@@ -7,6 +7,21 @@ ROOT=Path(__file__).resolve().parents[1]
 
 @unittest.skipIf(tkinter is None,'Python Tcl interpreter unavailable')
 class CollectorTests(unittest.TestCase):
+    def test_split_vio_input_reassembly_requires_explicit_disjoint_ranges(self):
+        t=tkinter.Tcl();t.call('source',str(ROOT/'scripts/hw_helpers.tcl'))
+        t.eval('''
+set props [dict create hard [dict create TYPE vio_input PROBE_PORT 5 PROBE_PORT_BITS 4 PROBE_PORT_BIT_COUNT 2 INPUT_VALUE 2] frame [dict create TYPE vio_input PROBE_PORT 5 PROBE_PORT_BITS 0 PROBE_PORT_BIT_COUNT 2 INPUT_VALUE 3] soft [dict create TYPE vio_input PROBE_PORT 5 PROBE_PORT_BITS 2 PROBE_PORT_BIT_COUNT 2 INPUT_VALUE 1] role [dict create TYPE vio_output PROBE_PORT 5 PROBE_PORT_BITS 0 PROBE_PORT_BIT_COUNT 2 OUTPUT_VALUE 0]]
+proc get_hw_probes {args} {return [dict keys $::props]}
+proc list_property {object} {return [dict keys [dict get $::props $object]]}
+proc get_property {property object} {return [dict get $::props $object $property]}
+''')
+        self.assertEqual(t.call('obsidian_hw::read_input','vio',5),'27')
+        with self.assertRaises(tkinter.TclError):t.call('obsidian_hw::vio_probe','vio','in',5)
+        t.eval('dict set props soft PROBE_PORT_BITS 1')
+        with self.assertRaises(tkinter.TclError):t.call('obsidian_hw::read_input','vio',5)
+        t.eval('dict set props soft PROBE_PORT_BITS 2;dict unset props frame')
+        with self.assertRaises(tkinter.TclError):t.call('obsidian_hw::read_input','vio',5)
+
     def interpreter(self,output,change=False):
         t=tkinter.Tcl()
         text=(ROOT/'scripts/physical_hw.tcl').read_text()
@@ -21,19 +36,28 @@ class CollectorTests(unittest.TestCase):
 proc physical_hw::select {serial} {return $serial}
 proc refresh_hw_vio {args} {}
 proc close_hw_target {args} {}
-proc obsidian_hw::write_output {v index value} {
- if {$index!=3} {error "Unexpected mutation in read-only collector"}
+proc obsidian_hw::vio_probe {v direction index} {
+ if {$direction eq "out" && $index==3} {return address_probe}
+ if {$direction eq "in" && $index==1} {return journal_probe}
+ error "Unexpected probe binding"
+}
+proc set_property {property value object} {
+ if {$property ne "OUTPUT_VALUE" || $object ne "address_probe"} {error "Unexpected mutation in collector"}
  set ::mock_address [expr 0x$value]
 }
-proc obsidian_hw::read_input {v index} {
- if {$index==0} {return 5048030000000000000000000000000000000000000000000000000000040100}
- if {$index!=1} {error "Unexpected probe read"}
+proc commit_hw_vio {args} {}
+proc get_property {property object} {
+ if {$property ne "INPUT_VALUE" || $object ne "journal_probe"} {error "Unexpected probe read"}
  set value [lindex $::mock_words $::mock_address]
  if {$::mock_address==0} {
   incr ::mock_reads_zero
   if {$::mock_change && $::mock_reads_zero>1} {return 0000000000000001}
  }
  return $value
+}
+proc obsidian_hw::read_input {v index} {
+ if {$index==0} {return 5048030000000000000000000000000000000000000000000000000000040100}
+ error "Unexpected probe read"
 }
 ''')
         return t
@@ -64,5 +88,21 @@ proc physical_hw::all_frozen {} {return [expr {!$::mock_idle}]}
 proc physical_hw::collect {} {incr ::mock_collected;set ::mock_idle 1}
 ''')
             t.call('physical_hw::wait_idle');self.assertEqual(int(t.call('set','mock_collected')),1)
+
+    def test_initialize_holds_all_resets_before_releasing_any(self):
+        with tempfile.TemporaryDirectory() as d:
+            t=self.interpreter(d);t.eval('''
+set physical_hw::targets {A B C}
+set writes {}
+proc obsidian_hw::read_input {v index} {if {$index==4} {return 3};return 0}
+proc obsidian_hw::write_output {v index value} {lappend ::writes [list $v $index $value]}
+proc physical_hw::status {serial} {return 0}
+''')
+            t.call('physical_hw::initialize')
+            self.assertEqual(t.eval('lmap w $writes {if {[lindex $w 1]!=0} {continue};set w}'),'{A 0 1} {B 0 1} {C 0 1} {A 0 0} {B 0 0} {C 0 0}')
+            self.assertEqual(int(t.eval('llength [lmap w $writes {if {[lindex $w 1]==0} {continue};set w}]')),12)
+            t.eval('set writes {};proc obsidian_hw::read_input {v index} {if {$index==4} {return 3};return 800}')
+            with self.assertRaises(tkinter.TclError):t.call('physical_hw::initialize')
+            self.assertEqual(t.eval('set writes'),'')
 
 if __name__=='__main__':unittest.main()

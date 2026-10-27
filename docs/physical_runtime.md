@@ -55,6 +55,10 @@ autorisée=19, moteur vidé=20, défaut moteur=21, erreur globale essai=22,
 rôle=24:23, bitmap retraits=27:25. Génération active=63:32, run=95:64,
 essais terminés=127:96, essai courant=159:128, échéances sautées=223:160,
 nombre de résumés=231:224, signature `504803`=255:232.
+Le compteur terminé 127:96 de A sert au quota du run courant ; celui des
+suiveurs B/C cumule les essais depuis le reset applicatif. Pour un décompte
+par campagne sur les trois cartes, utiliser les identifiants run/essai des
+résumés, comme le fait le vérificateur de campagne.
 
 Le rôle est fixé au premier configure et ne change pas pendant cette session.
 Un reset explicite permet une nouvelle affectation ; le changement de mode ou
@@ -140,6 +144,14 @@ départ ; ils ne tronquent pas une trame pour déclarer artificiellement le vida
 
 ## Journal et CSV
 
+L'initialisation après chargement est explicite : `program_physical.py` charge
+les trois FPGA puis maintient **tous** les resets avant d'en relâcher un seul.
+Après chargement manuel, utiliser l'action `initialize` de la campagne. Elle
+exige des liens actifs et refuse une campagne ou une trame engagée. Cette action
+crée de nouvelles origines brutes ; `configure`, `run` et `sweep` ne l'appellent
+jamais. Un pulse de reset successif sur chaque carte laisserait les autres
+émettre pendant le redémarrage d'un parseur.
+
 La RAM journal fait 8192 mots de 64 bits, à lecture synchrone :
 
 | Région | Contenu |
@@ -160,6 +172,8 @@ Après 128 essais ou une fin de campagne, les trois pages sont figées après
 vidage. La maintenance peut continuer sans modifier la page. La collecte lit
 deux fois, vérifie stabilité, signature, rôle et compteurs, puis acquitte B/C/A.
 La campagne reprend sur une époque commune si des répétitions restent à faire.
+Les sondes adresse/donnée sont résolues une fois par sélection de carte. La
+progression de chacune des deux passes est affichée toutes les 256 lectures.
 
 Le résumé contient config, run/essai, événements bruts d'injection/retrait,
 compteurs, temps de résidence RX-premier vers TX-premier, attentes d'injection,
@@ -185,6 +199,10 @@ calibration externe et sa provenance pour obtenir le statut `calibrated`.
 Sans cela, l'hypothèse de symétrie est étiquetée non calibrée et les durées
 intercartes ainsi que les écarts de départ restent vides. Aucune valeur n'est
 inventée pour compléter les courbes.
+
+Lorsque H est un multiple de trois, le paquet RAG revient à sa carte d'origine.
+`local_packet_duration_us` utilise alors les deux événements de ce même compteur
+brut, sans calibration intercartes. Ce champ reste vide pour les autres trajets.
 
 Le script de campagne collecte une page de maintenance après le run pour
 encadrer les événements mesurés. Les pauses de lecture JTAG font partie des

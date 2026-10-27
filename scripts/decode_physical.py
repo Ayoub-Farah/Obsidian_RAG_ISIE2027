@@ -8,7 +8,7 @@ from physical_codec import Config
 UNAVAILABLE=(1<<64)-1
 FIELDS=['source','board','page','generation','run','trial','mode','payload_bytes','local_bytes','hops','repetitions','period_ticks',
         'local_bad','global_bad','fault','valid','retired_origin','retired_hops','launch_raw','first_tx_raw','last_tx_raw','first_retired_rx_raw','last_retired_rx_raw',
-        'ct_rtt_ticks','ct_rtt_us','tx_span_us','launch_wait_us','tx_stall_ticks','own_tx_stall_ticks','relay_tx_stall_ticks','relay_residence_sum_ticks',
+        'ct_rtt_ticks','ct_rtt_us','local_packet_duration_us','tx_span_us','launch_wait_us','tx_stall_ticks','own_tx_stall_ticks','relay_tx_stall_ticks','relay_residence_sum_ticks',
         'relay_frames','rx_frames','tx_words','rx_words','crc_errors','pattern_errors','fifo_highwater','skipped_deadlines_cumulative',
         'holdover_during_trial','sync_locked_at_drain','holdover_at_drain','trace_lost_at_summary','calibration_lost_at_summary',
         'first_tx_common_ticks','last_rx_common_ticks','launch_skew_ns','packet_duration_us','calibration_id','time_uncertainty_ns','page_trace_lost','page_calibration_lost']
@@ -50,6 +50,9 @@ def decode_page(page):
         row['valid']=not(row['local_bad'] or row['global_bad'] or row['fault'])
         row['page_trace_lost']=page.get('lost_events',0);row['page_calibration_lost']=page.get('lost_calibration',0)
         row['ct_rtt_us']=None if row['ct_rtt_ticks'] is None else row['ct_rtt_ticks']*.016
+        row['local_packet_duration_us']=None
+        if row['mode']=='RAG' and row['retired_origin']=='ABC'.index(row['board']) and row['first_tx_raw'] is not None and row['last_retired_rx_raw'] is not None:
+            row['local_packet_duration_us']=(row['last_retired_rx_raw']-row['first_tx_raw'])*.016
         row['tx_span_us']=None if row['first_tx_raw'] is None or row['last_tx_raw'] is None else (row['last_tx_raw']-row['first_tx_raw'])*.016
         if row['first_tx_raw'] is None:row['launch_wait_us']=None
         if row['mode']=='CT' and row['board']=='A' and row['first_tx_raw'] is not None and row['last_retired_rx_raw'] is not None:

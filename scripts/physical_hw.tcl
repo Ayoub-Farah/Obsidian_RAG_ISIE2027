@@ -30,6 +30,32 @@ proc physical_hw::pulse {serial port} {
  obsidian_hw::write_output $v $port 0
  close_hw_target
 }
+proc physical_hw::initialize {} {
+ variable targets
+ # Explicit one-time recovery after programming. Runtime configure/run never
+ # resets counters. Check all boards before asserting any reset.
+ foreach serial $targets {
+  set v [select $serial]
+  set s [expr 0x[obsidian_hw::read_input $v 0]]
+  set links [expr 0x[obsidian_hw::read_input $v 4]]
+  close_hw_target
+  if {$s & ((1<<11)|(1<<13))} {error "Cannot initialize during traffic/campaign on $serial"}
+  if {$links!=3} {error "Both Aurora channels must be up before initialize: $serial"}
+ }
+ # A pulse on each board in turn would release parsers while the other boards
+ # can still be transmitting. Hold EVERY board before releasing ANY board.
+ foreach serial $targets {
+  set v [select $serial];obsidian_hw::write_output $v 0 1
+  foreach port {1 2 6 7} {obsidian_hw::write_output $v $port 0}
+  close_hw_target
+ }
+ foreach serial $targets {set v [select $serial];obsidian_hw::write_output $v 0 0;close_hw_target}
+ foreach serial $targets {
+  set s [status $serial]
+  if {$s & ((1<<8)|(1<<11)|(1<<13))} {error "Initialize did not return $serial to unconfigured idle"}
+ }
+ puts "INITIALIZATION_COMPLETE raw_counter_origins_reset=1";flush stdout
+}
 proc physical_hw::wait_idle {} {
  variable targets;variable timeout_ms
  set end [expr {[clock milliseconds]+$timeout_ms}]
@@ -56,15 +82,21 @@ proc physical_hw::wait_frozen {} {
  }
 }
 proc physical_hw::read_word {v address} {
- obsidian_hw::write_output $v 3 [format %04x $address]
+ variable address_probe;variable journal_probe
+ # Resolve probe handles once per cable selection, not for every RAM word.
+ # Closing a hardware target invalidates its objects; collect_board rebinds.
+ set_property OUTPUT_VALUE [format %04x $address] $address_probe
+ commit_hw_vio $v
  refresh_hw_vio $v
- set value [string tolower [obsidian_hw::read_input $v 1]]
+ set value [string tolower [get_property INPUT_VALUE $journal_probe]]
  if {![regexp {^[0-9a-f]{1,16}$} $value]} {error "Unknown journal data at $address: $value"}
  return [format %016llx [expr 0x$value]]
 }
 proc physical_hw::collect_board {serial board} {
- variable output
+ variable output;variable address_probe;variable journal_probe
  set v [select $serial]
+ set address_probe [obsidian_hw::vio_probe $v out 3]
+ set journal_probe [obsidian_hw::vio_probe $v in 1]
  set s [expr 0x[obsidian_hw::read_input $v 0]]
  if {!($s & (1<<18))} {error "Journal is not frozen"}
  set h0 [expr 0x[read_word $v 7168]];set h1 [expr 0x[read_word $v 7169]];set h2 [expr 0x[read_word $v 7170]]
@@ -75,8 +107,18 @@ proc physical_hw::collect_board {serial board} {
  foreach {base size} [list 0 [expr {$ns*32}] 4096 [expr {$ne*2}] 6144 [expr {$nc*4}] 7168 16] {
   for {set j 0} {$j<$size} {incr j} {lappend addresses [expr {$base+$j}]}
  }
- set pass1 {};foreach address $addresses {lappend pass1 [read_word $v $address]}
- set pass2 {};foreach address $addresses {lappend pass2 [read_word $v $address]}
+ puts "PAGE_READ_BEGIN $serial page=$page summaries=$ns events=$ne calibration=$nc words_per_pass=[llength $addresses]";flush stdout
+ set started [clock milliseconds]
+ foreach pass {1 2} {
+  set values {};set n 0
+  foreach address $addresses {
+   lappend values [read_word $v $address];incr n
+   if {$n%256==0 || $n==[llength $addresses]} {
+    puts "PAGE_READ_PROGRESS $serial page=$page pass=$pass words=$n/[llength $addresses] elapsed_ms=[expr {[clock milliseconds]-$started}]";flush stdout
+   }
+  }
+  set pass$pass $values
+ }
  if {$pass1 ne $pass2} {error "Frozen journal changed during double read"}
  refresh_hw_vio $v
  if {!([expr 0x[obsidian_hw::read_input $v 0]] & (1<<18))} {error "Journal unfroze during collection"}

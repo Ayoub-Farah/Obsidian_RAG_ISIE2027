@@ -287,6 +287,12 @@ begin
           bad:=bad or header_bad;
           if header_bad='1' then fault<='1';end if;
           event_rx_valid_o<='1';event_rx_o<=make_event(dd.rx_first,trial_id,origin,observed_hop(config_i,board,hop+1),5,header_bad);
+          -- Claim an idle transmitter on the header-validation edge. Waiting
+          -- another edge to observe desc.ready costs the only overlap cycle
+          -- of a minimum CT frame at the physical Aurora RX boundary.
+          if owner=0 and pending='0' and dc>0 and dh=dt and dd.sink='0' then
+            owner<=2;
+          end if;
         end if;
         if pattern_bad='1' then pattern_errors<=pattern_errors+1;end if;
         if rx_last_i='1' then

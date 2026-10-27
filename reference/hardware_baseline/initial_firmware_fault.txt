@@ -1,0 +1,316 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Tue Oct 27 14:41:48 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {C:\Users\afarahhass\Documents\Xilinx_project\Obsidian_RAG\captures\hardware_20261027_143955\smoke\run.tcl}
+# source {C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/scripts/physical_hw.tcl}
+## source [file join [file dirname [info script]] hw_helpers.tcl]
+### namespace eval obsidian_hw {}
+### proc obsidian_hw::property_names {object} {
+###  set result {}
+###  foreach name [list_property $object] {lappend result [string toupper $name]}
+###  return $result
+### }
+### proc obsidian_hw::direction {probe} {
+###  set names [property_names $probe]
+###  if {"TYPE" in $names} {
+###   set type [string tolower [string trim [get_property TYPE $probe]]]
+###   if {$type eq "vio_input"} {return in}
+###   if {$type eq "vio_output"} {return out}
+###   if {$type ne ""} {error "Probe $probe is not a VIO input/output (TYPE=$type)"}
+###  }
+###  # Strict fallback for tool versions lacking TYPE: an entire final path
+###  # component must be probe_inN or probe_outN. Never substring-match port 0/10.
+###  if {"NAME" in $names && [regexp {(^|/)probe_(in|out)([0-9]+)$} [get_property NAME $probe] _ prefix direction index]} {
+###   return $direction
+###  }
+###  error "Cannot determine VIO probe direction for $probe; inspect report_property -all"
+### }
+### proc obsidian_hw::vio_probe {vio direction index} {
+###  if {$direction ni {in out} || ![string is integer -strict $index] || $index<0} {
+###   error "Expected VIO direction in/out and a nonnegative probe index"
+###  }
+###  set expected [expr {$direction eq "in" ? "vio_input" : "vio_output"}]
+###  set exact {};set fallback {}
+###  foreach probe [get_hw_probes -of_objects $vio] {
+###   set names [property_names $probe]
+###   set type ""
+###   if {"TYPE" in $names} {set type [string tolower [string trim [get_property TYPE $probe]]]}
+###   if {$type ne "" && $type ne $expected} {continue}
+###   if {$type eq $expected && "PROBE_PORT" in $names} {
+###    set port [get_property PROBE_PORT $probe]
+###    if {![string is integer -strict $port]} {error "Invalid PROBE_PORT for $probe: $port"}
+###    if {$port==$index} {lappend exact $probe}
+###    continue
+###   }
+###   if {"NAME" in $names && [regexp {(^|/)probe_(in|out)([0-9]+)$} [get_property NAME $probe] _ prefix named_direction named_index]} {
+###    if {$named_direction eq $direction && $named_index==$index} {lappend fallback $probe}
+###   }
+###  }
+###  if {[llength $exact]>1} {error "Ambiguous VIO $direction port $index: $exact"}
+###  if {[llength $exact]==1} {return [lindex $exact 0]}
+###  if {[llength $fallback]!=1} {error "Cannot uniquely resolve VIO $direction port $index (fallback=$fallback); inspect report_property -all"}
+###  return [lindex $fallback 0]
+### }
+### proc obsidian_hw::read_probe {probe} {
+###  set property [expr {[direction $probe] eq "in" ? "INPUT_VALUE" : "OUTPUT_VALUE"}]
+###  if {$property ni [property_names $probe]} {error "Probe $probe lacks $property"}
+###  return [get_property $property $probe]
+### }
+### proc obsidian_hw::read_input {vio index} {
+###  return [read_probe [vio_probe $vio in $index]]
+### }
+### proc obsidian_hw::write_output {vio index value} {
+###  set probe [vio_probe $vio out $index]
+###  if {"OUTPUT_VALUE" ni [property_names $probe]} {error "Probe $probe lacks OUTPUT_VALUE"}
+###  set_property OUTPUT_VALUE $value $probe
+###  commit_hw_vio $vio
+### }
+## namespace eval physical_hw {variable targets;variable ltx;variable output;variable timeout_ms 300000}
+## proc physical_hw::select {serial} {
+##  variable ltx
+##  set ts [get_hw_targets */$serial]
+##  if {[llength $ts]!=1} {error "Expected one cable $serial, got $ts"}
+##  open_hw_target [lindex $ts 0]
+##  set ds [get_hw_devices -of_objects [current_hw_target]]
+##  if {[llength $ds]!=1 || [get_property PART [lindex $ds 0]] ne "xc7a35t"} {error "Unexpected FPGA: $ds"}
+##  set d [lindex $ds 0];set_property PROBES.FILE $ltx $d;refresh_hw_device $d
+##  set vs [get_hw_vios -of_objects $d]
+##  if {[llength $vs]!=1} {error "Expected one physical VIO"}
+##  set v [lindex $vs 0];refresh_hw_vio $v
+##  set s [expr 0x[obsidian_hw::read_input $v 0]]
+##  if {($s>>232)!=0x504803} {error "Wrong firmware VIO signature on $serial"}
+##  return $v
+## }
+## proc physical_hw::status {serial} {
+##  set v [select $serial];refresh_hw_vio $v
+##  set s [expr 0x[obsidian_hw::read_input $v 0]]
+##  close_hw_target
+##  if {$s & (1<<12)} {error "Firmware fault on $serial: [format %064llx $s]"}
+##  return $s
+## }
+## proc physical_hw::pulse {serial port} {
+##  set v [select $serial]
+##  obsidian_hw::write_output $v $port 0
+##  obsidian_hw::write_output $v $port 1
+##  obsidian_hw::write_output $v $port 0
+##  close_hw_target
+## }
+## proc physical_hw::wait_idle {} {
+##  variable targets;variable timeout_ms
+##  set end [expr {[clock milliseconds]+$timeout_ms}]
+##  while 1 {
+##   set s [status [lindex $targets 0]]
+##   if {($s & 255)==0 && !($s & (1<<11)) && !($s & (1<<18))} {return}
+##   if {[all_frozen]} {collect}
+##   if {[clock milliseconds]>$end} {error "Timeout waiting for coordinator idle"}
+##   after 10
+##  }
+## }
+## proc physical_hw::all_frozen {} {
+##  variable targets
+##  set all 1
+##  foreach serial $targets {if {!([status $serial] & (1<<18))} {set all 0}}
+##  return $all
+## }
+## proc physical_hw::wait_frozen {} {
+##  variable timeout_ms
+##  set end [expr {[clock milliseconds]+$timeout_ms}]
+##  while {![all_frozen]} {
+##   if {[clock milliseconds]>$end} {error "Timeout: global drain/page freeze not proved"}
+##   after 10
+##  }
+## }
+## proc physical_hw::read_word {v address} {
+##  obsidian_hw::write_output $v 3 [format %04x $address]
+##  refresh_hw_vio $v
+##  set value [string tolower [obsidian_hw::read_input $v 1]]
+##  if {![regexp {^[0-9a-f]{1,16}$} $value]} {error "Unknown journal data at $address: $value"}
+##  return [format %016llx [expr 0x$value]]
+## }
+## proc physical_hw::collect_board {serial board} {
+##  variable output
+##  set v [select $serial]
+##  set s [expr 0x[obsidian_hw::read_input $v 0]]
+##  if {!($s & (1<<18))} {error "Journal is not frozen"}
+##  set h0 [expr 0x[read_word $v 7168]];set h1 [expr 0x[read_word $v 7169]];set h2 [expr 0x[read_word $v 7170]]
+##  if {$h0!=0x5048595300030001 || (($h1>>48)&3)!=[string first $board ABC]} {error "Journal signature/role mismatch"}
+##  set ns [expr {($h1>>32)&65535}];set ne [expr {$h2&0xffffffff}];set nc [expr {$h2>>32}];set page [expr {$h1&0xffffffff}]
+##  if {$ns>128 || $ne>1024 || $nc>256} {error "Invalid page counts"}
+##  set addresses {}
+##  foreach {base size} [list 0 [expr {$ns*32}] 4096 [expr {$ne*2}] 6144 [expr {$nc*4}] 7168 16] {
+##   for {set j 0} {$j<$size} {incr j} {lappend addresses [expr {$base+$j}]}
+##  }
+##  set pass1 {};foreach address $addresses {lappend pass1 [read_word $v $address]}
+##  set pass2 {};foreach address $addresses {lappend pass2 [read_word $v $address]}
+##  if {$pass1 ne $pass2} {error "Frozen journal changed during double read"}
+##  refresh_hw_vio $v
+##  if {!([expr 0x[obsidian_hw::read_input $v 0]] & (1<<18))} {error "Journal unfroze during collection"}
+##  close_hw_target
+##  set words [lrepeat 8192 0000000000000000]
+##  foreach address $addresses value $pass1 {lset words $address $value}
+##  set path [file join $output [format "%s_page_%08d.json" $board $page]]
+##  if {[file exists $path]} {error "Refusing to overwrite $path"}
+##  set f [open $path w]
+##  puts $f "\{\"schema\":\"physical_v3\",\"source\":\"hardware_jtag\",\"board\":\"$board\",\"serial\":\"$serial\",\"unused_storage_zero_filled\":true,\"double_read_verified\":true,\"words\":\["
+##  puts $f "\"[join $words {","}]\""
+##  puts $f "\]\}";close $f
+##  puts "PAGE_COLLECTED $path summaries=$ns events=$ne calibration=$nc"
+##  return $s
+## }
+## proc physical_hw::collect {} {
+##  variable targets
+##  wait_frozen
+##  set statuses {};foreach serial $targets board {A B C} {lappend statuses [collect_board $serial $board]}
+##  # Followers clear first; A cannot re-arm while any follower page is frozen.
+##  foreach serial [list [lindex $targets 1] [lindex $targets 2] [lindex $targets 0]] {pulse $serial 7}
+##  return $statuses
+## }
+## proc physical_hw::configure {word} {
+##  variable targets;variable timeout_ms
+##  if {[llength [lsort -unique $targets]]!=3} {error "Three unique cables required"}
+##  # Stage all shadow words/roles before any configuration command.
+##  foreach serial $targets role {0 1 2} {
+##   set v [select $serial]
+##   obsidian_hw::write_output $v 4 $word
+##   obsidian_hw::write_output $v 5 [format %x $role]
+##   close_hw_target
+##  }
+##  foreach serial [list [lindex $targets 1] [lindex $targets 2] [lindex $targets 0]] {pulse $serial 6}
+##  set end [expr {[clock milliseconds]+$timeout_ms}]
+##  while 1 {
+##   if {[all_frozen]} {collect}
+##   set ok 1
+##   foreach serial $targets role {0 1 2} {
+##    set v [select $serial];refresh_hw_vio $v
+##    set s [expr 0x[obsidian_hw::read_input $v 0]]
+##    set active [expr 0x[obsidian_hw::read_input $v 2]]
+##    set links [expr 0x[obsidian_hw::read_input $v 4]]
+##    close_hw_target
+##    if {$s & (1<<12)} {error "Controller fault during configure"}
+##    if {$s & (1<<10)} {error "Configuration rejected by $serial"}
+##    if {$active!=[expr 0x$word] || !($s & (1<<8)) || (($s>>23)&3)!=$role || $links!=3} {set ok 0}
+##   }
+##   if {$ok} {puts "CONFIGURATION_COMMITTED $word";return}
+##   if {[clock milliseconds]>$end} {error "Configuration did not commit coherently"}
+##   after 10
+##  }
+## }
+## proc physical_hw::run {repetitions post_calibration_ms} {
+##  variable targets
+##  wait_idle;pulse [lindex $targets 0] 1
+##  while 1 {
+##   set statuses [collect];set s [lindex $statuses 0]
+##   set completed [expr {($s>>96)&0xffffffff}]
+##   if {($repetitions!=0 && $completed>=$repetitions) || !($s & (1<<13))} {break}
+##  }
+##  wait_idle
+##  if {$post_calibration_ms>0} {
+##   # Collect a separate idle calibration page to bracket the measured run.
+##   after $post_calibration_ms;pulse [lindex $targets 0] 2;collect;wait_idle
+##  }
+##  puts "PHYSICAL_RUN_COMPLETE completed=$completed"
+## }
+# open_hw_manager
+open_hw_manager: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 531.402 ; gain = 223.621
+# connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2025.2
+  **** Build date : Oct 28 2025 at 10:03:13
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.2.0
+  ****** Build date   : Nov 14 2025-00:16:52
+    **** Build number : 2025.2.1763075812
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 536.336 ; gain = 4.934
+# set physical_hw::targets {OBS001A OBS003A OBS002A}
+# set physical_hw::ltx {C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/build/physical_runtime/obsidian_benchmark.ltx}
+# set physical_hw::timeout_ms 60000
+# file mkdir {C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/captures/hardware_20261027_143955/smoke/configuration_000}
+# set physical_hw::output {C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/captures/hardware_20261027_143955/smoke/configuration_000}
+# physical_hw::configure 0000186a00000004000100020101000700000001
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS001A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS001A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS003A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS003A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS002A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS002A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS003A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS003A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS002A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS002A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS001A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS001A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/OBS001A
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-2302] Device xc7a35t (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Xilinx/OBS001A
+Firmware fault on OBS001A: 5048030000000000000000000000000000000000000000000000000100119116
+    while executing
+"error "Firmware fault on $serial: [format %064llx $s]""
+    invoked from within
+"if {$s & (1<<12)} {error "Firmware fault on $serial: [format %064llx $s]"}"
+    (procedure "status" line 5)
+    invoked from within
+"status $serial"
+    invoked from within
+"if {!([status $serial] & (1<<18))} {set all 0}"
+    ("foreach" body line 1)
+    invoked from within
+"foreach serial $targets {if {!([status $serial] & (1<<18))} {set all 0}}"
+    (procedure "all_frozen" line 4)
+    invoked from within
+"all_frozen"
+    invoked from within
+"if {[all_frozen]} {collect}"
+    ("while" body line 2)
+    invoked from within
+"while 1 {
+  if {[all_frozen]} {collect}
+  set ok 1
+  foreach serial $targets role {0 1 2} {
+   set v [select $serial];refresh_hw_vio $v
+   set s [expr..."
+    (procedure "physical_hw::configure" line 13)
+    invoked from within
+"physical_hw::configure 0000186a00000004000100020101000700000001"
+    (file "C:\Users\afarahhass\Documents\Xilinx_project\Obsidian_RAG\captures\hardware_20261027_143955\smoke\run.tcl" line 9)
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 27 14:42:19 2026...

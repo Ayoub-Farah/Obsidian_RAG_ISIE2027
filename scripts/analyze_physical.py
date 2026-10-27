@@ -59,6 +59,7 @@ def plot(rows,output):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     panels=[('ct_rtt_us','CT round trip (µs)'),('tx_span_us','Local injection TX span (µs)'),('launch_wait_us','Injection wait (µs)')]
+    if any(r.get('local_packet_duration_us') not in ('',None) for r in rows):panels.append(('local_packet_duration_us','RAG return to origin (µs, same board)'))
     if any(r.get('packet_duration_us') not in ('',None) for r in rows):panels.append(('packet_duration_us','Calibrated RAG packet duration (µs)'))
     fig,axes=plt.subplots(1,len(panels),figsize=(4.3*len(panels),4),layout='constrained')
     sources=sorted({r.get('source','unknown') for r in rows})
@@ -67,9 +68,11 @@ def plot(rows,output):
         for b in 'ABC':
             rs=[r for r in rows if r['mode']==mode and r['board']==b and str(r['valid']).lower() in ('true','1')]
             for ax,(field,label) in zip(axes,panels):
-                pts=[(int(r['payload_bytes']),float(r[field])) for r in rs if r.get(field) not in ('',None)]
+                xfield='hops' if field=='local_packet_duration_us' else 'payload_bytes'
+                pts=[(int(r[xfield]),float(r[field])) for r in rs if r.get(field) not in ('',None)]
                 if pts:ax.scatter(*zip(*pts),label=f'{mode} {b}',s=20)
-                ax.set(xlabel='Payload bytes',ylabel=label);ax.grid(alpha=.3)
+                ax.set(xlabel='Physical hops H' if xfield=='hops' else 'Payload bytes',ylabel=label);ax.grid(alpha=.3)
+                if field=='local_packet_duration_us':ax.set_xscale('log');ax.set_yscale('log')
     for ax in axes:
         handles,_=ax.get_legend_handles_labels()
         if handles:ax.legend(fontsize=8)

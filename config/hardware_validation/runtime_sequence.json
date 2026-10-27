@@ -1,0 +1,5 @@
+[
+ {"generation":10,"mode":"CT","payload_bytes":257,"local_bytes":7,"hops":2,"repetitions":16,"period_ticks":6250},
+ {"generation":11,"mode":"RAG","payload_bytes":257,"local_bytes":7,"hops":4,"repetitions":16,"period_ticks":6250},
+ {"generation":12,"mode":"CT","payload_bytes":4096,"local_bytes":1365,"hops":2,"repetitions":16,"period_ticks":6250}
+]

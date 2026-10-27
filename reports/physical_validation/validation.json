@@ -1,7 +1,7 @@
 {
-  "recorded_at_utc": "2026-10-27T13:16:56.797990+00:00",
+  "recorded_at_utc": "2026-10-27T15:49:35.832015+00:00",
   "status": "passed",
-  "python_tests": 30,
+  "python_tests": 34,
   "rtl_cases": [
     "tb_physical_system",
     "tb_physical_node",
@@ -40,16 +40,6 @@
       ],
       "returncode": 0,
       "log": "python.log"
-    },
-    {
-      "command": [
-        "C:\\Users\\afarahhass\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
-        "scripts/run_vivado_tests.py",
-        "--only",
-        "(tb_physical_.*|tb_crc|tb_management_codec|tb_sync_.*|tb_codec_equivalence)"
-      ],
-      "returncode": 0,
-      "log": "xsim_runner.log"
     },
     {
       "command": [

@@ -1,0 +1,74 @@
+[
+  {
+    "generation": 26,
+    "mode": "CT",
+    "payload_bytes": 3,
+    "local_bytes": 1,
+    "hops": 2,
+    "repetitions": 2,
+    "period_ticks": 64
+  },
+  {
+    "generation": 20,
+    "mode": "RAG",
+    "payload_bytes": 1,
+    "local_bytes": 1,
+    "hops": 1,
+    "repetitions": 2,
+    "period_ticks": 6250
+  },
+  {
+    "generation": 21,
+    "mode": "RAG",
+    "payload_bytes": 63,
+    "local_bytes": 7,
+    "hops": 2,
+    "repetitions": 2,
+    "period_ticks": 6250
+  },
+  {
+    "generation": 22,
+    "mode": "RAG",
+    "payload_bytes": 257,
+    "local_bytes": 7,
+    "hops": 3,
+    "repetitions": 2,
+    "period_ticks": 6250
+  },
+  {
+    "generation": 23,
+    "mode": "RAG",
+    "payload_bytes": 4096,
+    "local_bytes": 1365,
+    "hops": 4,
+    "repetitions": 2,
+    "period_ticks": 6250
+  },
+  {
+    "generation": 24,
+    "mode": "RAG",
+    "payload_bytes": 1,
+    "local_bytes": 1,
+    "hops": 29,
+    "repetitions": 2,
+    "period_ticks": 64
+  },
+  {
+    "generation": 25,
+    "mode": "RAG",
+    "payload_bytes": 1,
+    "local_bytes": 1,
+    "hops": 65535,
+    "repetitions": 1,
+    "period_ticks": 6250
+  },
+  {
+    "generation": 27,
+    "mode": "CT",
+    "payload_bytes": 4095,
+    "local_bytes": 1365,
+    "hops": 2,
+    "repetitions": 2,
+    "period_ticks": 625000
+  }
+]

@@ -338,6 +338,70 @@
         "cwd": "${workspaceFolder}"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: explicitly program three common images",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/program_physical.py",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}",
+        "--output",
+        "captures/${input:runName}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/program_physical.py",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}",
+          "--output",
+          "captures/${input:runName}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: initialize loaded images after programming",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "initialize",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}",
+        "--output",
+        "captures/${input:runName}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "initialize",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}",
+          "--output",
+          "captures/${input:runName}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
     }
   ],
   "inputs": [

@@ -1,6 +1,6 @@
 -------------------------------------
 | Tool Version : Vivado v.2025.2
-| Date         : Tue Oct 27 14:20:12 2026
+| Date         : Tue Oct 27 15:57:52 2026
 | Host         : HP-OWNTECH
 | Design       : design_1
 | Device       : xc7a35t-csg325-2--

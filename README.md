@@ -35,10 +35,26 @@ couple BIT/LTX s'utilise sur les trois cartes. Vérifier `execution.json` et
 
 L'état livré et les marges mesurées par les outils sont résumés dans
 [validation_physique.md](docs/validation_physique.md).
+Le diagnostic des premiers échecs et les mesures du banc réel sont consignés
+dans [validation_materielle.md](docs/validation_materielle.md).
 
 ## Utiliser les images déjà chargées
 
-Charger manuellement le BIT/LTX commun sur les trois cartes. Les numéros de
+Le chargement JTAG des trois FPGA est une commande **explicite**, distincte du
+build et des campagnes ; elle ne programme pas la mémoire flash :
+
+```powershell
+py -3 scripts/program_physical.py --targets OBS001A OBS003A OBS002A --output captures/program_001
+```
+
+Elle charge le BIT/LTX commun puis maintient les trois resets applicatifs avant
+de les relâcher. Cela évite de conserver un défaut de parseur acquis pendant le
+chargement séquentiel des voisins. Après un chargement manuel, exécuter une fois
+`run_physical_campaign.py initialize --output captures/init_001` avec les mêmes
+`--targets`. Cette initialisation remet les origines des compteurs à zéro ; les
+changements de configuration et de mode suivants ne demandent aucun reset.
+
+Les numéros de
 série ci-dessous doivent suivre l'ordre physique de l'anneau ; les modifier si
 le câblage diffère. Le script vérifie trois cibles distinctes et la signature VIO.
 
@@ -58,6 +74,14 @@ synchronisation et provenance. Une page contient 128 résumés ; les campagnes
 plus longues font des pauses de collecte explicites. Les échéances indisponibles
 sont sautées, sans chevauchement d'essais. La trace détaillée est bornée et ses
 pertes sont comptées ; les résumés sont conservés.
+
+La collecte affiche sa progression par passe ; une page peut demander plusieurs
+dizaines de secondes par carte. Ne pas confondre cette lecture avec la durée de
+l'essai, mesurée dans le FPGA. Vérifier une campagne collectée avec :
+
+```powershell
+py -3 scripts/verify_physical_capture.py captures/ct_001 --output captures/ct_001/verification.json
+```
 
 ## Exploiter
 

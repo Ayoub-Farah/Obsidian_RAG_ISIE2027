@@ -6,14 +6,14 @@ L'image contient un seul moteur physique, sans nœud virtuel.
 
 | Vérification finale | Résultat |
 |---|---|
-| Setup WNS | 1.186 ns, aucun endpoint en échec |
-| Hold WHS | 0.026 ns, aucun endpoint en échec |
-| LUT | 19357 / 20800 |
+| Setup WNS | 1.192 ns, aucun endpoint en échec |
+| Hold WHS | 0.056 ns, aucun endpoint en échec |
+| LUT | 19333 / 20800 |
 | Registres | 21545 / 41600 |
 | BRAM équivalentes RAMB36 | 32.5 / 50 |
 | Bus skew, DRC Error, horloges/chemins internes non contraints | critères de construction passants |
 | Scénarios XSim | 17 passants, empreintes de sources vérifiées |
-| Tests Python/Tcl simulé | 30 passants |
+| Tests Python/Tcl simulé | 34 passants |
 
 La construction a réellement exécuté génération des IP Aurora/VIO/ILA,
 synthèse, placement, routage et optimisation physique. Les reprises de
@@ -34,11 +34,14 @@ RTL et portent cette étiquette. Les modèles de transport numériques ne sont
 pas une simulation analogique des transceivers Aurora ni une mesure de fibre.
 Les métriques intercartes restent absentes sans calibration externe valide.
 
-**Aucune carte n'a été programmée et aucune mesure matérielle n'a été fabriquée.**
-Le chargement manuel, le contrôle des liens et la calibration sur le banc réel
-restent à effectuer par l'utilisateur.
+Les trois cartes ont été programmées explicitement et la campagne matérielle
+a validé 192 essais, soit 576 résumés de cartes.
+Voir [le diagnostic et les mesures réelles](validation_materielle.md) et
+[les preuves](../reports/hardware_validation/verification.json).
+Les mesures intercartes restent absentes sans calibration externe.
+Les constructions et les campagnes ne programment pas les cartes automatiquement.
 
-BIT SHA256 : `9151d08ab6aa2bfb570e7df7313f40af063be768b40191fd12b7eacfaf08d21a`  
+BIT SHA256 : `d844d4fbc15c4702dd8eb6e468fd1ab3128bfc21a0c1e0972d15b96c581835c4`  
 LTX SHA256 : `c7061aa49dc0073b3c5d09dab514abaad53ead809e9a51ce3df5ffa1186e61e8`
 
 Voir [le guide](physical_runtime.md), [les tests](../reports/physical_validation/validation.json)

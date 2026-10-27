@@ -23,12 +23,23 @@ def render(targets,ltx,output,action,configs,timeout_ms=300000,post_calibration_
     if action=='start':text+='physical_hw::wait_idle\nphysical_hw::pulse [lindex $physical_hw::targets 0] 1\n'
     elif action=='stop':text+='physical_hw::pulse [lindex $physical_hw::targets 0] 2\nphysical_hw::collect\n'
     elif action=='collect':text+='physical_hw::collect\n'
-    elif action=='status':text+='foreach t $physical_hw::targets {puts "PHYSICAL_STATUS $t [format %064llx [physical_hw::status $t]]"}\n'
+    elif action=='status':text+='''set fault_found 0
+foreach t $physical_hw::targets {
+ set v [physical_hw::select $t]
+ set s [expr 0x[obsidian_hw::read_input $v 0]]
+ puts "PHYSICAL_STATUS $t [format %064llx $s]"
+ puts "PHYSICAL_DIAG $t raw=[obsidian_hw::read_input $v 3] links=[obsidian_hw::read_input $v 4] aurora_errors=[obsidian_hw::read_input $v 5] lost=[obsidian_hw::read_input $v 7]"
+ close_hw_target
+ if {$s & (1<<12)} {set fault_found 1}
+}
+if {$fault_found} {error "Firmware fault; all board snapshots were printed above"}
+'''
+    elif action=='initialize':text+='physical_hw::initialize\n'
     return text+'close_hw_manager\nputs "PHYSICAL_COMMAND_COMPLETE"\n'
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('action',choices=('configure','start','stop','status','run','sweep','collect'))
+    p.add_argument('action',choices=('initialize','configure','start','stop','status','run','sweep','collect'))
     p.add_argument('--targets',nargs=3,default=['OBS001A','OBS003A','OBS002A'])
     p.add_argument('--image-dir',type=Path,default=ROOT/'build/physical_runtime')
     p.add_argument('--config',type=Path,help='Configuration object; sweep accepts a JSON list of objects')
@@ -64,7 +75,7 @@ def main():
     metadata=dict(schema='physical_campaign_v3',source='dry_run' if a.dry_run else 'hardware_jtag',
         created_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),action=a.action,
         targets=dict(zip('ABC',a.targets)),configurations=[c.__dict__ for c in configs] if a.action in ('configure','run','sweep') else None,hardware_programmed=False,
-        post_calibration_ms=a.post_calibration_ms,bitstream_sha256=hashlib.sha256(bit.read_bytes()).hexdigest() if bit.is_file() else None)
+        post_calibration_ms=a.post_calibration_ms,raw_counter_origins_reset=a.action=='initialize',bitstream_sha256=hashlib.sha256(bit.read_bytes()).hexdigest() if bit.is_file() else None)
     (a.output/'campaign.json').write_text(json.dumps(metadata,indent=2)+'\n')
     if a.dry_run:print(a.output/'run.tcl');return
     vivado=os.environ.get('VIVADO') or shutil.which('vivado') or shutil.which('vivado.bat') or 'C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat'
@@ -84,4 +95,6 @@ def main():
     (a.output/'events.json').write_text(json.dumps(events,indent=2)+'\n');(a.output/'sync.json').write_text(json.dumps(sync,indent=2)+'\n')
     metadata.update(completed=True,summary_rows=len(rows),invalid_rows=sum(not r['valid'] for r in rows),pages=page_info)
     (a.output/'campaign.json').write_text(json.dumps(metadata,indent=2)+'\n')
+    if metadata['invalid_rows']:
+        raise RuntimeError('Hardware campaign contains invalid trials; results and raw pages have been preserved')
 if __name__=='__main__':main()

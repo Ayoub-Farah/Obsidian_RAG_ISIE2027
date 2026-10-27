@@ -1,0 +1,59 @@
+{
+  "source": "hardware_jtag",
+  "baseline_only": true,
+  "passed": false,
+  "bitstream_sha256": "9151d08ab6aa2bfb570e7df7313f40af063be768b40191fd12b7eacfaf08d21a",
+  "errors": [
+    "CT cut-through not proved: generation=26 board=B trial=0",
+    "CT cut-through not proved: generation=26 board=B trial=1",
+    "CT cut-through not proved: generation=26 board=C trial=0",
+    "CT cut-through not proved: generation=26 board=C trial=1"
+  ],
+  "cut_through_pairs": [
+    {
+      "generation": 26,
+      "board": "B",
+      "trial": 0,
+      "origin": 0,
+      "hop": 1,
+      "tx_first_raw": 107799310017,
+      "rx_last_raw": 107799310017,
+      "cut_through": false
+    },
+    {
+      "generation": 26,
+      "board": "B",
+      "trial": 1,
+      "origin": 0,
+      "hop": 1,
+      "tx_first_raw": 107799312193,
+      "rx_last_raw": 107799312193,
+      "cut_through": false
+    },
+    {
+      "generation": 26,
+      "board": "C",
+      "trial": 0,
+      "origin": 0,
+      "hop": 2,
+      "tx_first_raw": 107770231500,
+      "rx_last_raw": 107770231500,
+      "cut_through": false
+    },
+    {
+      "generation": 26,
+      "board": "C",
+      "trial": 1,
+      "origin": 0,
+      "hop": 2,
+      "tx_first_raw": 107770233676,
+      "rx_last_raw": 107770233676,
+      "cut_through": false
+    }
+  ],
+  "input_sha256": {
+    "minimum_ct_pages/A_page_00000010.json": "ecd2096bed615efba68e5d08079d694a0f6a724151f2d3b0c7bc665dbbb66dd9",
+    "minimum_ct_pages/B_page_00000010.json": "daeba920a198eeac388802295b37a93e2ac15f879e423cf801f20381c5493019",
+    "minimum_ct_pages/C_page_00000010.json": "59958883488cc63e50ba39a2390688a63d7b051451253791f5e7b4983f384815"
+  }
+}

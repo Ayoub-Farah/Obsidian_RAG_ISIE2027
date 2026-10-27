@@ -56,7 +56,28 @@ proc obsidian_hw::read_probe {probe} {
  return [get_property $property $probe]
 }
 proc obsidian_hw::read_input {vio index} {
- return [read_probe [vio_probe $vio in $index]]
+ if {![catch {set probe [vio_probe $vio in $index]} original]} {return [read_probe $probe]}
+ # Vivado can split a concatenated VIO port into several named net probes.
+ # Reassemble only explicitly positioned, disjoint, contiguous input slices.
+ # vio_probe itself remains strict for callers that require one probe handle.
+ set mask 0;set value 0;set width 0;set count 0
+ foreach p [get_hw_probes -of_objects $vio] {
+  set names [property_names $p]
+  if {"TYPE" ni $names || [string tolower [get_property TYPE $p]] ne "vio_input" || "PROBE_PORT" ni $names || [get_property PROBE_PORT $p]!=$index} {continue}
+  if {"PROBE_PORT_BITS" ni $names || "PROBE_PORT_BIT_COUNT" ni $names} {error $original}
+  set start [get_property PROBE_PORT_BITS $p];set bits [get_property PROBE_PORT_BIT_COUNT $p]
+  if {![string is integer -strict $start] || ![string is integer -strict $bits] || $start<0 || $bits<1} {error "Invalid VIO slice range: $p"}
+  set slice [expr {((1<<$bits)-1)<<$start}]
+  if {$mask & $slice} {error "Overlapping VIO input slices on port $index"}
+  set text [read_probe $p]
+  if {![regexp {^[0-9a-fA-F]+$} $text]} {error "Unknown VIO input bits: $p=$text"}
+  set part [expr 0x$text]
+  if {$part >= (1<<$bits)} {error "VIO slice exceeds its declared width: $p"}
+  set mask [expr {$mask|$slice}];set value [expr {$value|($part<<$start)}]
+  set width [expr {max($width,$start+$bits)}];incr count
+ }
+ if {$count<2 || $mask!=((1<<$width)-1)} {error "Incomplete/ambiguous VIO input port $index: $original"}
+ return [format %x $value]
 }
 proc obsidian_hw::write_output {vio index value} {
  set probe [vio_probe $vio out $index]

@@ -1,0 +1,20 @@
+{
+  "schema": "physical_campaign_v3",
+  "source": "hardware_jtag",
+  "created_at_utc": "2026-10-27T15:53:50.241316+00:00",
+  "action": "status",
+  "targets": {
+    "A": "OBS001A",
+    "B": "OBS003A",
+    "C": "OBS002A"
+  },
+  "configurations": null,
+  "hardware_programmed": false,
+  "post_calibration_ms": 20,
+  "raw_counter_origins_reset": false,
+  "bitstream_sha256": "d844d4fbc15c4702dd8eb6e468fd1ab3128bfc21a0c1e0972d15b96c581835c4",
+  "completed": true,
+  "summary_rows": 0,
+  "invalid_rows": 0,
+  "pages": []
+}

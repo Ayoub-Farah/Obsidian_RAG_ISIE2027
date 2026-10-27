@@ -43,9 +43,13 @@ begin
       variable previous:unsigned(63 downto 0):=(others=>'0');variable initialized:boolean:=false;
       variable left_index,right_index:natural range 0 to 2:=0;
       variable left_magic,right_magic:std_logic_vector(15 downto 0):=(others=>'0');
+      variable tx_index:natural range 0 to 2:=0;
+      variable tx_magic:std_logic_vector(15 downto 0):=(others=>'0');
+      variable tx_first_raw,last_rx_raw:ticks_t:=(others=>'0');
+      variable input_active:boolean:=false;
       variable data_active:boolean;
     begin if rising_edge(clocks(b)) then
-      if resets(b)='1' then initialized:=false;left_index:=0;right_index:=0;
+      if resets(b)='1' then initialized:=false;left_index:=0;right_index:=0;tx_index:=0;input_active:=false;
       else
         if initialized then assert unsigned(raw(b))=previous+1 report "Raw counter changed across runtime configuration" severity failure;end if;
         previous:=unsigned(raw(b));initialized:=true;
@@ -53,12 +57,27 @@ begin
         data_active:=status(0)(11)='1' and ((cfg_mode(active_cfg(0))=C_CT and status(0)(27 downto 25)/="001") or
                      (cfg_mode(active_cfg(0))=C_RAG and status(0)(27 downto 25)/="111"));
         if lrv(b)='1' then
+          input_active:=true;
+          if lrl(b)='1' then input_active:=false;last_rx_raw:=unsigned(raw(b));end if;
           if left_index=0 then left_magic:=lr(b);left_index:=1;
           elsif left_index=1 then
             assert not(data_active and left_magic=x"C35A" and lr(b)(15 downto 8)=x"01") report "Sync maintenance during live DATA" severity failure;
             left_index:=2;
           end if;
           if lrl(b)='1' then left_index:=0;end if;
+        end if;
+        if rv(b)='1' and rready(b)='1' then
+          if tx_index=0 then
+            tx_magic:=rd(b);tx_first_raw:=unsigned(raw(b));tx_index:=1;
+          elsif tx_index=1 then
+            if b>0 and cfg_mode(active_cfg(b))=C_CT and tx_magic=x"C35A" and rd(b)(15 downto 8)=x"02" then
+              assert input_active or tx_first_raw<last_rx_raw
+                report "CT first accepted TX must precede last physical RX, including minimum payload; b="&integer'image(b)
+                severity failure;
+            end if;
+            tx_index:=2;
+          end if;
+          if rl(b)='1' then tx_index:=0;end if;
         end if;
         if rrv(b)='1' then
           if right_index=0 then right_magic:=rr(b);right_index:=1;
@@ -143,6 +162,7 @@ begin
     apply(make_config(1,4096,6,2,C_CT,to_unsigned(1,32),to_unsigned(6250,32)));run_and_read;
     apply(make_config(2,257,6,4,C_RAG,to_unsigned(3,32),to_unsigned(1000,32)));run_and_read;
     apply(make_config(3,4095,1365,2,C_CT,to_unsigned(1,32),to_unsigned(6250,32)));run_and_read;
+    apply(make_config(13,3,1,2,C_CT,to_unsigned(1,32),to_unsigned(6250,32)));run_and_read;
     -- Change config and stop while the old CT payload is still in flight.
     apply(make_config(4,4096,6,2,C_CT,to_unsigned(0,32),to_unsigned(6250,32)));
     pulse(start,"100");

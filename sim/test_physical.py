@@ -52,6 +52,17 @@ class RuntimeContract(unittest.TestCase):
         self.assertEqual(text.count('physical_hw::configure '),2)
         with self.assertRaises(ValueError):render(['A','A','C'],ROOT/'x',ROOT/'x','run',[Config()])
 
+    def test_programming_is_explicit_and_initializes_after_all_boards(self):
+        from program_physical import render_program
+        text=render_program(['A','B','C'],ROOT/'image')
+        self.assertIn('program_hw_devices $d',text)
+        self.assertGreater(text.index('physical_hw::initialize'),text.index('program_hw_devices $d'))
+        self.assertNotIn('program_hw_cfgmem',text)
+        with self.assertRaises(ValueError):render_program(['A','A','C'],ROOT/'image')
+        init=render(['A','B','C'],ROOT/'x.ltx',ROOT/'x','initialize',[Config()])
+        self.assertIn('physical_hw::initialize',init)
+        self.assertNotIn('program_hw_devices',init)
+
 class MeasurementContract(unittest.TestCase):
     def page(self):
         c=Config(payload_bytes=64,local_bytes=6,repetitions=1)
@@ -85,6 +96,18 @@ class MeasurementContract(unittest.TestCase):
             with self.assertRaises(ValueError):read_page(path)
             page=self.page();v=int(page['words'][26],16);page['words'][26]=f'{v^1:016x}';path.write_text(json.dumps(page))
             with self.assertRaises(ValueError):decode_page(read_page(path))
+
+    def test_rag_origin_return_uses_only_the_same_board_counter(self):
+        page=self.page();words=[int(w,16) for w in page['words']]
+        s=sum(words[j]<<(64*j) for j in range(32))
+        c=Config(payload_bytes=64,local_bytes=6,hops=3,mode=2,repetitions=1)
+        s=(s&~((1<<160)-1))|c.register()
+        for j in range(32):words[j]=s>>(64*j)&((1<<64)-1)
+        fixture=dict(board='A',page=0,words=words,summary_count=1,event_count=0,calibration_count=0)
+        rows,_,_=decode_page(fixture)
+        self.assertEqual(rows[0]['local_packet_duration_us'],14.4)
+        fixture['board']='B';rows,_,_=decode_page(fixture)
+        self.assertIsNone(rows[0]['local_packet_duration_us'])
 
     def exchanges(self):
         events=[]
