@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "family": "RAG",
+  "source_bundle_sha256": "b088204bd8e8809c0dcceedc6372874cc9116e25abe216fda311988b08ceae33",
+  "upstream_commit": "e7d486a22b16bc1e52630341f7cdd1b560a97ce1",
+  "archive_selfcheck": {
+    "status": "passed",
+    "rtl_scenarios": 25,
+    "integration": "passed; one profile, three periods, independent extracted-family sources"
+  },
+  "shared_validation": "reports/integration_matrix.json and docs/VALIDATION_PROVENANCE.md identify all source versions.",
+  "vivado_ip_generation": "not_executed",
+  "vivado_synthesis": "not_executed",
+  "vivado_place_route_timing": "not_executed",
+  "hardware_test": "not_executed",
+  "note": "This source bundle ID is not a git commit. Source-only standalone project."
+}

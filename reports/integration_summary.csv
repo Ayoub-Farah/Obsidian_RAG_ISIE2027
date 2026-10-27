@@ -1,0 +1,11 @@
+case,mode,N,periods,max_observed_global_T_useful_ns,max_observed_global_T_drained_ns,max_first_TX_spread_between_segments_ns,evidence,scope
+simulate:tb_benchmark_system:mode0_N3_records12,RAG_C,3,12,1680.0,2640.0,0.0,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode0_N6_records12,RAG_C,6,12,4080.0,5040.0,0.0,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode1_N3_records12,AGG_C,3,12,2640.0,2656.0,,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode1_N6_records12,AGG_C,6,12,5184.0,5200.0,,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode2_N3_records12,RAG_D,3,12,1680.0,2640.0,0.0,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode2_N6_records12,RAG_D,6,12,4048.0,4992.0,0.0,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode3_N3_records12,AGG_D2,3,12,4384.0,5200.0,,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode3_N6_records12,AGG_D2,6,12,9376.0,10192.0,,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode4_N3_records12,AGG_D2_PIPE,3,12,4192.0,5008.0,,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"
+simulate:tb_benchmark_system:mode4_N6_records12,AGG_D2_PIPE,6,12,9040.0,9936.0,,RTL_INTERFACE_SIMULATION,"common-clock digital transport; not hardware; observed maximum, not a worst-case proof"

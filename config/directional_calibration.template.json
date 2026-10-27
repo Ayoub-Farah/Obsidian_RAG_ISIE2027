@@ -1,0 +1,9 @@
+{
+  "status":"not_measured",
+  "provenance":null,
+  "boundary":"Aurora application first accepted TX to first valid RX, same boundaries as firmware",
+  "links":{
+    "AB":{"forward_minus_reverse_ns":null,"uncertainty_ns":null},
+    "BC":{"forward_minus_reverse_ns":null,"uncertainty_ns":null}
+  }
+}

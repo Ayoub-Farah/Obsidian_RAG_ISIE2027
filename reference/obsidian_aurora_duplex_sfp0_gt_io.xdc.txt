@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: MIT
+###############################################################################
+# Obsidian -- une voie Aurora 8B/10B full-duplex sur SFP0/J12.
+#
+# Ne pas appliquer d'IOSTANDARD fabric aux ports MGTREFCLK, TXP/TXN ou
+# RXP/RXN. Les LOC GTPE2_CHANNEL/COMMON et leur timing appartiennent au XDC
+# d'implementation AMD fige avec l'IP duplex.
+###############################################################################
+
+# Ces associations consignent la cartographie physique attendue pendant la
+# synthèse. Ne pas forcer IO_BUFFER_TYPE=NONE sur les lignes série : les
+# marqueurs de frontière créés par la synthèse sont retargetés vers les vrais
+# terminaux GT après injection du DCP. Le hook réapplique ensuite les broches
+# et fixe les primitives GT séparément.
+set_property PACKAGE_PIN D6 [get_ports gt_refclk_p_i]
+set_property PACKAGE_PIN D5 [get_ports gt_refclk_n_i]
+set_property PACKAGE_PIN H2 [get_ports sfp0_txp_o]
+set_property PACKAGE_PIN H1 [get_ports sfp0_txn_o]
+set_property PACKAGE_PIN E4 [get_ports sfp0_rxp_i]
+set_property PACKAGE_PIN E3 [get_ports sfp0_rxn_i]
+

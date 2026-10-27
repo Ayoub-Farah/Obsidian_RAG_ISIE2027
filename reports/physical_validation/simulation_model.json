@@ -1,0 +1,136 @@
+{
+  "schema": "physical_cut_through_model_v1",
+  "source": "observations_only",
+  "data_sources": [
+    "rtl_simulation"
+  ],
+  "serialization_observations": [
+    {
+      "board": "A",
+      "words": 2066,
+      "span_ns": 33040.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 33040.0,
+      "expected_unpaused_span_ns": 33040
+    },
+    {
+      "board": "A",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "B",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "C",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "A",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "B",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "C",
+      "words": 147,
+      "span_ns": 2432.0,
+      "ready_pause_ns": 96,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "A",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "B",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "C",
+      "words": 147,
+      "span_ns": 2336.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 2336.0,
+      "expected_unpaused_span_ns": 2336
+    },
+    {
+      "board": "A",
+      "words": 2066,
+      "span_ns": 33040.0,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 33040.0,
+      "expected_unpaused_span_ns": 33040
+    },
+    {
+      "board": "A",
+      "words": 27,
+      "span_ns": 416.00000000000006,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 416.00000000000006,
+      "expected_unpaused_span_ns": 416
+    },
+    {
+      "board": "B",
+      "words": 27,
+      "span_ns": 416.00000000000006,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 416.00000000000006,
+      "expected_unpaused_span_ns": 416
+    },
+    {
+      "board": "C",
+      "words": 27,
+      "span_ns": 416.00000000000006,
+      "ready_pause_ns": 0,
+      "unpaused_span_ns": 416.00000000000006,
+      "expected_unpaused_span_ns": 416
+    }
+  ],
+  "relay_observations": [],
+  "link_observations": [],
+  "serialization_fit": {
+    "ns_per_word": 16.0,
+    "intercept_ns": 3.0445705029667585e-12,
+    "max_residual_ns": 3.183231456205249e-12
+  },
+  "relay_minimum_ns": {},
+  "effective_link_delay_ns": {},
+  "composition": "CT first-wave link delays + local RX-first to TX-first relay delays + final RX-first to RX-last span; never sum all per-hop frame serializations.",
+  "propagation_identifiability": "Effective link includes fiber, Aurora and PHY. Fiber-only propagation requires independent PHY calibration or varying known fiber lengths.",
+  "simulation_targets": [
+    "centralized CT",
+    "decentralized simultaneous injection with physical-hop budget"
+  ]
+}

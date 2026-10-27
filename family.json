@@ -1,0 +1,8 @@
+{
+  "family": "RAG",
+  "default_mode": 2,
+  "allowed_modes": {
+    "0": "RAG_C",
+    "2": "RAG_D"
+  }
+}

@@ -1,0 +1,76 @@
+﻿# Obsidian_RAG — CT / RAG sur trois cartes physiques
+
+Une image commune pour trois Obsidian **XC7A35T-CSG325-2**, câblées
+**A → B → C → A**. Les liens restent duplex pour la synchronisation.
+Le rôle A/B/C est attribué par VIO. Aucun nœud virtuel dans le nouveau top.
+
+- **CT :** A injecte une trame ; B/C insèrent leur contribution dans leurs
+  emplacements réservés en cut-through ; A vérifie et retire le résultat.
+- **RAG :** les trois cartes injectent au départ commun ; chaque paquet est
+  retiré après H sauts physiques, y compris après plusieurs tours.
+- Mode, payload P, emplacement S, H, répétitions et période sont des **registres
+  runtime**. CT → RAG → CT ne demande ni compilation ni rechargement.
+
+Limites : **P=1..4096 octets**, **S=1..1365**, **P≥3S en CT**, **H=1..65535**,
+répétitions uint32 (0=continu), période uint32 en ticks de 16 ns. Défaut :
+CT, P=4096, S=6, H=2, 128 essais, **100 µs**. Pour N modules cibles : H=N−1 ;
+le banc conserve trois injecteurs et trois oscillateurs physiques.
+
+## Construire et vérifier
+
+Python 3 avec NumPy/Matplotlib, Vivado **2025.2** installé et licence Artix-7.
+Définir `VIVADO` si nécessaire. Sous Windows :
+
+```powershell
+py -3 tools/validate_physical.py
+py -3 scripts/build_physical.py
+```
+
+Le build génère Aurora, VIO et ILA, puis synthèse et placement-routage. Il refuse
+les violations setup/hold/bus-skew, les chemins internes non contraints et les
+DRC Error. Les sorties sont dans `build/physical_runtime/` :
+`obsidian_benchmark.bit`, `.ltx`, rapports, manifestes et empreintes. Le même
+couple BIT/LTX s'utilise sur les trois cartes. Vérifier `execution.json` et
+`build_manifest.txt` avant utilisation. **Aucune carte n'est programmée par ces commandes.**
+
+L'état livré et les marges mesurées par les outils sont résumés dans
+[validation_physique.md](docs/validation_physique.md).
+
+## Utiliser les images déjà chargées
+
+Charger manuellement le BIT/LTX commun sur les trois cartes. Les numéros de
+série ci-dessous doivent suivre l'ordre physique de l'anneau ; les modifier si
+le câblage diffère. Le script vérifie trois cibles distinctes et la signature VIO.
+
+```powershell
+py -3 scripts/run_physical_campaign.py run --targets OBS001A OBS003A OBS002A --mode CT --payload-bytes 4096 --local-bytes 64 --repetitions 128 --output captures/ct_001
+py -3 scripts/run_physical_campaign.py run --targets OBS001A OBS003A OBS002A --mode RAG --payload-bytes 257 --target-modules 30 --output captures/rag_001
+py -3 scripts/run_physical_campaign.py sweep --config config/physical_sweep.example.json --output captures/sweep_001
+```
+
+`configure`, `start`, `stop`, `status` et `collect` sont également disponibles.
+`--dry-run` produit un Tcl révisable sans contacter les cartes. Les campagnes
+n'ont aucune option de programmation. Configurer pendant un transfert demande
+son vidage ; les paramètres actifs ne changent pas en pleine trame.
+
+Les résultats comprennent pages JSON brutes lues deux fois, CSV, événements,
+synchronisation et provenance. Une page contient 128 résumés ; les campagnes
+plus longues font des pauses de collecte explicites. Les échéances indisponibles
+sont sautées, sans chevauchement d'essais. La trace détaillée est bornée et ses
+pertes sont comptées ; les résumés sont conservés.
+
+## Exploiter
+
+```powershell
+py -3 scripts/analyze_physical.py plot captures/ct_001/results.csv --output captures/ct_001/durations.png
+py -3 scripts/analyze_physical.py fit-model captures/ct_001/results.csv --events captures/ct_001/events.json --output captures/ct_001/model.json
+```
+
+Le RTT CT utilise seulement le compteur brut de A, du premier TX accepté au
+dernier RX. Les mesures intercartes restent vides sans correspondance calibrée.
+Le workflow de calibration, les registres VIO, les formats et les limites sont
+décrits dans [physical_runtime.md](docs/physical_runtime.md).
+
+Les anciens BIT, rapports et documents restent historiques ; voir
+[README_legacy.md](docs/README_legacy.md). Ils ne prouvent pas la validation de
+la nouvelle image. Aucun résultat matériel n'est inventé.

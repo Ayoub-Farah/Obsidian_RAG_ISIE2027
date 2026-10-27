@@ -1,0 +1,404 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Obsidian: build common CT-RAG image",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/build_physical.py"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/build_physical.py"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: simulate physical CT-RAG",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_vivado_tests.py",
+        "--only",
+        "tb_physical_.*"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_vivado_tests.py",
+          "--only",
+          "tb_physical_.*"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: test host tools",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sim",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "sim",
+          "-p",
+          "test_*.py",
+          "-v"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: prepare sweep without hardware",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "sweep",
+        "--config",
+        "config/physical_sweep.example.json",
+        "--output",
+        "captures/sweep_review",
+        "--dry-run"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "sweep",
+          "--config",
+          "config/physical_sweep.example.json",
+          "--output",
+          "captures/sweep_review",
+          "--dry-run"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: configure loaded common images",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "configure",
+        "--output",
+        "captures/${input:runName}",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}",
+        "--config",
+        "${input:configurationFile}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "configure",
+          "--output",
+          "captures/${input:runName}",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}",
+          "--config",
+          "${input:configurationFile}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: run loaded common images",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "run",
+        "--output",
+        "captures/${input:runName}",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}",
+        "--config",
+        "${input:configurationFile}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "run",
+          "--output",
+          "captures/${input:runName}",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}",
+          "--config",
+          "${input:configurationFile}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: collect loaded common images",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "collect",
+        "--output",
+        "captures/${input:runName}",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "collect",
+          "--output",
+          "captures/${input:runName}",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: status loaded common images",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "status",
+        "--output",
+        "captures/${input:runName}",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "status",
+          "--output",
+          "captures/${input:runName}",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: stop loaded common images",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/run_physical_campaign.py",
+        "stop",
+        "--output",
+        "captures/${input:runName}",
+        "--targets",
+        "${input:targetA}",
+        "${input:targetB}",
+        "${input:targetC}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/run_physical_campaign.py",
+          "stop",
+          "--output",
+          "captures/${input:runName}",
+          "--targets",
+          "${input:targetA}",
+          "${input:targetB}",
+          "${input:targetC}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: ILA / VIO capture",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/vivado.py",
+        "capture",
+        "build/physical_runtime/obsidian_benchmark.ltx",
+        "captures/${input:runName}",
+        "${input:device}",
+        "${input:debugAction}"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/vivado.py",
+          "capture",
+          "build/physical_runtime/obsidian_benchmark.ltx",
+          "captures/${input:runName}",
+          "${input:device}",
+          "${input:debugAction}"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "OBSIDIAN_HW_TARGET": "*/${input:debugTarget}"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Obsidian: plot collected durations",
+      "type": "process",
+      "command": "python3",
+      "args": [
+        "scripts/analyze_physical.py",
+        "plot",
+        "${input:csvFile}",
+        "--output",
+        "captures/${input:runName}/durations.png"
+      ],
+      "windows": {
+        "command": "py",
+        "args": [
+          "-3",
+          "scripts/analyze_physical.py",
+          "plot",
+          "${input:csvFile}",
+          "--output",
+          "captures/${input:runName}/durations.png"
+        ]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "targetA",
+      "type": "promptString",
+      "description": "Cable serial of A, first in the physical ring",
+      "default": "OBS001A"
+    },
+    {
+      "id": "targetB",
+      "type": "promptString",
+      "description": "Cable serial of B, after A",
+      "default": "OBS003A"
+    },
+    {
+      "id": "targetC",
+      "type": "promptString",
+      "description": "Cable serial of C, after B",
+      "default": "OBS002A"
+    },
+    {
+      "id": "runName",
+      "type": "promptString",
+      "description": "New output folder name for hardware actions",
+      "default": "manual_001"
+    },
+    {
+      "id": "configurationFile",
+      "type": "promptString",
+      "description": "Runtime configuration JSON",
+      "default": "config/physical_default.json"
+    },
+    {
+      "id": "debugTarget",
+      "type": "promptString",
+      "description": "One cable serial for ILA/VIO capture",
+      "default": "OBS001A"
+    },
+    {
+      "id": "device",
+      "type": "promptString",
+      "description": "Exact hardware device name",
+      "default": "xc7a35t_0"
+    },
+    {
+      "id": "csvFile",
+      "type": "promptString",
+      "description": "CSV file to plot",
+      "default": "captures/manual_001/results.csv"
+    },
+    {
+      "id": "debugAction",
+      "type": "pickString",
+      "description": "Passive debug action; run/stop use the coordinated tasks",
+      "options": [
+        "arm",
+        "read",
+        "trigger"
+      ],
+      "default": "arm"
+    }
+  ]
+}

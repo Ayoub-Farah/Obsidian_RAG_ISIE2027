@@ -1,0 +1,6 @@
+{
+ "files.associations":{"*.vhd":"vhdl","*.xdc":"tcl"},
+ "files.exclude":{"**/build/**":true,"**/__pycache__/**":true},
+ "search.exclude":{"**/build/**":true},
+ "terminal.integrated.cwd":"${workspaceFolder}"
+}

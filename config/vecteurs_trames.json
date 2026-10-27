@@ -1,0 +1,1061 @@
+{
+  "provenance": "Recreated from Rapport_RAG_CT_specification_VHDL.md v1.0; original referenced vectors were not attached.",
+  "status": "wire-format reference; not hardware measurements",
+  "crc_golden": {
+    "ascii": "123456789",
+    "crc16_hex": "29B1",
+    "crc32_hex": "CBF43926"
+  },
+  "vectors": [
+    {
+      "name": "data_even",
+      "frame_hex": "C35A0101000100030102030400065B94E7E8E9EAEBEC747A8B1C",
+      "frame_bytes": 26,
+      "type": 1,
+      "origin_id": 1,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "E7E8E9EAEBEC",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 257,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 1,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 6,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 23444,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 59368,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 59882,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 60396,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 29818,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 35612,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "data_odd",
+      "frame_hex": "C35A01010002000301020304000546B3F8F9FAFBFC5D96E997",
+      "frame_bytes": 25,
+      "type": 1,
+      "origin_id": 2,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "F8F9FAFBFC",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 257,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 2,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 5,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 18099,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 63737,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 64251,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 64605,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 38633,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 38656,
+          "keep": 2,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "frame_hex": "C35A010200000003010203040006C84DD9DAF6F7131450293931",
+      "frame_bytes": 26,
+      "type": 2,
+      "origin_id": 0,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "D9DAF6F71314",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 6,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 51277,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 55770,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 63223,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 4884,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 20521,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 14641,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "aggregate_central_initial",
+      "frame_hex": "C35A010300000003010203040018E3FBD9DAF6F71314D6D7D8D9DADB0000000000000000000000000DC0AECE",
+      "frame_bytes": 44,
+      "type": 3,
+      "origin_id": 0,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "D9DAF6F71314D6D7D8D9DADB000000000000000000000000",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 259,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 24,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 58363,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 55770,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 63223,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 4884,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 54999,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 55513,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 56027,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3520,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 44750,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "aggregate_collect_initial",
+      "frame_hex": "C35A0104000000030102030400126B0CD6D7D8D9DADB000000000000000000000000E32F11CC",
+      "frame_bytes": 38,
+      "type": 4,
+      "origin_id": 0,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "D6D7D8D9DADB000000000000000000000000",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 260,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 18,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 27404,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 54999,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 55513,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 56027,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 58159,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 4556,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "aggregate_broadcast_complete",
+      "frame_hex": "C35A010500000003010203040012B345D6D7D8D9DADBE7E8E9EAEBECF8F9FAFBFCFDCFB8AD3A",
+      "frame_bytes": 38,
+      "type": 5,
+      "origin_id": 0,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "D6D7D8D9DADBE7E8E9EAEBECF8F9FAFBFCFD",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 261,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 18,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 45893,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 54999,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 55513,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 56027,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 59368,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 59882,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 60396,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 63737,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 64251,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 64765,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 53176,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 44346,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "sync_follow_up",
+      "frame_hex": "C35A011100000003010203040010977D00000007123456789ABCDEF0000000005731F4A8",
+      "frame_bytes": 36,
+      "type": 17,
+      "origin_id": 0,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "00000007123456789ABCDEF000000000",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 273,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 16,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 38781,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 7,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 4660,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 22136,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 39612,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 57072,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 22321,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 62632,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "arm",
+      "frame_hex": "C35A012000000003010203040018317B0000002A0200000000000004C4B40000010203040000186A2350F00B",
+      "frame_bytes": 44,
+      "type": 32,
+      "origin_id": 0,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "0000002A0200000000000004C4B40000010203040000186A",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 288,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 24,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 12667,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 42,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 512,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 4,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 50356,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 6250,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 9040,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 61451,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    },
+    {
+      "name": "ready",
+      "frame_hex": "C35A012100020003010203040010AE5D0000002A0001000000000000000000003FD0290B",
+      "frame_bytes": 36,
+      "type": 33,
+      "origin_id": 2,
+      "node_count": 3,
+      "cycle_id": 16909060,
+      "payload_hex": "0000002A000100000000000000000000",
+      "words": [
+        {
+          "data": 50010,
+          "keep": 3,
+          "sof": true,
+          "last": false
+        },
+        {
+          "data": 289,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 2,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 3,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 258,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 772,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 16,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 44637,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 42,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 1,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 0,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 16336,
+          "keep": 3,
+          "sof": false,
+          "last": false
+        },
+        {
+          "data": 10507,
+          "keep": 3,
+          "sof": false,
+          "last": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "recorded_at_utc": "2026-10-27T13:16:56.797990+00:00",
+  "status": "passed",
+  "python_tests": 30,
+  "rtl_cases": [
+    "tb_physical_system",
+    "tb_physical_node",
+    "tb_physical_fifo",
+    "tb_physical_pages",
+    "tb_physical_holdover",
+    "tb_physical_fault_0",
+    "tb_physical_fault_1",
+    "tb_physical_fault_2",
+    "tb_physical_fault_3",
+    "tb_physical_fault_4",
+    "tb_crc",
+    "tb_management_codec",
+    "tb_sync_median",
+    "tb_sync_system",
+    "tb_sync_stalls",
+    "tb_sync_bounded",
+    "tb_codec_equivalence"
+  ],
+  "compiled_source_hashes_verified": true,
+  "hardware_programmed": false,
+  "hardware_measurements": 0,
+  "simulation_data": "simulation.csv",
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\afarahhass\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sim",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log": "python.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\afarahhass\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "scripts/run_vivado_tests.py",
+        "--only",
+        "(tb_physical_.*|tb_crc|tb_management_codec|tb_sync_.*|tb_codec_equivalence)"
+      ],
+      "returncode": 0,
+      "log": "xsim_runner.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\afarahhass\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "scripts/extract_physical_simulation.py",
+        "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\physical_validation\\sim_tb_physical_system.log",
+        "--output",
+        "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\physical_validation\\simulation.csv"
+      ],
+      "returncode": 0,
+      "log": "simulation_export.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\afarahhass\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "scripts/analyze_physical.py",
+        "plot",
+        "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\physical_validation\\simulation.csv",
+        "--output",
+        "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\physical_validation\\simulation_durations.png"
+      ],
+      "returncode": 0,
+      "log": "plot.log"
+    },
+    {
+      "command": [
+        "C:\\Users\\afarahhass\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "scripts/analyze_physical.py",
+        "fit-model",
+        "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\physical_validation\\simulation.csv",
+        "--output",
+        "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\physical_validation\\simulation_model.json"
+      ],
+      "returncode": 0,
+      "log": "model.log"
+    }
+  ]
+}

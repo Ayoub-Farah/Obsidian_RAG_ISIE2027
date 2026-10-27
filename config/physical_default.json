@@ -1,0 +1,9 @@
+{
+  "generation":1,
+  "mode":"CT",
+  "payload_bytes":4096,
+  "local_bytes":6,
+  "hops":2,
+  "repetitions":128,
+  "period_ticks":6250
+}

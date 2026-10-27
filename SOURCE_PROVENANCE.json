@@ -1,0 +1,48 @@
+{
+  "upstream_repository": "Ayoub-Farah/Obsidian_Aurora_loopback_test-",
+  "upstream_branch": "SyncRAG_Estimator",
+  "upstream_commit": "e7d486a22b16bc1e52630341f7cdd1b560a97ce1",
+  "new_project": "Obsidian_RAG",
+  "created_on": "2026-10-26",
+  "upstream_snapshots": [
+    {
+      "source_path": "rtl/board/board_clock_reset_manager.vhd",
+      "snapshot": "reference/board_clock_reset_manager.vhd.txt",
+      "snapshot_sha256": "fc0e071defcea0dc41566b77a67fc4a0bba1381b6159865caed2dde78e82dc5d"
+    },
+    {
+      "source_path": "rtl/common/clock_20_to_50.vhd",
+      "snapshot": "reference/clock_20_to_50.vhd.txt",
+      "snapshot_sha256": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a"
+    },
+    {
+      "source_path": "ip_wrappers/obsidian_aurora_duplex_adapter.vhd",
+      "snapshot": "reference/obsidian_aurora_duplex_adapter.vhd.txt",
+      "snapshot_sha256": "d0cce3cb70d085d4f19a1633e3743ca78028d66e766f422ecad81fa49595d3cd"
+    },
+    {
+      "source_path": "scripts/ip/create_aurora_duplex_sfp0.tcl",
+      "snapshot": "reference/create_aurora_duplex_sfp0.tcl.txt",
+      "snapshot_sha256": "719e4d7a882a669043132caeddfb03294d9a2fb2061ea5aac27f9f303518a4b7"
+    },
+    {
+      "source_path": "constraints/aurora/obsidian_aurora_gt_io.xdc",
+      "snapshot": "reference/obsidian_aurora_gt_io.xdc.txt",
+      "snapshot_sha256": "94ac8d641003691776f769b46e6da8249449b65906125a429c147c4f4dc03f47"
+    },
+    {
+      "source_path": "constraints/aurora/obsidian_aurora_duplex_sfp0_gt_io.xdc",
+      "snapshot": "reference/obsidian_aurora_duplex_sfp0_gt_io.xdc.txt",
+      "snapshot_sha256": "dc2e1c56c043d1b667e26bf2701dce290730c2a1aba50a2517e5937c64898d16"
+    },
+    {
+      "source_path": "ip/aurora_duplex_sfp0_vivado_2025_2/aurora_duplex_sfp0.xci",
+      "snapshot": "reference/aurora_duplex_sfp0.xci",
+      "snapshot_sha256": "6da2c836babf6c1b7bf359de04b0fe0b910eb1ae8b7c9b1c4446060b1520ded6"
+    }
+  ],
+  "new_bitstream": "not_generated",
+  "vivado_status": "not_executed",
+  "hardware_status": "not_executed",
+  "note": "Upstream commit identifies the reference, not a commit of this independent project."
+}

@@ -1,0 +1,20 @@
+###############################################################################
+# Obsidian -- broches GTP du lien Aurora dual-simplex
+#
+# Ne jamais appliquer d'IOSTANDARD fabric aux ports MGTREFCLK, TXP/TXN ou
+# RXP/RXN. Les LOC des primitives GTPE2_CHANNEL/COMMON restent fournies par
+# les XDC des hierarchies Aurora versionnees.
+###############################################################################
+
+# Reference GTP externe 125 MHz : MGTREFCLK0P/N du quad/bank 216.
+set_property PACKAGE_PIN D6 [get_ports gt_refclk_p_i]
+set_property PACKAGE_PIN D5 [get_ports gt_refclk_n_i]
+
+# SFP0 = J12, emission sur le canal GTP 0 du quad 216.
+set_property PACKAGE_PIN H2 [get_ports sfp0_txp_o]
+set_property PACKAGE_PIN H1 [get_ports sfp0_txn_o]
+
+# SFP1 = J1, reception sur le canal GTP 1 du meme quad.
+set_property PACKAGE_PIN A4 [get_ports sfp1_rxp_i]
+set_property PACKAGE_PIN A3 [get_ports sfp1_rxn_i]
+

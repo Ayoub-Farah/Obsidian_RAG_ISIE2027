@@ -1,0 +1,240 @@
+# Generate, synthesize and freeze the SyncRAG Aurora duplex IP.
+#
+# This is an exceptional publishing recipe.  Normal project builds must never
+# source this file, register the XCI or regenerate output products; they load
+# only the versioned OOC DCP through the pre-opt hook.
+
+set force_recreate 0
+set jobs 4
+for {set index 0} {$index < [llength $argv]} {incr index} {
+    set argument [lindex $argv $index]
+    switch -- $argument {
+        -force {
+            set force_recreate 1
+        }
+        -jobs {
+            incr index
+            if {$index >= [llength $argv]} {
+                error "-jobs requires a positive integer"
+            }
+            set jobs [lindex $argv $index]
+            if {![string is integer -strict $jobs] || $jobs < 1} {
+                error "-jobs requires a positive integer"
+            }
+        }
+        default {
+            error "Unknown argument '$argument'; use -force or -jobs N"
+        }
+    }
+}
+
+if {![string match "2025.2*" [version -short]]} {
+    error "This publishing recipe requires Vivado 2025.2, got [version -short]"
+}
+
+set script_dir [file normalize [file dirname [info script]]]
+set root_dir [file normalize [file join $script_dir ".." ".."]]
+set build_root [file normalize [file join $root_dir build]]
+# Keep these names intentionally short: Vivado OOC synthesis still encounters
+# the Windows 260-byte path limit in some 2025.2 checkpoint staging paths.
+set project_dir [file normalize [file join $build_root adip_proj]]
+set generated_root [file normalize [file join $build_root adip_src]]
+set staging_dir [file normalize [file join $build_root adip_freeze]]
+set backup_dir [file normalize [file join $build_root adip_previous]]
+set frozen_dir [file normalize [file join $root_dir ip aurora_duplex_sfp0_vivado_2025_2]]
+set module_name aurora_duplex_sfp0
+set part_name xc7a35tcsg325-2
+
+proc obsidian_ipgen_exec_python {command args} {
+    set had_pythonhome [info exists ::env(PYTHONHOME)]
+    set had_pythonpath [info exists ::env(PYTHONPATH)]
+    if {$had_pythonhome} { set saved_pythonhome $::env(PYTHONHOME) }
+    if {$had_pythonpath} { set saved_pythonpath $::env(PYTHONPATH) }
+    unset -nocomplain ::env(PYTHONHOME) ::env(PYTHONPATH)
+    set status [catch {exec {*}$command {*}$args} result]
+    if {$had_pythonhome} { set ::env(PYTHONHOME) $saved_pythonhome }
+    if {$had_pythonpath} { set ::env(PYTHONPATH) $saved_pythonpath }
+    if {$status != 0} { error $result }
+    return $result
+}
+
+foreach path [list $project_dir $generated_root $staging_dir] {
+    if {![string match "${build_root}/*" $path]} {
+        error "Refusing to replace non-build path: $path"
+    }
+    if {[file exists $path]} {
+        file delete -force $path
+    }
+}
+if {[file exists $backup_dir]} {
+    error "Recovery directory already exists; inspect/restore it before publishing: $backup_dir"
+}
+if {![string match "${root_dir}/ip/*" $frozen_dir]} {
+    error "Refusing to publish outside the repository IP directory: $frozen_dir"
+}
+if {[file exists $frozen_dir]} {
+    if {!$force_recreate} {
+        error "$frozen_dir already exists; use -force only for an intentional audited replacement"
+    }
+}
+file mkdir $build_root
+file mkdir $generated_root
+
+create_project -force aurora_duplex_ipgen $project_dir -part $part_name
+set_property target_language VHDL [current_project]
+set_property simulator_language Mixed [current_project]
+
+if {[llength [get_ipdefs -all xilinx.com:ip:aurora_8b10b:*]] == 0} {
+    error "Aurora 8B/10B is unavailable in this Vivado installation"
+}
+create_ip -name aurora_8b10b -vendor xilinx.com -library ip \
+    -module_name $module_name -dir $generated_root
+set ip_object [get_ips $module_name]
+set aurora_config [list \
+    CONFIG.C_AURORA_LANES 1 \
+    CONFIG.C_LANE_WIDTH 2 \
+    CONFIG.C_LINE_RATE 1.25 \
+    CONFIG.C_REFCLK_FREQUENCY 125.000 \
+    CONFIG.C_INIT_CLK 50.0 \
+    CONFIG.DRP_FREQ 50.0000 \
+    CONFIG.Dataflow_Config Duplex \
+    CONFIG.Interface_Mode Framing \
+    CONFIG.Flow_Mode None \
+    CONFIG.C_GT_LOC_1 1 \
+    CONFIG.C_GT_CLOCK_1 GTPQ0 \
+    CONFIG.C_START_QUAD X0Y0 \
+    CONFIG.C_START_LANE X0Y0 \
+    CONFIG.SINGLEEND_INITCLK true \
+    CONFIG.SINGLEEND_GTREFCLK false \
+    CONFIG.C_USE_CRC false \
+    CONFIG.C_USE_SCRAMBLER false \
+    CONFIG.SupportLevel 1 \
+    CONFIG.TransceiverControl true]
+set_property -dict $aurora_config $ip_object
+
+set ::obsidian_defer_aurora_duplex_contract_check 1
+source [file join $script_dir verify_aurora_duplex_contract.tcl]
+unset ::obsidian_defer_aurora_duplex_contract_check
+obsidian_verify_aurora_duplex_ip_config $module_name
+
+generate_target instantiation_template $ip_object
+generate_target all $ip_object
+export_ip_user_files -of_objects $ip_object -no_script -sync -force -quiet
+
+set generated_dir [file normalize [file join $generated_root $module_name]]
+set generated_vho [file join $generated_dir "${module_name}.vho"]
+set generated_stub [file join $generated_dir "${module_name}_stub.vhdl"]
+set adapter [file join $root_dir ip_wrappers obsidian_aurora_duplex_adapter.vhd]
+set contract [file join $script_dir aurora_duplex_sfp0_ports.tsv]
+
+create_ip_run $ip_object
+set ip_run [get_runs "${module_name}_synth_1"]
+launch_runs $ip_run -jobs $jobs
+wait_on_run $ip_run
+set run_status [get_property STATUS $ip_run]
+if {![string match "*Complete*" $run_status]} {
+    error "$ip_run did not complete: $run_status"
+}
+set dcp_source [file normalize [file join [get_property DIRECTORY $ip_run] "${module_name}.dcp"]]
+if {![file isfile $dcp_source]} {
+    error "OOC synthesis completed but DCP is absent: $dcp_source"
+}
+report_ip_status -file [file join $project_dir aurora_duplex_ip_status.rpt]
+
+set publish_sources [list \
+    [list [file join $generated_dir "${module_name}.xci"] "${module_name}.xci"] \
+    [list $generated_vho "${module_name}.vho"] \
+    [list $generated_stub "${module_name}_stub.vhdl"] \
+    [list [file join $generated_dir "${module_name}.xdc"] "${module_name}.xdc"] \
+    [list [file join $generated_dir "${module_name}_clocks.xdc"] "${module_name}_clocks.xdc"] \
+    [list [file join $generated_dir "${module_name}_ooc.xdc"] "${module_name}_ooc.xdc"] \
+    [list $dcp_source "${module_name}.dcp"] \
+    [list $contract port_contract.tsv]]
+foreach specification $publish_sources {
+    lassign $specification source destination_name
+    if {![file isfile $source]} {
+        error "Required generated product is absent: $source"
+    }
+}
+
+file mkdir $staging_dir
+foreach specification $publish_sources {
+    lassign $specification source destination_name
+    file copy -force $source [file join $staging_dir $destination_name]
+}
+
+set frozen_xci [file join $staging_dir "${module_name}.xci"]
+set xci_handle [open $frozen_xci r]
+set xci_text [read $xci_handle]
+close $xci_handle
+if {[string first {"gen_directory": "."} $xci_text] < 0 ||
+    [string first {"OUTPUTDIR": [ { "value": "." } ]} $xci_text] < 0} {
+    error "Published XCI is not relocatable: $frozen_xci"
+}
+foreach forbidden {Project_aurora.gen Project_aurora.srcs {C:\\Users\\} {C:/Users/}} {
+    if {[string first $forbidden $xci_text] >= 0} {
+        error "Published XCI contains forbidden path '$forbidden': $frozen_xci"
+    }
+}
+
+close_project
+obsidian_verify_aurora_duplex_dcp \
+    [file join $staging_dir "${module_name}.dcp"] \
+    [file join $staging_dir port_contract.tsv]
+
+set python_command {}
+foreach candidate [list [list python3] [list python] [list py -3]] {
+    if {[auto_execok [lindex $candidate 0]] ne "" &&
+        ![catch {obsidian_ipgen_exec_python $candidate -c \
+            {import argparse, hashlib, json, pathlib, re, sys; assert sys.version_info.major == 3}}]} {
+        set python_command $candidate
+        break
+    }
+}
+if {[llength $python_command] == 0} {
+    error "Python 3 is required to finalize the Aurora duplex freeze"
+}
+set finalizer [file join $script_dir finalize_aurora_duplex_freeze.py]
+if {[catch {obsidian_ipgen_exec_python $python_command $finalizer --directory $staging_dir} finalize_result]} {
+    error "Could not create manifest.md/SHA256SUMS in staged freeze: $finalize_result"
+}
+puts $finalize_result
+
+# The raw Vivado stub spells one-element vectors as 0 TO 0 while the VHO and
+# adapter contract use 0 DOWNTO 0.  The finalizer canonicalizes those five
+# declarations before this exhaustive check and before atomic publication.
+obsidian_verify_aurora_duplex_vhdl_contract \
+    [file join $staging_dir "${module_name}.vho"] \
+    [file join $staging_dir "${module_name}_stub.vhdl"] \
+    $adapter [file join $staging_dir port_contract.tsv]
+
+# Publish only a fully validated directory.  On an intentional replacement,
+# preserve the previous freeze until the global three-IP verifier accepts the
+# new directory, and restore it on any failure.
+set previous_moved 0
+set staged_installed 0
+if {[file exists $frozen_dir]} {
+    file rename $frozen_dir $backup_dir
+    set previous_moved 1
+}
+if {[catch {
+    file rename $staging_dir $frozen_dir
+    set staged_installed 1
+    set hash_verifier [file join $root_dir scripts verify_aurora_ip_hashes.py]
+    set verify_result [obsidian_ipgen_exec_python $python_command $hash_verifier --root $root_dir]
+} publish_error]} {
+    if {$staged_installed && [file exists $frozen_dir]} {
+        file rename $frozen_dir $staging_dir
+    }
+    if {$previous_moved && [file exists $backup_dir]} {
+        file rename $backup_dir $frozen_dir
+    }
+    error "Atomic Aurora duplex publication failed and previous freeze was restored: $publish_error"
+}
+if {$previous_moved && [file exists $backup_dir]} {
+    file delete -force $backup_dir
+}
+puts $verify_result
+puts "Published frozen Aurora duplex products to $frozen_dir"
+puts "Normal builds must load only ${module_name}.dcp through scripts/read_user_managed_aurora_duplex_dcp.tcl"
+

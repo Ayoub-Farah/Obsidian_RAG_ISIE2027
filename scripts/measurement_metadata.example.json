@@ -1,0 +1,11 @@
+{
+  "run_id": "replace_with_campaign_id",
+  "git_commit": "replace_with_this_project_source_hash",
+  "bitstream_id": "replace_with_SHA256_of_actual_BIT",
+  "D": 6,
+  "R": 2,
+  "line_rate": 1250000000,
+  "virtual_model_id": "E0_physical_or_E1_config_hash",
+  "sync_interval": "record_actual_setting",
+  "measurement_uncertainty_ns": "record_calibrated_value"
+}
