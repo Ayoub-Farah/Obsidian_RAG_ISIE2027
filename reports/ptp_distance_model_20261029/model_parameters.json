@@ -1,0 +1,47 @@
+{
+  "schema": "ptp_distance_model_v1",
+  "central_component_only": true,
+  "outlier_probability": null,
+  "parameters": {
+    "measurement_sigma_ns": 0.035884825667841076,
+    "virtual_sigma_ns": 0,
+    "physical_sigma_ns": 4.380099666462204,
+    "baseline_phase_ns": 0.002318937737706238,
+    "boundary_bias_ns": [
+      -23.15009613643781,
+      13.478332556536607
+    ],
+    "observed_max_hops": 8
+  },
+  "formula_mean": "mu=a0+a1*I(p>=1)+a2*I(p>=2), only for the observed two boundaries",
+  "formula_variance": "sigma2=measurement_sigma_ns^2+physical_sigma_ns^2*p; virtual_sigma_ns=0 is a parsimonious choice",
+  "conditional_outliers": {
+    "case_id": "C_M7",
+    "source": "17_C_M7_outlier_trigger_quantized/outlier_trigger.json",
+    "sha256": "b287b58225dc9cccb2c8df3c82a973bab0934cf15036a0060dc553489e79a714",
+    "count": 3,
+    "signed_raw_delays_ns": [
+      -67.97941176470566,
+      57.15624999999999,
+      -58.655844155844235
+    ],
+    "contributes_to_unconditioned_statistics": false,
+    "outlier_probability": null,
+    "selection": "Déclenchement conditionnel hors fenêtre de ±50 ns",
+    "caveat": "Aucun dénominateur d'exposition exploitable ; ne pas interpréter 3/903 comme une fréquence"
+  },
+  "assumptions": [
+    "Chaîne mesurée fixe : N=9, trois FPGA, trois modules par FPGA ; aucun balayage de N.",
+    "Distance dirigée depuis M1 : h=i-1, p=floor(h/3), v=h-p ; retour M9 vers M1 hors chemin de phase.",
+    "Moyennes corrigées par soustraction de la moyenne de calibration A_same_sync ; SD observées conservées.",
+    "Le choix parcimonieux sigma_v=0 ne démontre pas un bruit virtuel intrinsèquement nul.",
+    "La loi de variance en p suppose des incréments indépendants et homogènes ; leurs covariances ne sont pas identifiées.",
+    "Les modules d'un FPGA partagent une horloge physique ; les captures successives n'identifient pas leurs covariances.",
+    "Seules les distributions marginales de la campagne observée sont ajustées ; les biais au-delà des deux frontières sont inconnus.",
+    "Les trois excursions sélectionnées par déclenchement restent séparées ; leur fréquence et leur probabilité ne sont pas calibrées.",
+    "Les projections décrivent la composante centrale, sans queues rares, dérives virtuelles indépendantes ni garantie de borne.",
+    "Le scénario à trois FPGA au-delà de N=9 suppose une image de plus grande capacité ; faisabilité matérielle non validée.",
+    "Un pas ADC de 0,5 ns avec interpolation ne confère pas une précision absolue de quelques dizaines de ps."
+  ],
+  "source_fit_results": "fit_results.json"
+}

@@ -4,6 +4,7 @@ reports/ptp_single_node_validation/** -text whitespace=-blank-at-eol,-blank-at-e
 reports/ptp_capacity/** -text whitespace=-blank-at-eol,-blank-at-eof
 reports/ptp_capacity_validation/** -text whitespace=-blank-at-eol,-blank-at-eof
 reports/ptp_scope_*/** -text whitespace=-blank-at-eol,-blank-at-eof
+reports/ptp_distance_model_*/** -text whitespace=-blank-at-eol,-blank-at-eof
 
 # Preserve the original KiCad reference export byte for byte.
 reference/Obsidian.net -text whitespace=cr-at-eol
