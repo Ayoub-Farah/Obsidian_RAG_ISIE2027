@@ -1,0 +1,18 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct 29 14:27:25 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_sync_bounded_snapshot/xsim_script.tcl
+# xsim {tb_sync_bounded_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Note: PASS bounded campaign completes three cycles and stops at common next epoch
+Time: 140488 ns  Iteration: 0  Process: /tb_sync_bounded/u/line__22  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_sync_system.vhd
+$stop called at time : 140488 ns : File "C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_sync_system.vhd" Line 46
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 14:27:30 2026...

@@ -1,0 +1,21 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct 29 12:31:51 2026
+| Host         : HP-OWNTECH running 64-bit major release  (build 9200)
+| Command      : report_cdc -file C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/build/ptp_k1_attempt2/cdc.rpt
+| Design       : obsidian_ptp_top
+| Device       : 7a35t-csg325
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+Severity  Source Clock                                                                                                Destination Clock                                                                                           CDC Type                 Exceptions               Endpoints  Safe  Unsafe  Unknown  No ASYNC_REG  
+--------  ----------------------------------------------------------------------------------------------------------  ----------------------------------------------------------------------------------------------------------  -----------------------  -----------------------  ---------  ----  ------  -------  ------------  
+Info      u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  clk50                                                                                                       No Common Primary Clock  False Path                      14    14       0        0             0  
+Info      u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                  No Common Primary Clock  Max Delay Datapath Only          2     2       0        0             0  
+Info      clk50                                                                                                       u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  No Common Primary Clock  False Path                      15    15       0        0             0  
+Info      dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                  u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  No Common Primary Clock  Max Delay Datapath Only          9     9       0        0             0  
+

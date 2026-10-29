@@ -1,5 +1,12 @@
 ﻿# Obsidian_RAG — CT / RAG sur trois cartes physiques
 
+Le profil **PTP_EMULATION** de la branche `test_sync` cible actuellement
+**un module par carte, K=1/N=3**, dans une image dédiée au PTP. Le
+[bilan d'optimisation](docs/ptp_single_node_optimization.md) donne les ressources
+mesurées et les validations ; [ptp_emulation.md](docs/ptp_emulation.md) décrit
+les paramètres runtime et les sorties de mesure. L'émulation de plusieurs
+modules par carte sera étudiée après cette base.
+
 Une image commune pour trois Obsidian **XC7A35T-CSG325-2**, câblées
 **A → B → C → A**. Les liens restent duplex pour la synchronisation.
 Le rôle A/B/C est attribué par VIO. Aucun nœud virtuel dans le nouveau top.
