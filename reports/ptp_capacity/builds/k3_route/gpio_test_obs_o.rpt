@@ -1,0 +1,47 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct 29 16:10:22 2026
+| Host         : HP-OWNTECH running 64-bit major release  (build 9200)
+| Command      : report_timing -to [get_ports test_obs_o] -max_paths 1 -file C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/build/ptp_capacity_search/k3_route/gpio_test_obs_o.rpt
+| Design       : obsidian_ptp_top
+| Device       : 7a35t-csg325
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.788ns  (required time - arrival time)
+  Source:                 u_ptp/observer/pin_reg/C
+                            (rising edge-triggered cell FDRE clocked by u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  {rise@0.000ns fall@8.000ns period=16.000ns})
+  Destination:            test_obs_o
+  Path Group:             **default**
+  Path Type:              Max at Slow Process Corner
+  Requirement:            8.000ns  (MaxDelay Path 8.000ns)
+  Data Path Delay:        6.212ns  (logic 4.088ns (65.816%)  route 2.123ns (34.184%))
+  Logic Levels:           1  (OBUF=1)
+  Output Delay:           0.000ns
+  Timing Exception:       MaxDelay Path 8.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y23                                      0.000     0.000 r  u_ptp/observer/pin_reg/C
+    SLICE_X29Y23         FDRE (Prop_fdre_C_Q)         0.379     0.379 r  u_ptp/observer/pin_reg/Q
+                         net (fo=4, routed)           2.123     2.502    test_obs_o_OBUF
+    T17                  OBUF (Prop_obuf_I_O)         3.709     6.212 r  test_obs_o_OBUF_inst/O
+                         net (fo=0)                   0.000     6.212    test_obs_o
+    T17                                                               r  test_obs_o (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    8.000     8.000    
+                         output delay                -0.000     8.000    
+  -------------------------------------------------------------------
+                         required time                          8.000    
+                         arrival time                          -6.212    
+  -------------------------------------------------------------------
+                         slack                                  1.788    
+
+
+
+

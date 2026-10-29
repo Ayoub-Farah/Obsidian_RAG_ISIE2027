@@ -1,0 +1,23 @@
+{
+  "schema": "ptp_validation_v1",
+  "recorded_at_utc": "2026-10-29T15:18:36.329800+00:00",
+  "status": "passed",
+  "rtl_cases": [
+    "tb_ptp_capacity_k3_runtime",
+    "tb_ptp_capacity_k3",
+    "tb_ptp_capacity_k3_uneven",
+    "tb_ptp_capacity_k3_jitter",
+    "tb_ptp_capacity_k3_asymmetry",
+    "tb_ptp_capacity_k3_runtime_minimum"
+  ],
+  "source_hashes_verified": true,
+  "verification_scope": "per-case transitive RTL dependencies with exact compiled hashes; see case_sources.json",
+  "scope": "capacity",
+  "physical_boards_simulated": 3,
+  "modules_per_board": 3,
+  "max_synchronized_logical_nodes": 9,
+  "hardware_programmed": false,
+  "hardware_validation": "not_executed",
+  "synthesis_and_timing": "See separate build execution records; not implied by simulation",
+  "python_tests": 86
+}

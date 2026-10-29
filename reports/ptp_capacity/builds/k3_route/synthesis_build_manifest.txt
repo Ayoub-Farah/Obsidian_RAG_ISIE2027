@@ -1,0 +1,10 @@
+schema=ptp_emulation_v1
+common_image=1
+physical_boards=3
+capacity=3
+max_nodes=9
+part=xc7a35tcsg325-2
+Vivado=2025.2
+line_rate=1.25Gbps
+user_clock=62.5MHz
+status=project_generated_not_implemented

@@ -1,0 +1,83 @@
+{
+  "schema": "ptp_emulation_v1",
+  "capacity": 3,
+  "max_nodes": 9,
+  "status": "passed",
+  "validation_stage": "routed_bitstream",
+  "hardware_programmed": false,
+  "started_at_utc": "2026-10-29T14:52:19.492141+00:00",
+  "source_synthesis": {
+    "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k3_synth",
+    "capacity": 3,
+    "max_nodes": 9,
+    "execution_sha256": "aec31b679dccc6f0826c28fd4db3d22dc8cc18939f63db7be94c2f0c91c161ee",
+    "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+    "dcp_sha256": "0eb8b5372e11efbc482eaad75861aecd45c97e11640efbc3392c32c8c3a882bb",
+    "build_manifest_sha256": "3883bc0514962191b67cccde08cc1d1cf0436cea11ee3c3a3c4c08c7486fcc21",
+    "synthesis_reports_sha256": {
+      "synthesis_utilization.rpt": "3f5285b8c186d98bf20088d92cea887efc9571349035ba8295a3a33bcab5177b",
+      "synthesis_cdc.rpt": "29d8984162f462c9d5b1a183d75b6bc27a0d4a642a4f5c17bba0489b489a3408"
+    },
+    "embedded_constraints_sha256": {
+      "obsidian_ptp_top.xdc": "58dfd7adc8e3889419be0d1e8f3c67e6ff94a79dd324cdbdc8d56f42cdf37bc0",
+      "obsidian_ptp_top_early.xdc": "5e380a5b7c45bd5ad75876160f388d59ad806454a870b351a29e85b5e19cfd58",
+      "obsidian_ptp_top_late.xdc": "1945659a230c3f1575a9a1b2c99a8d36b6044bae27c0ed1a6f2c6618d0affc70"
+    }
+  },
+  "routing_scripts_sha256": {
+    "scripts/implement_ptp.py": "5810fd7be9b4c9c6654d4af15096ae11d061564aef21b22a2eea3ebd5d87017b",
+    "scripts/implement_ptp.tcl": "21feb3950af5a889b27305b59dcf1a8b11a0a4dd54013c2ca6afaffcc10dc96e"
+  },
+  "ip_cache_provenance": {
+    "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_single_node_final",
+    "execution_sha256": "01a10e7c00279031cb861ec3043e9ad8903f65d204ac28963afbfcf74780a290",
+    "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+    "Vivado": "2025.2",
+    "part": "xc7a35tcsg325-2",
+    "files_sha256": {
+      "2025.2\\4\\4\\444c05be36e84488\\444c05be36e84488.xci": "4305eebfe53aad12c86e2346081abad6558ae9bc8f6be24b9ccc03ecf1615b47",
+      "2025.2\\4\\4\\444c05be36e84488\\dbg_hub.dcp": "5324f82790f9159fdbc28fbe4aea4c1a9b51d657b67e08c3aea22ca72893dddd",
+      "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.v": "09a308c15b3e71704e0b4806cd0768fa04a9d6d4dd6362fb2fc39b15b0c8fa1a",
+      "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.vhdl": "ad4fdabd3f60fd1b74c8f738f80bb58ad1cac7c5930ceb940d1d9d8c3043808e",
+      "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.v": "668b238a9dcbb5baff742989a700558be786a8c5722411c0a593f91e06148acc",
+      "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.vhdl": "ca073b49a64540c6afcfd5deb63ace4d048dc76a473515cdaa6b237a764fd36e"
+    },
+    "ip_configuration_sha256": {
+      "aurora_left": "1c446840768f3b8284bd5643f91170d53c2439e4ec95abb575531d0914e54953",
+      "aurora_right": "aa15af6a2142cb9d1f6970ddeba8dc18a4b1401fdd2c7674ef4b54e8aceb20ac",
+      "ptp_vio": "2e209eabd2ba60eefebb07e13ba35bf2316ce63c4540cdd2c1030e191e600267"
+    }
+  },
+  "command": [
+    "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+    "-mode",
+    "batch",
+    "-nojournal",
+    "-nolog",
+    "-source",
+    "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\scripts\\implement_ptp.tcl"
+  ],
+  "returncode": 0,
+  "sources_changed": [],
+  "missing_artifacts": [],
+  "finished_at_utc": "2026-10-29T15:11:13.864723+00:00",
+  "artifacts_sha256": {
+    "bus_skew.rpt": "64e547d49e15955c86f04c9973d2126b6d70ee920cf618fd207aa03d7a8c1990",
+    "cdc.rpt": "f5c12559864d4e2411c083cc169e74af7a171ce313b6937e99d00581561e181b",
+    "drc.rpt": "b9431c2da6de6ccf1133ab696b5166497fc14f83ace8fd53e38fc2964865fbcf",
+    "gpio_test_obs_o.rpt": "858278be95d90b0b59858c4d36aab21b9ebda11e695839c2fb8ea6474e2d6476",
+    "gpio_test_ref_m1_o.rpt": "331007aad600dc29326f7efdc1142fec5a7d235c49a1fb3b4c03aa27410bd470",
+    "implementation_utilization.rpt": "024ce307e3d6573670a9aea56cfede52569bae2f0f1677eccdc6ec4a88f00edf",
+    "ip_cache_after.rpt": "a2fa8df7dba72e2c21351f21eb3ae23e9f004060123f70f4074238aed93344b0",
+    "ip_cache_before.rpt": "4fc8db4824530a970006f35fc7c5c12e578120f732bdaef9aa8613b54b383071",
+    "obsidian_ptp.bit": "81ec98265341cf183854f9c653aa0d64b0d854d7d72399e2f0408c4d8c054b31",
+    "obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+    "obsidian_ptp_routed.dcp": "83b2e7f6b55801190f8ac41584f07d66f87417e30fdb1b25a652ac467a0f3bd7",
+    "obsidian_ptp_synth.dcp": "0eb8b5372e11efbc482eaad75861aecd45c97e11640efbc3392c32c8c3a882bb",
+    "pulse_width.rpt": "9e3ef4b2bf96b38245dd2a6ac9228cd1fbc0dd58e23110251664076041d4d4a3",
+    "synthesis_cdc.rpt": "29d8984162f462c9d5b1a183d75b6bc27a0d4a642a4f5c17bba0489b489a3408",
+    "synthesis_utilization.rpt": "3f5285b8c186d98bf20088d92cea887efc9571349035ba8295a3a33bcab5177b",
+    "timing_checks.rpt": "12e1d6f1057d526eb2c24babea72c4d2e683a97b14cea8fa9a2be27eba67e10a",
+    "timing_summary.rpt": "9679790cde1d9111632fcd7547cad67d452eb11ff23fb8ea3bb11af811a32168"
+  }
+}

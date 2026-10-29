@@ -1,0 +1,72 @@
+CELL u_ptp/core/edges[0].forward_link/u_ptp/core/edges[0].forward_link/mem_reg_cooolgate_en_gate_39_cooolDelFlop REF_NAME=FDCE
+INIT=1'b1
+IS_C_INVERTED=
+IS_CLR_INVERTED=
+PIN C NET=u_ptp/core/edges[0].forward_link/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CE NET=u_ptp/core/edges[0].forward_link/VCC_cooolDelFlop_2 DRIVERS=u_ptp/core/edges[0].forward_link/VCC_cooolDelFlop/P
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN CLR NET=u_ptp/core/edges[0].forward_link/GND_cooolDelFlop_2 DRIVERS=u_ptp/core/edges[0].forward_link/GND_cooolDelFlop/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN D NET=u_ptp/core/edges[0].forward_link/edges[0].edge_reset DRIVERS=u_ptp/core/engines[1].u/lcodec/busy_i_1__1/O
+FANIN_TYPES=FDSE 2 FDRE 6 FDPE 1 ASYNC_REGISTER_STARTPOINTS={reset_pipe_reg[2]}
+CELL u_ptp/core/edges[0].forward_link/u_ptp/core/edges[0].forward_link/mem_reg_cooolgate_en_gate_40_cooolDelFlop REF_NAME=FDCE
+INIT=1'b0
+IS_C_INVERTED=
+IS_CLR_INVERTED=
+PIN C NET=u_ptp/core/edges[0].forward_link/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CE NET=u_ptp/core/edges[0].forward_link/VCC_cooolDelFlop_2 DRIVERS=u_ptp/core/edges[0].forward_link/VCC_cooolDelFlop/P
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN CLR NET=u_ptp/core/edges[0].forward_link/GND_cooolDelFlop_2 DRIVERS=u_ptp/core/edges[0].forward_link/GND_cooolDelFlop/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN D NET=u_ptp/core/edges[0].forward_link/Q[0] DRIVERS=u_ptp/core/edges[0].forward_link/count_reg[6]/Q
+FANIN_TYPES=FDRE 1 ASYNC_REGISTER_STARTPOINTS=
+CELL u_ptp/core/edges[0].reverse_link/u_ptp/core/edges[0].reverse_link/mem_reg_cooolgate_en_gate_43_cooolDelFlop REF_NAME=FDCE
+INIT=1'b0
+IS_C_INVERTED=
+IS_CLR_INVERTED=
+PIN C NET=u_ptp/core/edges[0].reverse_link/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CE NET=u_ptp/core/edges[0].reverse_link/VCC_cooolDelFlop_2 DRIVERS=u_ptp/core/edges[0].reverse_link/VCC_cooolDelFlop/P
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN CLR NET=u_ptp/core/edges[0].reverse_link/GND_cooolDelFlop_2 DRIVERS=u_ptp/core/edges[0].reverse_link/GND_cooolDelFlop/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN D NET=u_ptp/core/edges[0].reverse_link/Q[0] DRIVERS=u_ptp/core/edges[0].reverse_link/count_reg[6]/Q
+FANIN_TYPES=FDRE 1 ASYNC_REGISTER_STARTPOINTS=
+CELL u_ptp/core/ext_left/u_ptp/core/ext_left/mem_reg_0_cooolgate_en_gate_28_cooolDelFlop REF_NAME=FDCE
+INIT=1'b1
+IS_C_INVERTED=
+IS_CLR_INVERTED=
+PIN C NET=u_ptp/core/ext_left/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CE NET=u_ptp/core/ext_left/VCC_cooolDelFlop_2 DRIVERS=u_ptp/core/ext_left/VCC_cooolDelFlop/P
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN CLR NET=u_ptp/core/ext_left/GND_cooolDelFlop_2 DRIVERS=u_ptp/core/ext_left/GND_cooolDelFlop/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN D NET=u_ptp/core/ext_left/reset_1 DRIVERS=u_ptp/core/engines[0].u/lcodec/busy_i_1__2/O
+FANIN_TYPES=FDRE 3 FDPE 1 ASYNC_REGISTER_STARTPOINTS={reset_pipe_reg[2]}
+CELL u_ptp/core/ext_left/u_ptp/core/ext_left/mem_reg_0_cooolgate_en_gate_29_cooolDelFlop REF_NAME=FDCE
+INIT=1'b0
+IS_C_INVERTED=
+IS_CLR_INVERTED=
+PIN C NET=u_ptp/core/ext_left/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CE NET=u_ptp/core/ext_left/VCC_cooolDelFlop_2 DRIVERS=u_ptp/core/ext_left/VCC_cooolDelFlop/P
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN CLR NET=u_ptp/core/ext_left/GND_cooolDelFlop_2 DRIVERS=u_ptp/core/ext_left/GND_cooolDelFlop/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN D NET=u_ptp/core/ext_left/Q[0] DRIVERS=u_ptp/core/ext_left/count_reg[7]/Q
+FANIN_TYPES=FDRE 1 ASYNC_REGISTER_STARTPOINTS=
+CELL u_ptp/core/ext_right/u_ptp/core/ext_right/mem_reg_0_cooolgate_en_gate_34_cooolDelFlop REF_NAME=FDCE
+INIT=1'b0
+IS_C_INVERTED=
+IS_CLR_INVERTED=
+PIN C NET=u_ptp/core/ext_right/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CE NET=u_ptp/core/ext_right/VCC_cooolDelFlop_2 DRIVERS=u_ptp/core/ext_right/VCC_cooolDelFlop/P
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN CLR NET=u_ptp/core/ext_right/GND_cooolDelFlop_2 DRIVERS=u_ptp/core/ext_right/GND_cooolDelFlop/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN D NET=u_ptp/core/ext_right/Q[0] DRIVERS=u_ptp/core/ext_right/count_reg[7]/Q
+FANIN_TYPES=FDRE 1 ASYNC_REGISTER_STARTPOINTS=

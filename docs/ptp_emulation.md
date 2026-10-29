@@ -5,11 +5,11 @@ HEAD au début du travail. La spécification du 29 octobre 2026 est une cible
 d'architecture. Les preuves d'exécution K=1 sont dans `reports/ptp_single_node_validation` et
 les dossiers de build ; elles ne prouvent pas une validation matérielle.
 
-Le travail en cours se concentre sur **K=1, N=3** : un module PTP sur chacune
-des trois cartes physiques. C'est désormais le profil par défaut. L'extension
-à plusieurs modules émulés par carte est différée jusqu'à la mesure de cette
-base. Le [bilan d'optimisation K=1](ptp_single_node_optimization.md) distingue
-les mesures de départ, les changements et les validations encore nécessaires.
+La base validée est **K=1, N=3** : un module PTP sur chacune des trois cartes
+physiques. Elle reste le profil par défaut des outils. Le
+[bilan d'optimisation K=1](ptp_single_node_optimization.md) donne les ressources
+et validations de cette base ; la [recherche de capacité](ptp_capacity.md)
+détermine l'image destinée aux essais avec plusieurs modules par carte.
 
 ## Architecture
 

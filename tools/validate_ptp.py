@@ -10,6 +10,8 @@ import subprocess
 import sys
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'tools'))
+from ptp_capacity_cases import capacity_cases
 PATTERN='(tb_ptp_.*|tb_sync_.*|tb_management_codec|tb_codec_equivalence|tb_physical_system|tb_physical_holdover)'
 SINGLE_CASES=[
     'tb_ptp_single_node','tb_ptp_event_journal','tb_ptp_registers',
@@ -52,13 +54,20 @@ def reachable(root,graph):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--collect-existing-rtl',action='store_true')
-    p.add_argument('--scope',choices=('single','emulation'),default='single')
+    p.add_argument('--scope',choices=('single','capacity','emulation'),default='single')
+    p.add_argument('--capacity',type=int)
     p.add_argument('--rtl-dir',type=Path)
     p.add_argument('--supplement-rtl-dir',type=Path,action='append',default=[])
     p.add_argument('--output',type=Path)
     a=p.parse_args()
-    a.rtl_dir=a.rtl_dir or ROOT/'build'/('ptp_single_node_validation_final' if a.scope=='single' else 'ptp_validation')
-    a.output=a.output or ROOT/'reports'/('ptp_single_node_validation' if a.scope=='single' else 'ptp_validation')
+    if a.scope=='capacity' and (a.capacity is None or not 2<=a.capacity<=20):
+        p.error('--scope capacity requires --capacity 2..20')
+    if a.scope=='capacity':
+        a.rtl_dir=a.rtl_dir or ROOT/'build/ptp_capacity_validation'/f'k{a.capacity}'
+        a.output=a.output or ROOT/'reports/ptp_capacity_validation'/f'k{a.capacity}'
+    else:
+        a.rtl_dir=a.rtl_dir or ROOT/'build'/('ptp_single_node_validation_final' if a.scope=='single' else 'ptp_validation')
+        a.output=a.output or ROOT/'reports'/('ptp_single_node_validation' if a.scope=='single' else 'ptp_validation')
     a.output.mkdir(parents=True,exist_ok=True)
     marker=a.output/'validation.json'
     record=dict(status='running',scope=a.scope,recorded_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat())
@@ -72,6 +81,7 @@ def main():
 
 
 def execute(a):
+    capacity_specs=capacity_cases(a.capacity) if a.scope=='capacity' else {}
     def run(command, dest):
         with dest.open('w') as log:
             r=subprocess.run(command,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT)
@@ -79,8 +89,11 @@ def execute(a):
             raise RuntimeError(f'Validation failed: {dest}')
     run([sys.executable,'-m','unittest','discover','-s','sim','-p','test_*.py','-v'],a.output/'python.log')
     if not a.collect_existing_rtl:
-        pattern='('+'|'.join(SINGLE_CASES)+')' if a.scope=='single' else PATTERN
-        run([sys.executable,'scripts/run_vivado_tests.py','--output-dir',str(a.rtl_dir),'--only',pattern],a.output/'runner.log')
+        selected=list(capacity_specs) if a.scope=='capacity' else SINGLE_CASES
+        pattern='('+'|'.join(selected)+')' if a.scope in ('single','capacity') else PATTERN
+        command=[sys.executable,'scripts/run_vivado_tests.py','--output-dir',str(a.rtl_dir),'--only',pattern]
+        if a.scope=='capacity':command+=['--ptp-capacity',str(a.capacity)]
+        run(command,a.output/'runner.log')
     snapshots=[]
     for folder in [a.rtl_dir,*a.supplement_rtl_dir]:
         hashes=json.loads((folder/'source_sha256.json').read_text())
@@ -102,8 +115,10 @@ def execute(a):
               'tb_ptp_chain_phased','tb_ptp_chain_asymmetry','tb_sync_system','tb_sync_stalls','tb_sync_bounded',
               'tb_sync_median','tb_sync_median_enable','tb_management_codec','tb_codec_equivalence','tb_physical_system','tb_physical_holdover']
     if a.scope=='single':required=SINGLE_CASES
+    elif a.scope=='capacity':required=list(capacity_specs)
     for n in required:
         entity='tb_ptp_chain' if n.startswith('tb_ptp_chain_') else 'tb_sync_system' if n in ('tb_sync_stalls','tb_sync_bounded') else 'tb_physical_system' if n=='tb_physical_holdover' else n
+        if a.scope=='capacity':entity=capacity_specs[n]['entity']
         used=reachable(entities[entity],graph)
         for folder,hashes,passed,cases in reversed(snapshots):
             expected=dict(entity=entity,generics='')
@@ -113,6 +128,7 @@ def execute(a):
             elif n=='tb_ptp_chain_phased':expected['generics']='G_NODES=>10,G_PHASED=>true,G_DRIFT=>2000'
             elif n=='tb_ptp_chain_asymmetry':expected['generics']='G_NODES=>10,G_ASYMMETRY=>true'
             elif n.startswith('tb_ptp_chain_'):expected['generics']='G_NODES=>'+n.rsplit('_',1)[1]
+            if a.scope=='capacity':expected=capacity_specs[n]
             matched=cases.get(n)==expected and all(hashes.get(f)==current[f] for f in used)
             if all(prefix+n in passed for prefix in ('elab_','sim_')) and matched:
                 log=folder/('sim_'+n+'.log');text=log.read_text(errors='replace')
@@ -130,7 +146,8 @@ def execute(a):
                 status='passed',rtl_cases=required,source_hashes_verified=True,
                 verification_scope='per-case transitive RTL dependencies with exact compiled hashes; see case_sources.json',
                 scope=a.scope,
-                physical_boards_simulated=3,modules_per_board=1 if a.scope=='single' else None,max_synchronized_logical_nodes=3 if a.scope=='single' else 180,
+                physical_boards_simulated=3,modules_per_board=1 if a.scope=='single' else a.capacity,
+                max_synchronized_logical_nodes=3 if a.scope=='single' else 3*a.capacity if a.scope=='capacity' else 180,
                 hardware_programmed=False,hardware_validation='not_executed',
                 synthesis_and_timing='See separate build execution records; not implied by simulation')
     count=re.search(r'Ran (\d+) tests',(a.output/'python.log').read_text(errors='replace'))

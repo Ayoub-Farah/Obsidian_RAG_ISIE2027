@@ -1,0 +1,19 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct 29 16:15:17 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ptp_capacity_k2_runtime_minimum_snapshot/xsim_script.tcl
+# xsim {tb_ptp_capacity_k2_runtime_minimum_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Note: PASS runtime capacity K=2 N=6 to 3: anchor-only START, all-slot maintenance, observer ownership, frozen page/events, inactive slots, STOP/drain/timed rearm
+Time: 1055192 ns  Iteration: 1  Process: /tb_ptp_capacity_k2_runtime_minimum/u/line__38  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_runtime_chain.vhd
+$stop called at time : 1055192 ns : File "C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_runtime_chain.vhd" Line 199
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 206.480 ; gain = 0.125
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 16:15:27 2026...

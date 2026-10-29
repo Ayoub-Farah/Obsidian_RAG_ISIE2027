@@ -1,3 +1,5 @@
 # Keep original Vivado evidence bytes (including CRLF) for SHA-256 verification.
 reports/ptp_single_node_builds/** -text whitespace=-blank-at-eol,-blank-at-eof
 reports/ptp_single_node_validation/** -text whitespace=-blank-at-eol,-blank-at-eof
+reports/ptp_capacity/** -text whitespace=-blank-at-eol,-blank-at-eof
+reports/ptp_capacity_validation/** -text whitespace=-blank-at-eol,-blank-at-eof

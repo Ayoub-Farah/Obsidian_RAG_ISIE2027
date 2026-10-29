@@ -8,13 +8,19 @@ import json
 import re
 import subprocess
 import time
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/'tools'))
+from ptp_capacity_cases import capacity_cases
 parser=argparse.ArgumentParser(description='Validate portable RTL and cycle equivalence with Vivado XSim.')
 parser.add_argument('--vivado-bin',type=Path)
 parser.add_argument('--only',default='.*',help='regular expression for testbench names')
 parser.add_argument('--output-dir',type=Path,default=ROOT/'build/xsim_tests')
+parser.add_argument('--ptp-capacity',type=int,help='Register focused cases for this capacity (2..20)')
 args=parser.parse_args()
+if args.ptp_capacity is not None and not 2<=args.ptp_capacity<=20:
+    parser.error('--ptp-capacity must be 2..20')
 DEST=args.output_dir.resolve()
 DEST.mkdir(parents=True, exist_ok=True)
 exe=os.environ.get('VIVADO') or shutil.which('vivado') or shutil.which('vivado.bat')
@@ -63,6 +69,8 @@ cases += [(n,n,'') for n in ('tb_ptp_registers','tb_ptp_link','tb_ptp_runtime_ch
 cases += [(f'tb_ptp_chain_{n}','tb_ptp_chain',f'G_NODES=>{n}') for n in (3,6,10,20,30,40,50,60,180)]
 cases += [('tb_ptp_chain_phased','tb_ptp_chain','G_NODES=>10,G_PHASED=>true,G_DRIFT=>2000'),
           ('tb_ptp_chain_asymmetry','tb_ptp_chain','G_NODES=>10,G_ASYMMETRY=>true')]
+cases += [(name, spec['entity'], spec['generics']) for capacity in ((args.ptp_capacity,) if args.ptp_capacity else (2, 3, 4, 5))
+          for name, spec in capacity_cases(capacity).items()]
 cases += [('tb_runtime_30','tb_runtime_system','G_TEST_RECORDS=>3'),
           ('tb_runtime_30_maintenance','tb_runtime_system','G_MAX_ONLY=>true')]
 cases += [('tb_runtime_small','tb_runtime_system','G_CAPACITY_LOCAL=>2')]
@@ -83,7 +91,7 @@ for top, entity, generics in cases:
 run('compile_tops','xvhdl',['--2008','test_tops.vhd'])
 for top, _, _ in cases:
     run('elab_'+top, 'xelab', ['--debug','typical',top,'-s',top+'_snapshot'])
-    run('sim_'+top, 'xsim', [top+'_snapshot','-runall'], timeout=3600 if top.startswith(('tb_runtime','tb_ptp_chain')) else 600, require_pass=True)
+    run('sim_'+top, 'xsim', [top+'_snapshot','-runall'], timeout=3600 if top.startswith(('tb_runtime','tb_ptp_chain','tb_ptp_capacity')) else 600, require_pass=True)
 
 changed=[name for name,digest in hashes.items() if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest]
 if changed: raise RuntimeError("Sources changed during validation: "+str(changed))

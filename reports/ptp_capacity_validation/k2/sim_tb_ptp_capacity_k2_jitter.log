@@ -1,0 +1,808 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct 29 15:34:07 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_ptp_capacity_k2_jitter_snapshot/xsim_script.tcl
+# xsim {tb_ptp_capacity_k2_jitter_snapshot} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+Note: PTP_CAP_HEADER,version,sample_index,sim_time_ps,capacity,nodes,board,local_slot,node_id,parent_board,parent_local_slot,hops,physical_hops,internal_hops,logical_q48_16,anchor_logical_q48_16,truth_error_q48_16,adjacent_truth_error_q48_16,correction_q48_16,estimated_theta_q48_16,estimated_delay_q48_16,accepted_age_ticks,accepted_count,rejected_count,dropped_count,running,locked,holdover,error,drift_ppb,logical_step_q32_32,jitter_mask,seed,asymmetry,phase_ps
+Time: 0 ps  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__46  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=0 locked=11 running=00 path=0000000000000000
+Time: 319985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=1 locked=00 running=00 path=00000000000D8007
+Time: 319985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=2 locked=00 running=00 path=00000000000C8007
+Time: 319985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=0 locked=10 running=00 path=0000000000000000
+Time: 639985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=1 locked=10 running=00 path=00000000000D8007
+Time: 639985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=2 locked=11 running=00 path=00000000000F0008
+Time: 639985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,46755,0,00000000B699E811,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,1,748065000,2,6,0,0,0,0,0,0,0,0,00000000B699E811,00000000B699E811,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,46755,1,00000000B69A6E53,0000000000008642,0000000000005665,FFFFFFFFFFFF8043,0000000000027FFA
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,1,748065000,2,6,0,1,1,0,0,1,0,1,00000000B69A6E53,00000000B699E811,0000000000008642,0000000000008642,0000000000005665,FFFFFFFFFFFF8043,0000000000027FFA,00000000000003E6,0000009E,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,46755,2,00000000B698E870,FFFFFFFFFFFF005F,000000000000005F,000000000000FFBC,00000000000D8007
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,1,748065000,2,6,1,0,2,0,1,2,1,1,00000000B698E870,00000000B699E811,FFFFFFFFFFFF005F,FFFFFFFFFFFE7A1D,000000000000005F,000000000000FFBC,00000000000D8007,00000000000003E4,0000006C,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,46755,3,00000000B6996F44,FFFFFFFFFFFF8733,0000000000005756,0000000000000043,0000000000017FFA
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,1,748065000,2,6,1,1,3,1,0,3,1,2,00000000B6996F44,00000000B699E811,FFFFFFFFFFFF8733,00000000000086D4,0000000000005756,0000000000000043,0000000000017FFA,00000000000003E5,0000003B,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,46755,4,00000000B698E8D0,FFFFFFFFFFFF00BF,FFFFFFFFFFFF00BF,0000000000007FBD,00000000000F0008
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,1,748065000,2,6,2,0,4,1,1,4,2,2,00000000B698E8D0,00000000B699E811,FFFFFFFFFFFF00BF,FFFFFFFFFFFF798C,FFFFFFFFFFFF00BF,0000000000007FBD,00000000000F0008,00000000000003E4,0000000E,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,46755,5,00000000B699F185,0000000000000974,FFFFFFFFFFFFD997,FFFFFFFFFFFF8000,000000000002FFFA
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,1,748065000,2,6,2,1,5,2,0,5,2,3,00000000B699F185,00000000B699E811,0000000000000974,00000000000108B5,FFFFFFFFFFFFD997,FFFFFFFFFFFF8000,000000000002FFFA,00000000000003E6,00000008,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12347,0,6000
+Time: 748065 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,47752,0,00000000BA7EE78E,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,2,764017000,2,6,0,0,0,0,0,0,0,0,00000000BA7EE78E,00000000BA7EE78E,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,47752,1,00000000BA7F6ED6,0000000000008748,0000000000005665,FFFFFFFFFFFF8043,0000000000027FFA
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,2,764017000,2,6,0,1,1,0,0,1,0,1,00000000BA7F6ED6,00000000BA7EE78E,0000000000008748,0000000000008748,0000000000005665,FFFFFFFFFFFF8043,0000000000027FFA,00000000000007CB,0000009E,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,47752,2,00000000BA7DE7EE,FFFFFFFFFFFF0060,000000000000005F,000000000000FFBC,00000000000D8007
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,2,764017000,2,6,1,0,2,0,1,2,1,1,00000000BA7DE7EE,00000000BA7EE78E,FFFFFFFFFFFF0060,FFFFFFFFFFFE7918,000000000000005F,000000000000FFBC,00000000000D8007,00000000000007C9,0000006C,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,47752,3,00000000BA7E6FC6,FFFFFFFFFFFF8838,0000000000005756,0000000000000043,0000000000017FFA
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,2,764017000,2,6,1,1,3,1,0,3,1,2,00000000BA7E6FC6,00000000BA7EE78E,FFFFFFFFFFFF8838,00000000000087D8,0000000000005756,0000000000000043,0000000000017FFA,00000000000007CA,0000003B,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,47752,4,00000000BA7DE84D,FFFFFFFFFFFF00BF,FFFFFFFFFFFF00BF,0000000000007FBD,00000000000F0008
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,2,764017000,2,6,2,0,4,1,1,4,2,2,00000000BA7DE84D,00000000BA7EE78E,FFFFFFFFFFFF00BF,FFFFFFFFFFFF7887,FFFFFFFFFFFF00BF,0000000000007FBD,00000000000F0008,00000000000007C9,0000000E,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,47752,5,00000000BA7EF208,0000000000000A7A,FFFFFFFFFFFFD997,FFFFFFFFFFFF8000,000000000002FFFA
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,2,764017000,2,6,2,1,5,2,0,5,2,3,00000000BA7EF208,00000000BA7EE78E,0000000000000A7A,00000000000109BB,FFFFFFFFFFFFD997,FFFFFFFFFFFF8000,000000000002FFFA,00000000000007CB,00000008,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12347,0,6000
+Time: 764017 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,48749,0,00000000BE63E70C,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,3,779969000,2,6,0,0,0,0,0,0,0,0,00000000BE63E70C,00000000BE63E70C,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,48749,1,00000000BE63E809,00000000000000FD,FFFFFFFFFFFFCF16,000000000000874F,000000000000FFFA
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,3,779969000,2,6,0,1,1,0,0,1,0,1,00000000BE63E809,00000000BE63E70C,00000000000000FD,00000000000000FD,FFFFFFFFFFFFCF16,000000000000874F,000000000000FFFA,0000000000000384,0000009F,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,48749,2,00000000BE646E5F,0000000000008753,0000000000018753,FFFFFFFFFFFE790C,00000000000F0007
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,3,779969000,2,6,1,0,2,0,1,2,1,1,00000000BE646E5F,00000000BE63E70C,0000000000008753,0000000000008656,0000000000018753,FFFFFFFFFFFE790C,00000000000F0007,0000000000000361,0000006D,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,48749,3,00000000BE636868,FFFFFFFFFFFF815C,0000000000004F75,00000000000007E1,0000000000037FFA
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,3,779969000,2,6,1,1,3,1,0,3,1,2,00000000BE636868,00000000BE63E70C,FFFFFFFFFFFF815C,FFFFFFFFFFFEFA09,0000000000004F75,00000000000007E1,0000000000037FFA,0000000000000384,0000003C,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,48749,4,00000000BE64EF50,0000000000010844,0000000000010844,FFFFFFFFFFFDF87B,00000000000E8007
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,3,779969000,2,6,2,0,4,1,1,4,2,2,00000000BE64EF50,00000000BE63E70C,0000000000010844,00000000000186E8,0000000000010844,FFFFFFFFFFFDF87B,00000000000E8007,0000000000000362,0000000F,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,48749,5,00000000BE61E8C7,FFFFFFFFFFFE01BB,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,3,779969000,2,6,2,1,5,2,0,5,2,3,00000000BE61E8C7,00000000BE63E70C,FFFFFFFFFFFE01BB,FFFFFFFFFFFCF977,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000384,00000009,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12347,0,6000
+Time: 779969 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,49746,0,00000000C248E689,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,4,795921000,2,6,0,0,0,0,0,0,0,0,00000000C248E689,00000000C248E689,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,49746,1,00000000C248E88C,0000000000000203,FFFFFFFFFFFFCF16,000000000000874F,000000000000FFFA
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,4,795921000,2,6,0,1,1,0,0,1,0,1,00000000C248E88C,00000000C248E689,0000000000000203,0000000000000203,FFFFFFFFFFFFCF16,000000000000874F,000000000000FFFA,0000000000000769,0000009F,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,49746,2,00000000C2496DDC,0000000000008753,0000000000018753,FFFFFFFFFFFE790C,00000000000F0007
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,4,795921000,2,6,1,0,2,0,1,2,1,1,00000000C2496DDC,00000000C248E689,0000000000008753,0000000000008550,0000000000018753,FFFFFFFFFFFE790C,00000000000F0007,0000000000000746,0000006D,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,49746,3,00000000C24868EB,FFFFFFFFFFFF8262,0000000000004F75,00000000000007E1,0000000000037FFA
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,4,795921000,2,6,1,1,3,1,0,3,1,2,00000000C24868EB,00000000C248E689,FFFFFFFFFFFF8262,FFFFFFFFFFFEFB0F,0000000000004F75,00000000000007E1,0000000000037FFA,0000000000000769,0000003C,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,49746,4,00000000C249EECD,0000000000010844,0000000000010844,FFFFFFFFFFFDF87B,00000000000E8007
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,4,795921000,2,6,2,0,4,1,1,4,2,2,00000000C249EECD,00000000C248E689,0000000000010844,00000000000185E2,0000000000010844,FFFFFFFFFFFDF87B,00000000000E8007,0000000000000747,0000000F,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,49746,5,00000000C246E94A,FFFFFFFFFFFE02C1,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,4,795921000,2,6,2,1,5,2,0,5,2,3,00000000C246E94A,00000000C248E689,FFFFFFFFFFFE02C1,FFFFFFFFFFFCFA7D,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000769,00000009,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12347,0,6000
+Time: 795921 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,50743,0,00000000C62DE606,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,5,811873000,2,6,0,0,0,0,0,0,0,0,00000000C62DE606,00000000C62DE606,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,50743,1,00000000C62DE702,00000000000000FC,FFFFFFFFFFFFCD09,000000000000020D,000000000003FFFA
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,5,811873000,2,6,0,1,1,0,0,1,0,1,00000000C62DE702,00000000C62DE606,00000000000000FC,00000000000000FC,FFFFFFFFFFFFCD09,000000000000020D,000000000003FFFA,000000000000037B,000000A0,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,50743,2,00000000C62E6817,0000000000008211,0000000000018210,0000000000000543,00000000000E8007
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,5,811873000,2,6,1,0,2,0,1,2,1,1,00000000C62E6817,00000000C62DE606,0000000000008211,0000000000008115,0000000000018210,0000000000000543,00000000000E8007,000000000000035A,0000006E,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,50743,3,00000000C62DEE54,000000000000084E,000000000000D45C,FFFFFFFFFFFF7B19,0000000000017FFA
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,5,811873000,2,6,1,1,3,1,0,3,1,2,00000000C62DEE54,00000000C62DE606,000000000000084E,FFFFFFFFFFFF863D,000000000000D45C,FFFFFFFFFFFF7B19,0000000000017FFA,000000000000037F,0000003D,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,50743,4,00000000C62E6875,000000000000826F,000000000000826F,00000000000085D5,00000000000E0007
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,5,811873000,2,6,2,0,4,1,1,4,2,2,00000000C62E6875,00000000C62DE606,000000000000826F,0000000000007A21,000000000000826F,00000000000085D5,00000000000E0007,000000000000035B,00000010,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,50743,5,00000000C62BE9CD,FFFFFFFFFFFE03C7,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,5,811873000,2,6,2,1,5,2,0,5,2,3,00000000C62BE9CD,00000000C62DE606,FFFFFFFFFFFE03C7,FFFFFFFFFFFD8158,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000B4E,00000009,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12347,0,6000
+Time: 811873 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,51740,0,00000000CA12E584,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,6,827825000,2,6,0,0,0,0,0,0,0,0,00000000CA12E584,00000000CA12E584,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,51740,1,00000000CA12E784,0000000000000200,FFFFFFFFFFFFCD09,000000000000020D,000000000003FFFA
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,6,827825000,2,6,0,1,1,0,0,1,0,1,00000000CA12E784,00000000CA12E584,0000000000000200,0000000000000200,FFFFFFFFFFFFCD09,000000000000020D,000000000003FFFA,0000000000000760,000000A0,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,51740,2,00000000CA136794,0000000000008210,0000000000018210,0000000000000543,00000000000E8007
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,6,827825000,2,6,1,0,2,0,1,2,1,1,00000000CA136794,00000000CA12E584,0000000000008210,0000000000008010,0000000000018210,0000000000000543,00000000000E8007,000000000000073F,0000006E,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,51740,3,00000000CA12EED7,0000000000000953,000000000000D45C,FFFFFFFFFFFF7B19,0000000000017FFA
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,6,827825000,2,6,1,1,3,1,0,3,1,2,00000000CA12EED7,00000000CA12E584,0000000000000953,FFFFFFFFFFFF8743,000000000000D45C,FFFFFFFFFFFF7B19,0000000000017FFA,0000000000000764,0000003D,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,51740,4,00000000CA1367F3,000000000000826F,000000000000826F,00000000000085D5,00000000000E0007
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,6,827825000,2,6,2,0,4,1,1,4,2,2,00000000CA1367F3,00000000CA12E584,000000000000826F,000000000000791C,000000000000826F,00000000000085D5,00000000000E0007,0000000000000740,00000010,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,51740,5,00000000CA10EA4F,FFFFFFFFFFFE04CB,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,6,827825000,2,6,2,1,5,2,0,5,2,3,00000000CA10EA4F,00000000CA12E584,FFFFFFFFFFFE04CB,FFFFFFFFFFFD825C,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000F33,00000009,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12347,0,6000
+Time: 827825 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,52737,0,00000000CDF7E501,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,7,843777000,2,6,0,0,0,0,0,0,0,0,00000000CDF7E501,00000000CDF7E501,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,52737,1,00000000CDF7E5FA,00000000000000F9,FFFFFFFFFFFFCAFC,000000000000020D,000000000001FFFA
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,7,843777000,2,6,0,1,1,0,0,1,0,1,00000000CDF7E5FA,00000000CDF7E501,00000000000000F9,00000000000000F9,FFFFFFFFFFFFCAFC,000000000000020D,000000000001FFFA,0000000000000374,000000A1,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,52737,2,00000000CDF6E710,FFFFFFFFFFFF020F,000000000000020F,0000000000018001,00000000000F0007
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,7,843777000,2,6,1,0,2,0,1,2,1,1,00000000CDF6E710,00000000CDF7E501,FFFFFFFFFFFF020F,FFFFFFFFFFFF0116,000000000000020F,0000000000018001,00000000000F0007,0000000000000352,0000006F,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,52737,3,00000000CDF8E80B,000000000001030A,000000000001CD0D,FFFFFFFFFFFF074F,0000000000017FFA
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,7,843777000,2,6,1,1,3,1,0,3,1,2,00000000CDF8E80B,00000000CDF7E501,000000000001030A,00000000000200FB,000000000001CD0D,FFFFFFFFFFFF074F,0000000000017FFA,0000000000000378,0000003E,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,52737,4,00000000CDF6EE63,FFFFFFFFFFFF0962,FFFFFFFFFFFF0962,000000000001790D,00000000000E0007
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,7,843777000,2,6,2,0,4,1,1,4,2,2,00000000CDF6EE63,00000000CDF7E501,FFFFFFFFFFFF0962,FFFFFFFFFFFE0658,FFFFFFFFFFFF0962,000000000001790D,00000000000E0007,0000000000000355,00000011,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,52737,5,00000000CDF5EAD2,FFFFFFFFFFFE05D1,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,7,843777000,2,6,2,1,5,2,0,5,2,3,00000000CDF5EAD2,00000000CDF7E501,FFFFFFFFFFFE05D1,FFFFFFFFFFFEFC6F,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 843777 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,53734,0,00000000D1DCE47E,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,8,859729000,2,6,0,0,0,0,0,0,0,0,00000000D1DCE47E,00000000D1DCE47E,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,53734,1,00000000D1DCE67D,00000000000001FF,FFFFFFFFFFFFCAFC,000000000000020D,000000000001FFFA
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,8,859729000,2,6,0,1,1,0,0,1,0,1,00000000D1DCE67D,00000000D1DCE47E,00000000000001FF,00000000000001FF,FFFFFFFFFFFFCAFC,000000000000020D,000000000001FFFA,0000000000000759,000000A1,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,53734,2,00000000D1DBE68E,FFFFFFFFFFFF0210,000000000000020F,0000000000018001,00000000000F0007
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,8,859729000,2,6,1,0,2,0,1,2,1,1,00000000D1DBE68E,00000000D1DCE47E,FFFFFFFFFFFF0210,FFFFFFFFFFFF0011,000000000000020F,0000000000018001,00000000000F0007,0000000000000737,0000006F,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,53734,3,00000000D1DDE88D,000000000001040F,000000000001CD0D,FFFFFFFFFFFF074F,0000000000017FFA
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,8,859729000,2,6,1,1,3,1,0,3,1,2,00000000D1DDE88D,00000000D1DCE47E,000000000001040F,00000000000201FF,000000000001CD0D,FFFFFFFFFFFF074F,0000000000017FFA,000000000000075D,0000003E,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,53734,4,00000000D1DBEDE0,FFFFFFFFFFFF0962,FFFFFFFFFFFF0962,000000000001790D,00000000000E0007
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,8,859729000,2,6,2,0,4,1,1,4,2,2,00000000D1DBEDE0,00000000D1DCE47E,FFFFFFFFFFFF0962,FFFFFFFFFFFE0553,FFFFFFFFFFFF0962,000000000001790D,00000000000E0007,000000000000073A,00000011,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,53734,5,00000000D1DAEB55,FFFFFFFFFFFE06D7,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,8,859729000,2,6,2,1,5,2,0,5,2,3,00000000D1DAEB55,00000000D1DCE47E,FFFFFFFFFFFE06D7,FFFFFFFFFFFEFD75,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 859729 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,54731,0,00000000D5C1E3FC,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,9,875681000,2,6,0,0,0,0,0,0,0,0,00000000D5C1E3FC,00000000D5C1E3FC,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,54731,1,00000000D5C164F2,FFFFFFFFFFFF80F6,FFFFFFFFFFFF48EF,000000000000820D,0000000000037FFA
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,9,875681000,2,6,0,1,1,0,0,1,0,1,00000000D5C164F2,00000000D5C1E3FC,FFFFFFFFFFFF80F6,FFFFFFFFFFFF80F6,FFFFFFFFFFFF48EF,000000000000820D,0000000000037FFA,000000000000036C,000000A2,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,54731,2,00000000D5C1660B,FFFFFFFFFFFF820F,000000000000820F,FFFFFFFFFFFF8000,00000000000D8007
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,9,875681000,2,6,1,0,2,0,1,2,1,1,00000000D5C1660B,00000000D5C1E3FC,FFFFFFFFFFFF820F,0000000000000119,000000000000820F,FFFFFFFFFFFF8000,00000000000D8007,000000000000034B,00000070,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,54731,3,00000000D5C26702,0000000000008306,0000000000014AFF,000000000000820E,0000000000027FFA
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,9,875681000,2,6,1,1,3,1,0,3,1,2,00000000D5C26702,00000000D5C1E3FC,0000000000008306,00000000000100F7,0000000000014AFF,000000000000820E,0000000000027FFA,000000000000036D,0000003F,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,54731,4,00000000D5C3E81B,000000000002041F,000000000002041F,FFFFFFFFFFFD0543,00000000000D0007
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,9,875681000,2,6,2,0,4,1,1,4,2,2,00000000D5C3E81B,00000000D5C1E3FC,000000000002041F,0000000000018119,000000000002041F,FFFFFFFFFFFD0543,00000000000D0007,000000000000034F,00000012,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,54731,5,00000000D5BFEBD7,FFFFFFFFFFFE07DB,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,9,875681000,2,6,2,1,5,2,0,5,2,3,00000000D5BFEBD7,00000000D5C1E3FC,FFFFFFFFFFFE07DB,FFFFFFFFFFFC03BC,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 875681 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,55728,0,00000000D9A6E379,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,10,891633000,2,6,0,0,0,0,0,0,0,0,00000000D9A6E379,00000000D9A6E379,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,55728,1,00000000D9A66575,FFFFFFFFFFFF81FC,FFFFFFFFFFFF48EF,000000000000820D,0000000000037FFA
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,10,891633000,2,6,0,1,1,0,0,1,0,1,00000000D9A66575,00000000D9A6E379,FFFFFFFFFFFF81FC,FFFFFFFFFFFF81FC,FFFFFFFFFFFF48EF,000000000000820D,0000000000037FFA,0000000000000751,000000A2,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,55728,2,00000000D9A66588,FFFFFFFFFFFF820F,000000000000820F,FFFFFFFFFFFF8000,00000000000D8007
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,10,891633000,2,6,1,0,2,0,1,2,1,1,00000000D9A66588,00000000D9A6E379,FFFFFFFFFFFF820F,0000000000000013,000000000000820F,FFFFFFFFFFFF8000,00000000000D8007,0000000000000730,00000070,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,55728,3,00000000D9A76785,000000000000840C,0000000000014AFF,000000000000820E,0000000000027FFA
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,10,891633000,2,6,1,1,3,1,0,3,1,2,00000000D9A76785,00000000D9A6E379,000000000000840C,00000000000101FD,0000000000014AFF,000000000000820E,0000000000027FFA,0000000000000752,0000003F,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,55728,4,00000000D9A8E798,000000000002041F,000000000002041F,FFFFFFFFFFFD0543,00000000000D0007
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,10,891633000,2,6,2,0,4,1,1,4,2,2,00000000D9A8E798,00000000D9A6E379,000000000002041F,0000000000018013,000000000002041F,FFFFFFFFFFFD0543,00000000000D0007,0000000000000734,00000012,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,55728,5,00000000D9A4EC5A,FFFFFFFFFFFE08E1,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,10,891633000,2,6,2,1,5,2,0,5,2,3,00000000D9A4EC5A,00000000D9A6E379,FFFFFFFFFFFE08E1,FFFFFFFFFFFC04C2,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 891633 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,56725,0,00000000DD8BE2F6,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,11,907585000,2,6,0,0,0,0,0,0,0,0,00000000DD8BE2F6,00000000DD8BE2F6,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,56725,1,00000000DD8CE3EC,00000000000100F6,000000000000C6E3,FFFFFFFFFFFE820C,000000000001FFFA
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,11,907585000,2,6,0,1,1,0,0,1,0,1,00000000DD8CE3EC,00000000DD8BE2F6,00000000000100F6,00000000000100F6,000000000000C6E3,FFFFFFFFFFFE820C,000000000001FFFA,0000000000000365,000000A3,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,56725,2,00000000DD8B6505,FFFFFFFFFFFF820F,000000000000820E,0000000000000001,00000000000F0007
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,11,907585000,2,6,1,0,2,0,1,2,1,1,00000000DD8B6505,00000000DD8BE2F6,FFFFFFFFFFFF820F,FFFFFFFFFFFE8119,000000000000820E,0000000000000001,00000000000F0007,0000000000000347,00000071,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,56725,3,00000000DD8AE5FA,FFFFFFFFFFFF0304,FFFFFFFFFFFFC8F2,000000000001820D,0000000000017FFA
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,11,907585000,2,6,1,1,3,1,0,3,1,2,00000000DD8AE5FA,00000000DD8BE2F6,FFFFFFFFFFFF0304,FFFFFFFFFFFF80F5,FFFFFFFFFFFFC8F2,000000000001820D,0000000000017FFA,0000000000000366,00000040,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,56725,4,00000000DD8CE714,000000000001041E,000000000001041E,0000000000010001,00000000000F8008
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,11,907585000,2,6,2,0,4,1,1,4,2,2,00000000DD8CE714,00000000DD8BE2F6,000000000001041E,000000000002011A,000000000001041E,0000000000010001,00000000000F8008,0000000000000345,00000013,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,56725,5,00000000DD89ECDD,FFFFFFFFFFFE09E7,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,11,907585000,2,6,2,1,5,2,0,5,2,3,00000000DD89ECDD,00000000DD8BE2F6,FFFFFFFFFFFE09E7,FFFFFFFFFFFD05C9,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 907585 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,57722,0,00000000E170E274,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,12,923537000,2,6,0,0,0,0,0,0,0,0,00000000E170E274,00000000E170E274,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,57722,1,00000000E171E46E,00000000000101FA,000000000000C6E3,FFFFFFFFFFFE820C,000000000001FFFA
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,12,923537000,2,6,0,1,1,0,0,1,0,1,00000000E171E46E,00000000E170E274,00000000000101FA,00000000000101FA,000000000000C6E3,FFFFFFFFFFFE820C,000000000001FFFA,000000000000074A,000000A3,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,57722,2,00000000E1706482,FFFFFFFFFFFF820E,000000000000820E,0000000000000001,00000000000F0007
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,12,923537000,2,6,1,0,2,0,1,2,1,1,00000000E1706482,00000000E170E274,FFFFFFFFFFFF820E,FFFFFFFFFFFE8014,000000000000820E,0000000000000001,00000000000F0007,000000000000072C,00000071,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,57722,3,00000000E16FE67D,FFFFFFFFFFFF0409,FFFFFFFFFFFFC8F2,000000000001820D,0000000000017FFA
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,12,923537000,2,6,1,1,3,1,0,3,1,2,00000000E16FE67D,00000000E170E274,FFFFFFFFFFFF0409,FFFFFFFFFFFF81FB,FFFFFFFFFFFFC8F2,000000000001820D,0000000000017FFA,000000000000074B,00000040,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,57722,4,00000000E171E692,000000000001041E,000000000001041E,0000000000010001,00000000000F8008
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,12,923537000,2,6,2,0,4,1,1,4,2,2,00000000E171E692,00000000E170E274,000000000001041E,0000000000020015,000000000001041E,0000000000010001,00000000000F8008,000000000000072A,00000013,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,57722,5,00000000E16EED5F,FFFFFFFFFFFE0AEB,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,12,923537000,2,6,2,1,5,2,0,5,2,3,00000000E16EED5F,00000000E170E274,FFFFFFFFFFFE0AEB,FFFFFFFFFFFD06CD,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 923537 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,58719,0,00000000E555E1F1,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,13,939489000,2,6,0,0,0,0,0,0,0,0,00000000E555E1F1,00000000E555E1F1,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,58719,1,00000000E555E2E4,00000000000000F3,FFFFFFFFFFFFC4D6,000000000001020D,000000000003FFFA
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,13,939489000,2,6,0,1,1,0,0,1,0,1,00000000E555E2E4,00000000E555E1F1,00000000000000F3,00000000000000F3,FFFFFFFFFFFFC4D6,000000000001020D,000000000003FFFA,000000000000035A,000000A4,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,58719,2,00000000E55663FF,000000000000820E,000000000001820E,FFFFFFFFFFFF0000,00000000000F8008
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,13,939489000,2,6,1,0,2,0,1,2,1,1,00000000E55663FF,00000000E555E1F1,000000000000820E,000000000000811B,000000000001820E,FFFFFFFFFFFF0000,00000000000F8008,000000000000033E,00000072,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,58719,3,00000000E554E4F3,FFFFFFFFFFFF0302,FFFFFFFFFFFFC6E5,000000000000020D,0000000000027FFA
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,13,939489000,2,6,1,1,3,1,0,3,1,2,00000000E554E4F3,00000000E555E1F1,FFFFFFFFFFFF0302,FFFFFFFFFFFE80F4,FFFFFFFFFFFFC6E5,000000000000020D,0000000000027FFA,000000000000035C,00000041,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,58719,4,00000000E556660F,000000000000841E,000000000000841E,0000000000008000,00000000000D8007
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,13,939489000,2,6,2,0,4,1,1,4,2,2,00000000E556660F,00000000E555E1F1,000000000000841E,000000000001811C,000000000000841E,0000000000008000,00000000000D8007,0000000000000343,00000014,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,58719,5,00000000E553EDE2,FFFFFFFFFFFE0BF1,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,13,939489000,2,6,2,1,5,2,0,5,2,3,00000000E553EDE2,00000000E555E1F1,FFFFFFFFFFFE0BF1,FFFFFFFFFFFD87D3,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 939489 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,59716,0,00000000E93AE16E,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,14,955441000,2,6,0,0,0,0,0,0,0,0,00000000E93AE16E,00000000E93AE16E,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,59716,1,00000000E93AE367,00000000000001F9,FFFFFFFFFFFFC4D6,000000000001020D,000000000003FFFA
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,14,955441000,2,6,0,1,1,0,0,1,0,1,00000000E93AE367,00000000E93AE16E,00000000000001F9,00000000000001F9,FFFFFFFFFFFFC4D6,000000000001020D,000000000003FFFA,000000000000073F,000000A4,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,59716,2,00000000E93B637D,000000000000820F,000000000001820E,FFFFFFFFFFFF0000,00000000000F8008
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,14,955441000,2,6,1,0,2,0,1,2,1,1,00000000E93B637D,00000000E93AE16E,000000000000820F,0000000000008016,000000000001820E,FFFFFFFFFFFF0000,00000000000F8008,0000000000000723,00000072,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,59716,3,00000000E939E575,FFFFFFFFFFFF0407,FFFFFFFFFFFFC6E5,000000000000020D,0000000000027FFA
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,14,955441000,2,6,1,1,3,1,0,3,1,2,00000000E939E575,00000000E93AE16E,FFFFFFFFFFFF0407,FFFFFFFFFFFE81F8,FFFFFFFFFFFFC6E5,000000000000020D,0000000000027FFA,0000000000000741,00000041,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,59716,4,00000000E93B658C,000000000000841E,000000000000841E,0000000000008000,00000000000D8007
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,14,955441000,2,6,2,0,4,1,1,4,2,2,00000000E93B658C,00000000E93AE16E,000000000000841E,0000000000018017,000000000000841E,0000000000008000,00000000000D8007,0000000000000728,00000014,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,59716,5,00000000E938EE65,FFFFFFFFFFFE0CF7,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,14,955441000,2,6,2,1,5,2,0,5,2,3,00000000E938EE65,00000000E93AE16E,FFFFFFFFFFFE0CF7,FFFFFFFFFFFD88D9,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 955441 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=0 locked=11 running=11 path=0000000000000000
+Time: 959985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=1 locked=11 running=11 path=00000000000D8007
+Time: 959985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: CHAIN_STATUS board=2 locked=00 running=11 path=00000000000D0007
+Time: 959985 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,60713,0,00000000ED1FE0EC,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,15,971393000,2,6,0,0,0,0,0,0,0,0,00000000ED1FE0EC,00000000ED1FE0EC,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,60713,1,00000000ED1EE1DC,FFFFFFFFFFFF00F0,FFFFFFFFFFFEC2C9,000000000001020D,000000000002FFFA
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,15,971393000,2,6,0,1,1,0,0,1,0,1,00000000ED1EE1DC,00000000ED1FE0EC,FFFFFFFFFFFF00F0,FFFFFFFFFFFF00F0,FFFFFFFFFFFEC2C9,000000000001020D,000000000002FFFA,0000000000000354,000000A5,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,60713,2,00000000ED2062FA,000000000000820E,000000000001820E,0000000000000000,00000000000D8007
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,15,971393000,2,6,1,0,2,0,1,2,1,1,00000000ED2062FA,00000000ED1FE0EC,000000000000820E,000000000001811E,000000000001820E,0000000000000000,00000000000D8007,0000000000000338,00000073,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,60713,3,00000000ED2063EB,00000000000082FF,00000000000144D8,FFFFFFFFFFFE820D,000000000002FFFA
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,15,971393000,2,6,1,1,3,1,0,3,1,2,00000000ED2063EB,00000000ED1FE0EC,00000000000082FF,00000000000000F1,00000000000144D8,FFFFFFFFFFFE820D,000000000002FFFA,0000000000000355,00000042,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,60713,4,00000000ED1FE509,000000000000041D,000000000000041D,0000000000008001,00000000000D0007
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,15,971393000,2,6,2,0,4,1,1,4,2,2,00000000ED1FE509,00000000ED1FE0EC,000000000000041D,FFFFFFFFFFFF811E,000000000000041D,0000000000008001,00000000000D0007,000000000000033D,00000015,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,60713,5,00000000ED1DEEE7,FFFFFFFFFFFE0DFB,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,15,971393000,2,6,2,1,5,2,0,5,2,3,00000000ED1DEEE7,00000000ED1FE0EC,FFFFFFFFFFFE0DFB,FFFFFFFFFFFE09DE,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 971393 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,61710,0,00000000F104E069,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,16,987345000,2,6,0,0,0,0,0,0,0,0,00000000F104E069,00000000F104E069,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,61710,1,00000000F103E25F,FFFFFFFFFFFF01F6,FFFFFFFFFFFEC2C9,000000000001020D,000000000002FFFA
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,16,987345000,2,6,0,1,1,0,0,1,0,1,00000000F103E25F,00000000F104E069,FFFFFFFFFFFF01F6,FFFFFFFFFFFF01F6,FFFFFFFFFFFEC2C9,000000000001020D,000000000002FFFA,0000000000000739,000000A5,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,61710,2,00000000F1056277,000000000000820E,000000000001820E,0000000000000000,00000000000D8007
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,16,987345000,2,6,1,0,2,0,1,2,1,1,00000000F1056277,00000000F104E069,000000000000820E,0000000000018018,000000000001820E,0000000000000000,00000000000D8007,000000000000071D,00000073,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,61710,3,00000000F105646E,0000000000008405,00000000000144D8,FFFFFFFFFFFE820D,000000000002FFFA
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,16,987345000,2,6,1,1,3,1,0,3,1,2,00000000F105646E,00000000F104E069,0000000000008405,00000000000001F7,00000000000144D8,FFFFFFFFFFFE820D,000000000002FFFA,000000000000073A,00000042,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,61710,4,00000000F104E486,000000000000041D,000000000000041D,0000000000008001,00000000000D0007
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,16,987345000,2,6,2,0,4,1,1,4,2,2,00000000F104E486,00000000F104E069,000000000000041D,FFFFFFFFFFFF8018,000000000000041D,0000000000008001,00000000000D0007,0000000000000722,00000015,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,61710,5,00000000F102EF6A,FFFFFFFFFFFE0F01,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,16,987345000,2,6,2,1,5,2,0,5,2,3,00000000F102EF6A,00000000F104E069,FFFFFFFFFFFE0F01,FFFFFFFFFFFE0AE4,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 987345 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,62707,0,00000000F4E9DFE6,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,17,1003297000,2,6,0,0,0,0,0,0,0,0,00000000F4E9DFE6,00000000F4E9DFE6,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,62707,1,00000000F4E860D6,FFFFFFFFFFFE80F0,FFFFFFFFFFFE40BD,000000000000820C,0000000000027FFA
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,17,1003297000,2,6,0,1,1,0,0,1,0,1,00000000F4E860D6,00000000F4E9DFE6,FFFFFFFFFFFE80F0,FFFFFFFFFFFE80F0,FFFFFFFFFFFE40BD,000000000000820C,0000000000027FFA,000000000000034A,000000A6,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,62707,2,00000000F4E861F5,FFFFFFFFFFFE820F,FFFFFFFFFFFF820E,0000000000020000,00000000000F8008
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,17,1003297000,2,6,1,0,2,0,1,2,1,1,00000000F4E861F5,00000000F4E9DFE6,FFFFFFFFFFFE820F,000000000000011F,FFFFFFFFFFFF820E,0000000000020000,00000000000F8008,000000000000032D,00000074,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,62707,3,00000000F4EB62E3,00000000000182FD,00000000000242CB,FFFFFFFFFFFF020D,000000000001FFFA
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,17,1003297000,2,6,1,1,3,1,0,3,1,2,00000000F4EB62E3,00000000F4E9DFE6,00000000000182FD,00000000000300EE,00000000000242CB,FFFFFFFFFFFF020D,000000000001FFFA,000000000000034F,00000043,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,62707,4,00000000F4EB6402,000000000001841C,000000000001841C,FFFFFFFFFFFE8001,00000000000E0007
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,17,1003297000,2,6,2,0,4,1,1,4,2,2,00000000F4EB6402,00000000F4E9DFE6,000000000001841C,000000000000011F,000000000001841C,FFFFFFFFFFFE8001,00000000000E0007,0000000000000334,00000016,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,62707,5,00000000F4E7EFED,FFFFFFFFFFFE1007,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,17,1003297000,2,6,2,1,5,2,0,5,2,3,00000000F4E7EFED,00000000F4E9DFE6,FFFFFFFFFFFE1007,FFFFFFFFFFFC8BEB,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1003297 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,63704,0,00000000F8CEDF64,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,18,1019249000,2,6,0,0,0,0,0,0,0,0,00000000F8CEDF64,00000000F8CEDF64,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,63704,1,00000000F8CD6158,FFFFFFFFFFFE81F4,FFFFFFFFFFFE40BD,000000000000820C,0000000000027FFA
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,18,1019249000,2,6,0,1,1,0,0,1,0,1,00000000F8CD6158,00000000F8CEDF64,FFFFFFFFFFFE81F4,FFFFFFFFFFFE81F4,FFFFFFFFFFFE40BD,000000000000820C,0000000000027FFA,000000000000072F,000000A6,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,63704,2,00000000F8CD6172,FFFFFFFFFFFE820E,FFFFFFFFFFFF820E,0000000000020000,00000000000F8008
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,18,1019249000,2,6,1,0,2,0,1,2,1,1,00000000F8CD6172,00000000F8CEDF64,FFFFFFFFFFFE820E,000000000000001A,FFFFFFFFFFFF820E,0000000000020000,00000000000F8008,0000000000000712,00000074,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,63704,3,00000000F8D06366,0000000000018402,00000000000242CB,FFFFFFFFFFFF020D,000000000001FFFA
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,18,1019249000,2,6,1,1,3,1,0,3,1,2,00000000F8D06366,00000000F8CEDF64,0000000000018402,00000000000301F4,00000000000242CB,FFFFFFFFFFFF020D,000000000001FFFA,0000000000000734,00000043,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,63704,4,00000000F8D06380,000000000001841C,000000000001841C,FFFFFFFFFFFE8001,00000000000E0007
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,18,1019249000,2,6,2,0,4,1,1,4,2,2,00000000F8D06380,00000000F8CEDF64,000000000001841C,000000000000001A,000000000001841C,FFFFFFFFFFFE8001,00000000000E0007,0000000000000719,00000016,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,63704,5,00000000F8CCF06F,FFFFFFFFFFFE110B,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,18,1019249000,2,6,2,1,5,2,0,5,2,3,00000000F8CCF06F,00000000F8CEDF64,FFFFFFFFFFFE110B,FFFFFFFFFFFC8CEF,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1019249 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,64701,0,00000000FCB3DEE1,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,19,1035201000,2,6,0,0,0,0,0,0,0,0,00000000FCB3DEE1,00000000FCB3DEE1,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,64701,1,00000000FCB45FCE,00000000000080ED,0000000000003EB0,FFFFFFFFFFFE020D,0000000000037FFA
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,19,1035201000,2,6,0,1,1,0,0,1,0,1,00000000FCB45FCE,00000000FCB3DEE1,00000000000080ED,00000000000080ED,0000000000003EB0,FFFFFFFFFFFE020D,0000000000037FFA,0000000000000341,000000A7,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,64701,2,00000000FCB160EF,FFFFFFFFFFFD820E,FFFFFFFFFFFE820E,0000000000010000,00000000000F0008
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,19,1035201000,2,6,1,0,2,0,1,2,1,1,00000000FCB160EF,00000000FCB3DEE1,FFFFFFFFFFFD820E,FFFFFFFFFFFD0121,FFFFFFFFFFFE820E,0000000000010000,00000000000F0008,000000000000032A,00000075,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,64701,3,00000000FCB1E1DC,FFFFFFFFFFFE02FB,FFFFFFFFFFFEC0BE,000000000003820D,0000000000037FFA
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,19,1035201000,2,6,1,1,3,1,0,3,1,2,00000000FCB1E1DC,00000000FCB3DEE1,FFFFFFFFFFFE02FB,00000000000080ED,FFFFFFFFFFFEC0BE,000000000003820D,0000000000037FFA,0000000000000344,00000044,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,64701,4,00000000FCB562FC,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,19,1035201000,2,6,2,0,4,1,1,4,2,2,00000000FCB562FC,00000000FCB3DEE1,000000000001841B,0000000000038120,000000000001841B,0000000000000001,00000000000E0007,000000000000032F,00000017,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,64701,5,00000000FCB1F0F2,FFFFFFFFFFFE1211,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,19,1035201000,2,6,2,1,5,2,0,5,2,3,00000000FCB1F0F2,00000000FCB3DEE1,FFFFFFFFFFFE1211,FFFFFFFFFFFC8DF6,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1035201 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,65698,0,000000010098DE5E,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,20,1051153000,2,6,0,0,0,0,0,0,0,0,000000010098DE5E,000000010098DE5E,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,65698,1,0000000100996051,00000000000081F3,0000000000003EB0,FFFFFFFFFFFE020D,0000000000037FFA
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,20,1051153000,2,6,0,1,1,0,0,1,0,1,0000000100996051,000000010098DE5E,00000000000081F3,00000000000081F3,0000000000003EB0,FFFFFFFFFFFE020D,0000000000037FFA,0000000000000726,000000A7,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,65698,2,000000010096606D,FFFFFFFFFFFD820F,FFFFFFFFFFFE820E,0000000000010000,00000000000F0008
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,20,1051153000,2,6,1,0,2,0,1,2,1,1,000000010096606D,000000010098DE5E,FFFFFFFFFFFD820F,FFFFFFFFFFFD001C,FFFFFFFFFFFE820E,0000000000010000,00000000000F0008,000000000000070F,00000075,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,65698,3,000000010096E25E,FFFFFFFFFFFE0400,FFFFFFFFFFFEC0BE,000000000003820D,0000000000037FFA
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,20,1051153000,2,6,1,1,3,1,0,3,1,2,000000010096E25E,000000010098DE5E,FFFFFFFFFFFE0400,00000000000081F1,FFFFFFFFFFFEC0BE,000000000003820D,0000000000037FFA,0000000000000729,00000044,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,65698,4,00000001009A6279,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,20,1051153000,2,6,2,0,4,1,1,4,2,2,00000001009A6279,000000010098DE5E,000000000001841B,000000000003801B,000000000001841B,0000000000000001,00000000000E0007,0000000000000714,00000017,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,65698,5,000000010096F175,FFFFFFFFFFFE1317,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,20,1051153000,2,6,2,1,5,2,0,5,2,3,000000010096F175,000000010098DE5E,FFFFFFFFFFFE1317,FFFFFFFFFFFC8EFC,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1051153 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,66695,0,00000001047DDDDC,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,21,1067105000,2,6,0,0,0,0,0,0,0,0,00000001047DDDDC,00000001047DDDDC,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,66695,1,00000001047CDEC6,FFFFFFFFFFFF00EA,FFFFFFFFFFFEBCA3,000000000001820D,000000000001FFFA
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,21,1067105000,2,6,0,1,1,0,0,1,0,1,00000001047CDEC6,00000001047DDDDC,FFFFFFFFFFFF00EA,FFFFFFFFFFFF00EA,FFFFFFFFFFFEBCA3,000000000001820D,000000000001FFFA,000000000000033D,000000A8,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,66695,2,00000001047D5FE9,FFFFFFFFFFFF820D,000000000000820D,FFFFFFFFFFFE0001,00000000000F0008
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,21,1067105000,2,6,1,0,2,0,1,2,1,1,00000001047D5FE9,00000001047DDDDC,FFFFFFFFFFFF820D,0000000000008123,000000000000820D,FFFFFFFFFFFE0001,00000000000F0008,0000000000000323,00000076,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,66695,3,00000001047B60D4,FFFFFFFFFFFD82F8,FFFFFFFFFFFE3EB1,000000000000820D,000000000000FFFA
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,21,1067105000,2,6,1,1,3,1,0,3,1,2,00000001047B60D4,00000001047DDDDC,FFFFFFFFFFFD82F8,FFFFFFFFFFFE00EB,FFFFFFFFFFFE3EB1,000000000000820D,000000000000FFFA,000000000000033E,00000045,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,66695,4,00000001047F61F7,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,21,1067105000,2,6,2,0,4,1,1,4,2,2,00000001047F61F7,00000001047DDDDC,000000000001841B,0000000000040123,000000000001841B,0000000000000001,00000000000E0007,0000000000000AF9,00000017,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,66695,5,00000001047BF1F7,FFFFFFFFFFFE141B,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,21,1067105000,2,6,2,1,5,2,0,5,2,3,00000001047BF1F7,00000001047DDDDC,FFFFFFFFFFFE141B,FFFFFFFFFFFC9000,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1067105 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,67692,0,000000010862DD59,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,22,1083057000,2,6,0,0,0,0,0,0,0,0,000000010862DD59,000000010862DD59,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,67692,1,000000010861DF49,FFFFFFFFFFFF01F0,FFFFFFFFFFFEBCA3,000000000001820D,000000000001FFFA
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,22,1083057000,2,6,0,1,1,0,0,1,0,1,000000010861DF49,000000010862DD59,FFFFFFFFFFFF01F0,FFFFFFFFFFFF01F0,FFFFFFFFFFFEBCA3,000000000001820D,000000000001FFFA,0000000000000722,000000A8,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,67692,2,0000000108625F66,FFFFFFFFFFFF820D,000000000000820D,FFFFFFFFFFFE0001,00000000000F0008
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,22,1083057000,2,6,1,0,2,0,1,2,1,1,0000000108625F66,000000010862DD59,FFFFFFFFFFFF820D,000000000000801D,000000000000820D,FFFFFFFFFFFE0001,00000000000F0008,0000000000000708,00000076,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,67692,3,0000000108606157,FFFFFFFFFFFD83FE,FFFFFFFFFFFE3EB1,000000000000820D,000000000000FFFA
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,22,1083057000,2,6,1,1,3,1,0,3,1,2,0000000108606157,000000010862DD59,FFFFFFFFFFFD83FE,FFFFFFFFFFFE01F1,FFFFFFFFFFFE3EB1,000000000000820D,000000000000FFFA,0000000000000723,00000045,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,67692,4,0000000108646174,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,22,1083057000,2,6,2,0,4,1,1,4,2,2,0000000108646174,000000010862DD59,000000000001841B,000000000004001D,000000000001841B,0000000000000001,00000000000E0007,0000000000000EDE,00000017,00000000,00000000,1,0,0,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,67692,5,000000010860F27A,FFFFFFFFFFFE1521,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,22,1083057000,2,6,2,1,5,2,0,5,2,3,000000010860F27A,000000010862DD59,FFFFFFFFFFFE1521,FFFFFFFFFFFC9106,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1083057 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,68689,0,000000010C47DCD6,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,23,1099009000,2,6,0,0,0,0,0,0,0,0,000000010C47DCD6,000000010C47DCD6,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,68689,1,000000010C48DDBF,00000000000100E9,000000000000BA96,FFFFFFFFFFFE020D,000000000001FFFA
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,23,1099009000,2,6,0,1,1,0,0,1,0,1,000000010C48DDBF,000000010C47DCD6,00000000000100E9,00000000000100E9,000000000000BA96,FFFFFFFFFFFE020D,000000000001FFFA,0000000000000332,000000A9,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,68689,2,000000010C475EE4,FFFFFFFFFFFF820E,000000000000820D,0000000000000000,00000000000D8007
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,23,1099009000,2,6,1,0,2,0,1,2,1,1,000000010C475EE4,000000010C47DCD6,FFFFFFFFFFFF820E,FFFFFFFFFFFE8125,000000000000820D,0000000000000000,00000000000D8007,000000000000031F,00000077,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,68689,3,000000010C46DFCC,FFFFFFFFFFFF02F6,FFFFFFFFFFFFBCA4,FFFFFFFFFFFE820D,0000000000027FFA
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,23,1099009000,2,6,1,1,3,1,0,3,1,2,000000010C46DFCC,000000010C47DCD6,FFFFFFFFFFFF02F6,FFFFFFFFFFFF80E8,FFFFFFFFFFFFBCA4,FFFFFFFFFFFE820D,0000000000027FFA,0000000000000338,00000046,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,68689,4,000000010C4960F1,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,23,1099009000,2,6,2,0,4,1,1,4,2,2,000000010C4960F1,000000010C47DCD6,000000000001841B,0000000000028125,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,68689,5,000000010C45F2FD,FFFFFFFFFFFE1627,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,23,1099009000,2,6,2,1,5,2,0,5,2,3,000000010C45F2FD,000000010C47DCD6,FFFFFFFFFFFE1627,FFFFFFFFFFFC920C,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1099009 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,69686,0,00000001102CDC54,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,24,1114961000,2,6,0,0,0,0,0,0,0,0,00000001102CDC54,00000001102CDC54,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,69686,1,00000001102DDE41,00000000000101ED,000000000000BA96,FFFFFFFFFFFE020D,000000000001FFFA
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,24,1114961000,2,6,0,1,1,0,0,1,0,1,00000001102DDE41,00000001102CDC54,00000000000101ED,00000000000101ED,000000000000BA96,FFFFFFFFFFFE020D,000000000001FFFA,0000000000000717,000000A9,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,69686,2,00000001102C5E61,FFFFFFFFFFFF820D,000000000000820D,0000000000000000,00000000000D8007
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,24,1114961000,2,6,1,0,2,0,1,2,1,1,00000001102C5E61,00000001102CDC54,FFFFFFFFFFFF820D,FFFFFFFFFFFE8020,000000000000820D,0000000000000000,00000000000D8007,0000000000000704,00000077,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,69686,3,00000001102BE04F,FFFFFFFFFFFF03FB,FFFFFFFFFFFFBCA4,FFFFFFFFFFFE820D,0000000000027FFA
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,24,1114961000,2,6,1,1,3,1,0,3,1,2,00000001102BE04F,00000001102CDC54,FFFFFFFFFFFF03FB,FFFFFFFFFFFF81EE,FFFFFFFFFFFFBCA4,FFFFFFFFFFFE820D,0000000000027FFA,000000000000071D,00000046,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,69686,4,00000001102E606F,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,24,1114961000,2,6,2,0,4,1,1,4,2,2,00000001102E606F,00000001102CDC54,000000000001841B,0000000000028020,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,69686,5,00000001102AF37F,FFFFFFFFFFFE172B,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,24,1114961000,2,6,2,1,5,2,0,5,2,3,00000001102AF37F,00000001102CDC54,FFFFFFFFFFFE172B,FFFFFFFFFFFC9310,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1114961 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,70683,0,000000011411DBD1,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,25,1130913000,2,6,0,0,0,0,0,0,0,0,000000011411DBD1,000000011411DBD1,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,70683,1,0000000114115CB7,FFFFFFFFFFFF80E6,FFFFFFFFFFFF3889,000000000001820D,0000000000037FFA
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,25,1130913000,2,6,0,1,1,0,0,1,0,1,0000000114115CB7,000000011411DBD1,FFFFFFFFFFFF80E6,FFFFFFFFFFFF80E6,FFFFFFFFFFFF3889,000000000001820D,0000000000037FFA,0000000000000328,000000AA,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,70683,2,0000000114115DDD,FFFFFFFFFFFF820C,000000000000820C,0000000000000001,00000000000E8007
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,25,1130913000,2,6,1,0,2,0,1,2,1,1,0000000114115DDD,000000011411DBD1,FFFFFFFFFFFF820C,0000000000000126,000000000000820C,0000000000000001,00000000000E8007,000000000000031A,00000078,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,70683,3,000000011412DEC5,00000000000102F4,000000000001BA97,FFFFFFFFFFFE020D,0000000000027FFA
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,25,1130913000,2,6,1,1,3,1,0,3,1,2,000000011412DEC5,000000011411DBD1,00000000000102F4,00000000000180E8,000000000001BA97,FFFFFFFFFFFE020D,0000000000027FFA,000000000000032B,00000047,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,70683,4,0000000114135FEC,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,25,1130913000,2,6,2,0,4,1,1,4,2,2,0000000114135FEC,000000011411DBD1,000000000001841B,0000000000008127,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,70683,5,00000001140FF402,FFFFFFFFFFFE1831,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,25,1130913000,2,6,2,1,5,2,0,5,2,3,00000001140FF402,000000011411DBD1,FFFFFFFFFFFE1831,FFFFFFFFFFFC9416,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1130913 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,71680,0,0000000117F6DB4E,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,26,1146865000,2,6,0,0,0,0,0,0,0,0,0000000117F6DB4E,0000000117F6DB4E,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,71680,1,0000000117F65D3A,FFFFFFFFFFFF81EC,FFFFFFFFFFFF3889,000000000001820D,0000000000037FFA
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,26,1146865000,2,6,0,1,1,0,0,1,0,1,0000000117F65D3A,0000000117F6DB4E,FFFFFFFFFFFF81EC,FFFFFFFFFFFF81EC,FFFFFFFFFFFF3889,000000000001820D,0000000000037FFA,000000000000070D,000000AA,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,71680,2,0000000117F65D5B,FFFFFFFFFFFF820D,000000000000820C,0000000000000001,00000000000E8007
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,26,1146865000,2,6,1,0,2,0,1,2,1,1,0000000117F65D5B,0000000117F6DB4E,FFFFFFFFFFFF820D,0000000000000021,000000000000820C,0000000000000001,00000000000E8007,00000000000006FF,00000078,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,71680,3,0000000117F7DF47,00000000000103F9,000000000001BA97,FFFFFFFFFFFE020D,0000000000027FFA
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,26,1146865000,2,6,1,1,3,1,0,3,1,2,0000000117F7DF47,0000000117F6DB4E,00000000000103F9,00000000000181EC,000000000001BA97,FFFFFFFFFFFE020D,0000000000027FFA,0000000000000710,00000047,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,71680,4,0000000117F85F69,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,26,1146865000,2,6,2,0,4,1,1,4,2,2,0000000117F85F69,0000000117F6DB4E,000000000001841B,0000000000008022,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,71680,5,0000000117F4F485,FFFFFFFFFFFE1937,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,26,1146865000,2,6,2,1,5,2,0,5,2,3,0000000117F4F485,0000000117F6DB4E,FFFFFFFFFFFE1937,FFFFFFFFFFFC951C,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1146865 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,72677,0,000000011BDBDACC,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,27,1162817000,2,6,0,0,0,0,0,0,0,0,000000011BDBDACC,000000011BDBDACC,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,72677,1,000000011BDADBB0,FFFFFFFFFFFF00E4,FFFFFFFFFFFEB67D,000000000000820C,000000000002FFFA
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,27,1162817000,2,6,0,1,1,0,0,1,0,1,000000011BDADBB0,000000011BDBDACC,FFFFFFFFFFFF00E4,FFFFFFFFFFFF00E4,FFFFFFFFFFFEB67D,000000000000820C,000000000002FFFA,0000000000000321,000000AB,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,72677,2,000000011BDA5CD8,FFFFFFFFFFFE820C,FFFFFFFFFFFF820C,0000000000010000,00000000000D0007
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,27,1162817000,2,6,1,0,2,0,1,2,1,1,000000011BDA5CD8,000000011BDBDACC,FFFFFFFFFFFE820C,FFFFFFFFFFFF8128,FFFFFFFFFFFF820C,0000000000010000,00000000000D0007,0000000000000310,00000079,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,72677,3,000000011BDCDDBC,00000000000102F0,000000000001B889,000000000000020E,0000000000027FFA
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,27,1162817000,2,6,1,1,3,1,0,3,1,2,000000011BDCDDBC,000000011BDBDACC,00000000000102F0,00000000000280E4,000000000001B889,000000000000020E,0000000000027FFA,0000000000000325,00000048,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,72677,4,000000011BDD5EE7,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,27,1162817000,2,6,2,0,4,1,1,4,2,2,000000011BDD5EE7,000000011BDBDACC,000000000001841B,000000000000812B,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,72677,5,000000011BD9F507,FFFFFFFFFFFE1A3B,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,27,1162817000,2,6,2,1,5,2,0,5,2,3,000000011BD9F507,000000011BDBDACC,FFFFFFFFFFFE1A3B,FFFFFFFFFFFC9620,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1162817 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,73674,0,000000011FC0DA49,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,28,1178769000,2,6,0,0,0,0,0,0,0,0,000000011FC0DA49,000000011FC0DA49,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,73674,1,000000011FBFDC33,FFFFFFFFFFFF01EA,FFFFFFFFFFFEB67D,000000000000820C,000000000002FFFA
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,28,1178769000,2,6,0,1,1,0,0,1,0,1,000000011FBFDC33,000000011FC0DA49,FFFFFFFFFFFF01EA,FFFFFFFFFFFF01EA,FFFFFFFFFFFEB67D,000000000000820C,000000000002FFFA,0000000000000706,000000AB,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,73674,2,000000011FBF5C55,FFFFFFFFFFFE820C,FFFFFFFFFFFF820C,0000000000010000,00000000000D0007
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,28,1178769000,2,6,1,0,2,0,1,2,1,1,000000011FBF5C55,000000011FC0DA49,FFFFFFFFFFFE820C,FFFFFFFFFFFF8022,FFFFFFFFFFFF820C,0000000000010000,00000000000D0007,00000000000006F5,00000079,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,73674,3,000000011FC1DE3F,00000000000103F6,000000000001B889,000000000000020E,0000000000027FFA
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,28,1178769000,2,6,1,1,3,1,0,3,1,2,000000011FC1DE3F,000000011FC0DA49,00000000000103F6,00000000000281EA,000000000001B889,000000000000020E,0000000000027FFA,000000000000070A,00000048,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,73674,4,000000011FC25E64,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,28,1178769000,2,6,2,0,4,1,1,4,2,2,000000011FC25E64,000000011FC0DA49,000000000001841B,0000000000008025,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,73674,5,000000011FBEF58A,FFFFFFFFFFFE1B41,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,28,1178769000,2,6,2,1,5,2,0,5,2,3,000000011FBEF58A,000000011FC0DA49,FFFFFFFFFFFE1B41,FFFFFFFFFFFC9726,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1178769 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,74671,0,0000000123A5D9C6,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,29,1194721000,2,6,0,0,0,0,0,0,0,0,0000000123A5D9C6,0000000123A5D9C6,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,74671,1,0000000123A45AA9,FFFFFFFFFFFE80E3,FFFFFFFFFFFE3470,000000000000820D,0000000000027FFA
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,29,1194721000,2,6,0,1,1,0,0,1,0,1,0000000123A45AA9,0000000123A5D9C6,FFFFFFFFFFFE80E3,FFFFFFFFFFFE80E3,FFFFFFFFFFFE3470,000000000000820D,0000000000027FFA,000000000000031E,000000AC,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,74671,2,0000000123A4DBD2,FFFFFFFFFFFF020C,000000000000020B,FFFFFFFFFFFF8001,00000000000D0007
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,29,1194721000,2,6,1,0,2,0,1,2,1,1,0000000123A4DBD2,0000000123A5D9C6,FFFFFFFFFFFF020C,0000000000008129,000000000000020B,FFFFFFFFFFFF8001,00000000000D0007,000000000000030D,0000007A,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,74671,3,0000000123A4DCB4,FFFFFFFFFFFF02EE,FFFFFFFFFFFFB67C,000000000002020D,0000000000037FFA
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,29,1194721000,2,6,1,1,3,1,0,3,1,2,0000000123A4DCB4,0000000123A5D9C6,FFFFFFFFFFFF02EE,00000000000000E2,FFFFFFFFFFFFB67C,000000000002020D,0000000000037FFA,000000000000031A,00000049,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,74671,4,0000000123A75DE1,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,29,1194721000,2,6,2,0,4,1,1,4,2,2,0000000123A75DE1,0000000123A5D9C6,000000000001841B,000000000002812D,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,74671,5,0000000123A3F60D,FFFFFFFFFFFE1C47,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,29,1194721000,2,6,2,1,5,2,0,5,2,3,0000000123A3F60D,0000000123A5D9C6,FFFFFFFFFFFE1C47,FFFFFFFFFFFC982C,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1194721 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,75668,0,00000001278AD944,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,30,1210673000,2,6,0,0,0,0,0,0,0,0,00000001278AD944,00000001278AD944,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,75668,1,0000000127895B2B,FFFFFFFFFFFE81E7,FFFFFFFFFFFE3470,000000000000820D,0000000000027FFA
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,30,1210673000,2,6,0,1,1,0,0,1,0,1,0000000127895B2B,00000001278AD944,FFFFFFFFFFFE81E7,FFFFFFFFFFFE81E7,FFFFFFFFFFFE3470,000000000000820D,0000000000027FFA,0000000000000703,000000AC,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,75668,2,000000012789DB4F,FFFFFFFFFFFF020B,000000000000020B,FFFFFFFFFFFF8001,00000000000D0007
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,30,1210673000,2,6,1,0,2,0,1,2,1,1,000000012789DB4F,00000001278AD944,FFFFFFFFFFFF020B,0000000000008024,000000000000020B,FFFFFFFFFFFF8001,00000000000D0007,00000000000006F2,0000007A,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,75668,3,000000012789DD37,FFFFFFFFFFFF03F3,FFFFFFFFFFFFB67C,000000000002020D,0000000000037FFA
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,30,1210673000,2,6,1,1,3,1,0,3,1,2,000000012789DD37,00000001278AD944,FFFFFFFFFFFF03F3,00000000000001E8,FFFFFFFFFFFFB67C,000000000002020D,0000000000037FFA,00000000000006FF,00000049,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,75668,4,00000001278C5D5F,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,30,1210673000,2,6,2,0,4,1,1,4,2,2,00000001278C5D5F,00000001278AD944,000000000001841B,0000000000028028,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,75668,5,000000012788F68F,FFFFFFFFFFFE1D4B,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,30,1210673000,2,6,2,1,5,2,0,5,2,3,000000012788F68F,00000001278AD944,FFFFFFFFFFFE1D4B,FFFFFFFFFFFC9930,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1210673 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,76665,0,000000012B6FD8C1,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,31,1226625000,2,6,0,0,0,0,0,0,0,0,000000012B6FD8C1,000000012B6FD8C1,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,76665,1,000000012B6FD9A1,00000000000000E0,FFFFFFFFFFFFB263,FFFFFFFFFFFE820D,000000000001FFFA
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,31,1226625000,2,6,0,1,1,0,0,1,0,1,000000012B6FD9A1,000000012B6FD8C1,00000000000000E0,00000000000000E0,FFFFFFFFFFFFB263,FFFFFFFFFFFE820D,000000000001FFFA,0000000000000315,000000AD,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,76665,2,000000012B6DDACC,FFFFFFFFFFFE020B,FFFFFFFFFFFF020B,0000000000010000,00000000000C8007
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,31,1226625000,2,6,1,0,2,0,1,2,1,1,000000012B6DDACC,000000012B6FD8C1,FFFFFFFFFFFE020B,FFFFFFFFFFFE012B,FFFFFFFFFFFF020B,0000000000010000,00000000000C8007,0000000000000306,0000007B,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,76665,3,000000012B6F5BAC,FFFFFFFFFFFF82EB,000000000000346E,FFFFFFFFFFFF820E,0000000000027FFA
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,31,1226625000,2,6,1,1,3,1,0,3,1,2,000000012B6F5BAC,000000012B6FD8C1,FFFFFFFFFFFF82EB,00000000000180E0,000000000000346E,FFFFFFFFFFFF820E,0000000000027FFA,0000000000000311,0000004A,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,76665,4,000000012B715CDC,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,31,1226625000,2,6,2,0,4,1,1,4,2,2,000000012B715CDC,000000012B6FD8C1,000000000001841B,0000000000020130,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,76665,5,000000012B6DF712,FFFFFFFFFFFE1E51,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,31,1226625000,2,6,2,1,5,2,0,5,2,3,000000012B6DF712,000000012B6FD8C1,FFFFFFFFFFFE1E51,FFFFFFFFFFFC9A36,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1226625 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,77662,0,000000012F54D83E,0000000000000000,0000000000000000,0000000000000000,0000000000000000
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,32,1242577000,2,6,0,0,0,0,0,0,0,0,000000012F54D83E,000000012F54D83E,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,0000000000000000,00000000,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12345,0,0
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,77662,1,000000012F54DA24,00000000000001E6,FFFFFFFFFFFFB263,FFFFFFFFFFFE820D,000000000001FFFA
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,32,1242577000,2,6,0,1,1,0,0,1,0,1,000000012F54DA24,000000012F54D83E,00000000000001E6,00000000000001E6,FFFFFFFFFFFFB263,FFFFFFFFFFFE820D,000000000001FFFA,00000000000006FA,000000AD,00000000,00000000,1,1,0,0,2000,000000010000218D,3,12345,0,0
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,77662,2,000000012F52DA4A,FFFFFFFFFFFE020C,FFFFFFFFFFFF020B,0000000000010000,00000000000C8007
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,32,1242577000,2,6,1,0,2,0,1,2,1,1,000000012F52DA4A,000000012F54D83E,FFFFFFFFFFFE020C,FFFFFFFFFFFE0026,FFFFFFFFFFFF020B,0000000000010000,00000000000C8007,00000000000006EB,0000007B,00000000,00000000,1,1,0,0,-2000,00000000FFFFDE73,3,12346,0,3000
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,77662,3,000000012F545C2E,FFFFFFFFFFFF83F0,000000000000346E,FFFFFFFFFFFF820E,0000000000027FFA
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,32,1242577000,2,6,1,1,3,1,0,3,1,2,000000012F545C2E,000000012F54D83E,FFFFFFFFFFFF83F0,00000000000181E4,000000000000346E,FFFFFFFFFFFF820E,0000000000027FFA,00000000000006F6,0000004A,00000000,00000000,1,0,0,0,2000,000000010000218D,3,12346,0,3000
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,77662,4,000000012F565C59,000000000001841B,000000000001841B,0000000000000001,00000000000E0007
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,32,1242577000,2,6,2,0,4,1,1,4,2,2,000000012F565C59,000000012F54D83E,000000000001841B,000000000002002B,000000000001841B,0000000000000001,00000000000E0007,0000000000000FA0,00000017,00000000,00000000,1,0,1,0,-2000,00000000FFFFDE73,3,12347,0,6000
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CSV,77662,5,000000012F52F795,FFFFFFFFFFFE1F57,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PTP_CAP_CSV,1,32,1242577000,2,6,2,1,5,2,0,5,2,3,000000012F52F795,000000012F54D83E,FFFFFFFFFFFE1F57,FFFFFFFFFFFC9B3C,FFFFFFFFFFFDCFD4,00000000000209C3,000000000002FFFA,0000000000000FA0,00000009,00000000,00000000,1,0,1,0,2000,000000010000218D,3,12347,0,6000
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+Note: PASS PTP chain N=6 acquisition=45759 independent-time samples=32
+Time: 1242577 ns  Iteration: 0  Process: /tb_ptp_capacity_k2_jitter/u/line__75  File: C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd
+$stop called at time : 1242577 ns : File "C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/sim/tb_ptp_chain.vhd" Line 132
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 205.195 ; gain = 0.062
+exit
+INFO: xsimkernel Simulation Memory Usage: 14476 KB (Peak: 14476 KB), Simulation CPU Usage: 16374 ms
+INFO: [Common 17-206] Exiting xsim at Thu Oct 29 15:34:27 2026...

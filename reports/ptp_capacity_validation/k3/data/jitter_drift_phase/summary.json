@@ -1,0 +1,238 @@
+{
+  "schema": "ptp_capacity_truth_v1",
+  "source": "rtl_simulation",
+  "source_log_sha256": "82246563c6e9d3924e55cf13ef0dd2e59c9a24b855707e980a7c4e00b215df4d",
+  "capacity": 3,
+  "nodes": 9,
+  "by_node": {
+    "0": {
+      "board": 0,
+      "local_slot": 0,
+      "hops": 0,
+      "physical_hops": 0,
+      "internal_hops": 0,
+      "drift_ppb": -2000,
+      "seed": 12345,
+      "phase_ps": 0,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": 0.0,
+        "sampled_sigma_ns": 0.0,
+        "sampled_rms_ns": 0.0,
+        "sampled_max_abs_ns": 0.0
+      },
+      "locked_samples": {
+        "samples": 32,
+        "mean_ns": 0.0,
+        "sampled_sigma_ns": 0.0,
+        "sampled_rms_ns": 0.0,
+        "sampled_max_abs_ns": 0.0
+      },
+      "excluded_samples": 0
+    },
+    "1": {
+      "board": 0,
+      "local_slot": 1,
+      "hops": 1,
+      "physical_hops": 0,
+      "internal_hops": 1,
+      "drift_ppb": 2000,
+      "seed": 12345,
+      "phase_ps": 0,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": 2.6110076904296875,
+        "sampled_sigma_ns": 15.448300133754172,
+        "sampled_rms_ns": 15.667397300829265,
+        "sampled_max_abs_ns": 24.454833984375
+      },
+      "locked_samples": {
+        "samples": 18,
+        "mean_ns": 4.573215060763889,
+        "sampled_sigma_ns": 16.52988037097355,
+        "sampled_rms_ns": 17.150837911620947,
+        "sampled_max_abs_ns": 24.454833984375
+      },
+      "excluded_samples": 14
+    },
+    "2": {
+      "board": 0,
+      "local_slot": 2,
+      "hops": 2,
+      "physical_hops": 0,
+      "internal_hops": 2,
+      "drift_ppb": -2000,
+      "seed": 12345,
+      "phase_ps": 0,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": 20.1407470703125,
+        "sampled_sigma_ns": 28.980979296121518,
+        "sampled_rms_ns": 35.292305868454186,
+        "sampled_max_abs_ns": 48.127685546875
+      },
+      "locked_samples": {
+        "samples": 8,
+        "mean_ns": 6.17974853515625,
+        "sampled_sigma_ns": 10.443156421965861,
+        "sampled_rms_ns": 12.1346119843781,
+        "sampled_max_abs_ns": 16.45654296875
+      },
+      "excluded_samples": 24
+    },
+    "3": {
+      "board": 1,
+      "local_slot": 0,
+      "hops": 3,
+      "physical_hops": 1,
+      "internal_hops": 2,
+      "drift_ppb": 2000,
+      "seed": 12346,
+      "phase_ps": 3000,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": 12.773529052734375,
+        "sampled_sigma_ns": 10.397579253843737,
+        "sampled_rms_ns": 16.47035818678546,
+        "sampled_max_abs_ns": 23.811767578125
+      },
+      "locked_samples": {
+        "samples": 8,
+        "mean_ns": 0.3294677734375,
+        "sampled_sigma_ns": 15.012681060170841,
+        "sampled_rms_ns": 15.016295869093222,
+        "sampled_max_abs_ns": 23.811767578125
+      },
+      "excluded_samples": 24
+    },
+    "4": {
+      "board": 1,
+      "local_slot": 1,
+      "hops": 4,
+      "physical_hops": 1,
+      "internal_hops": 3,
+      "drift_ppb": -2000,
+      "seed": 12346,
+      "phase_ps": 3000,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": -16.732620239257812,
+        "sampled_sigma_ns": 13.577481919166987,
+        "sampled_rms_ns": 21.548285206403936,
+        "sampled_max_abs_ns": 24.483154296875
+      },
+      "locked_samples": {
+        "samples": 2,
+        "mean_ns": -7.986572265625,
+        "sampled_sigma_ns": 0.0,
+        "sampled_rms_ns": 7.986572265625,
+        "sampled_max_abs_ns": 7.986572265625
+      },
+      "excluded_samples": 30
+    },
+    "5": {
+      "board": 1,
+      "local_slot": 2,
+      "hops": 5,
+      "physical_hops": 1,
+      "internal_hops": 4,
+      "drift_ppb": 2000,
+      "seed": 12346,
+      "phase_ps": 3000,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": -31.92236328125,
+        "sampled_sigma_ns": 3.6136592363139206,
+        "sampled_rms_ns": 32.126247999669914,
+        "sampled_max_abs_ns": 45.7958984375
+      },
+      "locked_samples": {
+        "samples": 6,
+        "mean_ns": -36.473958333333336,
+        "sampled_sigma_ns": 6.5692763547874895,
+        "sampled_rms_ns": 37.06082875931549,
+        "sampled_max_abs_ns": 45.7958984375
+      },
+      "excluded_samples": 26
+    },
+    "6": {
+      "board": 2,
+      "local_slot": 0,
+      "hops": 6,
+      "physical_hops": 2,
+      "internal_hops": 4,
+      "drift_ppb": -2000,
+      "seed": 12347,
+      "phase_ps": 6000,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": -28.4571533203125,
+        "sampled_sigma_ns": 11.90532469877269,
+        "sampled_rms_ns": 30.847144621163558,
+        "sampled_max_abs_ns": 47.2236328125
+      },
+      "locked_samples": {
+        "samples": 20,
+        "mean_ns": -28.02314453125,
+        "sampled_sigma_ns": 12.984177178575564,
+        "sampled_rms_ns": 30.8850366103712,
+        "sampled_max_abs_ns": 47.2236328125
+      },
+      "excluded_samples": 12
+    },
+    "7": {
+      "board": 2,
+      "local_slot": 1,
+      "hops": 7,
+      "physical_hops": 2,
+      "internal_hops": 5,
+      "drift_ppb": 2000,
+      "seed": 12347,
+      "phase_ps": 6000,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": -24.34588623046875,
+        "sampled_sigma_ns": 21.330128122066252,
+        "sampled_rms_ns": 32.36814084946322,
+        "sampled_max_abs_ns": 53.66796875
+      },
+      "locked_samples": {
+        "samples": 24,
+        "mean_ns": -32.985941569010414,
+        "sampled_sigma_ns": 17.55058795465589,
+        "sampled_rms_ns": 37.36436107774736,
+        "sampled_max_abs_ns": 53.66796875
+      },
+      "excluded_samples": 8
+    },
+    "8": {
+      "board": 2,
+      "local_slot": 2,
+      "hops": 8,
+      "physical_hops": 2,
+      "internal_hops": 6,
+      "drift_ppb": -2000,
+      "seed": 12347,
+      "phase_ps": 6000,
+      "all_samples": {
+        "samples": 32,
+        "mean_ns": -28.873931884765625,
+        "sampled_sigma_ns": 29.85839867092017,
+        "sampled_rms_ns": 41.535862982219264,
+        "sampled_max_abs_ns": 71.095458984375
+      },
+      "locked_samples": {
+        "samples": 10,
+        "mean_ns": -62.6796875,
+        "sampled_sigma_ns": 11.994290670559904,
+        "sampled_rms_ns": 63.81697449572125,
+        "sampled_max_abs_ns": 71.095458984375
+      },
+      "excluded_samples": 22
+    }
+  },
+  "physical_clock_domains": 3,
+  "hardware_validation": false,
+  "extrapolation_performed": false,
+  "note": "Finite RTL samples; shared oscillator within each board. No physical stability or extrapolation claim."
+}

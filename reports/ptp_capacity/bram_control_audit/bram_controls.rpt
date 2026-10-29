@@ -1,0 +1,104 @@
+CELL u_ptp/core/ext_left/mem_reg_1 REF_NAME=RAMB36E1
+READ_WIDTH_A=72
+READ_WIDTH_B=0
+WRITE_WIDTH_A=0
+WRITE_WIDTH_B=72
+RAM_MODE=SDP
+WRITE_MODE_A=READ_FIRST
+WRITE_MODE_B=READ_FIRST
+DOA_REG=0
+DOB_REG=0
+EN_ECC_READ=0
+EN_ECC_WRITE=0
+PIN CLKARDCLK NET=u_ptp/core/ext_left/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CLKBWRCLK NET=u_ptp/core/ext_left/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN ENARDEN NET=u_ptp/core/ext_left/mem_reg_1_ENARDEN_cooolgate_en_sig_15 DRIVERS=u_ptp/core/ext_left/mem_reg_1_ENARDEN_cooolgate_en_gate_24/O
+FANIN_TYPES=FDRE 2 FDPE 1 ASYNC_REGISTER_STARTPOINTS={reset_pipe_reg[2]}
+PIN ENBWREN NET=u_ptp/core/ext_left/mem_reg_1_ENBWREN_cooolgate_en_sig_20 DRIVERS=u_ptp/core/ext_left/mem_reg_1_ENBWREN_cooolgate_en_gate_32/O
+FANIN_TYPES=FDCE 2 FDRE 1 ASYNC_REGISTER_STARTPOINTS=u_ptp/core/ext_left/u_ptp/core/ext_left/mem_reg_0_cooolgate_en_gate_28_cooolDelFlop u_ptp/core/ext_left/u_ptp/core/ext_left/mem_reg_0_cooolgate_en_gate_29_cooolDelFlop
+PIN RSTRAMARSTRAM NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN RSTRAMB NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN RSTREGARSTREG NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN RSTREGB NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[3] NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[2] NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[1] NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[0] NET=u_ptp/core/ext_left/<const0> DRIVERS=u_ptp/core/ext_left/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[7] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[6] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[5] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[4] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[3] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[2] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[1] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[0] NET=u_ptp/core/ext_left/enqueue5_out DRIVERS=u_ptp/core/ext_left/mem_reg_0_i_16/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+CELL u_ptp/core/ext_right/mem_reg_1 REF_NAME=RAMB36E1
+READ_WIDTH_A=72
+READ_WIDTH_B=0
+WRITE_WIDTH_A=0
+WRITE_WIDTH_B=72
+RAM_MODE=SDP
+WRITE_MODE_A=READ_FIRST
+WRITE_MODE_B=READ_FIRST
+DOA_REG=0
+DOB_REG=0
+EN_ECC_READ=0
+EN_ECC_WRITE=0
+PIN CLKARDCLK NET=u_ptp/core/ext_right/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN CLKBWRCLK NET=u_ptp/core/ext_right/clk_i DRIVERS=u_optical/u_l/U0/clock_module_i/user_clk_buf_i/O
+FANIN_TYPES=GTPE2_CHANNEL 1 ASYNC_REGISTER_STARTPOINTS=
+PIN ENARDEN NET=u_ptp/core/ext_right/mem_reg_1_ENARDEN_cooolgate_en_sig_16 DRIVERS=u_ptp/core/ext_right/mem_reg_1_ENARDEN_cooolgate_en_gate_26/O
+FANIN_TYPES=FDRE 2 FDPE 1 ASYNC_REGISTER_STARTPOINTS={reset_pipe_reg[2]}
+PIN ENBWREN NET=u_ptp/core/ext_right/mem_reg_1_ENBWREN_cooolgate_en_sig_23 DRIVERS=u_ptp/core/ext_right/mem_reg_1_ENBWREN_cooolgate_en_gate_37/O
+FANIN_TYPES=FDCE 2 FDRE 1 ASYNC_REGISTER_STARTPOINTS=u_ptp/core/ext_left/u_ptp/core/ext_left/mem_reg_0_cooolgate_en_gate_28_cooolDelFlop u_ptp/core/ext_right/u_ptp/core/ext_right/mem_reg_0_cooolgate_en_gate_34_cooolDelFlop
+PIN RSTRAMARSTRAM NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN RSTRAMB NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN RSTREGARSTREG NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN RSTREGB NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[3] NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[2] NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[1] NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEA[0] NET=u_ptp/core/ext_right/<const0> DRIVERS=u_ptp/core/ext_right/GND/G
+FANIN_TYPES= ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[7] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[6] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[5] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[4] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[3] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[2] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[1] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=
+PIN WEBWE[0] NET=u_ptp/core/ext_right/enqueue5_out DRIVERS=u_ptp/core/ext_right/mem_reg_0_i_16__0/O
+FANIN_TYPES=FDRE 36 ASYNC_REGISTER_STARTPOINTS=

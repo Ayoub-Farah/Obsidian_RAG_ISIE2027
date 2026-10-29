@@ -1,0 +1,1023 @@
+{
+  "schema": "ptp_capacity_report_v1",
+  "generated_at_utc": "2026-10-29T15:12:44.404762+00:00",
+  "resource_limits": {
+    "luts": 20800,
+    "flip_flops": 41600,
+    "ramb36_equivalent": 50,
+    "dsp": 90
+  },
+  "engineering_criteria": {
+    "min_lut_free": 15.0,
+    "min_ff_free": 15.0,
+    "min_setup_ns": 0.5
+  },
+  "attempts": [
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_single_node_final",
+      "capacity": 1,
+      "classification": "routed_pass",
+      "routed_verified": true,
+      "recommended": true,
+      "reasons": [],
+      "max_nodes": 3,
+      "status": "passed",
+      "validation_stage": "routed_bitstream",
+      "started_at_utc": "20261029T130458803471Z",
+      "finished_at_utc": "2026-10-29T13:42:37.175396+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "01a10e7c00279031cb861ec3043e9ad8903f65d204ac28963afbfcf74780a290",
+        "artifacts_sha256": {
+          "bus_skew.rpt": "92fc8a5befdc94fa278d4317098ec1f0623cc478f52cc8c959cf896359aecd5d",
+          "cdc.rpt": "0aea78c8102ccd3b7228dbc5cad85d8c0f112b5d73379740b3eb6c9313bdaa8c",
+          "drc.rpt": "55f29d3a562ac121f23e6155e5c468cf3e3b329847dccc90e0dec3e36806cd15",
+          "gpio_test_obs_o.rpt": "ae732adf5e23288089da732f08c9749458b61793d3093d20cac6bb519583466f",
+          "gpio_test_ref_m1_o.rpt": "feb4576274d6935f08c6b93661e91b38b3b9c9ab59e569f25771a6b6ad2d4c85",
+          "implementation_utilization.rpt": "0ac30e90399867d03b83b1fa06f5503a0ae292832ee2cd5e8c85c4f24ae24c81",
+          "ip_status.rpt": "00ebfddaadab700eaba244442c232acf0eed2bf59c9c9ef1a6d6645c772949fa",
+          "obsidian_ptp.bit": "5b71d3310664a7613236acf82f0e86e91c2c39fcd3eeb1a5bf210625c9636704",
+          "obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+          "obsidian_ptp_routed.dcp": "dc79332c5ea46da884278fa9a879f8ac65195eaed1fb0c05586b7a44d3d75b13",
+          "obsidian_ptp_synth.dcp": "5e5125941b07cd5ab98ff2d115d7f82dae5635d988ea5d5889937dd14c459393",
+          "synthesis_cdc.rpt": "302d7526af7b65f33d326a3b96c5013157d354d8ab672c08c93b943cd54c7e66",
+          "synthesis_utilization.rpt": "b3911e673c4819ded26a09fc1268a530c37b9c4f5efb3bfff3d82242344d1c2e",
+          "timing_checks.rpt": "970a6d47ff74ede353d5051313e7d3b3f96b81c193b34d8a58e0330e11dc6f03",
+          "timing_summary.rpt": "a2cde5c6a37ba4422ea761b8879e0145ff6e1feb917de3a41d4196836db16ba5"
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 7226,
+        "logic_luts": 7185,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 10909,
+        "ramb36": 8,
+        "ramb18": 0,
+        "dsp": 1
+      },
+      "implementation_utilization": {
+        "luts": 7466,
+        "logic_luts": 7403,
+        "lutram": 24,
+        "srl": 39,
+        "flip_flops": 11421,
+        "ramb36": 8,
+        "ramb18": 0,
+        "dsp": 1
+      },
+      "routed_timing": {
+        "setup_wns_ns": 1.453,
+        "hold_whs_ns": 0.024,
+        "pulse_width_wpws_ns": 3.146
+      },
+      "resource_usage": {
+        "luts": {
+          "used": 7466,
+          "available": 20800,
+          "used_percent": 35.8942,
+          "free_percent": 64.1058
+        },
+        "flip_flops": {
+          "used": 11421,
+          "available": 41600,
+          "used_percent": 27.4543,
+          "free_percent": 72.5457
+        },
+        "dsp": {
+          "used": 1,
+          "available": 90,
+          "used_percent": 1.1111,
+          "free_percent": 98.8889
+        },
+        "ramb36_equivalent": {
+          "used": 8.0,
+          "available": 50,
+          "used_percent": 16.0,
+          "free_percent": 84.0
+        }
+      },
+      "resources_exceeded": [],
+      "engineering_margin_failures": []
+    },
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k2_route2",
+      "capacity": 2,
+      "classification": "routed_pass",
+      "routed_verified": true,
+      "recommended": true,
+      "reasons": [],
+      "max_nodes": 6,
+      "status": "passed",
+      "validation_stage": "routed_bitstream",
+      "started_at_utc": "2026-10-29T14:51:59.979431+00:00",
+      "finished_at_utc": "2026-10-29T15:08:21.554706+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "cdaf27e47f52dce14821342327bd266f2836fdcf94d21cd2c8081372db1f6733",
+        "artifacts_sha256": {
+          "bus_skew.rpt": "cc54415b58e6509e6e1eaaeb7a220d492420c259bae99ed87ff56198fc83d832",
+          "cdc.rpt": "3ee48726f64500d70e68cd92e46212a07b4cfaa5d0993acd8dbff35426af76e7",
+          "drc.rpt": "a41b6afeae65ae1d9b700bb21dfc4d8ffa04d6e849ee5794b22de84cb51844ee",
+          "gpio_test_obs_o.rpt": "da8ba632f3b66f60f46d097861c548961ad695a2edfa3c68358a43f4e2ed0a9b",
+          "gpio_test_ref_m1_o.rpt": "70063c45551446ec145e87eea99b23f35e9573718d56126188f4564b761648ca",
+          "implementation_utilization.rpt": "a24229ed948362dba9078429316c1617f86e040eb70912990cc8aef4a9feb9e1",
+          "ip_cache_after.rpt": "b770b8c74f1031b21615afe1e11a685e6eeb967730da7488419d7487b66b4887",
+          "ip_cache_before.rpt": "35f598fab373628d0bdb27320b2b4afbb3a28eeb46e7f4915339a7b9e4d29678",
+          "obsidian_ptp.bit": "a7b5a15a6772d2a9fc3cafb0d979d4421b4bf69cccd67d5980746537b6b9bf92",
+          "obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+          "obsidian_ptp_routed.dcp": "b7943045a3d4e134fac83d32fccfe4773f4301a1e9dd3c79e85b3478f1fe9ad7",
+          "obsidian_ptp_synth.dcp": "5d2b103a9a329e0365446963bcbc3c3dbc670755b9889cd1d7c48902099ef671",
+          "pulse_width.rpt": "b7b1beca74b25f6fc0c5c39a48e4687c6f79307ab6fe9c7419326256fc838d73",
+          "synthesis_cdc.rpt": "073aef4d40d75611f92185b6f9724f19c37a399ff031785c963657f57c981124",
+          "synthesis_utilization.rpt": "747036d03b118250fda9cb50af74c785a7968f14e6bf3d9258a8ca70fef7a62d",
+          "timing_checks.rpt": "30a000e982ea6a57734badd9b6b78eafab50dab5893290e30f69f1586d1429d7",
+          "timing_summary.rpt": "415f073ecfc432023e29af7b1e06618a89af0b8c649114131b040e281084f410"
+        },
+        "upstream": {
+          "source_synthesis": {
+            "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k2_synth",
+            "capacity": 2,
+            "max_nodes": 6,
+            "execution_sha256": "f5f331a3aa7b3b567ff3138644a9f602bc166ef9d1ce607097a98bb5efcfd074",
+            "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+            "dcp_sha256": "5d2b103a9a329e0365446963bcbc3c3dbc670755b9889cd1d7c48902099ef671",
+            "build_manifest_sha256": "c52cfec47ce28acb09592cf3fc5191293fb4331d183525c61a9c2028c37c36a5",
+            "synthesis_reports_sha256": {
+              "synthesis_utilization.rpt": "747036d03b118250fda9cb50af74c785a7968f14e6bf3d9258a8ca70fef7a62d",
+              "synthesis_cdc.rpt": "073aef4d40d75611f92185b6f9724f19c37a399ff031785c963657f57c981124"
+            },
+            "embedded_constraints_sha256": {
+              "obsidian_ptp_top.xdc": "58dfd7adc8e3889419be0d1e8f3c67e6ff94a79dd324cdbdc8d56f42cdf37bc0",
+              "obsidian_ptp_top_early.xdc": "9edacf39dee399098f8a206bd812295cc3c44a2f89fc12c1908715f746723704",
+              "obsidian_ptp_top_late.xdc": "4a6c5db88bbfac2bc8fa070669391cf29700e4a9f346e3714dce5e147020ef2f"
+            }
+          },
+          "verified_routing_scripts_sha256": {
+            "scripts/implement_ptp.py": "5810fd7be9b4c9c6654d4af15096ae11d061564aef21b22a2eea3ebd5d87017b",
+            "scripts/implement_ptp.tcl": "21feb3950af5a889b27305b59dcf1a8b11a0a4dd54013c2ca6afaffcc10dc96e"
+          }
+        },
+        "ip_cache_provenance": {
+          "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_single_node_final",
+          "execution_sha256": "01a10e7c00279031cb861ec3043e9ad8903f65d204ac28963afbfcf74780a290",
+          "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+          "Vivado": "2025.2",
+          "part": "xc7a35tcsg325-2",
+          "files_sha256": {
+            "2025.2\\4\\4\\444c05be36e84488\\444c05be36e84488.xci": "4305eebfe53aad12c86e2346081abad6558ae9bc8f6be24b9ccc03ecf1615b47",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub.dcp": "5324f82790f9159fdbc28fbe4aea4c1a9b51d657b67e08c3aea22ca72893dddd",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.v": "09a308c15b3e71704e0b4806cd0768fa04a9d6d4dd6362fb2fc39b15b0c8fa1a",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.vhdl": "ad4fdabd3f60fd1b74c8f738f80bb58ad1cac7c5930ceb940d1d9d8c3043808e",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.v": "668b238a9dcbb5baff742989a700558be786a8c5722411c0a593f91e06148acc",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.vhdl": "ca073b49a64540c6afcfd5deb63ace4d048dc76a473515cdaa6b237a764fd36e"
+          },
+          "ip_configuration_sha256": {
+            "aurora_left": "1c446840768f3b8284bd5643f91170d53c2439e4ec95abb575531d0914e54953",
+            "aurora_right": "aa15af6a2142cb9d1f6970ddeba8dc18a4b1401fdd2c7674ef4b54e8aceb20ac",
+            "ptp_vio": "2e209eabd2ba60eefebb07e13ba35bf2316ce63c4540cdd2c1030e191e600267"
+          }
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 11792,
+        "logic_luts": 11751,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 16564,
+        "ramb36": 10,
+        "ramb18": 0,
+        "dsp": 2
+      },
+      "implementation_utilization": {
+        "luts": 12012,
+        "logic_luts": 11949,
+        "lutram": 24,
+        "srl": 39,
+        "flip_flops": 17079,
+        "ramb36": 10,
+        "ramb18": 0,
+        "dsp": 2
+      },
+      "routed_timing": {
+        "setup_wns_ns": 1.24,
+        "hold_whs_ns": 0.073,
+        "pulse_width_wpws_ns": 3.146
+      },
+      "resource_usage": {
+        "luts": {
+          "used": 12012,
+          "available": 20800,
+          "used_percent": 57.75,
+          "free_percent": 42.25
+        },
+        "flip_flops": {
+          "used": 17079,
+          "available": 41600,
+          "used_percent": 41.0553,
+          "free_percent": 58.9447
+        },
+        "dsp": {
+          "used": 2,
+          "available": 90,
+          "used_percent": 2.2222,
+          "free_percent": 97.7778
+        },
+        "ramb36_equivalent": {
+          "used": 10.0,
+          "available": 50,
+          "used_percent": 20.0,
+          "free_percent": 80.0
+        }
+      },
+      "resources_exceeded": [],
+      "engineering_margin_failures": []
+    },
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k2_synth",
+      "capacity": 2,
+      "classification": "synthesis_candidate",
+      "routed_verified": false,
+      "recommended": false,
+      "reasons": [],
+      "max_nodes": 6,
+      "status": "passed",
+      "validation_stage": "synthesis",
+      "started_at_utc": "20261029T142212162776Z",
+      "finished_at_utc": "2026-10-29T14:41:34.251447+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "f5f331a3aa7b3b567ff3138644a9f602bc166ef9d1ce607097a98bb5efcfd074",
+        "artifacts_sha256": {
+          "ip_status.rpt": "b7380b50950cd0db624d7426d16b82d00f705b911ff7d78292743d70e4e46fb3",
+          "obsidian_ptp_synth.dcp": "5d2b103a9a329e0365446963bcbc3c3dbc670755b9889cd1d7c48902099ef671",
+          "synthesis_cdc.rpt": "073aef4d40d75611f92185b6f9724f19c37a399ff031785c963657f57c981124",
+          "synthesis_utilization.rpt": "747036d03b118250fda9cb50af74c785a7968f14e6bf3d9258a8ca70fef7a62d"
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 11792,
+        "logic_luts": 11751,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 16564,
+        "ramb36": 10,
+        "ramb18": 0,
+        "dsp": 2
+      },
+      "implementation_utilization": null,
+      "routed_timing": null,
+      "resource_usage": {
+        "luts": {
+          "used": 11792,
+          "available": 20800,
+          "used_percent": 56.6923,
+          "free_percent": 43.3077
+        },
+        "flip_flops": {
+          "used": 16564,
+          "available": 41600,
+          "used_percent": 39.8173,
+          "free_percent": 60.1827
+        },
+        "dsp": {
+          "used": 2,
+          "available": 90,
+          "used_percent": 2.2222,
+          "free_percent": 97.7778
+        },
+        "ramb36_equivalent": {
+          "used": 10.0,
+          "available": 50,
+          "used_percent": 20.0,
+          "free_percent": 80.0
+        }
+      },
+      "resources_exceeded": []
+    },
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k3_route",
+      "capacity": 3,
+      "classification": "routed_pass",
+      "routed_verified": true,
+      "recommended": true,
+      "reasons": [],
+      "max_nodes": 9,
+      "status": "passed",
+      "validation_stage": "routed_bitstream",
+      "started_at_utc": "2026-10-29T14:52:19.492141+00:00",
+      "finished_at_utc": "2026-10-29T15:11:13.864723+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "815259d6cdd8c8fb8a760e920372fb6a20e121e87dfddb36005e6b290472ced2",
+        "artifacts_sha256": {
+          "bus_skew.rpt": "64e547d49e15955c86f04c9973d2126b6d70ee920cf618fd207aa03d7a8c1990",
+          "cdc.rpt": "f5c12559864d4e2411c083cc169e74af7a171ce313b6937e99d00581561e181b",
+          "drc.rpt": "b9431c2da6de6ccf1133ab696b5166497fc14f83ace8fd53e38fc2964865fbcf",
+          "gpio_test_obs_o.rpt": "858278be95d90b0b59858c4d36aab21b9ebda11e695839c2fb8ea6474e2d6476",
+          "gpio_test_ref_m1_o.rpt": "331007aad600dc29326f7efdc1142fec5a7d235c49a1fb3b4c03aa27410bd470",
+          "implementation_utilization.rpt": "024ce307e3d6573670a9aea56cfede52569bae2f0f1677eccdc6ec4a88f00edf",
+          "ip_cache_after.rpt": "a2fa8df7dba72e2c21351f21eb3ae23e9f004060123f70f4074238aed93344b0",
+          "ip_cache_before.rpt": "4fc8db4824530a970006f35fc7c5c12e578120f732bdaef9aa8613b54b383071",
+          "obsidian_ptp.bit": "81ec98265341cf183854f9c653aa0d64b0d854d7d72399e2f0408c4d8c054b31",
+          "obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+          "obsidian_ptp_routed.dcp": "83b2e7f6b55801190f8ac41584f07d66f87417e30fdb1b25a652ac467a0f3bd7",
+          "obsidian_ptp_synth.dcp": "0eb8b5372e11efbc482eaad75861aecd45c97e11640efbc3392c32c8c3a882bb",
+          "pulse_width.rpt": "9e3ef4b2bf96b38245dd2a6ac9228cd1fbc0dd58e23110251664076041d4d4a3",
+          "synthesis_cdc.rpt": "29d8984162f462c9d5b1a183d75b6bc27a0d4a642a4f5c17bba0489b489a3408",
+          "synthesis_utilization.rpt": "3f5285b8c186d98bf20088d92cea887efc9571349035ba8295a3a33bcab5177b",
+          "timing_checks.rpt": "12e1d6f1057d526eb2c24babea72c4d2e683a97b14cea8fa9a2be27eba67e10a",
+          "timing_summary.rpt": "9679790cde1d9111632fcd7547cad67d452eb11ff23fb8ea3bb11af811a32168"
+        },
+        "upstream": {
+          "source_synthesis": {
+            "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k3_synth",
+            "capacity": 3,
+            "max_nodes": 9,
+            "execution_sha256": "aec31b679dccc6f0826c28fd4db3d22dc8cc18939f63db7be94c2f0c91c161ee",
+            "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+            "dcp_sha256": "0eb8b5372e11efbc482eaad75861aecd45c97e11640efbc3392c32c8c3a882bb",
+            "build_manifest_sha256": "3883bc0514962191b67cccde08cc1d1cf0436cea11ee3c3a3c4c08c7486fcc21",
+            "synthesis_reports_sha256": {
+              "synthesis_utilization.rpt": "3f5285b8c186d98bf20088d92cea887efc9571349035ba8295a3a33bcab5177b",
+              "synthesis_cdc.rpt": "29d8984162f462c9d5b1a183d75b6bc27a0d4a642a4f5c17bba0489b489a3408"
+            },
+            "embedded_constraints_sha256": {
+              "obsidian_ptp_top.xdc": "58dfd7adc8e3889419be0d1e8f3c67e6ff94a79dd324cdbdc8d56f42cdf37bc0",
+              "obsidian_ptp_top_early.xdc": "5e380a5b7c45bd5ad75876160f388d59ad806454a870b351a29e85b5e19cfd58",
+              "obsidian_ptp_top_late.xdc": "1945659a230c3f1575a9a1b2c99a8d36b6044bae27c0ed1a6f2c6618d0affc70"
+            }
+          },
+          "verified_routing_scripts_sha256": {
+            "scripts/implement_ptp.py": "5810fd7be9b4c9c6654d4af15096ae11d061564aef21b22a2eea3ebd5d87017b",
+            "scripts/implement_ptp.tcl": "21feb3950af5a889b27305b59dcf1a8b11a0a4dd54013c2ca6afaffcc10dc96e"
+          }
+        },
+        "ip_cache_provenance": {
+          "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_single_node_final",
+          "execution_sha256": "01a10e7c00279031cb861ec3043e9ad8903f65d204ac28963afbfcf74780a290",
+          "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+          "Vivado": "2025.2",
+          "part": "xc7a35tcsg325-2",
+          "files_sha256": {
+            "2025.2\\4\\4\\444c05be36e84488\\444c05be36e84488.xci": "4305eebfe53aad12c86e2346081abad6558ae9bc8f6be24b9ccc03ecf1615b47",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub.dcp": "5324f82790f9159fdbc28fbe4aea4c1a9b51d657b67e08c3aea22ca72893dddd",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.v": "09a308c15b3e71704e0b4806cd0768fa04a9d6d4dd6362fb2fc39b15b0c8fa1a",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.vhdl": "ad4fdabd3f60fd1b74c8f738f80bb58ad1cac7c5930ceb940d1d9d8c3043808e",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.v": "668b238a9dcbb5baff742989a700558be786a8c5722411c0a593f91e06148acc",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.vhdl": "ca073b49a64540c6afcfd5deb63ace4d048dc76a473515cdaa6b237a764fd36e"
+          },
+          "ip_configuration_sha256": {
+            "aurora_left": "1c446840768f3b8284bd5643f91170d53c2439e4ec95abb575531d0914e54953",
+            "aurora_right": "aa15af6a2142cb9d1f6970ddeba8dc18a4b1401fdd2c7674ef4b54e8aceb20ac",
+            "ptp_vio": "2e209eabd2ba60eefebb07e13ba35bf2316ce63c4540cdd2c1030e191e600267"
+          }
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 16624,
+        "logic_luts": 16583,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 22231,
+        "ramb36": 12,
+        "ramb18": 0,
+        "dsp": 3
+      },
+      "implementation_utilization": {
+        "luts": 16558,
+        "logic_luts": 16495,
+        "lutram": 24,
+        "srl": 39,
+        "flip_flops": 22744,
+        "ramb36": 12,
+        "ramb18": 0,
+        "dsp": 3
+      },
+      "routed_timing": {
+        "setup_wns_ns": 0.573,
+        "hold_whs_ns": 0.037,
+        "pulse_width_wpws_ns": 3.146
+      },
+      "resource_usage": {
+        "luts": {
+          "used": 16558,
+          "available": 20800,
+          "used_percent": 79.6058,
+          "free_percent": 20.3942
+        },
+        "flip_flops": {
+          "used": 22744,
+          "available": 41600,
+          "used_percent": 54.6731,
+          "free_percent": 45.3269
+        },
+        "dsp": {
+          "used": 3,
+          "available": 90,
+          "used_percent": 3.3333,
+          "free_percent": 96.6667
+        },
+        "ramb36_equivalent": {
+          "used": 12.0,
+          "available": 50,
+          "used_percent": 24.0,
+          "free_percent": 76.0
+        }
+      },
+      "resources_exceeded": [],
+      "engineering_margin_failures": []
+    },
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k3_synth",
+      "capacity": 3,
+      "classification": "synthesis_candidate",
+      "routed_verified": false,
+      "recommended": false,
+      "reasons": [],
+      "max_nodes": 9,
+      "status": "passed",
+      "validation_stage": "synthesis",
+      "started_at_utc": "20261029T143316403980Z",
+      "finished_at_utc": "2026-10-29T14:51:02.526458+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "aec31b679dccc6f0826c28fd4db3d22dc8cc18939f63db7be94c2f0c91c161ee",
+        "artifacts_sha256": {
+          "ip_status.rpt": "7a8640a259b88792a0373f3622d04ccfb543e2552951761a1e22f42fa0ad8c72",
+          "obsidian_ptp_synth.dcp": "0eb8b5372e11efbc482eaad75861aecd45c97e11640efbc3392c32c8c3a882bb",
+          "synthesis_cdc.rpt": "29d8984162f462c9d5b1a183d75b6bc27a0d4a642a4f5c17bba0489b489a3408",
+          "synthesis_utilization.rpt": "3f5285b8c186d98bf20088d92cea887efc9571349035ba8295a3a33bcab5177b"
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 16624,
+        "logic_luts": 16583,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 22231,
+        "ramb36": 12,
+        "ramb18": 0,
+        "dsp": 3
+      },
+      "implementation_utilization": null,
+      "routed_timing": null,
+      "resource_usage": {
+        "luts": {
+          "used": 16624,
+          "available": 20800,
+          "used_percent": 79.9231,
+          "free_percent": 20.0769
+        },
+        "flip_flops": {
+          "used": 22231,
+          "available": 41600,
+          "used_percent": 53.4399,
+          "free_percent": 46.5601
+        },
+        "dsp": {
+          "used": 3,
+          "available": 90,
+          "used_percent": 3.3333,
+          "free_percent": 96.6667
+        },
+        "ramb36_equivalent": {
+          "used": 12.0,
+          "available": 50,
+          "used_percent": 24.0,
+          "free_percent": 76.0
+        }
+      },
+      "resources_exceeded": []
+    },
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k4_route2",
+      "capacity": 4,
+      "classification": "resource_rejection",
+      "routed_verified": false,
+      "recommended": false,
+      "reasons": [],
+      "max_nodes": 12,
+      "status": "failed",
+      "validation_stage": "routed_bitstream",
+      "started_at_utc": "2026-10-29T14:51:57.115469+00:00",
+      "finished_at_utc": "2026-10-29T14:59:48.915320+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "927b97be2461077389d44b9b264799fe71d596ccea5b8bb905cc97eede4b5d46",
+        "artifacts_sha256": {
+          "ip_cache_before.rpt": "af67387f76b6cbb75841357538b451673b2f3bc4aa49241a74b9b9be68db479c",
+          "obsidian_ptp_synth.dcp": "82a08264aff8b576c698fc028a3155acdd9cf7f567d34502c4ece4768f4a1778",
+          "synthesis_cdc.rpt": "0a8c9280c40e970bec501a9c1d0ea27404a57d39b4c12e005f98e848eadc827b",
+          "synthesis_utilization.rpt": "3cf0a8b24a1a83ab62b1751463bd36d2ed6763e99afb265b3407c084f87f4ebf"
+        },
+        "upstream": {
+          "source_synthesis": {
+            "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k4_synth",
+            "capacity": 4,
+            "max_nodes": 12,
+            "execution_sha256": "9c8e31e37e8cb73a538b97ef95bd4671670f9b721cf28bc593a2bdf4e72e3fd5",
+            "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+            "dcp_sha256": "82a08264aff8b576c698fc028a3155acdd9cf7f567d34502c4ece4768f4a1778",
+            "build_manifest_sha256": "d144a1aef572213af4affa6bad080cb1abb3aa2e844009bcbda9e205203ba8ec",
+            "synthesis_reports_sha256": {
+              "synthesis_utilization.rpt": "3cf0a8b24a1a83ab62b1751463bd36d2ed6763e99afb265b3407c084f87f4ebf",
+              "synthesis_cdc.rpt": "0a8c9280c40e970bec501a9c1d0ea27404a57d39b4c12e005f98e848eadc827b"
+            },
+            "embedded_constraints_sha256": {
+              "obsidian_ptp_top.xdc": "58dfd7adc8e3889419be0d1e8f3c67e6ff94a79dd324cdbdc8d56f42cdf37bc0",
+              "obsidian_ptp_top_early.xdc": "7d5081a9e0aa8f9be8ea0430a2b9fc5a5c25796cc50bab559041de4de6922dbd",
+              "obsidian_ptp_top_late.xdc": "a0504f9142eff4e5e7ff6b9c33cf8f27f1b744ed53e9cfc04367181f202c5bea"
+            }
+          },
+          "verified_routing_scripts_sha256": {
+            "scripts/implement_ptp.py": "5810fd7be9b4c9c6654d4af15096ae11d061564aef21b22a2eea3ebd5d87017b",
+            "scripts/implement_ptp.tcl": "21feb3950af5a889b27305b59dcf1a8b11a0a4dd54013c2ca6afaffcc10dc96e"
+          }
+        },
+        "ip_cache_provenance": {
+          "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_single_node_final",
+          "execution_sha256": "01a10e7c00279031cb861ec3043e9ad8903f65d204ac28963afbfcf74780a290",
+          "source_manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+          "Vivado": "2025.2",
+          "part": "xc7a35tcsg325-2",
+          "files_sha256": {
+            "2025.2\\4\\4\\444c05be36e84488\\444c05be36e84488.xci": "4305eebfe53aad12c86e2346081abad6558ae9bc8f6be24b9ccc03ecf1615b47",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub.dcp": "5324f82790f9159fdbc28fbe4aea4c1a9b51d657b67e08c3aea22ca72893dddd",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.v": "09a308c15b3e71704e0b4806cd0768fa04a9d6d4dd6362fb2fc39b15b0c8fa1a",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_sim_netlist.vhdl": "ad4fdabd3f60fd1b74c8f738f80bb58ad1cac7c5930ceb940d1d9d8c3043808e",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.v": "668b238a9dcbb5baff742989a700558be786a8c5722411c0a593f91e06148acc",
+            "2025.2\\4\\4\\444c05be36e84488\\dbg_hub_stub.vhdl": "ca073b49a64540c6afcfd5deb63ace4d048dc76a473515cdaa6b237a764fd36e"
+          },
+          "ip_configuration_sha256": {
+            "aurora_left": "1c446840768f3b8284bd5643f91170d53c2439e4ec95abb575531d0914e54953",
+            "aurora_right": "aa15af6a2142cb9d1f6970ddeba8dc18a4b1401fdd2c7674ef4b54e8aceb20ac",
+            "ptp_vio": "2e209eabd2ba60eefebb07e13ba35bf2316ce63c4540cdd2c1030e191e600267"
+          }
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 21107,
+        "logic_luts": 21066,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 27869,
+        "ramb36": 14,
+        "ramb18": 0,
+        "dsp": 4
+      },
+      "implementation_utilization": null,
+      "routed_timing": null,
+      "resource_usage": {
+        "luts": {
+          "used": 21107,
+          "available": 20800,
+          "used_percent": 101.476,
+          "free_percent": -1.476
+        },
+        "flip_flops": {
+          "used": 27869,
+          "available": 41600,
+          "used_percent": 66.9928,
+          "free_percent": 33.0072
+        },
+        "dsp": {
+          "used": 4,
+          "available": 90,
+          "used_percent": 4.4444,
+          "free_percent": 95.5556
+        },
+        "ramb36_equivalent": {
+          "used": 14.0,
+          "available": 50,
+          "used_percent": 28.0,
+          "free_percent": 72.0
+        }
+      },
+      "resources_exceeded": [
+        "luts"
+      ]
+    },
+    {
+      "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k4_synth",
+      "capacity": 4,
+      "classification": "resource_rejection",
+      "routed_verified": false,
+      "recommended": false,
+      "reasons": [],
+      "max_nodes": 12,
+      "status": "passed",
+      "validation_stage": "synthesis",
+      "started_at_utc": "20261029T142213837728Z",
+      "finished_at_utc": "2026-10-29T14:44:52.491065+00:00",
+      "completed": true,
+      "source_evidence": {
+        "manifest_sha256": "972b2095632e1c7374babb544688e8559abcad50c5887c22990444fdd4f77591",
+        "current_sources_match": true,
+        "source_count": 39,
+        "source_sha256": {
+          "rtl/board/board_clock_reset_manager.vhd": "75ffe8f9d60ae2cfabda33e23b97fa273b6d30b4e83abab374a2dd9cde2e0c0e",
+          "rtl/board/clock_20_to_50.vhd": "a48d0125e717a93579c4809aaa3c996fbdd8ff0442c1d3b43f823361b35a471a",
+          "rtl/board/obsidian_benchmark_top.vhd": "6971a34b941ee953e8ee2c68165d35306372c89d9b5624a831dbb536b6857242",
+          "rtl/board/obsidian_physical_top.vhd": "3c14cfcf98d8a118cb3e6959cc24926d90e60dc0c4fa25e7b48e60a155f8583a",
+          "rtl/board/obsidian_ptp_top.vhd": "ed02b7f8c2b7ac2e4c07d75eeca2bd9a5f8788d5a0218437a0cd11e3ba43165b",
+          "rtl/links/aurora_rx_capture.vhd": "7ff97d82b8bde2a0e6ff628bbfcac6569948e09c56fe346ad1e19e2385844acf",
+          "rtl/links/data_frame_filter.vhd": "a8690763990ef090aa43fb9e69bf7c2cb6032046c86f280466cff08da507ff0a",
+          "rtl/links/physical_fifo.vhd": "af4e4c5a83e6c805fe03cb2ee4a34de2d25eb4e36fee90d1092e89a3a87405df",
+          "rtl/links/physical_rx_router.vhd": "a233cf797f5c01574ebad4b427ab724f63606f7fc4fdbac1c29fcf9c1256203d",
+          "rtl/links/ptp_neighbor_link.vhd": "5a5fef99e0a406c335c57872106faf9427a4dffca68d63d4517013cd997d314a",
+          "rtl/links/virtual_neighbor_link.vhd": "4faa45f97150ed18dd738baaf78d3348f28ca52f4c02910aa63bc65d82cf0cb0",
+          "rtl/protocol/benchmark_pkg.vhd": "22a34fd6edcaca34ad40005890f1d916bcfc55717c716d012134046e4a8e1dbe",
+          "rtl/protocol/physical_node.vhd": "1ee21cae7fa00c8b4c9d7f73b44d5b424e2e24b1bff6964943a9533b663fcadc",
+          "rtl/protocol/physical_pkg.vhd": "58c9b97bc760f365bdf8a426f0ac9f3d4bc563219cc55ff39c7f2faf879152f1",
+          "rtl/protocol/rag_node.vhd": "bb6e57bf839f7d1d95a009bbe905026e285e8c143589a2f441fbc9f01d912b8e",
+          "rtl/protocol/ring_control_codec.vhd": "2869d5e037f3e6e4da3e6d2e196bf1699d31df832b9455dbb7a9c19b47cd61cc",
+          "rtl/sync/management_codec.vhd": "9cd1de517fa3ec2175ff3209c9986df0051fb81d3017ec535901ac7eef15a1dc",
+          "rtl/sync/ptp_emulation_pkg.vhd": "517e54ec662ce8f59a5942471b401a3b157aba4e32fc77f1de059a68449d3e66",
+          "rtl/sync/ptp_epoch_marker.vhd": "19064c54f1379ccca5b8232c96770ec2447cff28a37d8f91e85a332b550f0294",
+          "rtl/sync/ptp_observer.vhd": "d214e91ba7eb7065c88e81eedf6f7d148e076e14d8b7b4185c4162b700e1d38b",
+          "rtl/sync/sync_math_pkg.vhd": "a7e741c08ca37b291709bf6175450e96edd253220a2c4f431972209e9e3927b6",
+          "rtl/sync/sync_median_serial.vhd": "d2c11eb075ca45223576cfa3b061eb9451dbdb464e82c60d13b765344385452b",
+          "rtl/sync/sync_system.vhd": "f8b7e363f18f1dc31e407a7da03ed62cee935217472144a85e8d050e57889029",
+          "rtl/system/benchmark_system.vhd": "ff3e684944076945ed9f07b9c72b6285516f8c1e0e340f31983018eeb7daeb97",
+          "rtl/system/physical_controller.vhd": "d3320e712ccfcc75c7961434b28762212da87dc4c621a01c42a4638bd16af2f1",
+          "rtl/system/physical_journal.vhd": "73de38098675386fea9c2b9c3b2ff24b14ae55a8ac20b0fda9ae6535d97d851c",
+          "rtl/system/physical_system.vhd": "fd86179d3e48f2f2556a21cf0f8ea7907e846a51ef8d7e23816b1c023a56e44b",
+          "rtl/system/ptp_emulation_core.vhd": "7253ff5619c31600ede7c8251388ee2c8cece874fabc4b24d846bdde074a020a",
+          "rtl/system/ptp_emulation_system.vhd": "10c9f1b7b9d866829de4e110665c4715e51e137ac4f7bfb0f684e62bf5e6b70e",
+          "rtl/system/ptp_event_journal.vhd": "c3bcc83a41aae7ed408062c8f5fb96506395b75be59b49c2f86dfe232b6eb6ea",
+          "constraints/obsidian_benchmark.xdc": "369dfc5e88fc07f2088fc27a6efcc8d14204c49bb9560930fb2848d335a42a97",
+          "constraints/obsidian_ptp.xdc": "5d705a1960d61cad80ce8966dae17b5e296cb5d980cb2114d8c45e2e3a6ee393",
+          "constraints/physical_reset_cdc.xdc": "ebd0a20f143c0d9f76bc665700673cb526ccf0f8c102fafcd12ac87a7b116622",
+          "constraints/reset_cdc.xdc": "a39fc4bfe7a830ca43d091b39d1f00efd1087372a1b1e16c0bb8d93e0ae78d9a",
+          "scripts/build_ptp.tcl": "4b261f4739fde8a36ba4e4f2e051e017e806227e1976aed9289ce10d7073c29c",
+          "scripts/build.tcl": "c66f9b8e4d23d090ee133119356e2c9f972b36758f26ab92fceb798130563b8d",
+          "scripts/create_ptp_project.tcl": "c062ed5a82fae643c1debc276db856929d7c38c8e05fc7799c554897f323527d",
+          "scripts/aurora_common.tcl": "3c7a5aec7d9c04f75f1f5f26045e3a22a0e2924a04b73b3a44db1d27643fdb1b",
+          "scripts/generate_aurora_adapter.py": "2b36d7d3003023c9b335df920136b9bf11b2332393b60717b12afcbce258f436"
+        },
+        "issues": []
+      },
+      "evidence": {
+        "execution_sha256": "9c8e31e37e8cb73a538b97ef95bd4671670f9b721cf28bc593a2bdf4e72e3fd5",
+        "artifacts_sha256": {
+          "ip_status.rpt": "55bc32c4208025548f598cec0fd6f75dacab57159c28a808953df3f9a2807511",
+          "obsidian_ptp_synth.dcp": "82a08264aff8b576c698fc028a3155acdd9cf7f567d34502c4ece4768f4a1778",
+          "synthesis_cdc.rpt": "0a8c9280c40e970bec501a9c1d0ea27404a57d39b4c12e005f98e848eadc827b",
+          "synthesis_utilization.rpt": "3cf0a8b24a1a83ab62b1751463bd36d2ed6763e99afb265b3407c084f87f4ebf"
+        }
+      },
+      "synthesis_utilization": {
+        "luts": 21107,
+        "logic_luts": 21066,
+        "lutram": 0,
+        "srl": 41,
+        "flip_flops": 27869,
+        "ramb36": 14,
+        "ramb18": 0,
+        "dsp": 4
+      },
+      "implementation_utilization": null,
+      "routed_timing": null,
+      "resource_usage": {
+        "luts": {
+          "used": 21107,
+          "available": 20800,
+          "used_percent": 101.476,
+          "free_percent": -1.476
+        },
+        "flip_flops": {
+          "used": 27869,
+          "available": 41600,
+          "used_percent": 66.9928,
+          "free_percent": 33.0072
+        },
+        "dsp": {
+          "used": 4,
+          "available": 90,
+          "used_percent": 4.4444,
+          "free_percent": 95.5556
+        },
+        "ramb36_equivalent": {
+          "used": 14.0,
+          "available": 50,
+          "used_percent": 28.0,
+          "free_percent": 72.0
+        }
+      },
+      "resources_exceeded": [
+        "luts"
+      ]
+    }
+  ],
+  "largest_verified_routed": {
+    "capacity": 3,
+    "max_nodes": 9,
+    "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k3_route"
+  },
+  "recommended": {
+    "capacity": 3,
+    "max_nodes": 9,
+    "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k3_route"
+  },
+  "next_observed_rejection": {
+    "capacity": 4,
+    "max_nodes": 12,
+    "build_directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\build\\ptp_capacity_search\\k4_route2",
+    "classification": "resource_rejection",
+    "adjacent_to_routed_maximum": true,
+    "untested_between": [],
+    "not_routed_between": [],
+    "all_larger_capacities_tested": false
+  },
+  "attempted_capacities": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "hardware_validated": false,
+  "scope": "Selections apply only to the listed, source-matched builds. A synthesis fit is a candidate; a failed next candidate does not establish that every larger capacity was tested. Hardware synchronization and functional RTL validation are separate evidence."
+}

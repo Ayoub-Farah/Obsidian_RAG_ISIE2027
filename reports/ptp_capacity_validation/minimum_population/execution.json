@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "runner_sha256": "aa7b3689c7580e2ec326a09be127f20905cb7b90df3c7b6b247a9d4ead809b62",
+  "cases": {
+    "tb_ptp_capacity_k2_runtime_minimum": {
+      "entity": "tb_ptp_runtime_chain",
+      "generics": "G_CAPACITY=>2,G_INITIAL_NODES=>6,G_REDUCED_NODES=>3,G_PHASED=>true"
+    },
+    "tb_ptp_capacity_k3_runtime_minimum": {
+      "entity": "tb_ptp_runtime_chain",
+      "generics": "G_CAPACITY=>3,G_INITIAL_NODES=>9,G_REDUCED_NODES=>3,G_PHASED=>true"
+    }
+  },
+  "source_snapshot_sha256": "d162f949e2ae85924dd9d2824b74ef9aa173f050a2418661941ffc4a426ac4f8",
+  "results_sha256": "d9a18db17f58cecd7f2ee1bc562fe7b6e2f9150e1de7d2438d6c343283a0278e"
+}

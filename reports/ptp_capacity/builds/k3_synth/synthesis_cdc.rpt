@@ -1,0 +1,19 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct 29 15:51:01 2026
+| Host         : HP-OWNTECH running 64-bit major release  (build 9200)
+| Command      : report_cdc -file C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/build/ptp_capacity_search/k3_synth/synthesis_cdc.rpt
+| Design       : obsidian_ptp_top
+| Device       : 7a35t-csg325
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Synthesized
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+Severity  Source Clock                                                                                                Destination Clock                                                                                           CDC Type                 Exceptions  Endpoints  Safe  Unsafe  Unknown  No ASYNC_REG  
+--------  ----------------------------------------------------------------------------------------------------------  ----------------------------------------------------------------------------------------------------------  -----------------------  ----------  ---------  ----  ------  -------  ------------  
+Info      u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  clk50                                                                                                       No Common Primary Clock  False Path         18    18       0        0             0  
+Info      clk50                                                                                                       u_optical/u_l/U0/aurora_left_core_i/gt_wrapper_i/aurora_left_multi_gt_i/gt0_aurora_left_i/gtpe2_i/TXOUTCLK  No Common Primary Clock  False Path         19    19       0        0             0  
+

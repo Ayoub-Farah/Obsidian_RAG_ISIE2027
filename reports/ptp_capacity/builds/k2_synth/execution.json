@@ -1,0 +1,28 @@
+{
+  "schema": "ptp_emulation_v1",
+  "capacity": 2,
+  "max_nodes": 6,
+  "started_at_utc": "20261029T142212162776Z",
+  "command": [
+    "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+    "-mode",
+    "batch",
+    "-nojournal",
+    "-nolog",
+    "-source",
+    "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\scripts\\build_ptp.tcl"
+  ],
+  "status": "passed",
+  "hardware_programmed": false,
+  "returncode": 0,
+  "sources_changed": [],
+  "missing_artifacts": [],
+  "validation_stage": "synthesis",
+  "finished_at_utc": "2026-10-29T14:41:34.251447+00:00",
+  "artifacts_sha256": {
+    "ip_status.rpt": "b7380b50950cd0db624d7426d16b82d00f705b911ff7d78292743d70e4e46fb3",
+    "obsidian_ptp_synth.dcp": "5d2b103a9a329e0365446963bcbc3c3dbc670755b9889cd1d7c48902099ef671",
+    "synthesis_cdc.rpt": "073aef4d40d75611f92185b6f9724f19c37a399ff031785c963657f57c981124",
+    "synthesis_utilization.rpt": "747036d03b118250fda9cb50af74c785a7968f14e6bf3d9258a8ca70fef7a62d"
+  }
+}

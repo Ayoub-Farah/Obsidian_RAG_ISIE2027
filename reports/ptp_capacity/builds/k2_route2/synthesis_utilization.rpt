@@ -1,0 +1,91 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct 29 15:41:17 2026
+| Host         : HP-OWNTECH running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file C:/Users/afarahhass/Documents/Xilinx_project/Obsidian_RAG/build/ptp_capacity_search/k2_synth/synthesis_utilization.rpt
+| Design       : obsidian_ptp_top
+| Device       : xc7a35tcsg325-2
+| Speed File   : -2
+| Design State : Synthesized
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------------+-------------------------------------------+------------+------------+---------+------+-------+--------+--------+------------+
+|                Instance                |                   Module                  | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | DSP Blocks |
++----------------------------------------+-------------------------------------------+------------+------------+---------+------+-------+--------+--------+------------+
+| obsidian_ptp_top                       |                                     (top) |      11792 |      11751 |       0 |   41 | 16564 |     10 |      0 |          2 |
+|   (obsidian_ptp_top)                   |                                     (top) |        139 |        139 |       0 |    0 |     3 |      0 |      0 |          0 |
+|   u_optical                            |                      obsidian_dual_aurora |        901 |        860 |       0 |   41 |  1766 |      0 |      0 |          0 |
+|     u_r                                |                              aurora_right |        439 |        422 |       0 |   17 |   867 |      0 |      0 |          0 |
+|       U0                               |                         aurora_right_core |        439 |        422 |       0 |   17 |   867 |      0 |      0 |          0 |
+|         tx_ll_i                        |                        aurora_right_TX_LL |         13 |         13 |       0 |    0 |    66 |      0 |      0 |          0 |
+|           tx_ll_datapath_i             |               aurora_right_TX_LL_DATAPATH |          2 |          2 |       0 |    0 |    52 |      0 |      0 |          0 |
+|         aurora_lane_0_i                |                  aurora_right_AURORA_LANE |        128 |        123 |       0 |    5 |   219 |      0 |      0 |          0 |
+|           sym_dec_i                    |                      aurora_right_SYM_DEC |         32 |         32 |       0 |    0 |    92 |      0 |      0 |          0 |
+|         global_logic_i                 |                 aurora_right_GLOBAL_LOGIC |         49 |         41 |       0 |    8 |    59 |      0 |      0 |          0 |
+|         gt_wrapper_i                   |                   aurora_right_GT_WRAPPER |        227 |        225 |       0 |    2 |   378 |      0 |      0 |          0 |
+|           gt_txresetfsm_i              |               aurora_right_tx_startup_fsm |         74 |         74 |       0 |    0 |   124 |      0 |      0 |          0 |
+|             (gt_txresetfsm_i)          |               aurora_right_tx_startup_fsm |         56 |         56 |       0 |    0 |    78 |      0 |      0 |          0 |
+|           aurora_right_multi_gt_i      |                     aurora_right_multi_gt |         44 |         44 |       0 |    0 |    66 |      0 |      0 |          0 |
+|             gt0_aurora_right_i         |                           aurora_right_gt |         44 |         44 |       0 |    0 |    66 |      0 |      0 |          0 |
+|               gtrxreset_seq_i          |                aurora_right_gtrxreset_seq |         30 |         30 |       0 |    0 |    66 |      0 |      0 |          0 |
+|           gt_rxresetfsm_i              |               aurora_right_rx_startup_fsm |         93 |         93 |       0 |    0 |   157 |      0 |      0 |          0 |
+|             (gt_rxresetfsm_i)          |               aurora_right_rx_startup_fsm |         73 |         73 |       0 |    0 |    77 |      0 |      0 |          0 |
+|         standard_cc_module_i           |           aurora_right_STANDARD_CC_MODULE |          9 |          7 |       0 |    2 |    64 |      0 |      0 |          0 |
+|     u_l                                |                               aurora_left |        452 |        428 |       0 |   24 |   886 |      0 |      0 |          0 |
+|       U0                               |                       aurora_left_support |        452 |        428 |       0 |   24 |   886 |      0 |      0 |          0 |
+|         aurora_left_core_i             |                          aurora_left_core |        437 |        420 |       0 |   17 |   855 |      0 |      0 |          0 |
+|           aurora_lane_0_i              |                   aurora_left_AURORA_LANE |        130 |        125 |       0 |    5 |   219 |      0 |      0 |          0 |
+|             sym_dec_i                  |                       aurora_left_SYM_DEC |         32 |         32 |       0 |    0 |    92 |      0 |      0 |          0 |
+|           global_logic_i               |                  aurora_left_GLOBAL_LOGIC |         49 |         41 |       0 |    8 |    59 |      0 |      0 |          0 |
+|           gt_wrapper_i                 |                    aurora_left_GT_WRAPPER |        226 |        224 |       0 |    2 |   378 |      0 |      0 |          0 |
+|             gt_txresetfsm_i            |                aurora_left_tx_startup_fsm |         73 |         73 |       0 |    0 |   124 |      0 |      0 |          0 |
+|               (gt_txresetfsm_i)        |                aurora_left_tx_startup_fsm |         56 |         56 |       0 |    0 |    78 |      0 |      0 |          0 |
+|             aurora_left_multi_gt_i     |                      aurora_left_multi_gt |         44 |         44 |       0 |    0 |    66 |      0 |      0 |          0 |
+|               gt0_aurora_left_i        |                            aurora_left_gt |         44 |         44 |       0 |    0 |    66 |      0 |      0 |          0 |
+|                 gtrxreset_seq_i        |                 aurora_left_gtrxreset_seq |         30 |         30 |       0 |    0 |    66 |      0 |      0 |          0 |
+|             gt_rxresetfsm_i            |                aurora_left_rx_startup_fsm |         93 |         93 |       0 |    0 |   157 |      0 |      0 |          0 |
+|               (gt_rxresetfsm_i)        |                aurora_left_rx_startup_fsm |         73 |         73 |       0 |    0 |    77 |      0 |      0 |          0 |
+|           standard_cc_module_i         |            aurora_left_STANDARD_CC_MODULE |          9 |          7 |       0 |    2 |    64 |      0 |      0 |          0 |
+|           tx_ll_i                      |                         aurora_left_TX_LL |         12 |         12 |       0 |    0 |    66 |      0 |      0 |          0 |
+|             tx_ll_datapath_i           |                aurora_left_TX_LL_DATAPATH |          2 |          2 |       0 |    0 |    52 |      0 |      0 |          0 |
+|   u_ptp                                |                      ptp_emulation_system |      10397 |      10397 |       0 |    0 | 12886 |     10 |      0 |          2 |
+|     (u_ptp)                            |                      ptp_emulation_system |         59 |         59 |       0 |    0 |  3002 |      0 |      0 |          0 |
+|     core                               |                        ptp_emulation_core |       8841 |       8841 |       0 |    0 |  9828 |      6 |      0 |          2 |
+|       (core)                           |                        ptp_emulation_core |          4 |          4 |       0 |    0 |    65 |      0 |      0 |          0 |
+|       edges[0].forward_link            |         ptp_neighbor_link__parameterized0 |        172 |        172 |       0 |    0 |   191 |      1 |      0 |          0 |
+|       edges[0].reverse_link            |      ptp_neighbor_link__parameterized0_64 |        152 |        152 |       0 |    0 |   191 |      1 |      0 |          0 |
+|       engines[0].marker                |                          ptp_epoch_marker |        174 |        174 |       0 |    0 |   268 |      0 |      0 |          0 |
+|       engines[0].u                     |                               sync_system |       3814 |       3814 |       0 |    0 |  4163 |      0 |      0 |          1 |
+|         (engines[0].u)                 |                               sync_system |       1409 |       1409 |       0 |    0 |  2074 |      0 |      0 |          1 |
+|         lcodec                         |                       management_codec_68 |       1076 |       1076 |       0 |    0 |   905 |      0 |      0 |          0 |
+|         rcodec                         |       management_codec__parameterized0_69 |       1040 |       1040 |       0 |    0 |  1022 |      0 |      0 |          0 |
+|         runtime_median.u               |                     sync_median_serial_70 |        290 |        290 |       0 |    0 |   162 |      0 |      0 |          0 |
+|       engines[1].marker                |                       ptp_epoch_marker_65 |        173 |        173 |       0 |    0 |   268 |      0 |      0 |          0 |
+|       engines[1].u                     |                            sync_system_66 |       3783 |       3783 |       0 |    0 |  4163 |      0 |      0 |          1 |
+|         (engines[1].u)                 |                            sync_system_66 |       1387 |       1387 |       0 |    0 |  2074 |      0 |      0 |          1 |
+|         lcodec                         |                          management_codec |       1078 |       1078 |       0 |    0 |   905 |      0 |      0 |          0 |
+|         rcodec                         |          management_codec__parameterized0 |       1029 |       1029 |       0 |    0 |  1022 |      0 |      0 |          0 |
+|         runtime_median.u               |                        sync_median_serial |        290 |        290 |       0 |    0 |   162 |      0 |      0 |          0 |
+|       ext_left                         |                         ptp_neighbor_link |        425 |        425 |       0 |    0 |   259 |      2 |      0 |          0 |
+|       ext_right                        |                      ptp_neighbor_link_67 |        272 |        272 |       0 |    0 |   260 |      2 |      0 |          0 |
+|     journal                            |                         ptp_event_journal |       1454 |       1454 |       0 |    0 |    41 |      4 |      0 |          0 |
+|   u_vio                                |                                   ptp_vio |        345 |        345 |       0 |    0 |  1898 |      0 |      0 |          0 |
+|     inst                               |                           vio_v3_0_27_vio |        345 |        345 |       0 |    0 |  1898 |      0 |      0 |          0 |
+|       U_XSDB_SLAVE                     |                        xsdbs_v1_0_5_xsdbs |         77 |         77 |       0 |    0 |   161 |      0 |      0 |          0 |
+|       DECODER_INST                     |                       vio_v3_0_27_decoder |         43 |         43 |       0 |    0 |    51 |      0 |      0 |          0 |
+|       PROBE_IN_INST                    |                  vio_v3_0_27_probe_in_one |        151 |        151 |       0 |    0 |  1393 |      0 |      0 |          0 |
+|       PROBE_OUT_ALL_INST               |                 vio_v3_0_27_probe_out_all |         66 |         66 |       0 |    0 |   265 |      0 |      0 |          0 |
+|         G_PROBE_OUT[2].PROBE_OUT0_INST | vio_v3_0_27_probe_out_one__parameterized1 |         24 |         24 |       0 |    0 |   147 |      0 |      0 |          0 |
++----------------------------------------+-------------------------------------------+------------+------------+---------+------+-------+--------+--------+------------+
+
+
