@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-29T17:07:10.798457+00:00",
+  "resource": "USB0::0x1AB1::0x0452::MHO9B280300263::INSTR",
+  "requested": {
+    "directory": "reports\\ptp_scope_20261029T160956Z\\12a_C_OBS_disabled_diagnostic",
+    "count": 2,
+    "window": 1.0,
+    "scale": 1e-07,
+    "depth": 10000,
+    "wide": false,
+    "case_id": null,
+    "label": null,
+    "board": null,
+    "node": null,
+    "kind": "module"
+  },
+  "statistics_started_utc": "2026-10-29T17:07:11.141573+00:00",
+  "statistics_window_wall_s": 1.0310000000026776,
+  "statistics_stopped_utc": "2026-10-29T17:07:12.185928+00:00",
+  "settings": {
+    ":ACQuire:MDEPth?": "1.0000E+04",
+    ":ACQuire:SRATe?": "2.000000E+9",
+    ":TIMebase:MAIN:SCALe?": "1.000000E-7",
+    ":TIMebase:MAIN:OFFSet?": "0.000000",
+    ":DISPlay:GRADing:TIME?": "INF",
+    ":CHANnel1:PROBe?": "1.000000E+1",
+    ":CHANnel2:PROBe?": "1.000000E+1",
+    ":CHANnel1:SCALe?": "1.000000E+00",
+    ":CHANnel2:SCALe?": "1.000000E+00",
+    ":ACQuire:TYPE?": "NORM",
+    ":CHANnel1:BWLimit?": "OFF",
+    ":CHANnel2:BWLimit?": "OFF",
+    ":CHANnel1:INVert?": "0",
+    ":CHANnel2:INVert?": "0",
+    ":CHANnel1:TCALibrate?": "0.000000",
+    ":CHANnel2:TCALibrate?": "0.000000"
+  },
+  "instrument_delay_s": {
+    "CURRent": 9.9e+37,
+    "AVERages": 9.9e+37,
+    "DEViation": 0.0,
+    "MINimum": 9.9e+37,
+    "MAXimum": 9.9e+37,
+    "CNT": 0.0
+  },
+  "fresh_single_acquisitions": 2,
+  "status": "acquired",
+  "finished_utc": "2026-10-29T17:07:15.325334+00:00"
+}

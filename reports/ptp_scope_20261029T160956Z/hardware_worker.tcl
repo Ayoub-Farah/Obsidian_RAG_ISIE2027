@@ -1,0 +1,334 @@
+# Report-local worker. Run only in Vivado; never programs/resets/stops PTP.
+# Requests must be atomically renamed to hardware_rpc/request.txt.
+# One line: ID status | ID observe SERIAL GLOBAL_NODE | ID disable SERIAL | ID exit.
+# At startup, expected_targets.txt may contain A+B or A+C, one serial per line.
+namespace eval ::ptp_scope_worker {
+ variable worker_dir [file normalize [file dirname [info script]]]
+ variable worker_root [file normalize [file join $worker_dir ../..]]
+ variable worker_rpc [file join $worker_dir hardware_rpc]
+ variable worker_targets {OBS001A OBS003A OBS002A}
+ variable worker_expected_connected {OBS001A OBS003A}
+ variable worker_first [dict create OBS001A 0 OBS003A 3 OBS002A 6]
+ variable worker_config 0xb548f1927173517b
+ variable worker_rejected 0
+}
+proc ::ptp_scope_worker::load_expected {} {
+ variable worker_rpc
+ variable worker_targets
+ variable worker_expected_connected
+ set worker_expected_path [file join $worker_rpc expected_targets.txt]
+ set worker_expected_connected {OBS001A OBS003A}
+ if {[file exists $worker_expected_path]} {
+  set worker_channel [open $worker_expected_path r]
+  fconfigure $worker_channel -encoding utf-8
+  set worker_text [string trimleft [read $worker_channel] "\ufeff"]
+  close $worker_channel
+  set worker_expected_connected {}
+  foreach worker_line [split $worker_text "\n"] {
+   set worker_line [string trim $worker_line]
+   if {$worker_line ne ""} {lappend worker_expected_connected $worker_line}
+  }
+ }
+ if {[llength $worker_expected_connected]!=2 ||
+     [llength [lsort -unique $worker_expected_connected]]!=2 ||
+     "OBS001A" ni $worker_expected_connected} {
+  error "Expected exactly two distinct connected serials: OBS001A plus OBS003A or OBS002A"
+ }
+ foreach worker_serial $worker_expected_connected {
+  if {$worker_serial ni $worker_targets} {error "Unknown expected serial: $worker_serial"}
+ }
+}
+proc ::ptp_scope_worker::utc {} {
+ return [clock format [clock seconds] -gmt 1 -format {%Y-%m-%dT%H:%M:%SZ}]
+}
+proc ::ptp_scope_worker::quote {worker_text} {
+ set worker_result "\""
+ foreach worker_char [split $worker_text ""] {
+  scan $worker_char %c worker_code
+  if {$worker_char eq "\""} {append worker_result {\"}} elseif {$worker_char eq "\\"} {
+   append worker_result {\\}
+  } elseif {$worker_code<32} {append worker_result [format {\u%04x} $worker_code]} else {
+   append worker_result $worker_char
+  }
+ }
+ append worker_result "\""
+ return $worker_result
+}
+proc ::ptp_scope_worker::object {worker_pairs} {
+ set worker_fields {}
+ foreach {worker_key worker_value} $worker_pairs {
+  lappend worker_fields "[quote $worker_key]:$worker_value"
+ }
+ return "\{[join $worker_fields ,]\}"
+}
+proc ::ptp_scope_worker::strings {worker_values} {
+ set worker_encoded {}
+ foreach worker_value $worker_values {lappend worker_encoded [quote $worker_value]}
+ return "\[[join $worker_encoded ,]\]"
+}
+proc ::ptp_scope_worker::atomic {worker_path worker_json {worker_replace 0}} {
+ if {!$worker_replace && [file exists $worker_path]} {error "Receipt already exists: $worker_path"}
+ set worker_temp "$worker_path.[pid].tmp"
+ set worker_channel [open $worker_temp {WRONLY CREAT EXCL}]
+ fconfigure $worker_channel -encoding utf-8 -translation lf
+ puts $worker_channel $worker_json
+ close $worker_channel
+ if {$worker_replace} {file rename -force $worker_temp $worker_path} else {
+  file rename $worker_temp $worker_path
+ }
+}
+proc ::ptp_scope_worker::board {worker_serial} {
+ variable worker_first
+ variable worker_config
+ variable worker_expected_connected
+ set worker_started [utc]
+ set worker_start_ms [clock milliseconds]
+ set worker_code [catch {
+  set worker_vio [::ptp_hw::select $worker_serial]
+  foreach worker_port {0 2 3 4 5} {
+   set worker_input($worker_port) [expr 0x[::obsidian_hw::read_input $worker_vio $worker_port]]
+  }
+  foreach worker_port {7 8 9 10} {
+   set worker_probe [::obsidian_hw::vio_probe $worker_vio out $worker_port]
+   set worker_output($worker_port) [expr 0x[::obsidian_hw::read_probe $worker_probe]]
+  }
+  set worker_status $worker_input(0)
+  set worker_expected_first [dict get $worker_first $worker_serial]
+  set worker_role [expr {$worker_expected_first/3}]
+  set worker_errors {}
+  if {($worker_status>>232)!=0x505401} {lappend worker_errors "PTP signature mismatch"}
+  if {($worker_status&25)!=25} {lappend worker_errors "Configured/running/locked required"}
+  if {$worker_status&4194} {lappend worker_errors "Configuration error, holdover, core fault or halt"}
+  if {(($worker_status>>16)&65535)!=3 || (($worker_status>>32)&65535)!=9} {
+   lappend worker_errors "Expected K=3/N=9"
+  }
+  if {(($worker_status>>8)&3)!=$worker_role || (($worker_status>>48)&65535)!=$worker_expected_first} {
+   lappend worker_errors "Role/first-node mismatch"
+  }
+  if {$worker_input(2)!=$worker_config} {lappend worker_errors "Active configuration ID mismatch"}
+  if {$worker_input(4)!=3} {lappend worker_errors "Both Aurora links must be up"}
+  if {$worker_input(5)!=0} {lappend worker_errors "Current Aurora hard/soft/frame error"}
+  if {$worker_output(7)!=$worker_role} {lappend worker_errors "Role output mismatch"}
+  if {$worker_output(9)!=0} {lappend worker_errors "Observation apply remains asserted"}
+  if {$worker_input(3)&(1<<17)} {lappend worker_errors "Observation selection error"}
+  if {$worker_output(10)} {
+   set worker_active [expr {$worker_input(3)&65535}]
+   if {!($worker_input(3)&(1<<16)) || $worker_active!=$worker_output(8) ||
+       $worker_active<$worker_expected_first || $worker_active>=$worker_expected_first+3} {
+    lappend worker_errors "Enabled observation is invalid or differs from its selection"
+   }
+  }
+  set worker_nominal [expr {[llength $worker_errors]==0}]
+  set worker_fields [list serial [quote $worker_serial] available true \
+   expected_connected [expr {$worker_serial in $worker_expected_connected ? "true" : "false"}] \
+   host_started_utc [quote $worker_started] host_finished_utc [quote [utc]] \
+   host_started_ms $worker_start_ms host_finished_ms [clock milliseconds] \
+   expected_role $worker_role expected_first $worker_expected_first \
+   status_hex [quote [format %064llx $worker_status]] \
+   config_id_hex [quote [format %016llx $worker_input(2)]] \
+   observer_hex [quote [format %08x $worker_input(3)]] \
+   links_hex [quote [format %x $worker_input(4)]] \
+   phy_errors_hex [quote [format %02x $worker_input(5)]] \
+   nominal [expr {$worker_nominal ? "true" : "false"}] errors [strings $worker_errors]]
+  foreach worker_port {7 8 9 10} {
+   lappend worker_fields [format output%d_hex $worker_port] [quote [format %x $worker_output($worker_port)]]
+  }
+  set worker_result [dict create nominal $worker_nominal json [object $worker_fields]]
+ } worker_result worker_options]
+ catch {close_hw_target}
+ if {$worker_code} {return -options $worker_options $worker_result}
+ return $worker_result
+}
+proc ::ptp_scope_worker::all_boards {} {
+ variable worker_targets
+ variable worker_expected_connected
+ set worker_cards {}
+ set worker_nominal 1
+ set worker_available_nominal 1
+ foreach worker_serial $worker_targets {
+  set worker_required [expr {$worker_serial in $worker_expected_connected}]
+  set worker_available [get_hw_targets -quiet */$worker_serial]
+  if {[llength $worker_available]==0} {
+   if {$worker_required} {set worker_nominal 0}
+   lappend worker_cards [object [list serial [quote $worker_serial] available false \
+    expected_connected [expr {$worker_required ? "true" : "false"}] nominal null error null]]
+  } elseif {[catch {board $worker_serial} worker_result]} {
+   set worker_available_nominal 0
+   if {$worker_required} {set worker_nominal 0}
+   lappend worker_cards [object [list serial [quote $worker_serial] available true \
+    expected_connected [expr {$worker_required ? "true" : "false"}] nominal false error [quote $worker_result]]]
+  } else {
+   if {![dict get $worker_result nominal]} {set worker_available_nominal 0}
+   if {$worker_required && ![dict get $worker_result nominal]} {set worker_nominal 0}
+   lappend worker_cards [dict get $worker_result json]
+  }
+ }
+ return [dict create nominal $worker_nominal available_nominal $worker_available_nominal json "\[[join $worker_cards ,]\]"]
+}
+proc ::ptp_scope_worker::disable {worker_serial} {
+ set worker_code [catch {
+  set worker_vio [::ptp_hw::select $worker_serial]
+  set worker_before [expr 0x[::obsidian_hw::read_input $worker_vio 3]]
+  set worker_active [expr {$worker_before&65535}]
+  set worker_shadow [expr 0x[::obsidian_hw::read_probe [::obsidian_hw::vio_probe $worker_vio out 8]]]
+  if {$worker_before&(1<<17)} {error "Observation error before disable"}
+  if {$worker_shadow!=$worker_active} {error "Observation shadow differs from active ID; refusing apply"}
+  ::obsidian_hw::write_output $worker_vio 10 0
+  ::ptp_hw::pulse_v $worker_vio 9
+  set worker_deadline [expr {[clock milliseconds]+10000}]
+  while 1 {
+   refresh_hw_vio $worker_vio
+   set worker_after [expr 0x[::obsidian_hw::read_input $worker_vio 3]]
+   if {$worker_after&(1<<17)} {error "Observation selection error during disable"}
+   if {($worker_after&65535)!=$worker_active} {error "Active observation ID changed during disable"}
+   if {!($worker_after&(1<<16))} {break}
+   if {[clock milliseconds]>=$worker_deadline} {error "Observation disable timeout"}
+   after 1
+  }
+  refresh_hw_vio -update_output_values $worker_vio
+  foreach worker_port {9 10} {
+   set worker_value [expr 0x[::obsidian_hw::read_probe [::obsidian_hw::vio_probe $worker_vio out $worker_port]]]
+   if {$worker_value!=0} {error "Observation output $worker_port did not remain zero"}
+  }
+  set worker_result [object [list operation [quote disable] serial [quote $worker_serial] \
+   active_id_before $worker_active active_id_after [expr {$worker_after&65535}] \
+   observer_before_hex [quote [format %08x $worker_before]] \
+   observer_after_hex [quote [format %08x $worker_after]] output9_hex [quote 0] output10_hex [quote 0]]]
+ } worker_result worker_options]
+ catch {close_hw_target}
+ if {$worker_code} {return -options $worker_options $worker_result}
+ return $worker_result
+}
+proc ::ptp_scope_worker::dispatch {worker_request} {
+ variable worker_rpc
+ variable worker_first
+ variable worker_rejected
+ variable worker_expected_connected
+ set worker_started [utc]
+ set worker_begin_ms [clock milliseconds]
+ set worker_id ""
+ if {![regexp {^([A-Za-z0-9][A-Za-z0-9_-]{0,63})([ \t]|$)} $worker_request _ worker_id]} {
+  set worker_id "rejected_[clock microseconds]_[incr worker_rejected]"
+ }
+ set worker_receipt [file join $worker_rpc "$worker_id.json"]
+ if {[file exists $worker_receipt]} {
+  set worker_id "duplicate_[clock microseconds]_[incr worker_rejected]"
+  set worker_receipt [file join $worker_rpc "$worker_id.json"]
+  set worker_duplicate 1
+ } else {set worker_duplicate 0}
+ set worker_cards {[]}
+ set worker_diagnostic ""
+ set worker_exit 0
+ set worker_code [catch {
+  if {$worker_duplicate} {error "Duplicate request ID; command was not executed"}
+  if {[regexp {^[A-Za-z0-9][A-Za-z0-9_-]{0,63}[ \t]+status$} $worker_request]} {
+   set worker_result [all_boards]
+   set worker_cards [dict get $worker_result json]
+   if {![dict get $worker_result nominal]} {error "An expected connected board is unavailable or not nominal"}
+  } elseif {[regexp {^[A-Za-z0-9][A-Za-z0-9_-]{0,63}[ \t]+observe[ \t]+(OBS001A|OBS003A|OBS002A)[ \t]+([0-8])$} \
+              $worker_request _ worker_serial worker_node]} {
+   set worker_local_first [dict get $worker_first $worker_serial]
+   if {$worker_node<$worker_local_first || $worker_node>=$worker_local_first+3} {
+    error "Requested global node does not belong to $worker_serial"
+   }
+   if {$worker_serial ni $worker_expected_connected} {
+    error "Observation target is outside the expected connected set"
+   }
+   # Gate the write on the complete current configuration and health.
+   set worker_result [all_boards]
+   set worker_cards [dict get $worker_result json]
+   if {![dict get $worker_result nominal]} {error "Observation write refused: expected connected boards are unavailable or not nominal"}
+   ::ptp_hw::observe $worker_serial $worker_node
+   set worker_result [all_boards]
+   set worker_cards [dict get $worker_result json]
+   if {![dict get $worker_result nominal]} {error "An expected connected board is unavailable or not nominal after observation"}
+  } elseif {[regexp {^[A-Za-z0-9][A-Za-z0-9_-]{0,63}[ \t]+disable[ \t]+(OBS001A|OBS003A|OBS002A)$} \
+              $worker_request _ worker_serial]} {
+   if {$worker_serial ni $worker_expected_connected} {
+    error "Disable target is outside the expected connected set"
+   }
+   set worker_result [all_boards]
+   set worker_cards [dict get $worker_result json]
+   if {![dict get $worker_result nominal] || ![dict get $worker_result available_nominal]} {
+    error "Disable refused: expected boards are unavailable or an available board is not nominal"
+   }
+   set worker_disable_code [catch {disable $worker_serial} worker_disable_result]
+   set worker_result [all_boards]
+   set worker_cards [dict get $worker_result json]
+   if {$worker_disable_code} {error $worker_disable_result}
+   set worker_diagnostic $worker_disable_result
+   if {![dict get $worker_result nominal] || ![dict get $worker_result available_nominal]} {
+    error "Board state is not nominal after disable"
+   }
+  } elseif {[regexp {^[A-Za-z0-9][A-Za-z0-9_-]{0,63}[ \t]+exit$} $worker_request]} {
+   set worker_exit 1
+  } else {error "Only 'ID status', 'ID observe SERIAL GLOBAL_NODE', 'ID disable SERIAL', or 'ID exit' are allowed"}
+ } worker_error]
+ set worker_fields [list schema [quote ptp_scope_hardware_rpc_v1] request_id [quote $worker_id] \
+  request [quote $worker_request] status [quote [expr {$worker_code ? "error" : "ok"}]] \
+  host_started_utc [quote $worker_started] host_finished_utc [quote [utc]] \
+  host_started_ms $worker_begin_ms host_finished_ms [clock milliseconds] \
+  health_scope [quote connected_boards_only] expected_connected [strings $worker_expected_connected] cards $worker_cards]
+ if {$worker_code} {lappend worker_fields error [quote $worker_error]}
+ if {$worker_diagnostic ne ""} {lappend worker_fields diagnostic $worker_diagnostic}
+ atomic $worker_receipt [object $worker_fields]
+ puts "PTP_SCOPE_RPC $worker_id [expr {$worker_code ? "error" : "ok"}]"
+ flush stdout
+ return $worker_exit
+}
+proc ::ptp_scope_worker::run {} {
+ variable worker_root
+ variable worker_rpc
+ variable worker_targets
+ variable worker_expected_connected
+ file mkdir $worker_rpc
+ load_expected
+ # Source in the global namespace, as expected by the production helpers.
+ uplevel #0 [list source [file join $worker_root scripts ptp_hw.tcl]]
+ set ::ptp_hw::targets $worker_targets
+ set ::ptp_hw::ltx [file join $worker_root build ptp_capacity_search k3_route obsidian_ptp.ltx]
+ set ::ptp_hw::timeout_ms 10000
+ if {![file exists $::ptp_hw::ltx]} {error "Missing K3 probe file"}
+ if {[file exists [file join $worker_rpc ready.json]]} {
+  file rename [file join $worker_rpc ready.json] [file join $worker_rpc "ready_previous_[clock microseconds].json"]
+ }
+ set worker_opened 0
+ set worker_code [catch {
+  open_hw_manager
+  set worker_opened 1
+  connect_hw_server
+  refresh_hw_server
+  atomic [file join $worker_rpc ready.json] [object [list schema [quote ptp_scope_hardware_rpc_v1] \
+   status [quote ready] host_time_utc [quote [utc]] pid [pid] targets [strings $worker_targets] \
+   ltx [quote $::ptp_hw::ltx] health_scope [quote connected_boards_only] \
+   expected_connected [strings $worker_expected_connected]]]
+  puts "PTP_SCOPE_WORKER_READY $worker_rpc"
+  flush stdout
+  set worker_request_path [file join $worker_rpc request.txt]
+  set worker_quit 0
+  while {!$worker_quit} {
+   if {[file exists $worker_request_path]} {
+    set worker_claim "$worker_request_path.[pid].processing"
+    file rename $worker_request_path $worker_claim
+    set worker_channel [open $worker_claim r]
+    fconfigure $worker_channel -encoding utf-8
+    set worker_requests [read $worker_channel]
+    close $worker_channel
+    file delete $worker_claim
+    foreach worker_line [split $worker_requests "\n"] {
+     set worker_line [string trim $worker_line]
+     if {$worker_line eq ""} {continue}
+     set worker_quit [dispatch $worker_line]
+     if {$worker_quit} {break}
+    }
+   }
+   if {!$worker_quit} {after 100}
+  }
+ } worker_result worker_options]
+ catch {close_hw_target}
+ if {$worker_opened} {catch {close_hw_manager}}
+ if {$worker_code} {return -options $worker_options $worker_result}
+ puts PTP_SCOPE_WORKER_CLOSED
+ flush stdout
+}
+::ptp_scope_worker::run

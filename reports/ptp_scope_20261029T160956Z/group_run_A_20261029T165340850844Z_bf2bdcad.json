@@ -1,0 +1,33 @@
+{
+  "schema": "ptp_scope_group_run_v1",
+  "status": "acquired",
+  "started_utc": "2026-10-29T16:53:40.851943+00:00",
+  "board": "A",
+  "nodes": [
+    2
+  ],
+  "count": 100,
+  "window_seconds": 20.0,
+  "expected_connected": [
+    "OBS001A",
+    "OBS003A"
+  ],
+  "health_scope": "connected_boards_only",
+  "worker_ready_sha256": "0cfec54e24e9f2f55251cd0dca9bf73287cb7519f015e1af0b7598f18b622265",
+  "wiring_verified": true,
+  "wiring_verification_source": {
+    "file": "hardware_rpc/r011_disable_A.json",
+    "sha256": "c5b219f5da3a44411017da3a6a8bcb4523af7da51503eeab90e5ea660a7d984e"
+  },
+  "cases": [
+    {
+      "id": "A_M3",
+      "directory": "08_A_M3_verified",
+      "status": "acquired",
+      "health_before_receipt": "hardware_rpc/campaign_eec3fd99051c4a3a91e1a0b97e5e33ea.json",
+      "health_after_receipt": "hardware_rpc/campaign_f44e49e93c5e4ab0bbac29723f9deebd.json",
+      "finished_utc": "2026-10-29T16:55:17.037131+00:00"
+    }
+  ],
+  "finished_utc": "2026-10-29T16:55:17.040388+00:00"
+}

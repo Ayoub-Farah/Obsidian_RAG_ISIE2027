@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-29T17:11:09.277948+00:00",
+  "resource": "USB0::0x1AB1::0x0452::MHO9B280300263::INSTR",
+  "requested": {
+    "directory": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\reports\\ptp_scope_20261029T160956Z\\14_C_M9",
+    "count": 100,
+    "window": 20.0,
+    "scale": 1e-07,
+    "depth": 10000,
+    "wide": false,
+    "case_id": "C_M9",
+    "label": "C_M9",
+    "board": "C",
+    "node": 8,
+    "kind": "module"
+  },
+  "statistics_started_utc": "2026-10-29T17:11:09.579142+00:00",
+  "statistics_window_wall_s": 20.031999999999243,
+  "statistics_stopped_utc": "2026-10-29T17:11:29.612602+00:00",
+  "settings": {
+    ":ACQuire:MDEPth?": "1.0000E+04",
+    ":ACQuire:SRATe?": "2.000000E+9",
+    ":TIMebase:MAIN:SCALe?": "1.000000E-7",
+    ":TIMebase:MAIN:OFFSet?": "0.000000",
+    ":DISPlay:GRADing:TIME?": "INF",
+    ":CHANnel1:PROBe?": "1.000000E+1",
+    ":CHANnel2:PROBe?": "1.000000E+1",
+    ":CHANnel1:SCALe?": "1.000000E+00",
+    ":CHANnel2:SCALe?": "1.000000E+00",
+    ":ACQuire:TYPE?": "NORM",
+    ":CHANnel1:BWLimit?": "OFF",
+    ":CHANnel2:BWLimit?": "OFF",
+    ":CHANnel1:INVert?": "0",
+    ":CHANnel2:INVert?": "0",
+    ":CHANnel1:TCALibrate?": "0.000000",
+    ":CHANnel2:TCALibrate?": "0.000000"
+  },
+  "instrument_delay_s": {
+    "CURRent": -1.5e-08,
+    "AVERages": -1.0602e-08,
+    "DEViation": 6.3765e-09,
+    "MINimum": -2.45e-08,
+    "MAXimum": 4.5e-09,
+    "CNT": 318.0
+  },
+  "fresh_single_acquisitions": 100,
+  "status": "acquired",
+  "finished_utc": "2026-10-29T17:12:43.595761+00:00"
+}

@@ -1,0 +1,178 @@
+{"utc": "2026-10-29T17:20:53.632543+00:00", "command": "*IDN?", "reply": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00"}
+{"utc": "2026-10-29T17:20:53.632543+00:00", "command": "idn", "reply": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00"}
+{"utc": "2026-10-29T17:20:53.632543+00:00", "command": ":STOP", "reply": null}
+{"utc": "2026-10-29T17:20:53.670980+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:53.670980+00:00", "command": ":WAVeform:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:53.670980+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:53.672977+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:53.672977+00:00", "command": ":WAVeform:STOP 1000", "reply": null}
+{"utc": "2026-10-29T17:20:53.760384+00:00", "command": ":WAVeform:STARt?", "reply": "1"}
+{"utc": "2026-10-29T17:20:53.790304+00:00", "command": ":WAVeform:STOP?", "reply": "1000"}
+{"utc": "2026-10-29T17:20:53.790304+00:00", "command": ":WAVeform:SOURce CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:53.790304+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:53.790304+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:53.790304+00:00", "command": ":WAVeform:STOP 1000", "reply": null}
+{"utc": "2026-10-29T17:20:53.878744+00:00", "command": ":WAVeform:STARt?", "reply": "1"}
+{"utc": "2026-10-29T17:20:53.909605+00:00", "command": ":WAVeform:STOP?", "reply": "1000"}
+{"utc": "2026-10-29T17:20:53.943251+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:20:53.943251+00:00", "command": ":TRIGger:MODE DELay", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:SA CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:ASLop NEGative", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:SB CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:BSLop POSitive", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:ALEVel 1.65", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:BLEVel 1.65", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:TYPE GOUT", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:TUPPer 9.9027702838828e-05", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:DELay:TLOWer 9.8927702838828e-05", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":TRIGger:SWEep NORMal", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":MEASure:STATistic:RESet", "reply": null}
+{"utc": "2026-10-29T17:20:53.944228+00:00", "command": ":DISPlay:CLEar", "reply": null}
+{"utc": "2026-10-29T17:20:54.261519+00:00", "command": ":TRIGger:MODE?", "reply": "DEL"}
+{"utc": "2026-10-29T17:20:54.312427+00:00", "command": ":TRIGger:DELay:SA?", "reply": "CHAN1"}
+{"utc": "2026-10-29T17:20:54.361391+00:00", "command": ":TRIGger:DELay:ASLop?", "reply": "NEG"}
+{"utc": "2026-10-29T17:20:54.413326+00:00", "command": ":TRIGger:DELay:SB?", "reply": "CHAN2"}
+{"utc": "2026-10-29T17:20:54.468989+00:00", "command": ":TRIGger:DELay:BSLop?", "reply": "POS"}
+{"utc": "2026-10-29T17:20:54.521973+00:00", "command": ":TRIGger:DELay:TYPE?", "reply": "GOUT"}
+{"utc": "2026-10-29T17:20:54.578065+00:00", "command": ":TRIGger:DELay:TLOWer?", "reply": "9.892771E-5"}
+{"utc": "2026-10-29T17:20:54.628938+00:00", "command": ":TRIGger:DELay:TUPPer?", "reply": "9.902771E-5"}
+{"utc": "2026-10-29T17:20:54.662956+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:20:54.662956+00:00", "command": ":SINGle", "reply": null}
+{"utc": "2026-10-29T17:20:54.738812+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:54.796325+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:54.849018+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:54.909674+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:54.966337+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.021194+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.079715+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.138649+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.196014+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.252637+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.310211+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.368153+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.425657+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.481468+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.538577+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.595741+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.651120+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.707820+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.782277+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.838661+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.894397+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:55.951574+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:56.025655+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:56.378833+00:00", "command": ":DISPlay:DATA? PNG", "reply": {"payload_bytes": 107366}}
+{"utc": "2026-10-29T17:20:56.417930+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:56.440785+00:00", "command": ":ACQuire:MDEPth?", "reply": "1.0000E+04"}
+{"utc": "2026-10-29T17:20:56.469364+00:00", "command": ":ACQuire:SRATe?", "reply": "2.000000E+9"}
+{"utc": "2026-10-29T17:20:56.471972+00:00", "command": ":WAVeform:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:56.471972+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:56.471972+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T17:20:56.471972+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:56.471972+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:56.565048+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,10000,1,5.000000E-10,-2.500000E-6,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T17:20:56.590186+00:00", "command": ":WAVeform:STARt?", "reply": "1"}
+{"utc": "2026-10-29T17:20:56.615626+00:00", "command": ":WAVeform:STOP?", "reply": "10000"}
+{"utc": "2026-10-29T17:20:56.618135+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:56.618135+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:56.663042+00:00", "command": ":WAVeform:DATA?", "reply": {"payload_bytes": 10000}}
+{"utc": "2026-10-29T17:20:56.663042+00:00", "command": ":WAVeform:SOURce CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:56.663042+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:56.663964+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T17:20:56.663964+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:56.663964+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:56.775500+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,10000,1,5.000000E-10,-2.500000E-6,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T17:20:56.805199+00:00", "command": ":WAVeform:STARt?", "reply": "1"}
+{"utc": "2026-10-29T17:20:56.832348+00:00", "command": ":WAVeform:STOP?", "reply": "10000"}
+{"utc": "2026-10-29T17:20:56.832348+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:56.833354+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:56.879681+00:00", "command": ":WAVeform:DATA?", "reply": {"payload_bytes": 10000}}
+{"utc": "2026-10-29T17:20:56.914592+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:56.953798+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:20:56.977893+00:00", "command": ":SINGle", "reply": null}
+{"utc": "2026-10-29T17:20:57.048500+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.101871+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.154859+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.208762+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.263002+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.321369+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.376976+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.433385+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.481037+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.534727+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.590632+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.644282+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.697711+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.752769+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.806375+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.862847+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.917065+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:57.976566+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:58.030365+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:58.081092+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:58.138583+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:58.531735+00:00", "command": ":DISPlay:DATA? PNG", "reply": {"payload_bytes": 111982}}
+{"utc": "2026-10-29T17:20:58.567803+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:58.567803+00:00", "command": ":WAVeform:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:58.567803+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:58.567803+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T17:20:58.567803+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:58.568812+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:58.678907+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,10000,1,5.000000E-10,-2.500000E-6,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T17:20:58.678907+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:58.678907+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:58.743747+00:00", "command": ":WAVeform:DATA?", "reply": {"payload_bytes": 10000}}
+{"utc": "2026-10-29T17:20:58.743747+00:00", "command": ":WAVeform:SOURce CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:58.743747+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:58.744265+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T17:20:58.744265+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:58.744265+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:58.853168+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,10000,1,5.000000E-10,-2.500000E-6,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T17:20:58.853168+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:58.853168+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:58.899804+00:00", "command": ":WAVeform:DATA?", "reply": {"payload_bytes": 10000}}
+{"utc": "2026-10-29T17:20:58.935264+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:58.971435+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:20:59.034046+00:00", "command": ":SINGle", "reply": null}
+{"utc": "2026-10-29T17:20:59.101308+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:59.155376+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:59.210795+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:59.261489+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:59.316080+00:00", "command": ":TRIGger:STATus?", "reply": "WAIT"}
+{"utc": "2026-10-29T17:20:59.370032+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:59.603973+00:00", "command": ":DISPlay:DATA? PNG", "reply": {"payload_bytes": 109669}}
+{"utc": "2026-10-29T17:20:59.639953+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:59.640935+00:00", "command": ":WAVeform:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:59.640935+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:59.640935+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T17:20:59.640935+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:59.640935+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:59.747810+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,10000,1,5.000000E-10,-2.500000E-6,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T17:20:59.748830+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:59.748830+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:59.810550+00:00", "command": ":WAVeform:DATA?", "reply": {"payload_bytes": 10000}}
+{"utc": "2026-10-29T17:20:59.810550+00:00", "command": ":WAVeform:SOURce CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:59.810550+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:59.810550+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T17:20:59.810550+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:59.810550+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:59.923388+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,10000,1,5.000000E-10,-2.500000E-6,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T17:20:59.923388+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:59.923388+00:00", "command": ":WAVeform:STOP 10000", "reply": null}
+{"utc": "2026-10-29T17:20:59.988484+00:00", "command": ":WAVeform:DATA?", "reply": {"payload_bytes": 10000}}
+{"utc": "2026-10-29T17:21:00.024127+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:21:00.062235+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:21:00.079854+00:00", "command": ":STOP", "reply": null}
+{"utc": "2026-10-29T17:21:00.117858+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:21:00.117858+00:00", "command": ":TRIGger:MODE EDGE", "reply": null}
+{"utc": "2026-10-29T17:21:00.117858+00:00", "command": ":TRIGger:EDGE:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":TRIGger:EDGE:SLOPe POSitive", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":TRIGger:EDGE:LEVel 1.65", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":TRIGger:SWEep NORMal", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":DISPlay:GRADing:TIME INFinite", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":MEASure:STATistic:RESet", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":DISPlay:CLEar", "reply": null}
+{"utc": "2026-10-29T17:21:00.118968+00:00", "command": ":RUN", "reply": null}
+{"utc": "2026-10-29T17:21:00.277880+00:00", "command": ":TRIGger:MODE?", "reply": "EDGE"}
+{"utc": "2026-10-29T17:21:00.323603+00:00", "command": ":TRIGger:EDGE:SOURce?", "reply": "CHAN1"}
+{"utc": "2026-10-29T17:21:00.357779+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}

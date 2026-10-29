@@ -1,0 +1,19 @@
+{
+  "id": "C_M9",
+  "label": "C_M9",
+  "board": "C",
+  "observer_node": 8,
+  "kind": "module",
+  "ch1": "A_TEST_SYNC_TP23_or_TP15",
+  "ch2": "C_MOSI_TP24_or_TP16",
+  "expected_period_s": 0.0001,
+  "health_before_receipt": "hardware_rpc/campaign_89c7e10a4ffa4bdca21c09b953209c2d.json",
+  "health_after_receipt": "hardware_rpc/campaign_3ea05d7928524df6bbcf645e7bc575a4.json",
+  "wiring_verified": true,
+  "wiring_verification_source": "operator_cli_flag",
+  "wiring_verification_evidence": {
+    "file": "12a_C_OBS_disabled_diagnostic/validation.json",
+    "sha256": "6477afc4139ebfdf1deec6976a121b234365cabd99cb6bacc73b869c60f1181a"
+  },
+  "receipt_path_base": "campaign_directory"
+}

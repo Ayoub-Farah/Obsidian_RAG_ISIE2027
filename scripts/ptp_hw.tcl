@@ -11,7 +11,10 @@ proc ptp_hw::select {serial} {
  set d [lindex $ds 0];set_property PROBES.FILE $ltx $d;refresh_hw_device $d
  set vs [get_hw_vios -of_objects $d]
  if {[llength $vs]!=1} {error "Expected one PTP VIO"}
- set v [lindex $vs 0];refresh_hw_vio $v
+ # A new software VIO object can retain default OUTPUT_VALUE properties.
+ # Read the hardware outputs into that cache before any whole-VIO commit;
+ # -update_output_values reads signals and does not drive them (UG835).
+ set v [lindex $vs 0];refresh_hw_vio -update_output_values $v
  if {([expr 0x[obsidian_hw::read_input $v 0]]>>232)!=0x505401} {error "Not a PTP_EMULATION v1 image"}
  return $v
 }

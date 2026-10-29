@@ -1,0 +1,216 @@
+{
+  "schema": "ptp_scope_conditional_outlier_v1",
+  "started_utc": "2026-10-29T17:20:53.632543+00:00",
+  "module": "C_M7",
+  "source": "CH1 falling followed by CH2 rising",
+  "reference_period_s": 0.00010000194093406594,
+  "reference_width_s": 1.024238095238101e-06,
+  "lower_delay_s": 9.892770283882784e-05,
+  "upper_delay_s": 9.902770283882784e-05,
+  "intended_rr_range_s": [
+    -5e-08,
+    5e-08
+  ],
+  "captures": [
+    {
+      "stem": "outlier_0000",
+      "qualifies": true,
+      "analysis": {
+        "count": 1,
+        "delays_s": [
+          -6.797941176470566e-08
+        ],
+        "pairs": [
+          {
+            "reference_s": 6.977941176470571e-08,
+            "observed_s": 1.8000000000000507e-09,
+            "delay_s": -6.797941176470566e-08
+          }
+        ],
+        "mean_s": -6.797941176470566e-08,
+        "std_s": 0.0,
+        "min_s": -6.797941176470566e-08,
+        "max_s": -6.797941176470566e-08,
+        "max_delta_s": 1e-06,
+        "reference": {
+          "edges_s": [
+            6.977941176470571e-08
+          ],
+          "edge_count": 1,
+          "samples": 10000,
+          "low_v": 0.0,
+          "high_v": 3.2426349999999995,
+          "amplitude_v": 3.2426349999999995,
+          "threshold_v": 1.6213174999999997,
+          "hysteresis_low_v": 0.9727904999999998,
+          "hysteresis_high_v": 2.2698444999999996,
+          "level_seed_v": 1.6383839999999998,
+          "level_method": "P10/P99.8 seed followed by low/high plateau medians"
+        },
+        "observed": {
+          "edges_s": [
+            1.8000000000000507e-09
+          ],
+          "edge_count": 1,
+          "samples": 10000,
+          "low_v": 0.0,
+          "high_v": 3.2085019999999997,
+          "amplitude_v": 3.2085019999999997,
+          "threshold_v": 1.6042509999999999,
+          "hysteresis_low_v": 0.9625505999999999,
+          "hysteresis_high_v": 2.2459514,
+          "level_seed_v": 1.6213174999999997,
+          "level_method": "P10/P99.8 seed followed by low/high plateau medians"
+        },
+        "reference_period_s": null,
+        "observed_period_s": null,
+        "period_verified": false,
+        "expected_period_verified": false,
+        "unmatched_reference_indices": [],
+        "unmatched_observed_indices": [],
+        "absolute_epoch_verified": false,
+        "matching": "nearest unique rising edges; signed observed-reference; no modulo"
+      }
+    },
+    {
+      "stem": "outlier_0001",
+      "qualifies": true,
+      "analysis": {
+        "count": 1,
+        "delays_s": [
+          5.715624999999999e-08
+        ],
+        "pairs": [
+          {
+            "reference_s": -5.665625000000017e-08,
+            "observed_s": 4.999999999998258e-10,
+            "delay_s": 5.715624999999999e-08
+          }
+        ],
+        "mean_s": 5.715624999999999e-08,
+        "std_s": 0.0,
+        "min_s": 5.715624999999999e-08,
+        "max_s": 5.715624999999999e-08,
+        "max_delta_s": 1e-06,
+        "reference": {
+          "edges_s": [
+            -5.665625000000017e-08
+          ],
+          "edge_count": 1,
+          "samples": 10000,
+          "low_v": -0.034133,
+          "high_v": 3.2426349999999995,
+          "amplitude_v": 3.2767679999999997,
+          "threshold_v": 1.6042509999999996,
+          "hysteresis_low_v": 0.9488973999999997,
+          "hysteresis_high_v": 2.2596045999999994,
+          "level_seed_v": 1.6383839999999998,
+          "level_method": "P10/P99.8 seed followed by low/high plateau medians"
+        },
+        "observed": {
+          "edges_s": [
+            4.999999999998258e-10
+          ],
+          "edge_count": 1,
+          "samples": 10000,
+          "low_v": 0.0,
+          "high_v": 3.2085019999999997,
+          "amplitude_v": 3.2085019999999997,
+          "threshold_v": 1.6042509999999999,
+          "hysteresis_low_v": 0.9625505999999999,
+          "hysteresis_high_v": 2.2459514,
+          "level_seed_v": 1.6042509999999996,
+          "level_method": "P10/P99.8 seed followed by low/high plateau medians"
+        },
+        "reference_period_s": null,
+        "observed_period_s": null,
+        "period_verified": false,
+        "expected_period_verified": false,
+        "unmatched_reference_indices": [],
+        "unmatched_observed_indices": [],
+        "absolute_epoch_verified": false,
+        "matching": "nearest unique rising edges; signed observed-reference; no modulo"
+      }
+    },
+    {
+      "stem": "outlier_0002",
+      "qualifies": true,
+      "analysis": {
+        "count": 1,
+        "delays_s": [
+          -5.865584415584424e-08
+        ],
+        "pairs": [
+          {
+            "reference_s": 5.84285714285714e-08,
+            "observed_s": -2.2727272727284047e-10,
+            "delay_s": -5.865584415584424e-08
+          }
+        ],
+        "mean_s": -5.865584415584424e-08,
+        "std_s": 0.0,
+        "min_s": -5.865584415584424e-08,
+        "max_s": -5.865584415584424e-08,
+        "max_delta_s": 1e-06,
+        "reference": {
+          "edges_s": [
+            5.84285714285714e-08
+          ],
+          "edge_count": 1,
+          "samples": 10000,
+          "low_v": -0.034133,
+          "high_v": 3.2426349999999995,
+          "amplitude_v": 3.2767679999999997,
+          "threshold_v": 1.6042509999999996,
+          "hysteresis_low_v": 0.9488973999999997,
+          "hysteresis_high_v": 2.2596045999999994,
+          "level_seed_v": 1.6213175,
+          "level_method": "P10/P99.8 seed followed by low/high plateau medians"
+        },
+        "observed": {
+          "edges_s": [
+            -2.2727272727284047e-10
+          ],
+          "edge_count": 1,
+          "samples": 10000,
+          "low_v": 0.0,
+          "high_v": 3.2085019999999997,
+          "amplitude_v": 3.2085019999999997,
+          "threshold_v": 1.6042509999999999,
+          "hysteresis_low_v": 0.9625505999999999,
+          "hysteresis_high_v": 2.2459514,
+          "level_seed_v": 1.6042509999999996,
+          "level_method": "P10/P99.8 seed followed by low/high plateau medians"
+        },
+        "reference_period_s": null,
+        "observed_period_s": null,
+        "period_verified": false,
+        "expected_period_verified": false,
+        "unmatched_reference_indices": [],
+        "unmatched_observed_indices": [],
+        "absolute_epoch_verified": false,
+        "matching": "nearest unique rising edges; signed observed-reference; no modulo"
+      }
+    }
+  ],
+  "contributes_to_unconditioned_statistics": false,
+  "settings": {
+    ":TRIGger:MODE?": "DEL",
+    ":TRIGger:DELay:SA?": "CHAN1",
+    ":TRIGger:DELay:ASLop?": "NEG",
+    ":TRIGger:DELay:SB?": "CHAN2",
+    ":TRIGger:DELay:BSLop?": "POS",
+    ":TRIGger:DELay:TYPE?": "GOUT",
+    ":TRIGger:DELay:TLOWer?": "9.892771E-5",
+    ":TRIGger:DELay:TUPPer?": "9.902771E-5"
+  },
+  "actual_rr_range_s": [
+    -4.999283882783326e-08,
+    5.0007161172155616e-08
+  ],
+  "bound_readback_tolerance_s": 5e-11,
+  "status": "captured",
+  "restored_mode": "EDGE",
+  "restored_trigger_source": "CHAN1",
+  "finished_utc": "2026-10-29T17:21:00.357779+00:00"
+}

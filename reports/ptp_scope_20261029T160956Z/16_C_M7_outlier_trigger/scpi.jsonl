@@ -1,0 +1,53 @@
+{"utc": "2026-10-29T17:20:18.742521+00:00", "command": "*IDN?", "reply": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00"}
+{"utc": "2026-10-29T17:20:18.742521+00:00", "command": "idn", "reply": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00"}
+{"utc": "2026-10-29T17:20:18.742521+00:00", "command": ":STOP", "reply": null}
+{"utc": "2026-10-29T17:20:18.776388+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:18.777932+00:00", "command": ":WAVeform:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:18.777932+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:18.778987+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:18.778987+00:00", "command": ":WAVeform:STOP 1000", "reply": null}
+{"utc": "2026-10-29T17:20:18.865397+00:00", "command": ":WAVeform:STARt?", "reply": "1"}
+{"utc": "2026-10-29T17:20:18.893238+00:00", "command": ":WAVeform:STOP?", "reply": "1000"}
+{"utc": "2026-10-29T17:20:18.893238+00:00", "command": ":WAVeform:SOURce CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:18.894314+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T17:20:18.894596+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T17:20:18.894783+00:00", "command": ":WAVeform:STOP 1000", "reply": null}
+{"utc": "2026-10-29T17:20:18.982241+00:00", "command": ":WAVeform:STARt?", "reply": "1"}
+{"utc": "2026-10-29T17:20:19.009699+00:00", "command": ":WAVeform:STOP?", "reply": "1000"}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:MODE DELay", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:SA CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:ASLop NEGative", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:SB CHANnel2", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:BSLop POSitive", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:ALEVel 1.65", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:BLEVel 1.65", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:TYPE GOUT", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:TUPPer 9.9027702838828e-05", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:DELay:TLOWer 9.8927702838828e-05", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":TRIGger:SWEep NORMal", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":MEASure:STATistic:RESet", "reply": null}
+{"utc": "2026-10-29T17:20:19.049841+00:00", "command": ":DISPlay:CLEar", "reply": null}
+{"utc": "2026-10-29T17:20:19.343125+00:00", "command": ":TRIGger:MODE?", "reply": "DEL"}
+{"utc": "2026-10-29T17:20:19.382943+00:00", "command": ":TRIGger:DELay:SA?", "reply": "CHAN1"}
+{"utc": "2026-10-29T17:20:19.421125+00:00", "command": ":TRIGger:DELay:ASLop?", "reply": "NEG"}
+{"utc": "2026-10-29T17:20:19.470224+00:00", "command": ":TRIGger:DELay:SB?", "reply": "CHAN2"}
+{"utc": "2026-10-29T17:20:19.520472+00:00", "command": ":TRIGger:DELay:BSLop?", "reply": "POS"}
+{"utc": "2026-10-29T17:20:19.569799+00:00", "command": ":TRIGger:DELay:TYPE?", "reply": "GOUT"}
+{"utc": "2026-10-29T17:20:19.624710+00:00", "command": ":TRIGger:DELay:TLOWer?", "reply": "9.892771E-5"}
+{"utc": "2026-10-29T17:20:19.680244+00:00", "command": ":TRIGger:DELay:TUPPer?", "reply": "9.902771E-5"}
+{"utc": "2026-10-29T17:20:19.714310+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}
+{"utc": "2026-10-29T17:20:19.714310+00:00", "command": ":STOP", "reply": null}
+{"utc": "2026-10-29T17:20:19.753086+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T17:20:19.753086+00:00", "command": ":TRIGger:MODE EDGE", "reply": null}
+{"utc": "2026-10-29T17:20:19.753086+00:00", "command": ":TRIGger:EDGE:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T17:20:19.753529+00:00", "command": ":TRIGger:EDGE:SLOPe POSitive", "reply": null}
+{"utc": "2026-10-29T17:20:19.753604+00:00", "command": ":TRIGger:EDGE:LEVel 1.65", "reply": null}
+{"utc": "2026-10-29T17:20:19.753675+00:00", "command": ":TRIGger:SWEep NORMal", "reply": null}
+{"utc": "2026-10-29T17:20:19.753747+00:00", "command": ":DISPlay:GRADing:TIME INFinite", "reply": null}
+{"utc": "2026-10-29T17:20:19.753747+00:00", "command": ":MEASure:STATistic:RESet", "reply": null}
+{"utc": "2026-10-29T17:20:19.753747+00:00", "command": ":DISPlay:CLEar", "reply": null}
+{"utc": "2026-10-29T17:20:19.753747+00:00", "command": ":RUN", "reply": null}
+{"utc": "2026-10-29T17:20:19.908740+00:00", "command": ":TRIGger:MODE?", "reply": "EDGE"}
+{"utc": "2026-10-29T17:20:19.961996+00:00", "command": ":TRIGger:EDGE:SOURce?", "reply": "CHAN1"}
+{"utc": "2026-10-29T17:20:19.999484+00:00", "command": ":SYSTem:ERRor?", "reply": "0,\"No error\""}

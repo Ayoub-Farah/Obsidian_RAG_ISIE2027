@@ -1,0 +1,19 @@
+{
+  "id": "C_M7",
+  "label": "C_M7",
+  "board": "C",
+  "observer_node": 6,
+  "kind": "module",
+  "ch1": "A_TEST_SYNC_TP23_or_TP15",
+  "ch2": "C_MOSI_TP24_or_TP16",
+  "expected_period_s": 0.0001,
+  "health_before_receipt": "hardware_rpc/campaign_6f9360f62c1948ee96a5734d8f0b8ba8.json",
+  "health_after_receipt": "hardware_rpc/campaign_31aa612373fa463f9f22b8729b96be83.json",
+  "wiring_verified": true,
+  "wiring_verification_source": "operator_cli_flag",
+  "wiring_verification_evidence": {
+    "file": "12a_C_OBS_disabled_diagnostic/validation.json",
+    "sha256": "6477afc4139ebfdf1deec6976a121b234365cabd99cb6bacc73b869c60f1181a"
+  },
+  "receipt_path_base": "campaign_directory"
+}

@@ -1,0 +1,41 @@
+{"utc": "2026-10-29T16:18:16.993563+00:00", "command": "*IDN?", "reply": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00"}
+{"utc": "2026-10-29T16:18:16.993563+00:00", "command": "idn", "reply": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00"}
+{"utc": "2026-10-29T16:18:16.993563+00:00", "command": ":STOP", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":TIMebase:MAIN:SCALe 1e-07", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":TIMebase:MAIN:OFFSet 0", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":ACQuire:MDEPth 100000", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":ACQuire:TYPE NORMal", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":MEASure:STATistic:RESet", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":DISPlay:CLEar", "reply": null}
+{"utc": "2026-10-29T16:18:17.031686+00:00", "command": ":RUN", "reply": null}
+{"utc": "2026-10-29T16:18:18.034873+00:00", "command": ":STOP", "reply": null}
+{"utc": "2026-10-29T16:18:18.070936+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T16:18:18.099812+00:00", "command": ":ACQuire:MDEPth?", "reply": "1.0000E+05"}
+{"utc": "2026-10-29T16:18:18.125630+00:00", "command": ":ACQuire:SRATe?", "reply": "2.000000E+9"}
+{"utc": "2026-10-29T16:18:18.151086+00:00", "command": ":TIMebase:MAIN:SCALe?", "reply": "1.000000E-7"}
+{"utc": "2026-10-29T16:18:18.179274+00:00", "command": ":TIMebase:MAIN:OFFSet?", "reply": "0.000000"}
+{"utc": "2026-10-29T16:18:18.209866+00:00", "command": ":DISPlay:GRADing:TIME?", "reply": "INF"}
+{"utc": "2026-10-29T16:18:18.245651+00:00", "command": ":CHANnel1:PROBe?", "reply": "1.000000E+1"}
+{"utc": "2026-10-29T16:18:18.275675+00:00", "command": ":CHANnel2:PROBe?", "reply": "1.000000E+1"}
+{"utc": "2026-10-29T16:18:18.302169+00:00", "command": ":CHANnel1:SCALe?", "reply": "1.000000E+00"}
+{"utc": "2026-10-29T16:18:18.337822+00:00", "command": ":CHANnel2:SCALe?", "reply": "1.000000E+00"}
+{"utc": "2026-10-29T16:18:18.365279+00:00", "command": ":CHANnel1:TCALibrate?", "reply": "0.000000"}
+{"utc": "2026-10-29T16:18:18.396546+00:00", "command": ":CHANnel2:TCALibrate?", "reply": "0.000000"}
+{"utc": "2026-10-29T16:18:18.425335+00:00", "command": ":MEASure:STATistic:ITEM? CURRent,RRDelay,CHANnel1,CHANnel2", "reply": "-5.0000E-10"}
+{"utc": "2026-10-29T16:18:18.458373+00:00", "command": ":MEASure:STATistic:ITEM? AVERages,RRDelay,CHANnel1,CHANnel2", "reply": "-5.0000E-10"}
+{"utc": "2026-10-29T16:18:18.487326+00:00", "command": ":MEASure:STATistic:ITEM? DEViation,RRDelay,CHANnel1,CHANnel2", "reply": "0.0000E+00"}
+{"utc": "2026-10-29T16:18:18.520031+00:00", "command": ":MEASure:STATistic:ITEM? MINimum,RRDelay,CHANnel1,CHANnel2", "reply": "-5.0000E-10"}
+{"utc": "2026-10-29T16:18:18.549094+00:00", "command": ":MEASure:STATistic:ITEM? MAXimum,RRDelay,CHANnel1,CHANnel2", "reply": "-5.0000E-10"}
+{"utc": "2026-10-29T16:18:18.577890+00:00", "command": ":MEASure:STATistic:ITEM? CNT,RRDelay,CHANnel1,CHANnel2", "reply": "7.0000E+00"}
+{"utc": "2026-10-29T16:18:18.928507+00:00", "command": ":DISPlay:DATA? PNG", "reply": {"payload_bytes": 107481}}
+{"utc": "2026-10-29T16:18:18.971648+00:00", "command": ":TRIGger:STATus?", "reply": "STOP"}
+{"utc": "2026-10-29T16:18:18.999066+00:00", "command": ":ACQuire:MDEPth?", "reply": "1.0000E+05"}
+{"utc": "2026-10-29T16:18:19.027841+00:00", "command": ":ACQuire:SRATe?", "reply": "2.000000E+9"}
+{"utc": "2026-10-29T16:18:19.027841+00:00", "command": ":WAVeform:SOURce CHANnel1", "reply": null}
+{"utc": "2026-10-29T16:18:19.027841+00:00", "command": ":WAVeform:MODE RAW", "reply": null}
+{"utc": "2026-10-29T16:18:19.028352+00:00", "command": ":WAVeform:FORMat BYTE", "reply": null}
+{"utc": "2026-10-29T16:18:19.028352+00:00", "command": ":WAVeform:STARt 1", "reply": null}
+{"utc": "2026-10-29T16:18:19.028352+00:00", "command": ":WAVeform:STOP 100000", "reply": null}
+{"utc": "2026-10-29T16:18:19.149247+00:00", "command": ":WAVeform:PREamble?", "reply": "0,2,100000,1,5.000000E-10,-2.500000E-5,0.000000,3.4133E-02,-48,128"}
+{"utc": "2026-10-29T16:18:19.175332+00:00", "command": ":WAVeform:STARt?", "reply": "900001"}

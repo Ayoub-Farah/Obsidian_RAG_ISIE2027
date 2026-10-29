@@ -1,0 +1,10 @@
+{
+  "id": "A_M2",
+  "label": "M2_sur_A",
+  "board": "A",
+  "observer_node": 1,
+  "kind": "module",
+  "ch1": "A_TEST_SYNC_TP23_or_TP15",
+  "ch2": "A_MOSI_TP24_or_TP16",
+  "expected_period_s": 0.0001
+}

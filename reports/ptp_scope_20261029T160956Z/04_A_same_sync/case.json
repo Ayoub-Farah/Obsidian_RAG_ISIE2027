@@ -1,0 +1,13 @@
+{
+  "id": "A_same_sync",
+  "label": "Deux_sondes_sur_SYNC_A",
+  "board": "A",
+  "observer_node": null,
+  "kind": "instrument_calibration",
+  "ch1": "A_TEST_SYNC_TP23_or_TP15",
+  "ch2": "A_same_SYNC_net",
+  "expected_period_s": 0.0001,
+  "receipt_path_base": "campaign_directory",
+  "health_before_receipt": "hardware_rpc/r008_A_M2_after.json",
+  "health_after_receipt": "hardware_rpc/r009_cal_after.json"
+}

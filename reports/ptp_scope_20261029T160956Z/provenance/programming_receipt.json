@@ -1,0 +1,26 @@
+{
+  "schema": "ptp_programming_v1",
+  "status": "passed",
+  "targets": {
+    "A": "OBS001A",
+    "B": "OBS003A",
+    "C": "OBS002A"
+  },
+  "capacity": 3,
+  "operation": "program_fpga_sram",
+  "flash_memory_written": false,
+  "artifact_sha256": {
+    "obsidian_ptp.bit": "81ec98265341cf183854f9c653aa0d64b0d854d7d72399e2f0408c4d8c054b31",
+    "obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100"
+  },
+  "started_at_utc": "2026-10-29T15:38:13.000480+00:00",
+  "programming_started_at_utc": "2026-10-29T15:51:27.022727+00:00",
+  "programmed_targets": [
+    "OBS001A",
+    "OBS003A",
+    "OBS002A"
+  ],
+  "hardware_programmed": true,
+  "log_encoding": "utf-16",
+  "finished_at_utc": "2026-10-29T15:54:41.245350+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "capacity": 3,
+  "nodes": 9,
+  "run_id": 9,
+  "period_ticks": 6250,
+  "maintenance_ratio": 10,
+  "pulse_width_ticks": 64,
+  "sample_period_ticks": 62500,
+  "seed": 12345
+}

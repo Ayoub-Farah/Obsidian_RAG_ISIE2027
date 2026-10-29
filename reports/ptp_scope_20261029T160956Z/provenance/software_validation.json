@@ -1,0 +1,27 @@
+{
+  "schema": "ptp_scope_software_validation_v1",
+  "status": "passed",
+  "test_count": 36,
+  "command": "py -3 -m unittest sim.test_ptp_hw sim.test_ptp_scope_analysis sim.test_ptp_scope_campaign sim.test_ptp_scope_report",
+  "test_runtime_seconds": 2.793,
+  "test_completion_utc": "2026-10-29T17:26:16Z",
+  "offline_dataset_verification": {
+    "command": "py -3 reports/ptp_scope_20261029T160956Z/verify_and_plot.py",
+    "status": "passed",
+    "module_cases": 9,
+    "calibration_cases": 1,
+    "fresh_acquisitions": 1000,
+    "conditional_outliers_confirmed": 3
+  },
+  "source_sha256": {
+    "scripts/ptp_hw.tcl": "8c750c5ba7e691b8e3f38e72d36396f0d077c47aff7466371d5c1dfb1ee5652e",
+    "scripts/ptp_scope_analysis.py": "d9baa553b58bfddff85a8a187b50764fa62939dd03197272ebefb640e28ea36e",
+    "scripts/ptp_scope_campaign.py": "4efff5fbbfa0d5a0f10d2bbf0d4e1f1aee43818b9cf890cf296dbf5fd42a3a48",
+    "scripts/ptp_scope_capture.py": "8a8d10d76fa7fb79f0660844805dd736e9cd85433470025af5391fe0feef3663",
+    "scripts/ptp_scope_report.py": "7b146125c94cb233b38c6a6418f58fdbfdccde860955c1de9a64af1b29db4bf7",
+    "sim/test_ptp_hw.py": "2683087d809dd918c1a1c5ec6e42d163b10d4bad9f32f16f5d252fab55d43280",
+    "sim/test_ptp_scope_analysis.py": "fc3f319684d5e539629d2b67d4cd0246a61da3e87b02b66ae18d38ee3b2f208f",
+    "sim/test_ptp_scope_campaign.py": "0fd8d37fbde8ceb9a7d1ed2410d17a00a6f234b6222d0393729abb6f0a8a67f7",
+    "sim/test_ptp_scope_report.py": "0e39a42e826ddf495a79fade9bcb6d9bd0c0b9987b19a90195b05ca16583b512"
+  }
+}

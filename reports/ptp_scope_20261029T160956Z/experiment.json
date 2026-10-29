@@ -1,0 +1,153 @@
+{
+  "schema": "ptp_scope_experiment_v1",
+  "status": "completed",
+  "created_at_utc": "2026-10-29T16:09:56.562848+00:00",
+  "image_directory": "build/ptp_capacity_search/k3_route",
+  "capacity": 3,
+  "nodes": 9,
+  "scope_resource": "USB0::0x1AB1::0x0452::MHO9B280300263::INSTR",
+  "scope_idn": "RIGOL TECHNOLOGIES,MHO984,MHO9B280300263,00.01.00",
+  "physical_wiring_user_confirmed": {
+    "ch1": {
+      "board": "A",
+      "serial": "OBS001A",
+      "label": "TEST_SYNC",
+      "exact_test_point_not_specified": true
+    },
+    "ch2_initial": {
+      "board": "A",
+      "serial": "OBS001A",
+      "label": "MOSI",
+      "exact_test_point_not_specified": true
+    }
+  },
+  "probe_moves": [
+    {
+      "utc": "2026-10-29T16:36:02.192464+00:00",
+      "ch1": "A_TEST_SYNC_unchanged",
+      "ch2": "A_TEST_SYNC_same_net",
+      "user_confirmed": true
+    },
+    {
+      "recorded_utc": "2026-10-29T16:57:27.647619+00:00",
+      "ch1": "A_TEST_SYNC",
+      "ch2": "B_MOSI",
+      "ground_ch2": "B",
+      "user_confirmed": true
+    },
+    {
+      "recorded_utc": "2026-10-29T17:05:50.934160+00:00",
+      "ch1": "A_TEST_SYNC",
+      "ch2": "C_MOSI",
+      "ground_ch2": "C",
+      "user_confirmed": true
+    }
+  ],
+  "global_error_sign": "scope_delta = observed_edge - reference_edge; positive means late pulse",
+  "hardware_programming_receipt": "C:\\Users\\afarahhass\\Documents\\Xilinx_project\\Obsidian_RAG\\captures\\ptp_program_20261029T153602Z",
+  "usb_layout_history": [
+    {
+      "utc": "2026-10-29T16:27:53.939471+00:00",
+      "connected_fpga": [
+        "OBS001A",
+        "OBS003A"
+      ],
+      "scope_connected": true,
+      "disconnected_jtag": "OBS002A",
+      "all_fpga_powered_user_confirmed": true,
+      "reason": "three physical USB ports"
+    },
+    {
+      "recorded_utc": "2026-10-29T17:05:50.934160+00:00",
+      "connected_fpga": [
+        "OBS001A",
+        "OBS002A"
+      ],
+      "scope_connected": true,
+      "disconnected_jtag": "OBS003A",
+      "all_fpga_powered_user_confirmed": true
+    }
+  ],
+  "planned_module_cases": [
+    "A_M1",
+    "A_M2",
+    "A_M3",
+    "B_M4",
+    "B_M5",
+    "B_M6",
+    "C_M7",
+    "C_M8",
+    "C_M9"
+  ],
+  "campaign_complete": true,
+  "wiring_verification": {
+    "A": {
+      "disable_receipt": "hardware_rpc/r011_disable_A.json",
+      "reenable_receipt": "hardware_rpc/r012_A_M1_reenable.json",
+      "ch1_survives_disable": true,
+      "ch2_flat_when_disabled": true,
+      "two_fresh_disabled_acquisitions": true,
+      "after_reenable_M1_sample_sd_ns": 0.04049,
+      "scope_validation": "05b_A_OBS_disabled_diagnostic/validation.json"
+    },
+    "B": {
+      "disable_receipt": "hardware_rpc/r017_B_disable.json",
+      "scope_validation": "09a_B_OBS_disabled_diagnostic/validation.json",
+      "ch1_survives_disable": true,
+      "ch2_flat_when_disabled": true
+    },
+    "C": {
+      "disable_receipt": "hardware_rpc/r021_C_disable.json",
+      "scope_validation": "12a_C_OBS_disabled_diagnostic/validation.json",
+      "ch1_survives_disable": true,
+      "ch2_flat_when_disabled": true
+    }
+  },
+  "logical_tick_s": 1.6e-08,
+  "measured_adc_sample_interval_s": 5e-10,
+  "observer_generation_averaging": false,
+  "official_acquisitions_per_module": 100,
+  "persistence_window_s_per_module": 20,
+  "calibration_estimator": {
+    "mean_s": -2.966707471447938e-10,
+    "sample_sd_s": 3.588482566784108e-11,
+    "count": 100,
+    "absolute_timing_accuracy_claim": false
+  },
+  "progress": {
+    "module_cases_acquired": [
+      "A_M1",
+      "A_M2",
+      "A_M3",
+      "B_M4",
+      "B_M5",
+      "B_M6",
+      "C_M7",
+      "C_M8",
+      "C_M9"
+    ],
+    "awaiting": null
+  },
+  "conditional_outlier_diagnostic": {
+    "module": "C_M7",
+    "result": "17_C_M7_outlier_trigger_quantized/outlier_trigger.json",
+    "confirmed_delays_ns": [
+      -67.97941176470566,
+      57.15625,
+      -58.655844155844235
+    ],
+    "not_included_in_unconditioned_statistics": true,
+    "occurrence_rate_measured": false
+  },
+  "software_validation": "provenance/software_validation.json",
+  "hardware_health_summary": "health_summary.json",
+  "final_scope_settings": "18_final_live/final_settings.json",
+  "completed_utc": "2026-10-29T17:32:14.488459+00:00",
+  "official_module_acquisitions": 900,
+  "official_calibration_acquisitions": 100,
+  "confirmed_conditional_outlier_acquisitions": 3,
+  "final_observer_C": "M9",
+  "hardware_worker_closed": true,
+  "hardware_worker_close_receipt": "hardware_rpc/r026_worker_close.json",
+  "artifact_integrity_manifest": "sha256_manifest.json"
+}

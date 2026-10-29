@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-29T17:23:23.126025+00:00",
+  "ch1": "A_TEST_SYNC",
+  "ch2": "C_MOSI_M9",
+  "settings": {
+    ":ACQuire:TYPE?": "NORM",
+    ":ACQuire:MDEPth?": "1.0000E+04",
+    ":ACQuire:SRATe?": "2.000000E+9",
+    ":TIMebase:MAIN:SCALe?": "1.000000E-7",
+    ":TRIGger:MODE?": "EDGE",
+    ":TRIGger:SWEep?": "NORM",
+    ":TRIGger:EDGE:SOURce?": "CHAN1",
+    ":TRIGger:EDGE:SLOPe?": "POS",
+    ":TRIGger:EDGE:LEVel?": "1.650000E0",
+    ":TRIGger:STATus?": "TD",
+    ":DISPlay:GRADing:TIME?": "INF"
+  }
+}
