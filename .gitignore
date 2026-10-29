@@ -5,3 +5,7 @@ __pycache__/
 *.jou
 *.log
 .Xil/
+
+# Superseded generated PTP attempts and temporary source snapshots.
+reports/ptp_builds/
+reports/ptp_validation/
