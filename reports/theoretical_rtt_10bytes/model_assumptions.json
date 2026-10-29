@@ -1,0 +1,46 @@
+{
+  "schema": "theoretical_ring_total_time_v2",
+  "source": "theoretical_model",
+  "local_bytes": 10,
+  "module_range": [
+    2,
+    30
+  ],
+  "parameters": {
+    "tick_ns": 16.0,
+    "ct_first_wave_loop_ns": 2448.0,
+    "relay_minimum_ns": 288.0,
+    "equivalent_link_ns": 624.0,
+    "tx_last_to_next_first_ticks": 3,
+    "input_sha256": {
+      "reports/hardware_validation/model.json": "01a0076a32c30d38fd72867761dc8612e132987e352e79db8497454913360f1d",
+      "reports/hardware_validation/events.json": "7ef97701e55d74f9b2d4bb245efcc183bf5618e84a157d0b18f69782ce24379b",
+      "reports/hardware_validation/results.csv": "9ce344bd4fb2b7445a808d9372ddd27cd2106b6258873a279f40d547ea45a6a7",
+      "reports/hardware_validation/ila/verification.json": "df82d2676b5ce1dd40dd2d83853089d1ad1d114ffc1ab617c99f7dcad6fac8f3"
+    },
+    "ct_redistribution_delay_ns": 0
+  },
+  "equations": {
+    "words": "ceil((payload_bytes + 36) / 2)",
+    "serialization": "(words - 1) * tick_ns",
+    "CT_collection": "S_CT(N) + N*link + (N-1)*relay",
+    "CT_redistribution": "S_CT(N) + (N-1)*link + (N-2)*relay",
+    "CT_total": "CT_collection + reinjection_delay + CT_redistribution",
+    "RAG": "S_RAG + link + (N-1)*max(link+relay, S_RAG+turnaround)"
+  },
+  "assumptions": [
+    "CT gathers through N hops back to module 1, then sends the complete table through N-1 hops to module N.",
+    "CT redistribution starts only after the entire first frame has returned; serialization is counted once per phase.",
+    "Redistribution relays are cut-through and reuse the observed relay-latency floor as an assumption.",
+    "The new CT dissemination phase is not hardware-timed in the source captures.",
+    "Module-1 reinjection delay is unmeasured; zero by default is an immediate-retransmission assumption.",
+    "RAG remains a full return to origin: H=N.",
+    "CT payload = N*local_bytes; every RAG payload = local_bytes.",
+    "N identical modules, N synchronous RAG injections, equal effective links.",
+    "Equivalent link delay is inferred from a three-link loop, not calibrated per link.",
+    "Fixed frame ownership and deterministic service-time contention are included.",
+    "No additional clock-compensation pauses, random jitter or unrelated traffic.",
+    "Serialization overlaps across cut-through hops; it is not counted N times for CT.",
+    "No hardware measurements at the plotted module counts are asserted."
+  ]
+}
