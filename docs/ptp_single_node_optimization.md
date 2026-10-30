@@ -1,3 +1,5 @@
+> Rapports consolidés : [rapport final](../reports/README.md) et [index des archives](../reports/README.md). Les anciens chemins `reports/...` cités ci-dessous sont conservés dans les archives ; les nouvelles sorties sont générées sous `build/`.
+
 # Optimisation de la base PTP : un module par carte
 
 La cible actuelle est **K=1, N=3** sur les trois cartes A/B/C. Chaque carte

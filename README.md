@@ -1,5 +1,7 @@
 ﻿# Obsidian_RAG — CT / RAG sur trois cartes physiques
 
+Le [rapport final](reports/final_report.md) réunit les équations CT/RAG et les mesures de dégradation de synchronisation. Sa [version PDF](reports/final_report.pdf) et l’[index des preuves](reports/README.md) sont les points d’entrée des résultats. Les captures et validations historiques sont regroupées dans six archives vérifiées ; les sorties de génération restent dans `build/`.
+
 Le profil **PTP_EMULATION** de la branche `test_sync` utilise une image dédiée
 au PTP sur trois cartes. Le [bilan d'optimisation](docs/ptp_single_node_optimization.md)
 détaille la base **K=1/N=3**, un module par carte, ses ressources et ses validations.

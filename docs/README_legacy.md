@@ -6,7 +6,7 @@ Projet source indépendant issu de la branche `SyncRAG_Estimator`, pour trois ca
 
 **Modes de cette archive :** RAG_C (collecte centralisée) et RAG_D (all-gather décentralisé). Le mode par défaut est **RAG_D** (`2`). Les relais sont cut-through dans les deux familles : RAG désigne l'injection parallèle de paquets locaux ; CT désigne ici l'agrégation dans une trame circulante.
 
-**État de validation :** les trois images A/B/C du profil par défaut **RAG_D, N=3, D=6, R=2, 128 cycles** ont été générées avec **Vivado 2025.2** le 26 octobre 2026, avec timing setup/hold, bus skew et DRC passants. Les scripts et le RTL ont été corrigés/optimisés ; 18 simulations XSim et 15 tests Python passent. Aucune carte n'a été programmée ou mesurée. Voir le [rapport de construction locale](docs/construction_vivado_2026-10-26.md). Les autres profils nécessitent leur propre construction et validation ; les preuves historiques de l'archive restent dans `reports/` et [validation_et_limites.md](docs/validation_et_limites.md).
+**État de validation :** les trois images A/B/C du profil par défaut **RAG_D, N=3, D=6, R=2, 128 cycles** ont été générées avec **Vivado 2025.2** le 26 octobre 2026, avec timing setup/hold, bus skew et DRC passants. Les scripts et le RTL ont été corrigés/optimisés ; 18 simulations XSim et 15 tests Python passent. Aucune carte n'a été programmée ou mesurée. Voir le [rapport de construction locale](construction_vivado_2026-10-26.md). Les autres profils nécessitent leur propre construction et validation ; les preuves historiques de l'archive restent dans `reports/` et [validation_et_limites.md](validation_et_limites.md).
 
 ## 1. Ouvrir et vérifier
 
@@ -93,7 +93,7 @@ python3 scripts/decode_log.py captures/A_log.json --metadata captures/metadata.j
 
 La demande JTAG `stop` reste disponible pour interrompre une campagne continue. Elle est locale : la demander sur les trois cartes et conserver les éventuels échecs des derniers cycles perturbés par cet arrêt successif. Pour une série de mesures reproductible, préférer une durée commune fixée par `--run-cycles`.
 
-`metadata.json` contient l'identité du run, du bitstream, les tailles, le modèle virtuel et l'incertitude. Le format est décrit dans [protocole_mesure.md](docs/protocole_mesure.md). Les lectures VIO/ILA et les exports ne programment ni FPGA ni flash.
+`metadata.json` contient l'identité du run, du bitstream, les tailles, le modèle virtuel et l'incertitude. Le format est décrit dans [protocole_mesure.md](protocole_mesure.md). Les lectures VIO/ILA et les exports ne programment ni FPGA ni flash.
 
 Les durées du journal sont **locales à une carte ou à son segment**. Les compteurs bruts de cartes différentes ont des origines distinctes : leur soustraction ne donne pas une latence globale ou un écart de départ. Une mesure globale nécessite une correspondance temporelle calibrée ou un instrument commun avec des sorties physiques vérifiées. Le CSV laisse cet écart vide lorsqu'il n'est pas mesuré.
 
@@ -128,8 +128,8 @@ Le débit de 1,25 Gbit/s, la largeur de 16 bits et la fréquence utilisateur de 
 
 Source matérielle : `Ayoub-Farah/Obsidian_Aurora_loopback_test-`, branche `SyncRAG_Estimator`, commit **`e7d486a22b16bc1e52630341f7cdd1b560a97ce1`**. Les deux documents joints restent le cahier des charges. Les JSON et vecteurs fournis ici ont été recréés explicitement depuis ce texte : les fichiers auxiliaires cités dans le rapport n'étaient pas joints. Aucun fichier SPIN_OSC n'est utilisé.
 
-Voir aussi [le guide matériel](scripts/README_hardware.md) pour les ports VIO/ILA et les commandes détaillées.
+Voir aussi [le guide matériel](../scripts/README_hardware.md) pour les ports VIO/ILA et les commandes détaillées.
 
 ## Configuration dynamique
 
-Le flux configurable RAG_C/RAG_D, la selection de la population active et la mesure du retour du paquet du module 1 sont decrits dans [configuration_dynamique.md](docs/configuration_dynamique.md). La capacite simulee et la capacite admise sur FPGA doivent etre distinguees ; consulter les rapports de validation associes.
+Le flux configurable RAG_C/RAG_D, la selection de la population active et la mesure du retour du paquet du module 1 sont decrits dans [configuration_dynamique.md](configuration_dynamique.md). La capacite simulee et la capacite admise sur FPGA doivent etre distinguees ; consulter les rapports de validation associes.

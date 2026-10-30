@@ -13,6 +13,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'tools'))
 from ptp_capacity_cases import capacity_cases
+from ptp_config import normalize, config_id
 parser=argparse.ArgumentParser(description='Validate portable RTL and cycle equivalence with Vivado XSim.')
 parser.add_argument('--vivado-bin',type=Path)
 parser.add_argument('--only',default='.*',help='regular expression for testbench names')
@@ -69,6 +70,24 @@ cases += [(n,n,'') for n in ('tb_ptp_registers','tb_ptp_link','tb_ptp_runtime_ch
 cases += [(f'tb_ptp_chain_{n}','tb_ptp_chain',f'G_NODES=>{n}') for n in (3,6,10,20,30,40,50,60,180)]
 cases += [('tb_ptp_chain_phased','tb_ptp_chain','G_NODES=>10,G_PHASED=>true,G_DRIFT=>2000'),
           ('tb_ptp_chain_asymmetry','tb_ptp_chain','G_NODES=>10,G_ASYMMETRY=>true')]
+clock_case='tb_ptp_chain_uniform_4ppm'
+clock_input=None
+if re.fullmatch(args.only,clock_case):
+    clock_path=ROOT/'config/ptp_emulation_9_uniform_4ppm.json'
+    clock_cfg=normalize(json.loads(clock_path.read_text(encoding='utf-8')))
+    clock_file=DEST/'uniform_4ppm_drifts.txt'
+    clock_file.write_text(''.join(f'{value}\n' for value in clock_cfg['drift_ppb']),encoding='ascii')
+    clock_input={str(clock_path.relative_to(ROOT)):hashlib.sha256(clock_path.read_bytes()).hexdigest(),
+                 clock_file.name:hashlib.sha256(clock_file.read_bytes()).hexdigest()}
+    proof['clock_configuration']=dict(configuration=clock_cfg,config_id=f'{config_id(clock_cfg):016x}',
+                                     input_sha256=clock_input)
+    cases += [(clock_case,'tb_ptp_chain',
+               f'G_NODES=>{clock_cfg["nodes"]},G_PHASED=>true,G_DRIFT_FILE=>"{clock_file.name}",'
+               f'G_PERIOD_TICKS=>{clock_cfg["period_ticks"]},G_MAINTENANCE_RATIO=>{clock_cfg["maintenance_ratio"]},'
+               f'G_SEED=>{clock_cfg["seed"]},G_NOMINAL_SAMPLES=>16,G_SAMPLE_SPACING=>62500,G_CAPACITY_CSV=>true')]
+cases += [('tb_ptp_chain_4ppm_extremes','tb_ptp_chain',
+           'G_NODES=>9,G_PHASED=>true,G_DRIFT=>4000,G_PERIOD_TICKS=>6250,G_MAINTENANCE_RATIO=>10,'
+           'G_NOMINAL_SAMPLES=>16,G_SAMPLE_SPACING=>62500,G_CAPACITY_CSV=>true')]
 cases += [(name, spec['entity'], spec['generics']) for capacity in ((args.ptp_capacity,) if args.ptp_capacity else (2, 3, 4, 5))
           for name, spec in capacity_cases(capacity).items()]
 cases += [('tb_runtime_30','tb_runtime_system','G_TEST_RECORDS=>3'),
@@ -99,6 +118,10 @@ current_sources={str(p.relative_to(ROOT)) for d in ('protocol','links','sync','s
 current_sources.update(str(p.relative_to(ROOT)) for pattern in ('tb_*.vhd','*_model.vhd') for p in (ROOT/'sim').glob(pattern))
 current_sources.update(str(p.relative_to(ROOT)) for p in (ROOT/'sim/equivalence').glob('*.vhd'))
 if current_sources!=set(hashes): raise RuntimeError('Source inventory changed during validation')
+if clock_input:
+    if hashlib.sha256(clock_path.read_bytes()).hexdigest()!=clock_input[str(clock_path.relative_to(ROOT))] or \
+       hashlib.sha256(clock_file.read_bytes()).hexdigest()!=clock_input[clock_file.name]:
+        raise RuntimeError('Logical clock configuration changed during validation')
 proof.update(status='passed',source_snapshot_sha256=hashlib.sha256((DEST/'source_sha256.json').read_bytes()).hexdigest(),results_sha256=hashlib.sha256((DEST/'results.json').read_bytes()).hexdigest())
 (DEST/'execution.json').write_text(json.dumps(proof,indent=2)+'\n')
 print("ALL_SELECTED_TESTS_PASSED",flush=True)

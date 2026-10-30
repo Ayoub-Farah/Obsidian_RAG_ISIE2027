@@ -89,9 +89,13 @@ def _analyze_acquisition(path, expected_period, max_delta, threshold):
         if metadata.get('trigger_state', 'STOP') != 'STOP':
             raise ValueError('Paired waveforms were not recorded in a common stopped acquisition')
         channels, traces, quality, edges = {}, {}, {}, {}
+        reference = str(metadata.get('reference_channel', 1))
+        observed = str(metadata.get('observed_channel', 2))
+        if reference == observed or any(ch not in ('1','2','3','4') for ch in (reference,observed)):
+            raise ValueError('Reference and observed channels must be distinct analog inputs')
         result.update(channels=channels,quality=quality)
         with np.load(path, allow_pickle=False) as archive:
-            for channel in ('1', '2'):
+            for channel in (reference, observed):
                 samples = archive['ch'+channel]
                 if samples.dtype != np.uint8 or samples.ndim != 1:
                     raise ValueError(f'Channel {channel} is not a one-dimensional BYTE waveform')
@@ -103,17 +107,24 @@ def _analyze_acquisition(path, expected_period, max_delta, threshold):
                 quality[channel] = waveform_quality(payload)
                 if quality[channel]['possible_clipping']:
                     raise ValueError(f'Channel {channel} contains ADC rail codes (0 or 255)')
-                traces[channel] = decode_waveform(payload, preamble)
+                traces[channel] = decode_waveform(payload, preamble,
+                    voltage_encoding=entry.get('voltage_encoding','rigol_byte'))
                 edges[channel] = rising_edges(*traces[channel], threshold_v=threshold)
                 if edges[channel]['amplitude_v']<=0.5:
                     raise ValueError(f'Channel {channel} amplitude must exceed 0.5 V')
                 channels[channel] = dict(preamble=preamble, points=len(samples))
         result.update(channels=channels, quality=quality)
         for field in ('points', 'x_increment', 'x_origin', 'x_reference'):
-            if channels['1']['preamble'][field] != channels['2']['preamble'][field]:
+            if channels[reference]['preamble'][field] != channels[observed]['preamble'][field]:
+                if field=='x_origin' and metadata.get('allow_per_channel_x_origin') is True and \
+                   all(metadata['channels'][ch].get('voltage_encoding')=='keysight_byte' for ch in (reference,observed)):
+                    difference=channels[observed]['preamble'][field]-channels[reference]['preamble'][field]
+                    if abs(difference)<=2*channels[reference]['preamble']['x_increment']:
+                        result['channel_time_origin_delta_s']=difference
+                        continue
                 raise ValueError(f'Channel timing field {field} differs between paired waveforms')
-        period = expected_period if all(edges[ch]['edge_count']>=2 for ch in ('1','2')) else None
-        pair = paired_delays(*traces['1'], *traces['2'], max_delta=max_delta,
+        period = expected_period if all(edges[ch]['edge_count']>=2 for ch in (reference,observed)) else None
+        pair = paired_delays(*traces[reference], *traces[observed], max_delta=max_delta,
                              expected_period_s=period, threshold_v=threshold)
         result.update(status='passed', pairing=pair, paired_edge_stats=_stats(pair['delays_s']),
                       signed_mean_s=pair['mean_s'], period_expected_s=expected_period,

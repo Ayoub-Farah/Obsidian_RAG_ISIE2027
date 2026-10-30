@@ -59,7 +59,7 @@ def run_command(command, cwd, timeout=180):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--family", choices=("all", "RAG", "CT"), default="RAG")
-    parser.add_argument("--output", type=Path, default=ROOT / "reports/test_results.json")
+    parser.add_argument("--output", type=Path, default=ROOT / "build/validation/test_results.json")
     parser.add_argument("--work-dir", type=Path, default=ROOT / "build/ghdl")
     parser.add_argument("--require-rtl", action="store_true")
     parser.add_argument("--stop-time", default="2ms")

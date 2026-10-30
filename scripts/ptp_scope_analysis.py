@@ -69,10 +69,11 @@ def decode_preamble(text: str) -> dict:
     return result
 
 
-def decode_waveform(payload: bytes, preamble: Mapping) -> tuple[np.ndarray, np.ndarray]:
+def decode_waveform(payload: bytes, preamble: Mapping, *, voltage_encoding='rigol_byte') -> tuple[np.ndarray, np.ndarray]:
     """Return time_s, voltage_v for one complete unsigned BYTE waveform.
 
-    V = (byte - Yorigin - Yreference) * Yincrement
+    RIGOL: V = (byte - Yorigin - Yreference) * Yincrement
+    Keysight: V = (byte - Yreference) * Yincrement + Yorigin (volts)
     t = (sample_index - Xreference) * Xincrement + Xorigin
 
     Concatenate raw-memory chunks before calling: POINTS must match byte count.
@@ -91,7 +92,12 @@ def decode_waveform(payload: bytes, preamble: Mapping) -> tuple[np.ndarray, np.n
     if not all(math.isfinite(v) for v in (xinc, xorigin, xref, yinc, yorigin, yref)) or xinc <= 0 or yinc == 0:
         raise ValueError('Invalid waveform scaling')
     codes = np.frombuffer(payload, dtype=np.uint8).astype(np.float64)
-    voltage = (codes - yorigin - yref) * yinc
+    if voltage_encoding == 'rigol_byte':
+        voltage = (codes - yorigin - yref) * yinc
+    elif voltage_encoding == 'keysight_byte':
+        voltage = (codes - yref) * yinc + yorigin
+    else:
+        raise ValueError('Unknown BYTE voltage encoding: ' + str(voltage_encoding))
     time = (np.arange(len(codes), dtype=np.float64) - xref) * xinc + xorigin
     return time, voltage
 

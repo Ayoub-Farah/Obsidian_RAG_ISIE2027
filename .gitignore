@@ -6,6 +6,5 @@ __pycache__/
 *.log
 .Xil/
 
-# Superseded generated PTP attempts and temporary source snapshots.
-reports/ptp_builds/
-reports/ptp_validation/
+# Generated reports and restored evidence belong in build/, not in reports/.
+tmp/

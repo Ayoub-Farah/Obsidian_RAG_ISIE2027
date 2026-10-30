@@ -45,7 +45,7 @@ def write_json(path, value, *, initial=False):
     os.replace(temporary, path)  # Update only this run's newly created files.
 
 
-def check_health(receipt, serial, expected, node=None):
+def check_health(receipt, serial, expected, node=None, *, require_locked=True):
     if receipt.get('schema') != 'ptp_scope_hardware_rpc_v1' or receipt.get('status') != 'ok':
         raise ValueError('Hardware RPC failed: ' + str(receipt.get('error', 'invalid receipt')))
     if receipt.get('health_scope') != 'connected_boards_only':
@@ -63,7 +63,7 @@ def check_health(receipt, serial, expected, node=None):
         if type(card.get('available')) is not bool:
             raise ValueError('Missing explicit card availability')
         if card['available']:
-            if card.get('nominal') is not True:
+            if card.get('nominal') is not True and (require_locked or card.get('operational') is not True):
                 raise ValueError('Available card is not nominal: ' + card['serial'])
         elif card.get('nominal') is not None:
             raise ValueError('Unavailable card must have unknown health')
@@ -121,7 +121,8 @@ def campaign(args):
         nodes = [int(value) for value in args.nodes.split(',')]
     if len(set(nodes)) != len(nodes) or any(node not in range(first, first + 3) for node in nodes):
         raise ValueError('Nodes must be distinct and belong to the selected board')
-    if args.count < 1 or not math.isfinite(args.window) or args.window <= 0:
+    if args.count < 1 or not math.isfinite(args.window) or args.window < 0 or \
+       (args.window == 0 and getattr(args,'scope_driver','rigol') != 'keysight_segmented'):
         raise ValueError('Count and statistics-window seconds must be positive')
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,31}', args.prefix or args.board):
         raise ValueError('Invalid group-log prefix')
@@ -141,10 +142,10 @@ def campaign(args):
     ready_bytes = ready_path.read_bytes()
     ready = json.loads(ready_bytes)
     expected = ready.get('expected_connected')
-    if ready.get('status') != 'ready' or not isinstance(expected, list) or len(expected) != 2 or \
-       len(set(expected)) != 2 or 'OBS001A' not in expected or serial not in expected or \
+    if ready.get('status') != 'ready' or not isinstance(expected, list) or len(expected) not in (2,3) or \
+       len(set(expected)) != len(expected) or 'OBS001A' not in expected or serial not in expected or \
        any(item not in {b[0] for b in BOARDS.values()} for item in expected):
-        raise ValueError('Worker is not ready for the selected pair of boards')
+        raise ValueError('Worker is not ready for the selected connected boards')
     ready_hash = hashlib.sha256(ready_bytes).hexdigest()
     run_id = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '_' + uuid.uuid4().hex[:8]
     log_path = report / f'group_run_{args.prefix or args.board}_{run_id}.json'
@@ -163,11 +164,17 @@ def campaign(args):
             write_json(log_path, log)
             emit(event='case_begin', case_id=case_id, directory=str(output))
             before_path, before = rpc(report, f'observe {serial} {node}', ready_hash)
-            check_health(before, serial, expected, node)
+            check_health(before, serial, expected, node,
+                         require_locked=not getattr(args,'allow_unlocked_measurements',False))
             record['health_before_receipt'] = before_path.relative_to(report).as_posix()
             command = [sys.executable, str(CAPTURE), str(output),
                        '--case-id', case_id, '--label', case_id, '--board', args.board,
                        '--node', str(node), '--count', str(args.count), '--window', str(args.window)]
+            if getattr(args,'scope_driver','rigol') in ('keysight','keysight_segmented'):
+                name='ptp_scope_keysight_segmented.py' if args.scope_driver=='keysight_segmented' else 'ptp_scope_keysight.py'
+                command[1] = str(CAPTURE.with_name(name))
+                command += ['--reference-channel',str(args.reference_channel),
+                            '--observed-channel',str(args.observed_channel)]
             capture_error = None
             try:
                 subprocess.run(command, check=True, shell=False)
@@ -190,7 +197,8 @@ def campaign(args):
                 if case_id == 'A_M1':
                     case['path_identity_verified'] = args.wiring_verified
                 write_json(case_path, case)
-            check_health(after, serial, expected, node)
+            check_health(after, serial, expected, node,
+                         require_locked=not getattr(args,'allow_unlocked_measurements',False))
             if capture_error:
                 raise RuntimeError(f'Capture failed for {case_id}: {capture_error}') from capture_error
             acquisition = json.loads((output / 'acquisition.json').read_text(encoding='utf-8'))
@@ -220,6 +228,11 @@ def main():
     parser.add_argument('--count', type=int, default=100)
     parser.add_argument('--window', type=float, default=20, help='Scope statistics window in seconds')
     parser.add_argument('--prefix', help='Unique group-log filename prefix; fixed case folder names are retained')
+    parser.add_argument('--scope-driver',choices=('rigol','keysight','keysight_segmented'),default='rigol')
+    parser.add_argument('--reference-channel',type=int,default=1)
+    parser.add_argument('--observed-channel',type=int,default=3)
+    parser.add_argument('--allow-unlocked-measurements',action='store_true',
+                        help='Retain unlocked states as findings; still require running/configured, valid links and no core fault')
     parser.add_argument('--wiring-verified', action='store_true',
                         help='Operator confirms probe placement and OBS output identity; never inferred from health')
     parser.add_argument('--verification-source', type=Path,

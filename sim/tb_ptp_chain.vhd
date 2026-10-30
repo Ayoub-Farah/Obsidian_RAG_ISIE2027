@@ -1,9 +1,10 @@
-library ieee;use ieee.std_logic_1164.all;use ieee.numeric_std.all;use std.env.all;
+library ieee;use ieee.std_logic_1164.all;use ieee.numeric_std.all;use std.env.all;use std.textio.all;
 use work.ptp_emulation_pkg.all;
 entity tb_ptp_chain is
   generic(G_NODES:positive:=3;G_PHASED:boolean:=false;G_ASYMMETRY:boolean:=false;G_DRIFT:integer:=0;
     G_SEED:positive:=1;G_JITTER_MASK:natural range 0 to 255:=0;G_DROP_EVERY:natural range 0 to 65535:=0;
-    G_NOMINAL_SAMPLES:positive:=12;G_SAMPLE_SPACING:positive:=1000;G_CAPACITY_CSV:boolean:=false);
+    G_NOMINAL_SAMPLES:positive:=12;G_SAMPLE_SPACING:positive:=1000;G_CAPACITY_CSV:boolean:=false;
+    G_DRIFT_FILE:string:="";G_PERIOD_TICKS:positive:=1000;G_MAINTENANCE_RATIO:positive:=2);
 end;
 architecture test of tb_ptp_chain is
   constant K:positive:=(G_NODES+2)/3;
@@ -16,13 +17,30 @@ architecture test of tb_ptp_chain is
   signal times,corrections,theta,delays,ages:board_words;signal running,locked,holdover,errors,pulses:board_flags;
   signal raw:words64_t(0 to 2);
   signal accepted,rejected,dropped:board_counts;
+  type drifts_t is array(0 to G_NODES-1) of integer;
+  impure function load_drifts return drifts_t is
+    file input:text;variable row:line;variable good:boolean;variable values:drifts_t;
+  begin
+    if G_DRIFT_FILE/="" then
+      file_open(input,G_DRIFT_FILE,read_mode);
+      for n in values'range loop
+        assert not endfile(input) report "Missing module drift" severity failure;
+        readline(input,row);read(row,values(n),good);
+        assert good and abs(values(n))<=1000000 report "Invalid module drift" severity failure;
+      end loop;
+      assert endfile(input) report "Too many module drifts" severity failure;file_close(input);
+    else
+      for n in values'range loop values(n):=G_DRIFT;if n mod 2=0 then values(n):=-G_DRIFT;end if;end loop;
+    end if;return values;
+  end;
+  constant C_DRIFTS:drifts_t:=load_drifts;
   function phase(b:natural)return time is
   begin if G_PHASED then return b*3 ns;else return 0 ns;end if;end;
   function step(b,i:natural)return unsigned is
     variable d:signed(79 downto 0);
   begin
-    d:=shift_left(to_signed(G_DRIFT,80),32)/to_signed(1000000000,80);
-    if (first_node(G_NODES,b)+i) mod 2=0 then d:=-d;end if;
+    if i>=population(G_NODES,b) then return to_unsigned(1,64) sll 32;end if;
+    d:=shift_left(to_signed(C_DRIFTS(first_node(G_NODES,b)+i),80),32)/to_signed(1000000000,80);
     return resize(unsigned(shift_left(to_signed(1,80),32)+d),64);
   end;
   function owner(node:natural)return natural is
@@ -59,7 +77,7 @@ begin
     end generate;
     u:entity work.ptp_emulation_core generic map(K,G_NODES,5000)
       port map(clk(b),rst,'0',start,stop_req,'1',G_NODES,b,steps,offsets,fwd,rev,
-        to_unsigned(G_JITTER_MASK,8),to_unsigned(G_SEED+b,32),to_unsigned(G_DROP_EVERY,16),1000,2,to_unsigned(0,64),64,
+        to_unsigned(G_JITTER_MASK,8),to_unsigned(G_SEED+b,32),to_unsigned(G_DROP_EVERY,16),G_PERIOD_TICKS,G_MAINTENANCE_RATIO,to_unsigned(0,64),64,
         lrx(b),rrx(b),lrk(b),rrk(b),lrv(b),lrl(b),rrv(b),rrl(b),
         ld(b),rd(b),lk(b),rk(b),lv(b),ll(b),rv(b),rl(b),lready(b),rready(b),raw(b),
         times(b),corrections(b),delays(b),theta(b),ages(b),accepted(b),rejected(b),open,open,open,open,
@@ -77,6 +95,7 @@ begin
     variable previous:words64_t(0 to 2):=(others=>(others=>'0'));
     variable e,adjacent:signed(63 downto 0);variable n,parent_board,parent_slot,physical:natural;
     variable drift_ppb:integer;
+    variable base_time,expected_base:unsigned(63 downto 0);variable product:unsigned(127 downto 0);
   begin
     wait until rising_edge(clk(0));wait for 1 ns;ticks:=ticks+1;all_run:=true;
     if rst='0' then
@@ -88,6 +107,13 @@ begin
         assert unsigned(raw(b))>=unsigned(previous(b)) report "Raw time moved backwards" severity failure;previous(b):=raw(b);
         for i in 0 to population(G_NODES,b)-1 loop
           assert errors(b)(i)='0' report "PTP engine error" severity failure;
+          if G_DRIFT_FILE/="" then
+            -- Both raw counters and accumulators reset on the same board edge.
+            -- Remove PTP corrections to prove the actual per-module rate.
+            base_time:=unsigned(times(b)(i))-unsigned(corrections(b)(i));
+            product:=unsigned(raw(b))*step(b,i);expected_base:=resize(shift_right(product,16),64);
+            assert base_time=expected_base report "Module does not advance at its configured logical rate" severity failure;
+          end if;
           if running(b)(i)/='1' then all_run:=false;end if;
         end loop;
         for i in population(G_NODES,b) to K-1 loop
@@ -95,6 +121,11 @@ begin
         end loop;
       end loop;
       if all_run then
+        if G_DRIFT_FILE/="" then
+          for b in 0 to 2 loop for i in 0 to population(G_NODES,b)-1 loop
+            assert locked(b)(i)='1' and holdover(b)(i)='0' report "Independent logical clock lost nominal lock" severity failure;
+          end loop;end loop;
+        end if;
         if first_running=0 then first_running:=ticks;end if;nominal:=nominal+1;
         if nominal mod G_SAMPLE_SPACING=0 then
           for b in 0 to 2 loop for i in 0 to population(G_NODES,b)-1 loop
@@ -106,7 +137,7 @@ begin
                 parent_board:=owner(n-1);parent_slot:=n-1-first_node(G_NODES,parent_board);
                 adjacent:=signed(times(b)(i))-signed(times(parent_board)(parent_slot));
               end if;
-              physical:=physical_hops(n);drift_ppb:=G_DRIFT;if n mod 2=0 then drift_ppb:=-G_DRIFT;end if;
+              physical:=physical_hops(n);drift_ppb:=C_DRIFTS(n);
               -- Sampling is always at an integer-nanosecond A edge +1 ns.
               -- Append 000 rather than converting millisecond times to a
               -- 32-bit integer number of picoseconds (which would overflow).
@@ -120,7 +151,7 @@ begin
                 integer'image(drift_ppb)&","&to_hstring(std_logic_vector(step(b,i)))&","&integer'image(G_JITTER_MASK)&","&integer'image(G_SEED+b)&","&
                 integer'image(boolean'pos(G_ASYMMETRY))&","&integer'image(phase(b)/1 ps) severity note;
             end if;
-            if G_DRIFT=0 and not G_PHASED and G_JITTER_MASK=0 and G_DROP_EVERY=0 then
+            if G_DRIFT_FILE="" and G_DRIFT=0 and not G_PHASED and G_JITTER_MASK=0 and G_DROP_EVERY=0 then
               if G_ASYMMETRY then
                 assert abs(e+to_signed(n*65536,64))<=to_signed(G_NODES*65536/2,64) report "Asymmetry sign or accumulated bias is wrong" severity failure;
               else assert abs(e)<=to_signed(G_NODES*65536/2,64) report "Symmetric links impose an error slope" severity failure;end if;
@@ -133,6 +164,6 @@ begin
         end if;
       end if;
     end if;
-    assert ticks<500000 report "PTP chain acquisition timeout" severity failure;
+    assert ticks<500000+G_NOMINAL_SAMPLES*G_SAMPLE_SPACING report "PTP chain acquisition timeout" severity failure;
   end process;
 end;

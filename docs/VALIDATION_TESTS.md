@@ -23,7 +23,7 @@ GHDL est nécessaire pour les simulations RTL portables. Python 3 suffit aux
 vecteurs et aux validations statiques. Un test GHDL n'est déclaré réussi que
 s'il termine sans erreur et produit explicitement `PASS` ; atteindre seulement
 `--stop-time` constitue un échec. Les sorties et commandes réellement exécutées
-sont conservées dans `reports/test_results.json`. Le CSV voisin contient les
+sont conservées dans `build/validation/test_results.json`. Le CSV voisin contient les
 résumés temporels émis par le test d'intégration.
 
 La matrice d'intégration raccourcit uniquement l'attente d'armement à 10 000

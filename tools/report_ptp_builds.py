@@ -34,7 +34,7 @@ def timing(path):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--output',type=Path,default=ROOT/'reports/ptp_builds')
+    p.add_argument('--output',type=Path,default=ROOT/'build/report_outputs/ptp_builds')
     p.add_argument('--build',type=Path,action='append',default=[],help='Limit the report to these build directories')
     a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True);records=[]
     executions=[folder/'execution.json' for folder in a.build] if a.build else (ROOT/'build').rglob('execution.json')

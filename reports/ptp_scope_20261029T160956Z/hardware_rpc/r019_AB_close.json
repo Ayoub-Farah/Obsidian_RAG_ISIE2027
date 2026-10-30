@@ -1,1 +1,0 @@
-{"schema":"ptp_scope_hardware_rpc_v1","request_id":"r019_AB_close","request":"r019_AB_close exit","status":"ok","host_started_utc":"2026-10-29T17:04:12Z","host_finished_utc":"2026-10-29T17:04:12Z","host_started_ms":1793293452762,"host_finished_ms":1793293452765,"health_scope":"connected_boards_only","expected_connected":["OBS001A","OBS003A"],"cards":[]}

@@ -12,14 +12,17 @@ from datetime import datetime, timezone
 import hashlib
 import itertools
 import json
+import sys
 from pathlib import Path, PureWindowsPath
 
 import numpy as np
 
 
 REPOSITORY = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPOSITORY / 'tools'))
+from report_paths import resolve_report_path
 DEFAULT_SOURCE = REPOSITORY / "reports/ptp_scope_20261029T160956Z"
-DEFAULT_OUTPUT = REPOSITORY / "reports/ptp_distance_model_20261029"
+DEFAULT_OUTPUT = REPOSITORY / "build/report_outputs/ptp_distance_model"
 BOARD_COLORS = {"A": "#147D92", "B": "#C26428", "C": "#7656A3"}
 ASSUMPTIONS = [
     "Chaîne mesurée fixe : N=9, trois FPGA, trois modules par FPGA ; aucun balayage de N.",
@@ -375,7 +378,7 @@ def make_figures(result, output):
 
 
 def fit(source, output, replicates=5000, seed=20261029, max_modules=60):
-    source, output = Path(source).resolve(), Path(output).resolve()
+    source, output = resolve_report_path(Path(source).resolve()), Path(output).resolve()
     if output == source or source in output.parents:
         raise ValueError("Output must not be inside the sealed source report")
     if replicates < 100 or max_modules < 9:

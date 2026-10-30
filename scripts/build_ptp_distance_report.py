@@ -2,9 +2,12 @@
 from pathlib import Path
 import json
 import sys
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "build/ptp_report_deps"))
+sys.path.insert(0, str(ROOT / 'tools'))
+from report_paths import resolve_report_path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -22,13 +25,17 @@ WIDTH = 17.4 * cm
 NAVY, TEAL = colors.HexColor("#17324d"), colors.HexColor("#00858b")
 
 
-def build():
+def build(report=REPORT, source=SOURCE, output=ROOT/'build/report_outputs/ptp_distance_pdf'):
+    report=resolve_report_path(Path(report).resolve())
+    source=resolve_report_path(Path(source).resolve())
+    output=Path(output).resolve()
+    (output/'figures').mkdir(parents=True,exist_ok=True)
     fonts = Path(matplotlib.get_data_path()) / "fonts/ttf"
     for name, filename in (("DV", "DejaVuSans.ttf"), ("DVB", "DejaVuSans-Bold.ttf"), ("DVM", "DejaVuSansMono.ttf")):
         pdfmetrics.registerFont(TTFont(name, str(fonts / filename)))
     pdfmetrics.registerFontFamily("DV", normal="DV", bold="DVB", italic="DV", boldItalic="DVB")
-    fit = json.loads((REPORT / "fit_results.json").read_text(encoding="utf-8"))
-    model = json.loads((REPORT / "model_parameters.json").read_text(encoding="utf-8"))
+    fit = json.loads((report / "fit_results.json").read_text(encoding="utf-8"))
+    model = json.loads((report / "model_parameters.json").read_text(encoding="utf-8"))
     params, points = model["parameters"], fit["measurements"]
     assert len(points) == 9 and all(p["n"] == 100 for p in points)
     styles = getSampleStyleSheet()
@@ -60,7 +67,7 @@ def build():
         story.append(Spacer(1, 7))
 
     def equation(name, expression):
-        dest = REPORT / "figures" / f"equation_{name}.png"
+        dest = output / "figures" / f"equation_{name}.png"
         fig = plt.figure(figsize=(9, .65))
         fig.text(.01, .5, "$" + expression + "$", fontsize=16, va="center", color="#17324d")
         fig.savefig(dest, dpi=240, bbox_inches="tight", pad_inches=.08, facecolor="white")
@@ -121,7 +128,7 @@ def build():
 
     # 3 - Main distance curves.
     page(); heading("2. Courbes selon le nombre de sauts depuis M1")
-    picture(REPORT / "figures/distance_offset_jitter.png", maximum_height=18 * cm)
+    picture(report / "figures/distance_offset_jitter.png", maximum_height=18 * cm)
     p("<b>Lecture.</b> Les frontières physiques se situent entre h=2 et h=3, puis entre h=5 et h=6. Sur A, ajouter deux moteurs virtuels au même domaine d'horloge n'ajoute pas de dispersion résolue. Sur B et C, le bruit inter-horloges domine la mesure.")
     p("Le biais moyen n'est pas monotone : la contribution effective de la seconde frontière compense une partie de la première. Les moteurs ont été mesurés successivement ; cette campagne ne sépare pas totalement un effet de position d'une variation lente dans le temps.")
     p("Les barres indiquent des écarts-types observés, pas des intervalles de confiance sur la moyenne. Les neuf positions appartiennent à une configuration N=9 ; elles ne constituent pas neuf tailles d'anneau différentes.", "SmallFR")
@@ -169,7 +176,7 @@ def build():
 
     # 6 - Rare events.
     page(); heading("5. Excursions : une composante séparée")
-    picture(SOURCE / "outliers_confirmes.png", maximum_height=6.3 * cm)
+    picture(source / "outliers_confirmes.png", maximum_height=6.3 * cm)
     p("Ces trois acquisitions conditionnelles de M7 dépassent la fenêtre relue d'environ [-50 ; +50] ns. Elles confirment des excursions que les 100 captures ordinaires de ce module n'ont pas échantillonnées. Elles restent exclues de l'ajustement central et ne mesurent pas un taux d'apparition.")
     equation("tail", r"\Delta_h=\mu_h+X_h+Z_hA_h,\qquad P(Z_h=1)=\pi_h\quad\mathrm{non\ identifiee}")
     p("X représente la composante centrale ajustée. π, la loi d'amplitude et la propagation temporelle des excursions restent à mesurer. Les valeurs -67,98/+57,16/-58,66 ns sont des délais absolus, pas des incréments à additionner directement à μ : pour un scénario d'injection, centrer l'amplitude par rapport au biais choisi.")
@@ -179,7 +186,7 @@ def build():
 
     # 7 - Conditional extrapolation.
     page(); heading("6. Extrapolation : l'architecture fait partie de l'équation")
-    picture(REPORT / "figures/extrapolation_scenarios.png", maximum_height=10.6 * cm)
+    picture(report / "figures/extrapolation_scenarios.png", maximum_height=10.6 * cm)
     p("Ces courbes sont des <b>scénarios du modèle central</b>, sans queues. Le seul nombre total de moteurs mesuré est N=9. Le point M9 est une observation ; les autres tailles ne sont pas une nouvelle campagne expérimentale.")
     p("• Une horloge physique par module : p=N-1, d'où σ ≈ 4,38√(N-1) ns hors bruit de mesure.<br/>• Trois modules par FPGA et ajout de FPGA : p=⌊(N-1)/3⌋.<br/>• Trois FPGA fixes et davantage de moteurs par FPGA : p=2 au dernier moteur, sous l'hypothèse virtuelle nulle, soit environ 6,19 ns.")
     p("Le dernier scénario ne démontre pas la faisabilité en ressources : l'image K=3 ne porte pas plus de neuf moteurs. Il suppose une autre capacité et ne couvre pas de nouvelles files d'attente, dérives virtuelles indépendantes, corrélations ou excursions.")
@@ -198,7 +205,7 @@ def build():
     p("<b>Éviter le double comptage.</b> Dans une simulation RTL qui reproduit déjà horloges, horodatages, échanges, servo et génération des fronts, ne pas ajouter automatiquement ce bruit en sortie. Utiliser le modèle réduit comme référence de comparaison, ou injecter les incertitudes physiques manquantes au niveau approprié. Les deux usages sont distincts.")
     code([
         "py -3 scripts/fit_ptp_distance_model.py --source reports/ptp_scope_20261029T160956Z",
-        "    --output reports/ptp_distance_model_20261029",
+        "    --output build/report_outputs/ptp_distance_model",
         "py -3 scripts/build_ptp_distance_report.py",
         "py -3 -m unittest sim.test_ptp_distance_model",
     ])
@@ -207,7 +214,7 @@ def build():
     p("[R1] Campagne locale ptp_scope_20261029T160956Z : 900 captures de modules, 100 de calibration, trois excursions conditionnelles ; commit source 27e03fd, manifestes SHA-256 et journaux conservés.<br/>[R2] rtl/sync/sync_system.vhd, lignes 137-180 et 193-199 ; rtl/sync/management_codec.vhd, lignes 80-91 et 120-123 : route, quatre horodatages, correction et retour ARM.<br/>[R3] rtl/system/ptp_emulation_core.vhd, activation du mode externe ; theory_audit.json : empreintes et qualification détaillée des équations.<br/>[R4] J. Eidson, Tutorial on IEEE 1588, 10 octobre 2005, pages 20-24, document hébergé par NIST : <link href='https://www.nist.gov/system/files/documents/el/isd/ieee/tutorial-basic.pdf' color='#00858b'>nist.gov/.../tutorial-basic.pdf</link>. Référence pédagogique de l'échange à quatre horodatages.<br/>[R5] RIGOL, guide de programmation MHO900 : <link href='https://www.rigol.com/dam/global/downloads/brochures/en/program-guide/oscilloscopes/MHO900-ProgrammingGuide.pdf?t=1760543891885' color='#00858b'>guide officiel</link> ; réglages réellement relus archivés dans la campagne.", "SmallFR")
 
     page(); heading("Annexe. Comparaison graphique des modèles")
-    picture(REPORT / "figures/model_comparison.png", maximum_height=20.5 * cm)
+    picture(report / "figures/model_comparison.png", maximum_height=20.5 * cm)
     p("La droite en h attribue un bruit à chaque saut logique ; le modèle par frontières p distingue les domaines physiques. Les deux ajustements sont faits sur les mêmes données. Leur comparaison ne constitue pas une validation sur de nouvelles cartes.", "SmallFR")
 
     def decorate(canvas, doc):
@@ -222,7 +229,7 @@ def build():
         canvas.drawRightString(doc.leftMargin + WIDTH, 28, f"Page {doc.page}")
         canvas.restoreState()
 
-    destination = REPORT / "Rapport_PTP_distance_modele.pdf"
+    destination = output / "Rapport_PTP_distance_modele.pdf"
     document = SimpleDocTemplate(str(destination), pagesize=(21 * cm, 29.7 * cm),
         leftMargin=1.8 * cm, rightMargin=1.8 * cm, topMargin=1.6 * cm, bottomMargin=1.5 * cm,
         title="Synchronisation PTP selon la distance - mesures et modèle", author="Obsidian_RAG")
@@ -231,4 +238,9 @@ def build():
 
 
 if __name__ == "__main__":
-    build()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--report',type=Path,default=REPORT)
+    parser.add_argument('--source',type=Path,default=SOURCE)
+    parser.add_argument('--output',type=Path,default=ROOT/'build/report_outputs/ptp_distance_pdf')
+    args=parser.parse_args()
+    build(args.report,args.source,args.output)

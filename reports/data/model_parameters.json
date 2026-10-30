@@ -1,0 +1,260 @@
+{
+  "schema": "obsidian_final_report_parameters_v1",
+  "transmission_and_historical_models": {
+    "ptp_distance_model_20261029": {
+      "source": "reports/ptp_distance_model_20261029/model_parameters.json",
+      "parameters": {
+        "schema": "ptp_distance_model_v1",
+        "central_component_only": true,
+        "outlier_probability": null,
+        "parameters": {
+          "measurement_sigma_ns": 0.035884825667841076,
+          "virtual_sigma_ns": 0,
+          "physical_sigma_ns": 4.380099666462204,
+          "baseline_phase_ns": 0.002318937737706238,
+          "boundary_bias_ns": [
+            -23.15009613643781,
+            13.478332556536607
+          ],
+          "observed_max_hops": 8
+        },
+        "formula_mean": "mu=a0+a1*I(p>=1)+a2*I(p>=2), only for the observed two boundaries",
+        "formula_variance": "sigma2=measurement_sigma_ns^2+physical_sigma_ns^2*p; virtual_sigma_ns=0 is a parsimonious choice",
+        "conditional_outliers": {
+          "case_id": "C_M7",
+          "source": "17_C_M7_outlier_trigger_quantized/outlier_trigger.json",
+          "sha256": "b287b58225dc9cccb2c8df3c82a973bab0934cf15036a0060dc553489e79a714",
+          "count": 3,
+          "signed_raw_delays_ns": [
+            -67.97941176470566,
+            57.15624999999999,
+            -58.655844155844235
+          ],
+          "contributes_to_unconditioned_statistics": false,
+          "outlier_probability": null,
+          "selection": "Déclenchement conditionnel hors fenêtre de ±50 ns",
+          "caveat": "Aucun dénominateur d'exposition exploitable ; ne pas interpréter 3/903 comme une fréquence"
+        },
+        "assumptions": [
+          "Chaîne mesurée fixe : N=9, trois FPGA, trois modules par FPGA ; aucun balayage de N.",
+          "Distance dirigée depuis M1 : h=i-1, p=floor(h/3), v=h-p ; retour M9 vers M1 hors chemin de phase.",
+          "Moyennes corrigées par soustraction de la moyenne de calibration A_same_sync ; SD observées conservées.",
+          "Le choix parcimonieux sigma_v=0 ne démontre pas un bruit virtuel intrinsèquement nul.",
+          "La loi de variance en p suppose des incréments indépendants et homogènes ; leurs covariances ne sont pas identifiées.",
+          "Les modules d'un FPGA partagent une horloge physique ; les captures successives n'identifient pas leurs covariances.",
+          "Seules les distributions marginales de la campagne observée sont ajustées ; les biais au-delà des deux frontières sont inconnus.",
+          "Les trois excursions sélectionnées par déclenchement restent séparées ; leur fréquence et leur probabilité ne sont pas calibrées.",
+          "Les projections décrivent la composante centrale, sans queues rares, dérives virtuelles indépendantes ni garantie de borne.",
+          "Le scénario à trois FPGA au-delà de N=9 suppose une image de plus grande capacité ; faisabilité matérielle non validée.",
+          "Un pas ADC de 0,5 ns avec interpolation ne confère pas une précision absolue de quelques dizaines de ps."
+        ],
+        "source_fit_results": "fit_results.json"
+      }
+    },
+    "theoretical_rtt_10bytes": {
+      "source": "reports/theoretical_rtt_10bytes/model_assumptions.json",
+      "parameters": {
+        "schema": "theoretical_ring_total_time_v2",
+        "source": "theoretical_model",
+        "local_bytes": 10,
+        "module_range": [
+          2,
+          30
+        ],
+        "parameters": {
+          "tick_ns": 16.0,
+          "ct_first_wave_loop_ns": 2448.0,
+          "relay_minimum_ns": 288.0,
+          "equivalent_link_ns": 624.0,
+          "tx_last_to_next_first_ticks": 3,
+          "input_sha256": {
+            "reports/hardware_validation/model.json": "01a0076a32c30d38fd72867761dc8612e132987e352e79db8497454913360f1d",
+            "reports/hardware_validation/events.json": "7ef97701e55d74f9b2d4bb245efcc183bf5618e84a157d0b18f69782ce24379b",
+            "reports/hardware_validation/results.csv": "9ce344bd4fb2b7445a808d9372ddd27cd2106b6258873a279f40d547ea45a6a7",
+            "reports/hardware_validation/ila/verification.json": "df82d2676b5ce1dd40dd2d83853089d1ad1d114ffc1ab617c99f7dcad6fac8f3"
+          },
+          "ct_redistribution_delay_ns": 0
+        },
+        "equations": {
+          "words": "ceil((payload_bytes + 36) / 2)",
+          "serialization": "(words - 1) * tick_ns",
+          "CT_collection": "S_CT(N) + N*link + (N-1)*relay",
+          "CT_redistribution": "S_CT(N) + (N-1)*link + (N-2)*relay",
+          "CT_total": "CT_collection + reinjection_delay + CT_redistribution",
+          "RAG": "S_RAG + link + (N-1)*max(link+relay, S_RAG+turnaround)"
+        },
+        "assumptions": [
+          "CT gathers through N hops back to module 1, then sends the complete table through N-1 hops to module N.",
+          "CT redistribution starts only after the entire first frame has returned; serialization is counted once per phase.",
+          "Redistribution relays are cut-through and reuse the observed relay-latency floor as an assumption.",
+          "The new CT dissemination phase is not hardware-timed in the source captures.",
+          "Module-1 reinjection delay is unmeasured; zero by default is an immediate-retransmission assumption.",
+          "RAG remains a full return to origin: H=N.",
+          "CT payload = N*local_bytes; every RAG payload = local_bytes.",
+          "N identical modules, N synchronous RAG injections, equal effective links.",
+          "Equivalent link delay is inferred from a three-link loop, not calibrated per link.",
+          "Fixed frame ownership and deterministic service-time contention are included.",
+          "No additional clock-compensation pauses, random jitter or unrelated traffic.",
+          "Serialization overlaps across cut-through hops; it is not counted N times for CT.",
+          "No hardware measurements at the plotted module counts are asserted."
+        ]
+      }
+    },
+    "theoretical_payload_n30": {
+      "source": "reports/theoretical_payload_n30/model_assumptions.json",
+      "parameters": {
+        "modules": 30,
+        "payload_range_bytes": [
+          1,
+          20
+        ],
+        "parameters": {
+          "tick_ns": 16.0,
+          "ct_first_wave_loop_ns": 2448.0,
+          "relay_minimum_ns": 288.0,
+          "equivalent_link_ns": 624.0,
+          "tx_last_to_next_first_ticks": 3,
+          "input_sha256": {
+            "reports/hardware_validation/model.json": "01a0076a32c30d38fd72867761dc8612e132987e352e79db8497454913360f1d",
+            "reports/hardware_validation/events.json": "7ef97701e55d74f9b2d4bb245efcc183bf5618e84a157d0b18f69782ce24379b",
+            "reports/hardware_validation/results.csv": "9ce344bd4fb2b7445a808d9372ddd27cd2106b6258873a279f40d547ea45a6a7",
+            "reports/hardware_validation/ila/verification.json": "df82d2676b5ce1dd40dd2d83853089d1ad1d114ffc1ab617c99f7dcad6fac8f3"
+          }
+        },
+        "source": "nominal_analytical_model_not_hardware_measurements",
+        "equations": {
+          "serialization": "0.016*(ceil((payload+36)/2)-1) us",
+          "CT": "S(29*P)+30*d+29*r",
+          "RAG": "S(P)+d+28*max(d+r,S(P)+g)"
+        },
+        "assumptions": [
+          "CT reserves all 29 peer slots from the first TX; no module-1 data.",
+          "CT cut-through slot filling adds no delay; collection only, no redistribution.",
+          "RAG uses the report synchronous homogeneous cadence; equal-sized peer packets.",
+          "Module 1 may inject an equal-sized packet as in the report; its return is not required.",
+          "Time zero: module-1 first CT TX / simultaneous first RAG TX.",
+          "Completion: last word of all 29 peer payloads at module 1.",
+          "No extra pauses, acquisition, preparation, host readout or heterogeneous arbitration.",
+          "Coefficients extrapolated from three physical boards; no validation at N=30."
+        ]
+      }
+    }
+  },
+  "latest_synchronization": {
+    "source_archive": "scope_20261030_run11.zip",
+    "source_member": "reports/ptp_scope_4ppm_dsox3014t_run11_20261030/distance_qualification.json",
+    "source_sha256": "1f721d3d7268cf4d53814604f598e5d2945e65bfc216b2fb181fb23cc04d27ae",
+    "configuration": {
+      "schema_version": 1,
+      "capacity": 3,
+      "nodes": 9,
+      "run_id": 11,
+      "period_ticks": 6250,
+      "maintenance_ratio": 10,
+      "epoch_ticks": 500000,
+      "pulse_width_ticks": 64,
+      "sample_period_ticks": 62500,
+      "duration_ticks": 0,
+      "seed": 20261030,
+      "jitter_mask": 0,
+      "drop_every": 0,
+      "drift_ppb": [
+        467,
+        -2200,
+        589,
+        -1266,
+        3090,
+        -627,
+        -3694,
+        2011,
+        2498
+      ],
+      "offset_ticks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "links": [
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        },
+        {
+          "forward_ticks": 1,
+          "reverse_ticks": 1
+        }
+      ]
+    },
+    "config_id": "16c87b5a422b4f71",
+    "timing_basis": "raw_uncalibrated",
+    "valid_acquisitions": 4200,
+    "campaign_complete": true,
+    "nominal_checks_passed": false,
+    "health_events": [
+      {
+        "case": "B_M4",
+        "phase": "before",
+        "receipt": "hardware_rpc/campaign_d78ad0d0617d42279db1049ce5f05d85.json",
+        "status": "ok",
+        "cards": [
+          {
+            "serial": "OBS003A",
+            "available": true,
+            "expected_connected": true,
+            "host_started_utc": "2026-10-30T17:08:14Z",
+            "host_finished_utc": "2026-10-30T17:08:15Z",
+            "host_started_ms": 1793380094439,
+            "host_finished_ms": 1793380095355,
+            "expected_role": 1,
+            "expected_first": 3,
+            "status_hex": "505401000027f48a6b6400200549709d00295679000000010003000900030d89",
+            "config_id_hex": "16c87b5a422b4f71",
+            "observer_hex": "00010003",
+            "links_hex": "3",
+            "phy_errors_hex": "00",
+            "operational": true,
+            "all_local_locked": false,
+            "nominal": false,
+            "errors": [
+              "One or more local modules unlocked"
+            ],
+            "output7_hex": "1",
+            "output8_hex": "3",
+            "output9_hex": "0",
+            "output10_hex": "1"
+          }
+        ]
+      }
+    ]
+  }
+}

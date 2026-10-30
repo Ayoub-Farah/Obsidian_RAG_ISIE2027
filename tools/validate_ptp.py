@@ -64,10 +64,10 @@ def main():
         p.error('--scope capacity requires --capacity 2..20')
     if a.scope=='capacity':
         a.rtl_dir=a.rtl_dir or ROOT/'build/ptp_capacity_validation'/f'k{a.capacity}'
-        a.output=a.output or ROOT/'reports/ptp_capacity_validation'/f'k{a.capacity}'
+        a.output=a.output or ROOT/'build/validation/ptp_capacity'/f'k{a.capacity}'
     else:
         a.rtl_dir=a.rtl_dir or ROOT/'build'/('ptp_single_node_validation_final' if a.scope=='single' else 'ptp_validation')
-        a.output=a.output or ROOT/'reports'/('ptp_single_node_validation' if a.scope=='single' else 'ptp_validation')
+        a.output=a.output or ROOT/'build/validation'/('ptp_single_node' if a.scope=='single' else 'ptp_emulation')
     a.output.mkdir(parents=True,exist_ok=True)
     marker=a.output/'validation.json'
     record=dict(status='running',scope=a.scope,recorded_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat())

@@ -1,3 +1,5 @@
+> Rapports consolidés : [rapport final](../reports/README.md) et [index des archives](../reports/README.md). Les anciens chemins `reports/...` cités ci-dessous sont conservés dans les archives ; les nouvelles sorties sont générées sous `build/`.
+
 # Capacité d'émulation du profil PTP
 
 La base K=1 validée est enregistrée dans le commit `cfb9722`. La recherche
@@ -82,7 +84,7 @@ py -3 scripts/run_ptp_campaign.py run --config config/ptp_emulation_9.example.js
 Le rapport complet est généré par :
 
 ```powershell
-py -3 tools/report_ptp_capacity.py --output reports/ptp_capacity
+py -3 tools/report_ptp_capacity.py --output build/report_outputs/ptp_capacity
 ```
 
 Il distingue les candidats synthétisés, les rejets et les images routées dont

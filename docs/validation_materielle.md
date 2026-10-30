@@ -1,3 +1,5 @@
+> Rapports consolidés : [rapport final](../reports/README.md) et [index des archives](../reports/README.md). Les anciens chemins `reports/...` cités ci-dessous sont conservés dans les archives ; les nouvelles sorties sont générées sous `build/`.
+
 # Diagnostic et validation matérielle — 27 octobre 2026
 
 Image commune corrigée : SHA256
@@ -90,12 +92,12 @@ sans reset ni rechargement après l'initialisation. Les cartes sont laissées au
 repos en CT, P=257, S=7, répétitions=129, période=100 µs, synchronisation active.
 Le dernier relevé donne `links=3`, `aurora_errors=0` et aucun défaut sur A/B/C.
 
-- [Vérification et empreintes](../reports/hardware_validation/verification.json)
-- [Résultats CSV](../reports/hardware_validation/results.csv)
-- [Pauses entre pages](../reports/hardware_validation/collection_pauses.csv)
-- [Durées observées](../reports/hardware_validation/durations.png)
-- [Modèle extrait des observations](../reports/hardware_validation/model.json)
-- [Vérification indépendante ILA](../reports/hardware_validation/ila/verification.json)
+- [Vérification et empreintes](../reports/README.md)
+- [Résultats CSV](../reports/README.md)
+- [Pauses entre pages](../reports/README.md)
+- [Durées observées](../reports/README.md)
+- [Modèle extrait des observations](../reports/README.md)
+- [Vérification indépendante ILA](../reports/README.md)
 
 Les configurations reproductibles se trouvent dans `config/hardware_validation/`.
 La programmation est une commande explicite, séparée des campagnes :

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "capacity": 3,
+  "nodes": 9,
+  "run_id": 11,
+  "period_ticks": 6250,
+  "maintenance_ratio": 10,
+  "epoch_ticks": 500000,
+  "pulse_width_ticks": 64,
+  "sample_period_ticks": 62500,
+  "duration_ticks": 0,
+  "seed": 20261030,
+  "jitter_mask": 0,
+  "drop_every": 0,
+  "drift_ppb": [
+    467,
+    -2200,
+    589,
+    -1266,
+    3090,
+    -627,
+    -3694,
+    2011,
+    2498
+  ],
+  "offset_ticks": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "links": [
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    },
+    {
+      "forward_ticks": 1,
+      "reverse_ticks": 1
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+> Rapports consolidés : [rapport final](../reports/README.md) et [index des archives](../reports/README.md). Les anciens chemins `reports/...` cités ci-dessous sont conservés dans les archives ; les nouvelles sorties sont générées sous `build/`.
+
 # PTP_EMULATION — branche test_sync
 
 Ce profil part du commit `d92a3dcfdd0642c7e6094d15171a43990d3803db`, également
@@ -55,6 +57,16 @@ La période des pulses est la période logique ; elle n'est pas indépendante
 dans cette version. Maintien et cadence logique ont un rapport entier.
 L'hôte calcule `2^32 + trunc(ppb*2^32/10^9)`, troncature signée vers zéro.
 2000 ppb = 2 ppm. Cette dérive s'ajoute à celle de l'oscillateur de la carte.
+Pour le nouvel essai K=3/N=9, la configuration
+[`ptp_emulation_9_uniform_4ppm.json`](../config/ptp_emulation_9_uniform_4ppm.json)
+attribue un tirage uniforme indépendant entre −4000 et +4000 ppb à chacun
+des neuf modules, M1 compris. Le tirage reste fixe pendant l'essai ; sa graine
+est 20261030 et son `run_id` vaut 10. Les accumulateurs indépendants existent
+déjà dans l'image K=3 : cette injection se règle par les registres runtime.
+Le [dossier de préparation et de validation](../reports/README.md)
+donne les valeurs, les commandes et les limites de comparaison avec la mesure
+sans dérive logique du 29 octobre.
+
 Le jitter est tiré une fois par trame avec un LFSR reproductible ; les graines
 sont décalées par carte et direction. Les files conservent l'ordre des mots
 et des trames, même si cela augmente leur attente effective.
@@ -154,7 +166,7 @@ ne sont pas simultanés.
 
 ```powershell
 py -3 scripts/analyze_ptp.py page captures/ptp_page_001/A_page.json --output captures/ptp_page_001/decoded_A
-py -3 scripts/analyze_ptp.py simulation reports/ptp_validation/sim_tb_ptp_chain_60.log --output captures/ptp_rtl_analysis --plot
+py -3 scripts/analyze_ptp.py simulation build/validation/ptp_emulation/sim_tb_ptp_chain_60.log --output captures/ptp_rtl_analysis --plot
 ```
 
 Le test de chaîne soustrait directement les sorties logiques à M1 au même

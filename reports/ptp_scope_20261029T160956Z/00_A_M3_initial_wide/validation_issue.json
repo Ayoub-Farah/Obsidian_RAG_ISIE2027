@@ -1,5 +1,0 @@
-{
-  "status": "discovery_only_excluded_from_measurement_statistics",
-  "reason": "CH2 native transfer window inherited CH1 final chunk; only first100000 samples transferred instead of1000000. Corrected collector now resets both bounds for every channel and verifies count/rate/bounds.",
-  "superseded_by": "subsequent wide validation with corrected collector"
-}

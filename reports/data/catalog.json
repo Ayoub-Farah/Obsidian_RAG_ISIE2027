@@ -1,0 +1,122 @@
+{
+  "schema": "obsidian_reports_catalog_v1",
+  "created_utc": "2026-10-30T17:33:45.629745+00:00",
+  "archives": [
+    {
+      "id": "scope_20261029",
+      "file": "scope_20261029.zip",
+      "sha256": "800a8eed179c6b159b6869f777bc96d8feddd69f95fe6fb29a309744ebcbdb57",
+      "original_roots": [
+        "reports/ptp_scope_20261029T160956Z"
+      ],
+      "status": "complete zero-logical-drift historical baseline",
+      "file_count": 2715,
+      "original_bytes": 42499567,
+      "archive_bytes": 28688482
+    },
+    {
+      "id": "scope_20261030_run10",
+      "file": "scope_20261030_run10.zip",
+      "sha256": "ed873dc48aad85a907d5a2b9f4ec8d2f3c533f2dbf758d4cd14050e18513df10",
+      "original_roots": [
+        "reports/ptp_scope_4ppm_dsox3014t_20261030",
+        "config/ptp_emulation_9_uniform_4ppm.json"
+      ],
+      "status": "interrupted by hardware reset; not pooled with run11",
+      "file_count": 2003,
+      "original_bytes": 14874639,
+      "archive_bytes": 4349255
+    },
+    {
+      "id": "scope_20261030_run11",
+      "file": "scope_20261030_run11.zip",
+      "sha256": "aa4e8f0cb735de1fb8697f8d0f69e0090690f88354f5b71320682e06090d3aec",
+      "original_roots": [
+        "reports/ptp_scope_4ppm_dsox3014t_run11_20261030",
+        "config/ptp_emulation_9_uniform_4ppm_run11.json"
+      ],
+      "status": "complete 4200 valid records; raw uncalibrated; one aggregate B unlock snapshot",
+      "file_count": 8559,
+      "original_bytes": 55150747,
+      "archive_bytes": 12727387
+    },
+    {
+      "id": "hardware",
+      "file": "hardware.zip",
+      "sha256": "e8b93b5a00518226aefdf0090e9cb9a10c52801d47f4b22c1a840f01e1011a01",
+      "original_roots": [
+        "reports/hardware_validation",
+        "ARTIFACT_MANIFEST.json",
+        "SHA256SUMS"
+      ],
+      "status": "physical CT/RAG hardware evidence and immutable 20261027 delivery manifests",
+      "file_count": 88,
+      "original_bytes": 14275169,
+      "archive_bytes": 835902
+    },
+    {
+      "id": "models_history",
+      "file": "models_history.zip",
+      "sha256": "fe1ea084dd76c3ac7f513b82cf9499f0b515b06947192ee5fb4319fd77f47aed",
+      "original_roots": [
+        "reports/ptp_distance_model_20261029",
+        "reports/theoretical_payload_n30",
+        "reports/theoretical_rtt_10bytes"
+      ],
+      "status": "historical analytical models; superseded reading entrypoint, not pooled with new measurements",
+      "file_count": 34,
+      "original_bytes": 2475289,
+      "archive_bytes": 1972849
+    },
+    {
+      "id": "validation",
+      "file": "validation.zip",
+      "sha256": "e598c7baf72df00b8b4936271f09481d9123194b293a80b474f6146a3109a395",
+      "original_roots": [
+        "reports/physical_validation",
+        "reports/ptp_builds",
+        "reports/ptp_capacity",
+        "reports/ptp_capacity_validation",
+        "reports/ptp_single_node_builds",
+        "reports/ptp_single_node_validation",
+        "reports/ptp_uniform_4ppm_20261030",
+        "reports/ptp_validation",
+        "reports/archive_integration.log",
+        "reports/archive_selfcheck.csv",
+        "reports/archive_selfcheck.json",
+        "reports/benchmark_fault_tests.log",
+        "reports/host_checks.log",
+        "reports/integration_matrix.csv",
+        "reports/integration_matrix.json",
+        "reports/integration_summary.csv",
+        "reports/management_codec_test.log",
+        "reports/portable_final.csv",
+        "reports/portable_final.json",
+        "reports/rag_c_useful_fix_tests.log",
+        "reports/rag_corrected_final.csv",
+        "reports/rag_corrected_final.json",
+        "reports/rag_links_final_tests.log",
+        "reports/rag_links_synthesis.log",
+        "reports/runtime_capacity30_synthesis.log",
+        "reports/runtime_capacity3_implementation.log",
+        "reports/runtime_capacity6_implementation.log",
+        "reports/runtime_capacity6_probe_utilization.rpt",
+        "reports/runtime_capacity6_synthesis.log",
+        "reports/runtime_dynamic_tests.log",
+        "reports/runtime_hw_helpers_test.log",
+        "reports/runtime_initial_tests.log",
+        "reports/runtime_python_tests.log",
+        "reports/runtime_small_tests.log",
+        "reports/runtime_validation.log",
+        "reports/runtime_validation_final.log",
+        "reports/start_edge_final.csv",
+        "reports/start_edge_final.json",
+        "reports/sync_tests.log"
+      ],
+      "status": "simulation, build capacity and preparation evidence; original statuses retained",
+      "file_count": 297,
+      "original_bytes": 9929291,
+      "archive_bytes": 979117
+    }
+  ]
+}

@@ -1,0 +1,622 @@
+{
+  "schema": "obsidian_repository_cleanup_v1",
+  "completed_utc": "2026-10-30T17:44:21.653982+00:00",
+  "untracked_files_before": 10576,
+  "untracked_files_after": 31,
+  "report_root_directories_before": 15,
+  "report_root_directories_after": 2,
+  "loose_archived_files_removed": 13694,
+  "loose_archived_bytes": 139202524,
+  "archives": 6,
+  "archive_bytes": 49552992,
+  "cache_files_removed": 7223,
+  "cache_bytes_removed": 3491908131,
+  "cache_directories_removed": [
+    {
+      "path": ".Xil",
+      "files": 1645,
+      "bytes": 1618595314,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_capacity_bench_smoke",
+      "files": 107,
+      "bytes": 19044488,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_capacity_review",
+      "files": 1,
+      "bytes": 50601,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_capacity_validation",
+      "files": 477,
+      "bytes": 128798585,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_control_final",
+      "files": 104,
+      "bytes": 21410103,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_control_fix",
+      "files": 104,
+      "bytes": 21401230,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_control_fix2",
+      "files": 104,
+      "bytes": 21404202,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_control_fix3",
+      "files": 85,
+      "bytes": 16663139,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_csr_check",
+      "files": 76,
+      "bytes": 6059515,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_journal_check",
+      "files": 30,
+      "bytes": 444452,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_journal_parallel_probe",
+      "files": 6,
+      "bytes": 37792,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_journal_synth",
+      "files": 12,
+      "bytes": 118985,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k1_agent_validation",
+      "files": 82,
+      "bytes": 7966681,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k1_attempt1",
+      "files": 288,
+      "bytes": 112229836,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k1_codec_tests",
+      "files": 126,
+      "bytes": 2669261,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k20_attempt1",
+      "files": 5,
+      "bytes": 18528,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k20_attempt2",
+      "files": 449,
+      "bytes": 206181862,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k20_attempt3",
+      "files": 113,
+      "bytes": 10424897,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_k20_attempt4",
+      "files": 118,
+      "bytes": 89305784,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_link_bram_ooc",
+      "files": 11,
+      "bytes": 235450,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_link_bram_validation",
+      "files": 31,
+      "bytes": 3649678,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_optimized",
+      "files": 125,
+      "bytes": 84961568,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_reset_we_validation",
+      "files": 117,
+      "bytes": 5972193,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_reset_we_validation_final",
+      "files": 117,
+      "bytes": 5982152,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_runtime_validation",
+      "files": 83,
+      "bytes": 16525658,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_scope_analysis_review",
+      "files": 1,
+      "bytes": 16125,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_scope_report_trial",
+      "files": 11,
+      "bytes": 252160,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_single_node_validation",
+      "files": 417,
+      "bytes": 41678452,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_single_node_validation_final",
+      "files": 417,
+      "bytes": 41716598,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_stop_validation",
+      "files": 217,
+      "bytes": 39743651,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_uniform_4ppm_validation_20261030",
+      "files": 161,
+      "bytes": 43318830,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/ptp_validation",
+      "files": 500,
+      "bytes": 694684078,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/sync_k1_optimization",
+      "files": 326,
+      "bytes": 23231348,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    },
+    {
+      "path": "build/xsim_tests",
+      "files": 757,
+      "bytes": 207114935,
+      "reason": "reproducible Vivado/simulation cache or superseded failed attempt; no BIT/LTX"
+    }
+  ],
+  "archived_sources_removed": [
+    {
+      "path": "reports/ptp_scope_20261029T160956Z",
+      "files": 2715,
+      "bytes": 42499567,
+      "archive": "scope_20261029.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_scope_4ppm_dsox3014t_20261030",
+      "files": 2002,
+      "bytes": 14873550,
+      "archive": "scope_20261030_run10.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_scope_4ppm_dsox3014t_run11_20261030",
+      "files": 8558,
+      "bytes": 55149658,
+      "archive": "scope_20261030_run11.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/hardware_validation",
+      "files": 86,
+      "bytes": 14172541,
+      "archive": "hardware.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "ARTIFACT_MANIFEST.json",
+      "files": 1,
+      "bytes": 53620,
+      "archive": "hardware.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "SHA256SUMS",
+      "files": 1,
+      "bytes": 49008,
+      "archive": "hardware.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_distance_model_20261029",
+      "files": 21,
+      "bytes": 2064421,
+      "archive": "models_history.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/theoretical_payload_n30",
+      "files": 6,
+      "bytes": 201079,
+      "archive": "models_history.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/theoretical_rtt_10bytes",
+      "files": 7,
+      "bytes": 209789,
+      "archive": "models_history.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/physical_validation",
+      "files": 50,
+      "bytes": 252265,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_builds",
+      "files": 23,
+      "bytes": 717557,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_capacity",
+      "files": 74,
+      "bytes": 1764080,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_capacity_validation",
+      "files": 43,
+      "bytes": 1755610,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_single_node_builds",
+      "files": 27,
+      "bytes": 1209072,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_single_node_validation",
+      "files": 32,
+      "bytes": 1321445,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_uniform_4ppm_20261030",
+      "files": 13,
+      "bytes": 384004,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/ptp_validation",
+      "files": 4,
+      "bytes": 42294,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/archive_integration.log",
+      "files": 1,
+      "bytes": 2023,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/archive_selfcheck.csv",
+      "files": 1,
+      "bytes": 138,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/archive_selfcheck.json",
+      "files": 1,
+      "bytes": 31681,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/benchmark_fault_tests.log",
+      "files": 1,
+      "bytes": 921,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/host_checks.log",
+      "files": 1,
+      "bytes": 1506,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/integration_matrix.csv",
+      "files": 1,
+      "bytes": 59082,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/integration_matrix.json",
+      "files": 1,
+      "bytes": 84875,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/integration_summary.csv",
+      "files": 1,
+      "bytes": 2058,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/management_codec_test.log",
+      "files": 1,
+      "bytes": 186,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/portable_final.csv",
+      "files": 1,
+      "bytes": 138,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/portable_final.json",
+      "files": 1,
+      "bytes": 54525,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/rag_c_useful_fix_tests.log",
+      "files": 1,
+      "bytes": 1849,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/rag_corrected_final.csv",
+      "files": 1,
+      "bytes": 11862,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/rag_corrected_final.json",
+      "files": 1,
+      "bytes": 42015,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/rag_links_final_tests.log",
+      "files": 1,
+      "bytes": 5912,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/rag_links_synthesis.log",
+      "files": 1,
+      "bytes": 2010,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_capacity30_synthesis.log",
+      "files": 1,
+      "bytes": 671178,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_capacity3_implementation.log",
+      "files": 1,
+      "bytes": 612500,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_capacity6_implementation.log",
+      "files": 1,
+      "bytes": 202500,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_capacity6_probe_utilization.rpt",
+      "files": 1,
+      "bytes": 12299,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_capacity6_synthesis.log",
+      "files": 1,
+      "bytes": 642524,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_dynamic_tests.log",
+      "files": 1,
+      "bytes": 4208,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_hw_helpers_test.log",
+      "files": 1,
+      "bytes": 1064,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_initial_tests.log",
+      "files": 1,
+      "bytes": 1064,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_python_tests.log",
+      "files": 1,
+      "bytes": 5094,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_small_tests.log",
+      "files": 1,
+      "bytes": 548,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_validation.log",
+      "files": 1,
+      "bytes": 5564,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/runtime_validation_final.log",
+      "files": 1,
+      "bytes": 2210,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/start_edge_final.csv",
+      "files": 1,
+      "bytes": 1596,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/start_edge_final.json",
+      "files": 1,
+      "bytes": 18429,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    },
+    {
+      "path": "reports/sync_tests.log",
+      "files": 1,
+      "bytes": 1405,
+      "archive": "validation.zip",
+      "reason": "exact original bytes retained in verified SHA256 archive"
+    }
+  ],
+  "disposable_generated_files_removed": [
+    {
+      "path": "clockInfo.txt",
+      "sha256": "9bf63531441421ee281177d9706623f17cf13b2167debee98f2cdee281ab81e9",
+      "bytes": 382,
+      "reason": "Generated Vivado diagnostic without source consumer"
+    },
+    {
+      "path": "retry_open_nr.log",
+      "sha256": "f466925f9abb8878231078657d592f92111e7e5e745e4c46778b7236a0d98cb2",
+      "bytes": 101,
+      "reason": "Generated Vivado diagnostic without source consumer"
+    }
+  ],
+  "protected_bitstreams_and_probes_sha256": {
+    "build/physical_runtime/obsidian_benchmark.bit": "d844d4fbc15c4702dd8eb6e468fd1ab3128bfc21a0c1e0972d15b96c581835c4",
+    "build/physical_runtime/obsidian_benchmark.ltx": "c7061aa49dc0073b3c5d09dab514abaad53ead809e9a51ce3df5ffa1186e61e8",
+    "build/ptp_k1_attempt2/obsidian_ptp.bit": "043ec1bbb1e702c95c3171b9be7d4190642929d14b9fd3771ffeb5c1e1953bd6",
+    "build/ptp_k1_attempt2/obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+    "build/ptp_single_node/obsidian_ptp.bit": "1ce4154047f12505fed2524f0eeb2584c995bb07e800b7b4a4c1b09371961f41",
+    "build/ptp_single_node/obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+    "build/ptp_single_node_final/obsidian_ptp.bit": "5b71d3310664a7613236acf82f0e86e91c2c39fcd3eeb1a5bf210625c9636704",
+    "build/ptp_single_node_final/obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+    "build/rag_m2_n3_b0_l1_d6_r2_c128/obsidian_benchmark.bit": "9dea4f54192fc621f3d2a13bb3d67d2be17e96bd6019718a3f6883d62774b284",
+    "build/rag_m2_n3_b0_l1_d6_r2_c128/obsidian_benchmark.ltx": "0ba596a9b447af2a761867982ba232e0c0260f178b89aa851b7b6eb5a2385b9d",
+    "build/rag_m2_n3_b1_l1_d6_r2_c128/obsidian_benchmark.bit": "e4258b0bff5e0cfcd50c206276bdaa9a2010c49a0fac927e4d095e163bc6d178",
+    "build/rag_m2_n3_b1_l1_d6_r2_c128/obsidian_benchmark.ltx": "0ba596a9b447af2a761867982ba232e0c0260f178b89aa851b7b6eb5a2385b9d",
+    "build/rag_m2_n3_b2_l1_d6_r2_c128/obsidian_benchmark.bit": "e06ec2bf12a826e79b5b68198c56fc506235f558cb3f773ae7b168794b5d333e",
+    "build/rag_m2_n3_b2_l1_d6_r2_c128/obsidian_benchmark.ltx": "0ba596a9b447af2a761867982ba232e0c0260f178b89aa851b7b6eb5a2385b9d",
+    "build/physical_runtime/attempts/2026-10-27T121524_951143_0000/obsidian_benchmark.bit": "f07ba9b3ecd75f4f6dbc77e9a1046dcb28a5fbe4f29e7db9953122a028527096",
+    "build/physical_runtime/attempts/2026-10-27T121524_951143_0000/obsidian_benchmark.ltx": "c7061aa49dc0073b3c5d09dab514abaad53ead809e9a51ce3df5ffa1186e61e8",
+    "build/physical_runtime/attempts/2026-10-27T123909_628457_0000/obsidian_benchmark.bit": "d25d4ddfea5a4ce450279d13b640eda57879d0ccb1de568fe9c6d159464c8385",
+    "build/physical_runtime/attempts/2026-10-27T123909_628457_0000/obsidian_benchmark.ltx": "c7061aa49dc0073b3c5d09dab514abaad53ead809e9a51ce3df5ffa1186e61e8",
+    "build/physical_runtime/attempts/2026-10-27T130537_093527_0000/obsidian_benchmark.bit": "9151d08ab6aa2bfb570e7df7313f40af063be768b40191fd12b7eacfaf08d21a",
+    "build/physical_runtime/attempts/2026-10-27T130537_093527_0000/obsidian_benchmark.ltx": "c7061aa49dc0073b3c5d09dab514abaad53ead809e9a51ce3df5ffa1186e61e8",
+    "build/ptp_capacity_search/k2_route2/obsidian_ptp.bit": "a7b5a15a6772d2a9fc3cafb0d979d4421b4bf69cccd67d5980746537b6b9bf92",
+    "build/ptp_capacity_search/k2_route2/obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100",
+    "build/ptp_capacity_search/k3_route/obsidian_ptp.bit": "81ec98265341cf183854f9c653aa0d64b0d854d7d72399e2f0408c4d8c054b31",
+    "build/ptp_capacity_search/k3_route/obsidian_ptp.ltx": "e7576e74749b33994f2963b8d4f47ecbd78c3dc063adb7871eaf28bb0a02c100"
+  },
+  "existing_user_changes": "dfx_runtime.txt and prior source/config/test modifications preserved",
+  "verification": {
+    "per_member_archive_sha256": "passed for all six archives",
+    "source_archive_exact_comparison": "all 13694 removed source files matched their archived SHA256 before removal",
+    "archive_roundtrip_tests": 7,
+    "source_path_and_model_tests": 35,
+    "run11_raw_reanalysis": {
+      "modules": 9,
+      "valid_acquisitions": 4200,
+      "statistics": "identical to pre-migration",
+      "health_events": 1
+    },
+    "historical_model_replay": "900 module captures, identical sigma_physical=4.380099666462204 ns",
+    "transmission_replay": "tau=16 ns, effective link=624 ns, relay=288 ns",
+    "final_pdf": {
+      "pages": 10,
+      "sha256": "8cfc72c10d96310ee2dbe63d6a799228209a8a5e36c222eae17e0379f5a624c9",
+      "visual_review": "all pages passed",
+      "missing_glyphs": 0,
+      "overfull_boxes": 0,
+      "markdown_sha256": "ef6f07ccb14c432e0ba1dffdcea2b7dd687d1520945130fe2f4e9f5a5f91be95"
+    }
+  },
+  "git_commit_created": false
+}

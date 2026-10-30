@@ -1,10 +1,7 @@
-# Keep original Vivado evidence bytes (including CRLF) for SHA-256 verification.
-reports/ptp_single_node_builds/** -text whitespace=-blank-at-eol,-blank-at-eof
-reports/ptp_single_node_validation/** -text whitespace=-blank-at-eol,-blank-at-eof
-reports/ptp_capacity/** -text whitespace=-blank-at-eol,-blank-at-eof
-reports/ptp_capacity_validation/** -text whitespace=-blank-at-eol,-blank-at-eof
-reports/ptp_scope_*/** -text whitespace=-blank-at-eol,-blank-at-eof
-reports/ptp_distance_model_*/** -text whitespace=-blank-at-eol,-blank-at-eof
+# Immutable evidence archives retain original bytes and internal SHA-256 manifests.
+reports/data/*.zip binary
+reports/figures/*.png binary
+reports/final_report.pdf binary
 
 # Preserve the original KiCad reference export byte for byte.
 reference/Obsidian.net -text whitespace=cr-at-eol

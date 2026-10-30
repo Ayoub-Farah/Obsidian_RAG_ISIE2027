@@ -1,3 +1,5 @@
+> Rapports consolidés : [rapport final](../reports/README.md) et [index des archives](../reports/README.md). Les anciens chemins `reports/...` cités ci-dessous sont conservés dans les archives ; les nouvelles sorties sont générées sous `build/`.
+
 # Validation du banc physique CT/RAG
 
 Le BIT/LTX commun a été produit avec Vivado 2025.2 pour XC7A35T-CSG325-2.
@@ -37,12 +39,12 @@ Les métriques intercartes restent absentes sans calibration externe valide.
 Les trois cartes ont été programmées explicitement et la campagne matérielle
 a validé 192 essais, soit 576 résumés de cartes.
 Voir [le diagnostic et les mesures réelles](validation_materielle.md) et
-[les preuves](../reports/hardware_validation/verification.json).
+[les preuves](../reports/README.md).
 Les mesures intercartes restent absentes sans calibration externe.
 Les constructions et les campagnes ne programment pas les cartes automatiquement.
 
 BIT SHA256 : `d844d4fbc15c4702dd8eb6e468fd1ab3128bfc21a0c1e0972d15b96c581835c4`  
 LTX SHA256 : `c7061aa49dc0073b3c5d09dab514abaad53ead809e9a51ce3df5ffa1186e61e8`
 
-Voir [le guide](physical_runtime.md), [les tests](../reports/physical_validation/validation.json)
+Voir [le guide](physical_runtime.md), [les tests](../reports/README.md)
 et [les rapports de construction](../build/physical_runtime/execution.json).

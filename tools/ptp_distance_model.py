@@ -18,6 +18,11 @@ from typing import Sequence
 
 import numpy as np
 
+try:
+    from .report_paths import resolve_report_path
+except ImportError:
+    from report_paths import resolve_report_path
+
 PARAMETER_SCHEMA = 'ptp_distance_model_v1'
 
 
@@ -74,7 +79,7 @@ def load_parameters(path: str | Path) -> ModelParameters:
     Additional top-level fit/provenance metadata is allowed. Unknown parameter
     names are rejected; omitted parameter fields use the explicit defaults.
     """
-    data = json.loads(Path(path).read_text(encoding='utf-8'))
+    data = json.loads(resolve_report_path(Path(path).resolve()).read_text(encoding='utf-8'))
     if not isinstance(data, dict) or data.get('schema') != PARAMETER_SCHEMA:
         raise ValueError(f'Expected schema {PARAMETER_SCHEMA}')
     if data.get('central_component_only') is not True or data.get('outlier_probability') is not None:

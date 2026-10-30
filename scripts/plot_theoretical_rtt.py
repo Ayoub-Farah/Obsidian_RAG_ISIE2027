@@ -5,16 +5,18 @@ No FPGA, JTAG or network access. Curves are predictions, not hardware data.
 from __future__ import annotations
 from collections import defaultdict
 from pathlib import Path
-import argparse,csv,hashlib,json,math
+import argparse,csv,hashlib,json,math,sys
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'tools'))
+from report_paths import resolve_report_path
 
 
 def parameters():
-    source=ROOT/'reports/hardware_validation'
+    source=resolve_report_path('reports/hardware_validation')
     files=[source/n for n in ('model.json','events.json','results.csv','ila/verification.json')]
     model=json.loads(files[0].read_text(encoding='utf-8'))
     events=json.loads(files[1].read_text(encoding='utf-8'))
@@ -85,7 +87,7 @@ def main():
     parser.add_argument('--max-modules',type=int,default=30)
     parser.add_argument('--ct-redistribution-delay-ns',type=float,default=0,
                         help='Unmeasured module-1 reinjection delay; nominal default assumes immediate retransmission')
-    parser.add_argument('--output-dir',type=Path,default=ROOT/'reports/theoretical_rtt_10bytes')
+    parser.add_argument('--output-dir',type=Path,default=ROOT/'build/report_outputs/theoretical_rtt')
     a=parser.parse_args()
     if not 2<=a.min_modules<=a.max_modules or a.local_bytes<1 or a.max_modules*a.local_bytes>4096:
         parser.error('Require 2 <= min <= max, positive local bytes, and CT payload <= 4096 bytes')

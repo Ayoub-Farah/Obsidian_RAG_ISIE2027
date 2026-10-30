@@ -1,4 +1,0 @@
-{
-  "use_for_ptp_model": false,
-  "reason": "Same-M1 path identity was not yet verified; dispersion disappeared after probe movement/reconnection and disable/re-enable check. Initial cause remains undetermined. Raw data preserved."
-}

@@ -1,4 +1,0 @@
-board,generation,run,from_page,to_page,page_seal_raw,next_launch_raw,ticks,duration_us,scope
-A,100,12,11,12,122964790055,154771914458,31807124403,508913990.448,"page seal to next launch; includes collection, ACK, synchronization and rearming"
-B,100,12,11,12,122931459546,154738628517,31807168971,508914703.536,"page seal to next launch; includes collection, ACK, synchronization and rearming"
-C,100,12,11,12,122897831827,154704954612,31807122785,508913964.56,"page seal to next launch; includes collection, ACK, synchronization and rearming"

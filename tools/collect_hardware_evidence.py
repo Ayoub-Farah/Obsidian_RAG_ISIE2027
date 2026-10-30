@@ -13,7 +13,7 @@ def main():
     p.add_argument('--programming',type=Path,required=True)
     p.add_argument('--ila',type=Path)
     p.add_argument('--host-tests',type=Path,required=True)
-    p.add_argument('--output',type=Path,default=ROOT/'reports/hardware_validation')
+    p.add_argument('--output',type=Path,default=ROOT/'build/report_outputs/hardware_validation')
     a=p.parse_args()
     a.output=a.output.resolve()
     if a.output.exists() and any(a.output.iterdir()):raise ValueError('Use an empty evidence directory')

@@ -7,7 +7,8 @@ REQUIRED=['tb_physical_system','tb_physical_node','tb_physical_fifo','tb_physica
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--collect-existing-rtl',action='store_true',help='Accept existing PASS logs only if all compiled source hashes still match')
-    a=p.parse_args();dest=ROOT/'reports/physical_validation';dest.mkdir(parents=True,exist_ok=True)
+    p.add_argument('--output',type=Path,default=ROOT/'build/validation/physical')
+    a=p.parse_args();dest=a.output.resolve();dest.mkdir(parents=True,exist_ok=True)
     commands=[]
     def run(command,log):
         result=subprocess.run(command,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)

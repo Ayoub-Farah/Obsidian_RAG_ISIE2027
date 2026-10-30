@@ -100,6 +100,13 @@ class CampaignTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 campaign.check_health(bad, 'OBS001A', ['OBS001A', 'OBS003A'], 2)
 
+    def test_unlocked_measurement_option_keeps_operational_faults_blocking(self):
+        receipt=health();receipt['cards'][1].update(nominal=False,operational=True)
+        with self.assertRaises(ValueError):campaign.check_health(receipt,'OBS001A',['OBS001A','OBS003A'],2)
+        campaign.check_health(receipt,'OBS001A',['OBS001A','OBS003A'],2,require_locked=False)
+        receipt['cards'][1]['operational']=False
+        with self.assertRaises(ValueError):campaign.check_health(receipt,'OBS001A',['OBS001A','OBS003A'],2,require_locked=False)
+
     def test_pending_request_is_never_replaced(self):
         with tempfile.TemporaryDirectory() as tmp:
             report = Path(tmp); self.setup_report(report)

@@ -1,7 +1,7 @@
 """Compare completed PTP capacity builds with source and artifact provenance.
 
 Example: py -3 tools/report_ptp_capacity.py --build build/ptp_single_node_final
-    --build build/ptp_capacity_search/k4_synth --output reports/ptp_capacity
+    --build build/ptp_capacity_search/k4_synth --output build/report_outputs/ptp_capacity
 Only a fingerprint-verified, completed routed build can enter either selection.
 The report contains implementation evidence, never hardware validation.
 """
@@ -432,7 +432,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--build', action='append', type=Path, default=[],
                         help='Build directory; repeat for each executed candidate (default: final K1 plus capacity search)')
-    parser.add_argument('--output', type=Path, default=ROOT / 'reports/ptp_capacity', help='Output directory for capacity.json and capacity.md')
+    parser.add_argument('--output', type=Path, default=ROOT / 'build/report_outputs/ptp_capacity', help='Output directory for capacity.json and capacity.md')
     parser.add_argument('--min-lut-free-percent', type=float, default=15.0)
     parser.add_argument('--min-ff-free-percent', type=float, default=15.0)
     parser.add_argument('--min-setup-ns', type=float, default=0.5)

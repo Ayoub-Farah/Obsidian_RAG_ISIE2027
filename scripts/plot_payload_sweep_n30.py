@@ -3,6 +3,7 @@ from pathlib import Path
 import csv
 import json
 import math
+import argparse
 
 import matplotlib
 matplotlib.use('Agg')
@@ -12,6 +13,9 @@ from plot_theoretical_rtt import ROOT, parameters
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output-dir',type=Path,default=ROOT/'build/report_outputs/theoretical_payload_n30')
+    args=parser.parse_args()
     p = parameters()
     n = 30
     tau = p['tick_ns'] / 1000
@@ -36,7 +40,7 @@ def main():
     assert all(math.isclose(row['rag_cadence_us'], .912) for row in rows)
     assert math.isclose(rows[9]['ct_collection_us'], 29.664)
     assert math.isclose(rows[9]['rag_collection_us'], 26.512)
-    out = ROOT / 'reports/theoretical_payload_n30'
+    out = args.output_dir.resolve()
     out.mkdir(parents=True, exist_ok=True)
     with (out / 'collection_vs_payload.csv').open('w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0]))
